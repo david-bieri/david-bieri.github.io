@@ -19,9 +19,9 @@ window.MEDIA = [
   "outlet": "FOX 5 DC",
   "logo": "fox5",
   "program": "FOX 5 DC (live)",
-  "title": "Evening economic segment",
+  "title": "The Sunshine Protection Act and its economic impacts",
   "type": "tv",
-  "topic": "economy",
+  "topic": "politics-policy",
   "scope": "Regional",
   "tier": "regional"
  },
@@ -118,9 +118,9 @@ window.MEDIA = [
   "outlet": "FOX 5 DC",
   "logo": "fox5",
   "program": "FOX 5 DC (live)",
-  "title": "Evening economic segment",
+  "title": "The September FOMC meeting",
   "type": "tv",
-  "topic": "economy",
+  "topic": "fed",
   "scope": "Regional",
   "tier": "regional"
  },
