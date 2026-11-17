@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>In the press — David S. Bieri</title>
-<meta name="description" content="Media appearances and expert commentary by economist David S. Bieri: Marketplace, CBS, TIME, Newsweek, CNN, the Associated Press and more, on tariffs, the Fed, inflation and the economy.">
+<title>In the news — David S. Bieri</title>
+<meta name="description" content="Economist David S. Bieri in the news: commentary on tariffs, the Fed, prices, jobs, housing, prediction markets and state budgets for public radio, network and local television, newspapers and magazines.">
 <link rel="canonical" href="https://david-bieri.com/media.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,42 +17,41 @@
     <a class="brand" href="index.html">David S. Bieri <span>/ Virginia Tech</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Site">
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="media.html" aria-current="page">In the press</a><a href="teaching.html">Teaching</a><a href="assets/docs/CV_DSBieri.pdf">CV</a>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="media.html" aria-current="page">In the news</a><a href="teaching.html">Teaching</a><a href="assets/docs/CV_DSBieri.pdf">CV</a>
     </nav>
   </div>
 </header>
 
 <section class="intro">
   <div class="wrap">
-    <h1>In the press</h1>
-    <p>Economic commentary for a general audience, in plain terms and on deadline — tariffs and trade, the Federal Reserve, inflation, housing, energy shocks, prediction markets and the architecture of international money. Live television most weeks, radio most months, and the national and international press when the story turns on money.</p>
-    <p class="meta">To book an interview: Virginia Tech Media Relations, <a href="mailto:mediarelations@vt.edu">mediarelations@vt.edu</a>, or <a href="mailto:bieri@vt.edu">bieri@vt.edu</a> directly.</p>
+    <h1>In the news</h1>
+    <p>Economic policy explained for a general audience, on deadline: on public radio, network and local television, and in newspapers and magazines, in the United States and abroad.</p>
+    <p class="meta">To book an interview: Virginia Tech Media Relations, <a href="mailto:mediarelations@vt.edu">mediarelations@vt.edu</a>, or <a href="mailto:bieri@vt.edu">bieri@vt.edu</a> directly. <span class="updated" id="updated"></span></p>
+  </div>
+</section>
+
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="issue-bar" id="issue-chips" role="group" aria-label="Filter by issue"></div>
+    <div class="news-lead" id="lead" aria-live="polite"></div>
+    <div class="news-grid" id="news-grid"></div>
+    <div class="news-more"><button class="btn ghost" id="more" type="button">More coverage</button></div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="stats" id="stats"></div>
-    <h2 style="margin-bottom:16px">Outlets</h2><p class="muted small" style="margin-bottom:16px">National and international first; the full list of 100 outlets is in the archive below.</p>
+    <div class="section-head"><h2>Outlets</h2></div>
     <ul class="outlets" id="outlets" data-count="30"></ul>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head"><h2>Selected appearances</h2></div>
-    <div class="featured" id="featured" data-count="9"></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><h2>Archive</h2><span class="meta" id="count"></span></div>
-    <div class="filters"><label>Topic</label><div id="topic-chips" style="display:contents"></div></div>
-    <div class="filters"><label>Format</label><div id="type-chips" style="display:contents"></div>
-      <input class="search" id="search" type="search" placeholder="Search outlet or headline" aria-label="Search appearances"></div>
+    <div class="section-head"><h2>Every appearance, 2014–2026</h2><span class="meta"><span id="archive-scope"></span> <span id="count"></span></span></div>
+    <div class="filters"><input class="search" id="search" type="search" placeholder="Search outlet, programme or headline" aria-label="Search appearances" style="margin-left:0"></div>
     <ul class="list" id="archive"></ul>
-    <div class="empty" id="empty" hidden>Nothing matches those filters. Clear one and try again.</div>
+    <div class="empty" id="empty" hidden>Nothing matches. Clear the search or pick another issue above.</div>
   </div>
 </section>
 

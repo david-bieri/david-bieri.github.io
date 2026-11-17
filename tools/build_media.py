@@ -12,7 +12,12 @@ Columns
   program     show or section, e.g. "Good Day DC (live)"
   title       headline or short description
   type        tv | radio | print | online | podcast
-  topic       tariffs | fed | inflation | energy | housing | markets | prediction-markets | macro | politics-policy | finance | economy
+  topic       one of the eight issues (the filters on media.html and the tiles on the home page):
+                trade   Trade & tariffs          money    The Fed & money
+                prices  Prices & cost of living  jobs     Jobs & the economy
+                markets Markets & new finance    housing  Housing
+                gov     Government & budgets     world    Global affairs & energy
+  va          "yes" if the story is about Virginia or ran on a Virginia outlet (drives the Virginia filter)
   scope       Local | State | Regional | National | International   (from Elements)
   tier        national | international | regional | state | local   (drives outlet wall ordering)
   url         link; leave blank if none (title renders as plain text)
@@ -33,11 +38,23 @@ if bad:
     sys.exit("Rows missing date/outlet/title: " + ", ".join(r.get("id", "?") for r in bad))
 rows.sort(key=lambda r: r["date"], reverse=True)
 
+TOPIC_LABELS = {"trade": "Trade & tariffs", "money": "The Fed & money", "prices": "Prices & cost of living",
+    "jobs": "Jobs & the economy", "markets": "Markets & new finance", "housing": "Housing",
+    "gov": "Government & budgets", "world": "Global affairs & energy"}
+odd = [r.get("id", "?") for r in rows if r["topic"] not in TOPIC_LABELS]
+if odd:
+    sys.exit("Rows with a topic outside the eight issues: " + ", ".join(odd))
+YES = ("yes", "true", "1", "x")
+
 media = []
 for r in rows:
     m = {k: r[k] for k in ("id", "date", "outlet", "logo", "program", "title", "type", "topic", "scope", "tier", "url") if r.get(k)}
-    if r.get("featured", "").strip().lower() in ("yes", "true", "1", "x"):
+    if r.get("featured", "").strip().lower() in YES:
         m["featured"] = True
+    if r.get("va", "").strip().lower() in YES:
+        m["va"] = True
+    if "title-from-program" in r.get("notes", "") or r["title"] == r.get("program") or len(r["title"].split()) < 4:
+        m["weak"] = True  # placeholder headline: kept in the archive, skipped for the lead, cards and tiles
     if r.get("quote"):
         m["quote"] = r["quote"]
     media.append(m)
@@ -58,10 +75,6 @@ def prom(o):
 outlets = sorted(freq, key=lambda o: (prom(o), tier_rank.get(tier[o], 5), -freq[o], o))
 wall = [{"name": o, "logo": logo[o], "n": freq[o], "tier": tier[o]} for o in outlets]
 
-TOPIC_LABELS = {"tariffs": "Tariffs & trade", "fed": "The Fed & monetary policy", "inflation": "Inflation & prices",
-    "energy": "Energy & geopolitics", "housing": "Housing & real estate", "markets": "Markets & corporate",
-    "prediction-markets": "Prediction markets", "macro": "Jobs, growth & budgets", "politics-policy": "Politics & policy",
-    "finance": "Personal finance", "pandemic": "Pandemic economy", "economy": "The economy"}
 TYPE_LABELS = {"tv": "Television", "radio": "Radio", "print": "Print", "online": "Online", "podcast": "Podcast"}
 
 with open(OUT, "w", encoding="utf-8") as f:
