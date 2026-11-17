@@ -119,20 +119,42 @@ window.MEDIA = [
   { date: "2023-04-28", outlet: "KNX Radio (Los Angeles)", type: "radio", topic: "inflation",
     title: "The interest rate hikes are working. The economy is slowing down.",
     url: "https://liberalarts.vt.edu/news/in-the-news/2023/04/-the-one-thing-that-we-are-seeing-is-of-course-that-the-interest.html" },
+  { date: "2020-07-15", outlet: "WalletHub", type: "online", topic: "housing", title: "Best and worst places to rent in America — expert panel", url: "https://wallethub.com/edu/best-cities-for-renters/23010/#expert=david-s-bieri" },
+  { date: "2020-04-02", outlet: "WFIR Radio", type: "radio", topic: "recession", title: "Potential COVID-19 economic impact", url: "https://wfirnews.com/news/vt-professor-discusses-potential-covid-19-economic-impact" },
+  { date: "2019-12-13", outlet: "710 KNUS Denver", type: "radio", topic: "trade", title: "After the British general election: Tory landslide and the reshaping of British politics", url: "https://chuckandjulie.podbean.com/e/chuck-julie-december-13-2019-hr-1/" },
+  { date: "2019-11-15", outlet: "710 KNUS Denver", type: "radio", topic: "trade", title: "Brexit and Boris Johnson's general-election gamble", url: "https://chuckandjulie.podbean.com/e/chuck-julie-november-15-2019-hr-2/" },
+  { date: "2017-01-20", outlet: "WFXR (Fox Roanoke)", type: "tv", topic: "trade", title: "Political experts weigh in on the incoming administration", url: "http://www.virginiafirst.com/news/local-news/political-experts-weigh-in-on-upcoming-trump-presidency-womens-march/642431219" },
+  { date: "2017-01-20", outlet: "Correio Braziliense", type: "print", topic: "trade", title: "What the world can expect from the Trump administration", url: "http://www.correiobraziliense.com.br/app/noticia/mundo/2017/01/20/interna_mundo,566730/o-que-esperar-do-governo-trump.shtml" },
+  { date: "2017-01-18", outlet: "Christian Science Monitor", type: "print", topic: "trade", title: "Can a conservative president save the EU Parliament from the far right?", url: "http://www.csmonitor.com/World/Europe/2017/0118/Can-a-conservative-president-save-the-EU-parliament-from-the-far-right" },
+  { date: "2016-11-15", outlet: "MoneySense", type: "online", topic: "housing", title: "New rules of spending: real estate isn't just a place to live anymore", url: "http://www.moneysense.ca/spend/new-rules-personal-finance-spending/" },
+  { date: "2016-07-10", outlet: "The Roanoke Times", type: "print", topic: "trade", title: "Brexit as the battle of ideas over Europe's 'manifest destiny' (op-ed)", url: "http://www.roanoke.com/opinion/commentary/bieri-brexit-as-the-battle-of-ideas-over-europe-s/article_6dd34600-a9de-573d-8bf9-b9b9ec17370f.html" },
+  { date: "2016-04-12", outlet: "WalletHub", type: "online", topic: "housing", title: "Cities where people are most overleveraged on their homes", url: "https://wallethub.com/mortgage-calculator/" },
+  { date: "2015-11-20", outlet: "Der Standard / St. Galler Tagblatt", type: "print", topic: "housing", title: "Die Crowd als Baumeister — on crowdfunding the city", url: "http://derstandard.at/2000026115752/Die-Crowd-als-Baumeister" },
+  { date: "2015-09-15", outlet: "Earnest", type: "online", topic: "housing", title: "Ignore the '30 percent rule' when it comes to rent", url: "http://blog.meetearnest.com/post/129291050047/rent-and-the-30-percent-rule" },
+  { date: "2015-08-04", outlet: "Fortune", type: "online", topic: "housing", title: "Why should you only spend 30% of your income on housing?", url: "http://fortune.com/2015/08/04/housing-30-percent-rule/" },
+  { date: "2015-03-21", outlet: "Battle Creek Enquirer", type: "print", topic: "public-goods", title: "With public funds, Battle Creek United plays stealthy development game", url: "http://www.battlecreekenquirer.com/story/news/local/2015/03/21/public-funds-bcu-plays-stealthy-development-game/25115589/" },
+  { date: "2014-12-31", outlet: "Detroit Metro Times", type: "print", topic: "public-goods", title: "Lawmakers pass on TIF reform this year", url: "http://www.metrotimes.com/Blogs/archives/2014/12/31/news-hits-lawmakers-pass-on-tif-reform-this-year" },
+  { date: "2014-09-22", outlet: "HUD PD&R Edge", type: "online", topic: "housing", title: "Rental burdens: rethinking affordability measures", url: "http://www.huduser.org/portal/pdredge/pdr_edge_featd_article_092214.html" },
+  { date: "2014-09-15", outlet: "Michigan Public Radio", type: "radio", topic: "public-goods", title: "Transparency lacking as Michigan taxpayers bankroll private development", url: "http://michiganradio.org/post/tranparency-lacking-michigan-taxpayers-bankroll-private-development" },
+  { date: "2014-09-09", outlet: "Tax Policy Center", type: "online", topic: "public-goods", title: "Inversions, loopholes, taxes and TIFs: what's a revenue service to do?", url: "http://taxvox.taxpolicycenter.org/2014/09/09/inversions-loopholes-taxes-tifs-whats-revenue-service/" },
+  { date: "2014-09-08", outlet: "MLive", type: "online", topic: "public-goods", title: "Michigan tax-capturing authorities could rake in $1.2B a year but have little oversight", url: "http://www.mlive.com/lansing-news/index.ssf/2014/09/tax-capturing_authorities_that.html" },
+  { date: "2014-07-17", outlet: "Bloomberg Businessweek", type: "print", topic: "housing", featured: true, title: "Thou shalt not commit more than 30 percent of thine income to housing", url: "http://www.businessweek.com/articles/2014-07-17/housings-30-percent-of-income-rule-is-near-useless" },
+  { date: "2014-07-10", outlet: "Michigan Public Radio", type: "radio", topic: "public-goods", title: "Do corporate tax incentives boost Michigan's economy?", url: "http://wkar.org/post/do-corporate-tax-incentives-boost-michigans-economy" },
+  { date: "2014-04-15", outlet: "Die Presse", type: "print", topic: "housing", title: "Blumen für den Gemeindebau", url: "http://diepresse.com/home/panorama/welt/1598862/Blumen-fur-den-Gemeindebau" },
   { date: "2017-01-20", outlet: "WDBJ7 (CBS Roanoke)", type: "tv", topic: "trade",
     title: "How the inauguration could impact businesses in Virginia",
-    url: "https://www.david-bieri.com/" },
+    url: "http://www.wdbj7.com/content/news/Trumps-inauguration-could-impact-businesses-in-Virginia-410729125.html" },
   { date: "2016-06-24", outlet: "WDBJ7 (CBS Roanoke)", type: "tv", topic: "trade",
     title: "How Brexit could impact Virginia",
-    url: "https://www.david-bieri.com/" },
+    url: "http://www.wdbj7.com/content/news/How-Brexit-could-impact--384328971.html" },
   { date: "2016-06-27", outlet: "WFIR Radio", type: "radio", topic: "trade",
     title: "The European Union after Brexit",
-    url: "https://www.david-bieri.com/" }
+    url: "http://wfirnews.com/local-news/vt-prof-brexit-vote-reflects-long-stranding-issues-in-europe", audio: "legacy/docs/WFIRBrexitInterview_Bieri_Jun16.mp3" }
 ];
 
 // Outlets that have quoted or interviewed David, for the outlet wall. Order is editorial, not alphabetical.
 window.OUTLETS = [
-  "The Wall Street Journal", "The Washington Post", "TIME", "Newsweek", "CNN", "CBS News",
+  "The Wall Street Journal", "The Washington Post", "TIME", "Newsweek", "CNN", "CBS News", "Bloomberg Businessweek", "Fortune", "Christian Science Monitor", "Der Standard", "Die Presse",
   "Marketplace", "Associated Press", "DW News", "South China Morning Post", "Kiplinger", "Yahoo News",
   "Business Insider", "Money", "Fox LiveNOW", "KNX Radio", "WUSA9", "WBTV", "WSLS", "WDBJ7"
 ];
