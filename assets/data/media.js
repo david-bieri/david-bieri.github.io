@@ -46,6 +46,7 @@ window.MEDIA = [
   "title": "Covering the Cost: the necessity and luxury of buying a car",
   "type": "tv",
   "topic": "prices",
+  "scope": "Regional",
   "tier": "regional",
   "url": "https://www.wbtv.com/2026/10/24/covering-cot-necessity-luxury-buying-car/",
   "quote": "In terms of median income, that's close to about eight months' worth of pay."
@@ -58,6 +59,7 @@ window.MEDIA = [
   "title": "Standard time wins out in the daylight saving time debate, economist says",
   "type": "online",
   "topic": "gov",
+  "scope": "State",
   "tier": "state",
   "url": "https://news.vt.edu/articles/2026/10/clahs-daylight-savings-versus-standard-time.html",
   "quote": "The clock is shared infrastructure — a public good like weights and measures."
@@ -84,7 +86,7 @@ window.MEDIA = [
   "program": "Virginia Public Radio",
   "title": "The historical background of Virginia's debt debate",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "gov",
   "scope": "State",
   "tier": "national",
   "url": "https://www.wvtf.org/news/2026-10-19/the-historical-background-of-virginias-debt",
@@ -135,7 +137,7 @@ window.MEDIA = [
   "logo": "newrepublic",
   "title": "What all the AI spending in this Ohio district race is really about",
   "type": "print",
-  "topic": "prices",
+  "topic": "gov",
   "scope": "National",
   "tier": "national",
   "url": "https://newrepublic.com/article/215265/ai-anthropic-money-ohio-max-miller-brian-poindexter"
@@ -194,7 +196,7 @@ window.MEDIA = [
   "date": "2026-07-11",
   "outlet": "WRIC (ABC)",
   "logo": "abc-affiliate",
-  "program": "WIRC (ABC 8) Richmond",
+  "program": "ABC 8News",
   "title": "Richmond restaurant looks to adjust prices as inflation, cautious spending strain small businesses",
   "type": "tv",
   "topic": "prices",
@@ -209,7 +211,7 @@ window.MEDIA = [
   "outlet": "Assets (Austria)",
   "logo": "assets",
   "program": "Assets -- The Austrian business magazine for wealth and assets",
-  "title": "Odds Question — The business of digital betting In so-called prediction markets, betting enthusiasts can wager on anything – even murder and manslaughter. Kalsh",
+  "title": "Odds question: the business of digital betting — in so-called prediction markets, betting enthusiasts can wager on anything, even murder and manslaughter",
   "type": "print",
   "topic": "markets",
   "scope": "International",
@@ -260,9 +262,9 @@ window.MEDIA = [
  {
   "id": "3475605",
   "date": "2026-06-06",
-  "outlet": "CBS",
-  "logo": "cbs-affiliate",
-  "program": "CBS New MoneyWatch",
+  "outlet": "CBS News",
+  "logo": "cbs",
+  "program": "CBS MoneyWatch",
   "title": "Prediction markets offer the lure of fast money. Young men say they like their odds.",
   "type": "online",
   "topic": "markets",
@@ -282,7 +284,20 @@ window.MEDIA = [
   "topic": "markets",
   "scope": "National",
   "tier": "national",
-  "url": "https://www.npr.org/transcripts/nx-s1-5828906",
+  "url": "https://www.npr.org/transcripts/nx-s1-5828906"
+ },
+ {
+  "id": "3474138",
+  "date": "2026-05-19",
+  "outlet": "WSET (ABC)",
+  "logo": "abc-affiliate",
+  "program": "ABC 13 News",
+  "title": "Dominion vows $2B in customer payouts, mostly for Virginia, if merger passes regulators",
+  "type": "tv",
+  "topic": "world",
+  "scope": "State",
+  "tier": "regional",
+  "url": "https://wset.com/news/local/dominion-energy-vows-2b-in-customer-payouts-mostly-for-virginia-if-merger-passes-regulators-nextera-energy-pittsylvania-county-may-2026",
   "va": true
  },
  {
@@ -300,17 +315,17 @@ window.MEDIA = [
   "featured": true
  },
  {
-  "id": "3474138",
-  "date": "2026-05-19",
+  "id": "3451939",
+  "date": "2026-05-04",
   "outlet": "WSET (ABC)",
   "logo": "abc-affiliate",
-  "program": "13 News Now (ABC)",
-  "title": "Dominion vows $2B in customer payouts, mostly for Virginia, if merger passes regulators",
+  "program": "ABC 13 News",
+  "title": "Rising gas prices drive up transport costs, sending inflation to stores and restaurants",
   "type": "tv",
-  "topic": "world",
+  "topic": "prices",
   "scope": "State",
   "tier": "regional",
-  "url": "https://wset.com/news/local/dominion-energy-vows-2b-in-customer-payouts-mostly-for-virginia-if-merger-passes-regulators-nextera-energy-pittsylvania-county-may-2026",
+  "url": "https://wset.com/news/local/rising-gas-prices-drive-up-transport-costs-sending-inflation-to-stores-and-restaurants-straight-of-hormuz-oil-iran-may-2026",
   "va": true
  },
  {
@@ -324,20 +339,6 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "Regional",
   "tier": "regional"
- },
- {
-  "id": "3451939",
-  "date": "2026-05-04",
-  "outlet": "WSET (ABC)",
-  "logo": "abc-affiliate",
-  "program": "13 News Now (ABC)",
-  "title": "Rising gas prices drive up transport costs, sending inflation to stores and restaurants",
-  "type": "tv",
-  "topic": "prices",
-  "scope": "State",
-  "tier": "regional",
-  "url": "https://wset.com/news/local/rising-gas-prices-drive-up-transport-costs-sending-inflation-to-stores-and-restaurants-straight-of-hormuz-oil-iran-may-2026",
-  "va": true
  },
  {
   "id": "3455032",
@@ -371,7 +372,7 @@ window.MEDIA = [
   "date": "2026-04-27",
   "outlet": "WRIC (ABC)",
   "logo": "abc-affiliate",
-  "program": "WIRC (ABC 8) Richmond",
+  "program": "ABC 8News",
   "title": "‘Highly volatile’",
   "type": "tv",
   "topic": "jobs",
@@ -384,13 +385,14 @@ window.MEDIA = [
  {
   "id": "3448799",
   "date": "2026-04-26",
-  "outlet": "Washington Examiner (Business)",
+  "outlet": "Washington Examiner",
   "logo": "examiner",
   "program": "Washington Examiner (Business)",
   "title": "How a $15 minimum wage will regionally affect a diverse and unequal Virginia",
   "type": "print",
   "topic": "jobs",
   "scope": "Regional",
+  "tier": "national",
   "url": "https://www.washingtonexaminer.com/news/business/4533464/how-15-minimum-wage-affect-diverse-unequal-virginia/",
   "va": true
  },
@@ -409,6 +411,18 @@ window.MEDIA = [
   "featured": true
  },
  {
+  "id": "3449879",
+  "date": "2026-04-20",
+  "outlet": "Al Jazeera",
+  "logo": "aljazeera",
+  "program": "Al Jazeera News",
+  "title": "Volatility in the Middle East: Economic Consequences from the War in Iran and the Oil Supply Shock",
+  "type": "tv",
+  "topic": "world",
+  "scope": "International",
+  "tier": "international"
+ },
+ {
   "id": "3445035",
   "date": "2026-04-20",
   "outlet": "POLITICO",
@@ -421,18 +435,6 @@ window.MEDIA = [
   "tier": "national",
   "url": "https://subscriber.politicopro.com/article/2026/04/gas-tax-holidays-are-gaining-steam-across-north-america-but-dont-expect-congress-to-hop-on-the-train-00880107",
   "featured": true
- },
- {
-  "id": "3449879",
-  "date": "2026-04-20",
-  "outlet": "Al Jazeera",
-  "logo": "aljazeera",
-  "program": "Al Jazeera News",
-  "title": "Volatility in the Middle East: Economic Consequences from the War in Iran and the Oil Supply Shock",
-  "type": "tv",
-  "topic": "world",
-  "scope": "International",
-  "tier": "international"
  },
  {
   "id": "3438678",
@@ -475,6 +477,18 @@ window.MEDIA = [
   "va": true
  },
  {
+  "id": "x-2026-04-13-newswise",
+  "date": "2026-04-13",
+  "outlet": "Newswise",
+  "logo": "newswise",
+  "title": "Gas prices continue to rise amid Middle East conflict",
+  "type": "online",
+  "topic": "world",
+  "scope": "National",
+  "tier": "national",
+  "url": "https://www.newswise.com/articles/virginia-tech-expert-gas-prices-continue-to-rise-amid-middle-east-conflict"
+ },
+ {
   "id": "3433766",
   "date": "2026-04-13",
   "outlet": "The New Arab",
@@ -489,17 +503,6 @@ window.MEDIA = [
   "weak": true
  },
  {
-  "id": "x-2026-04-13-newswise",
-  "date": "2026-04-13",
-  "outlet": "Newswise",
-  "logo": "newswise",
-  "title": "Gas prices continue to rise amid Middle East conflict",
-  "type": "online",
-  "topic": "world",
-  "tier": "national",
-  "url": "https://www.newswise.com/articles/virginia-tech-expert-gas-prices-continue-to-rise-amid-middle-east-conflict"
- },
- {
   "id": "3433416",
   "date": "2026-04-11",
   "outlet": "EFN",
@@ -510,7 +513,33 @@ window.MEDIA = [
   "topic": "markets",
   "scope": "International",
   "tier": "international",
-  "url": "https://translate.google.com/translate?sl=sv&tl=en&u=https://efn.se/polymarket-kasinokapitalism-eller-sanningsmaskin"
+  "url": "https://efn.se/polymarket-kasinokapitalism-eller-sanningsmaskin"
+ },
+ {
+  "id": "3432530",
+  "date": "2026-04-10",
+  "outlet": "Atlanta News First",
+  "logo": "wanf",
+  "program": "Atlanta News First (WANF)",
+  "title": "March inflation jumps to 3.3% as war in Iran drives energy costs higher",
+  "type": "tv",
+  "topic": "prices",
+  "scope": "Regional",
+  "tier": "regional",
+  "url": "https://www.atlantanewsfirst.com/2026/04/10/march-inflation-jumps-33-war-iran-drives-energy-costs-higher/"
+ },
+ {
+  "id": "3431372",
+  "date": "2026-04-10",
+  "outlet": "KNX News 97.1 Los Angeles",
+  "logo": "knx",
+  "program": "KNX News 97.1 FM --- LA Morning News (live)",
+  "title": "This Morning's CPI: Oil Shock Meets Structural Resilience",
+  "type": "radio",
+  "topic": "prices",
+  "scope": "State",
+  "tier": "regional",
+  "url": "https://www.audacy.com/stations/knxnews/shows/las-morning-news-6b770/episodes/572d437067c6"
  },
  {
   "id": "3431363",
@@ -527,32 +556,6 @@ window.MEDIA = [
   "featured": true
  },
  {
-  "id": "3431372",
-  "date": "2026-04-10",
-  "outlet": "KNX News 97.1 Los Angeles",
-  "logo": "knx",
-  "program": "KNX News 97.1 FM --- LA Morning News (live)",
-  "title": "This Morning's CPI: Oil Shock Meets Structural Resilience",
-  "type": "radio",
-  "topic": "prices",
-  "scope": "State",
-  "tier": "regional",
-  "url": "https://www.audacy.com/stations/knxnews/shows/las-morning-news-6b770/episodes/572d437067c6"
- },
- {
-  "id": "3432530",
-  "date": "2026-04-10",
-  "outlet": "Atlanta News First",
-  "logo": "wanf",
-  "program": "Atlanta News First (WANF)",
-  "title": "March inflation jumps to 3.3% as war in Iran drives energy costs higher",
-  "type": "tv",
-  "topic": "prices",
-  "scope": "Regional",
-  "tier": "regional",
-  "url": "https://www.atlantanewsfirst.com/2026/04/10/march-inflation-jumps-33-war-iran-drives-energy-costs-higher/"
- },
- {
   "id": "3428593",
   "date": "2026-04-04",
   "outlet": "The Guardian",
@@ -567,19 +570,6 @@ window.MEDIA = [
   "featured": true
  },
  {
-  "id": "3428594",
-  "date": "2026-04-02",
-  "outlet": "WFXR (FOX)",
-  "logo": "fox-affiliate",
-  "program": "WFXR (Fox) News",
-  "title": "Gas prices rise locally, statewide amid continued Middle East conflict",
-  "type": "online",
-  "topic": "prices",
-  "tier": "regional",
-  "url": "https://www.wfxrtv.com/news/gas-prices-rise-locally-statewide-amid-continued-middle-east-conflict/",
-  "va": true
- },
- {
   "id": "x-2026-04-02-mpu",
   "date": "2026-04-02",
   "outlet": "More Perfect Union",
@@ -591,6 +581,20 @@ window.MEDIA = [
   "tier": "national"
  },
  {
+  "id": "3428594",
+  "date": "2026-04-02",
+  "outlet": "WFXR (FOX)",
+  "logo": "fox-affiliate",
+  "program": "WFXR (Fox) News",
+  "title": "Gas prices rise locally, statewide amid continued Middle East conflict",
+  "type": "online",
+  "topic": "prices",
+  "scope": "State",
+  "tier": "regional",
+  "url": "https://www.wfxrtv.com/news/gas-prices-rise-locally-statewide-amid-continued-middle-east-conflict/",
+  "va": true
+ },
+ {
   "id": "3430141",
   "date": "2026-04-01",
   "outlet": "WFLD (FOX)",
@@ -600,7 +604,21 @@ window.MEDIA = [
   "type": "tv",
   "topic": "markets",
   "scope": "Regional",
-  "tier": "regional"
+  "tier": "regional",
+  "va": true
+ },
+ {
+  "id": "x-2026-03-30-cnn",
+  "date": "2026-03-30",
+  "outlet": "CNN",
+  "logo": "cnn",
+  "program": "CNN Business",
+  "title": "Trump's economic promises",
+  "type": "print",
+  "topic": "gov",
+  "scope": "National",
+  "tier": "national",
+  "weak": true
  },
  {
   "id": "3430143",
@@ -619,9 +637,9 @@ window.MEDIA = [
  {
   "id": "3428630",
   "date": "2026-03-30",
-  "outlet": "WAVY (ABC)",
-  "logo": "abc-affiliate",
-  "program": "FOX43 News",
+  "outlet": "WAVY (NBC)",
+  "logo": "nbc-affiliate",
+  "program": "WAVY News 10",
   "title": "Impact of the ongoing Iran conflict may have already created ‘historic consequences’ according to VT professor",
   "type": "tv",
   "topic": "world",
@@ -629,19 +647,6 @@ window.MEDIA = [
   "tier": "regional",
   "url": "https://www.wavy.com/news/local-news/impact-of-the-ongoing-iran-conflict-may-already-created-historic-consequences-according-to-vt-professor/",
   "va": true
- },
- {
-  "id": "x-2026-03-30-cnn",
-  "date": "2026-03-30",
-  "outlet": "CNN",
-  "logo": "cnn",
-  "program": "CNN Business",
-  "title": "Trump's economic promises",
-  "type": "print",
-  "topic": "gov",
-  "scope": "National",
-  "tier": "national",
-  "weak": true
  },
  {
   "id": "x-2026-03-27-afp",
@@ -667,6 +672,19 @@ window.MEDIA = [
   "scope": "National",
   "tier": "national",
   "url": "https://www.futurity.org/iran-war-economic-impacts-3326712/"
+ },
+ {
+  "id": "x-2026-03-25-abc-affiliate",
+  "date": "2026-03-25",
+  "outlet": "WSET (ABC)",
+  "logo": "abc-affiliate",
+  "program": "ABC 13 News",
+  "title": "Iran war and local prices",
+  "type": "tv",
+  "topic": "world",
+  "scope": "State",
+  "tier": "regional",
+  "va": true
  },
  {
   "id": "3449947",
@@ -695,19 +713,6 @@ window.MEDIA = [
   "va": true
  },
  {
-  "id": "x-2026-03-25-abc-affiliate",
-  "date": "2026-03-25",
-  "outlet": "WSET (ABC)",
-  "logo": "abc-affiliate",
-  "program": "ABC13 News",
-  "title": "Iran war and local prices",
-  "type": "tv",
-  "topic": "world",
-  "scope": "State",
-  "tier": "regional",
-  "va": true
- },
- {
   "id": "x-2026-03-24-vt",
   "date": "2026-03-24",
   "outlet": "Virginia Tech News",
@@ -715,6 +720,7 @@ window.MEDIA = [
   "title": "Economic impact of the Iran war already widespread",
   "type": "online",
   "topic": "world",
+  "scope": "State",
   "tier": "state",
   "url": "https://news.vt.edu/articles/2026/03/Iran-Israel-Trump-gas-LNG-prices-Strait-Hormuz-economic-impact.html",
   "featured": true
@@ -730,7 +736,8 @@ window.MEDIA = [
   "topic": "world",
   "scope": "Regional",
   "tier": "regional",
-  "url": "https://woay.com/virginia-tech-professor-iran-conflict-has-caused-largest-oil-disruption-in-history/"
+  "url": "https://woay.com/virginia-tech-professor-iran-conflict-has-caused-largest-oil-disruption-in-history/",
+  "va": true
  },
  {
   "id": "3451854",
@@ -814,6 +821,7 @@ window.MEDIA = [
   "title": "Betting on geopolitics? Economist explains risks of prediction markets",
   "type": "online",
   "topic": "markets",
+  "scope": "State",
   "tier": "state",
   "url": "https://news.vt.edu/articles/2026/03/Prediction-markets-geopolitics-economist-betting-expert.html",
   "quote": "The issue of the regulatory state limping behind the frontier is exactly what fuels innovation."
@@ -867,6 +875,7 @@ window.MEDIA = [
   "title": "Special feature",
   "type": "online",
   "topic": "jobs",
+  "scope": "International",
   "tier": "international",
   "url": "http://share.fengshows.cn/article.html?id=74af9318-6af0-4b1c-866d-67a80ecf08a3&channelID=r03&time=1771968035.202499",
   "weak": true
@@ -879,6 +888,7 @@ window.MEDIA = [
   "title": "Supreme Court ruling begins new era of tariff uncertainty",
   "type": "online",
   "topic": "trade",
+  "scope": "State",
   "tier": "state",
   "url": "https://news.vt.edu/articles/2026/02/tariffs-sotu-iran-bombogenesis-sinners-microplastics-experts.html",
   "quote": "From an economics policy perspective, uncertainty is poison."
@@ -889,24 +899,12 @@ window.MEDIA = [
   "outlet": "WUSA9 (CBS)",
   "logo": "cbs-affiliate",
   "program": "WUSA9 (CBS) Washington, DC",
-  "title": "'Pushing off repairs'",
-  "type": "tv",
-  "topic": "prices",
-  "scope": "State",
-  "tier": "national",
-  "url": "https://www.wusa9.com/article/money/economy/business-owners-react-to-trump-tariff-whiplash/65-59905c8b-8ea8-4e51-bcb3-b8a47acbb31f",
-  "weak": true
- },
- {
-  "id": "x-2026-02-20-cbs-affiliate",
-  "date": "2026-02-20",
-  "outlet": "WUSA9 (CBS Washington)",
-  "logo": "cbs-affiliate",
   "title": "'Pushing off repairs': business owners deal with tariff whiplash",
   "type": "tv",
   "topic": "trade",
-  "tier": "regional",
-  "url": "https://liberalarts.vt.edu/news/in-the-news/2026/february/-pushing-off-repairs----business-owners-deal-with-trump-tariff-w.html"
+  "scope": "State",
+  "tier": "national",
+  "url": "https://www.wusa9.com/article/money/economy/business-owners-react-to-trump-tariff-whiplash/65-59905c8b-8ea8-4e51-bcb3-b8a47acbb31f"
  },
  {
   "id": "3392546",
@@ -928,23 +926,12 @@ window.MEDIA = [
   "outlet": "Virginia Tech News",
   "logo": "vt",
   "program": "VT News",
-  "title": "Even threat of Federal Reserve’s independence can imperil accountability, says expert",
+  "title": "Even the threat to the Federal Reserve's independence can imperil accountability",
   "type": "online",
   "topic": "money",
   "scope": "State",
   "tier": "state",
-  "url": "https://news.vt.edu/articles/2025/01/jerome-powell-investigation-federal-reserve-independence-expert.html"
- },
- {
-  "id": "x-2026-01-14-vt",
-  "date": "2026-01-14",
-  "outlet": "Virginia Tech News",
-  "logo": "vt",
-  "title": "Even the threat to the Federal Reserve's independence can imperil accountability",
-  "type": "online",
-  "topic": "money",
-  "tier": "state",
-  "url": "https://news.vt.edu/content/news_vt_edu/en/articles/2025/01/jerome-powell-investigation-federal-reserve-independence-expert.html",
+  "url": "https://news.vt.edu/articles/2025/01/jerome-powell-investigation-federal-reserve-independence-expert.html",
   "featured": true,
   "quote": "A critical test of central bank independence in the U.S. that goes well beyond a technical dispute over a building renovation."
  },
@@ -992,12 +979,11 @@ window.MEDIA = [
   "outlet": "Public News Service",
   "logo": "pns",
   "program": "Public News Service",
-  "title": "What shoppers might expect to see with regards to the impacts tariffs have had on prices of popular goods that are commonly in demand on Black Friday and going ",
+  "title": "What shoppers might expect from the impact of tariffs on prices of popular goods this Black Friday and holiday season",
   "type": "online",
   "topic": "trade",
   "scope": "National",
-  "tier": "national",
-  "url": "https://www.publicnewsservice.org/"
+  "tier": "national"
  },
  {
   "id": "3357609",
@@ -1016,13 +1002,14 @@ window.MEDIA = [
  {
   "id": "3357598",
   "date": "2025-11-26",
-  "outlet": "WIRC (ABC 8) Richmond",
-  "logo": "wirc-abc-8-richmond",
-  "program": "WIRC (ABC 8) Richmond",
+  "outlet": "WRIC (ABC)",
+  "logo": "abc-affiliate",
+  "program": "ABC 8News",
   "title": "Richmonders join nationwide boycott against major retailers",
   "type": "tv",
   "topic": "prices",
   "scope": "Local",
+  "tier": "regional",
   "url": "https://www.wric.com/news/local-news/richmond/richmonders-join-nationwide-boycott-against-major-retailers/",
   "va": true
  },
@@ -1061,6 +1048,7 @@ window.MEDIA = [
   "title": "Compare, act early to avoid holiday shopping tariff chaos",
   "type": "online",
   "topic": "trade",
+  "scope": "State",
   "tier": "state",
   "url": "https://news.vt.edu/articles/2025/11/tariffs-holiday-shopping-shipments-supreme-court.html",
   "quote": "Retailers can't retroactively adjust prices on goods sitting in inventory."
@@ -1068,9 +1056,9 @@ window.MEDIA = [
  {
   "id": "3296227",
   "date": "2025-11-13",
-  "outlet": "The Roanoke Times",
-  "logo": "roanoke",
-  "program": "WFRX (Fox) News",
+  "outlet": "WFXR (FOX)",
+  "logo": "fox-affiliate",
+  "program": "WFXR (Fox) News",
   "title": "Local economist, real estate agent weigh in on 50-year mortgage proposal",
   "type": "tv",
   "topic": "housing",
@@ -1155,19 +1143,7 @@ window.MEDIA = [
   "topic": "prices",
   "scope": "State",
   "tier": "state",
-  "url": "https://news.vt.edu/articles/2025/08/United-States-beef-prices-shortage-tariffs-price-rising.html?"
- },
- {
-  "id": "3239037",
-  "date": "2025-08-14",
-  "outlet": "POLITICO",
-  "logo": "politico",
-  "program": "Politico",
-  "title": "Canada shifting its auto imports largely from U.S. to Mexico",
-  "type": "print",
-  "topic": "trade",
-  "scope": "National",
-  "tier": "national"
+  "url": "https://news.vt.edu/articles/2025/08/United-States-beef-prices-shortage-tariffs-price-rising.html"
  },
  {
   "id": "3239536",
@@ -1182,6 +1158,18 @@ window.MEDIA = [
   "tier": "state",
   "url": "https://vadogwood.com/2025/08/14/virginias-economy-shows-signs-of-trouble-as-hiring-slows-fewer-people-quit-jobs/",
   "va": true
+ },
+ {
+  "id": "3239037",
+  "date": "2025-08-14",
+  "outlet": "POLITICO",
+  "logo": "politico",
+  "program": "Politico",
+  "title": "Canada shifting its auto imports largely from U.S. to Mexico",
+  "type": "print",
+  "topic": "trade",
+  "scope": "National",
+  "tier": "national"
  },
  {
   "id": "3239038",
@@ -1200,9 +1188,9 @@ window.MEDIA = [
  {
   "id": "3111507",
   "date": "2025-08-04",
-  "outlet": "WAVY (ABC)",
-  "logo": "abc-affiliate",
-  "program": "WAVY (NBC) Norfolk",
+  "outlet": "WAVY (NBC)",
+  "logo": "nbc-affiliate",
+  "program": "WAVY News 10",
   "title": "President Trump’s upcoming tariff rates could impact back-to-school shopping",
   "type": "tv",
   "topic": "trade",
@@ -1256,12 +1244,13 @@ window.MEDIA = [
  {
   "id": "x-2025-05-05-vt",
   "date": "2025-05-05",
-  "outlet": "Curious Conversations",
+  "outlet": "Virginia Tech News",
   "logo": "vt",
   "program": "Curious Conversations podcast",
   "title": "Making sense of economic climates — history, narratives, and the role of government",
   "type": "podcast",
   "topic": "gov",
+  "scope": "State",
   "tier": "state",
   "url": "https://news.vt.edu/articles/2025/05/research-curiousconversations-bieri.html",
   "featured": true
@@ -1308,18 +1297,6 @@ window.MEDIA = [
   "featured": true
  },
  {
-  "id": "x-2025-04-30-marketplace",
-  "date": "2025-04-30",
-  "outlet": "Marketplace",
-  "logo": "marketplace",
-  "title": "Economy under Trump marked by tariffs, uncertainty",
-  "type": "radio",
-  "topic": "trade",
-  "tier": "national",
-  "url": "https://www.marketplace.org/",
-  "featured": true
- },
- {
   "id": "2831335",
   "date": "2025-04-25",
   "outlet": "Yahoo News",
@@ -1330,7 +1307,7 @@ window.MEDIA = [
   "topic": "jobs",
   "scope": "National",
   "tier": "national",
-  "url": "https://www.yahoo.com/news/what-you-should-and-shouldnt-be-doing-to-prepare-for-a-possible-recession-according-to-financial-experts-090020413.html?"
+  "url": "https://www.yahoo.com/news/what-you-should-and-shouldnt-be-doing-to-prepare-for-a-possible-recession-according-to-financial-experts-090020413.html"
  },
  {
   "id": "2831336",
@@ -1343,7 +1320,33 @@ window.MEDIA = [
   "topic": "jobs",
   "scope": "International",
   "tier": "national",
-  "url": "https://uk.news.yahoo.com/the-best-ways-to-prepare-yourself-for-a-recession-in-your-20s-30s-40s-and-50s-according-to-financial-experts-191248990.html?"
+  "url": "https://uk.news.yahoo.com/the-best-ways-to-prepare-yourself-for-a-recession-in-your-20s-30s-40s-and-50s-according-to-financial-experts-191248990.html"
+ },
+ {
+  "id": "2853199",
+  "date": "2025-04-11",
+  "outlet": "WSET (ABC)",
+  "logo": "abc-affiliate",
+  "program": "ABC 13 News",
+  "title": "US-China trade war escalates; how it will impact consumers",
+  "type": "tv",
+  "topic": "trade",
+  "scope": "State",
+  "tier": "regional",
+  "url": "https://wset.com/news/local/us-china-trade-war-escalates-how-it-will-impact-consumers-april-2025-stock-market-united-states-economy-donald-trump-tariffs",
+  "va": true
+ },
+ {
+  "id": "2853195",
+  "date": "2025-04-11",
+  "outlet": "FOX News",
+  "logo": "fox",
+  "program": "FOX News",
+  "title": "Trump tariffs and the economic risks of a recession",
+  "type": "tv",
+  "topic": "trade",
+  "scope": "National",
+  "tier": "national"
  },
  {
   "id": "2831337",
@@ -1359,18 +1362,6 @@ window.MEDIA = [
   "url": "https://myrepublica.nagariknetwork.com/news/trump-tactics-putting-people-on-the-back-heel-95-41.html"
  },
  {
-  "id": "2853195",
-  "date": "2025-04-11",
-  "outlet": "FOX News",
-  "logo": "fox",
-  "program": "FOX News",
-  "title": "Trump tariffs and the economic risks of a recession",
-  "type": "tv",
-  "topic": "trade",
-  "scope": "National",
-  "tier": "national"
- },
- {
   "id": "2830765",
   "date": "2025-04-11",
   "outlet": "DW",
@@ -1383,20 +1374,6 @@ window.MEDIA = [
   "tier": "international",
   "url": "https://www.dw.com/en/foul-play-hardball-questions-abound-on-trump-tariff-u-turn/a-72222050",
   "featured": true
- },
- {
-  "id": "2853199",
-  "date": "2025-04-11",
-  "outlet": "WSET (ABC)",
-  "logo": "abc-affiliate",
-  "program": "ABC 13 News",
-  "title": "US-China trade war escalates; how it will impact consumers",
-  "type": "tv",
-  "topic": "trade",
-  "scope": "State",
-  "tier": "regional",
-  "url": "https://wset.com/news/local/us-china-trade-war-escalates-how-it-will-impact-consumers-april-2025-stock-market-united-states-economy-donald-trump-tariffs",
-  "va": true
  },
  {
   "id": "2853194",
@@ -1426,18 +1403,6 @@ window.MEDIA = [
   "va": true
  },
  {
-  "id": "x-2025-04-08-scmp",
-  "date": "2025-04-08",
-  "outlet": "South China Morning Post",
-  "logo": "scmp",
-  "title": "Trade war: tariff calculations slammed by some economists",
-  "type": "print",
-  "topic": "trade",
-  "tier": "international",
-  "url": "https://www.research.vt.edu/news/research-experts-media/2025/april.html",
-  "quote": "Those upset with the formula are making a big conceptual mistake."
- },
- {
   "id": "2824425",
   "date": "2025-04-07",
   "outlet": "Al Arabiya",
@@ -1462,6 +1427,18 @@ window.MEDIA = [
   "tier": "national"
  },
  {
+  "id": "x-2025-04-04-newswise",
+  "date": "2025-04-04",
+  "outlet": "Newswise",
+  "logo": "newswise",
+  "title": "Auto tariffs: motives and consequences",
+  "type": "online",
+  "topic": "trade",
+  "scope": "National",
+  "tier": "national",
+  "url": "https://www.newswise.com/articles/economic-expert-on-auto-tariffs-motives-and-consequences/?sc=rsln"
+ },
+ {
   "id": "2823956",
   "date": "2025-04-04",
   "outlet": "Forward Pathway",
@@ -1475,30 +1452,6 @@ window.MEDIA = [
   "url": "https://www.forwardpathway.us/a-deep-dive-into-trumps-auto-tariffs-impact-on-us-industry-consumers-and-global-trade"
  },
  {
-  "id": "x-2025-04-04-newswise",
-  "date": "2025-04-04",
-  "outlet": "Newswise",
-  "logo": "newswise",
-  "title": "Auto tariffs: motives and consequences",
-  "type": "online",
-  "topic": "trade",
-  "tier": "national",
-  "url": "https://www.newswise.com/articles/economic-expert-on-auto-tariffs-motives-and-consequences/?sc=rsln"
- },
- {
-  "id": "2823953",
-  "date": "2025-04-03",
-  "outlet": "CBS",
-  "logo": "cbs-affiliate",
-  "program": "WDBJ7 News at 11:00",
-  "title": "Experts discuss tariff impacts",
-  "type": "tv",
-  "topic": "trade",
-  "scope": "Local",
-  "tier": "national",
-  "url": "https://www.wdbj7.com/2025/04/03/local-experts-discuss-tariff-impacts/"
- },
- {
   "id": "2824437",
   "date": "2025-04-03",
   "outlet": "South China Morning Post",
@@ -1510,7 +1463,8 @@ window.MEDIA = [
   "scope": "International",
   "tier": "international",
   "url": "https://www.scmp.com/news/us/economy-trade-business/article/3305148/trumps-tariff-calculations-are-sharply-questioned-economists?module=top_story&pgtype=homepage",
-  "featured": true
+  "featured": true,
+  "quote": "Those upset with the formula are making a big conceptual mistake."
  },
  {
   "id": "2824431",
@@ -1524,6 +1478,34 @@ window.MEDIA = [
   "scope": "International",
   "tier": "national",
   "url": "https://www.newsweek.com/tesla-tariffs-elon-musk-win-elon-musk-2055014"
+ },
+ {
+  "id": "2823953",
+  "date": "2025-04-03",
+  "outlet": "WDBJ7 (CBS Roanoke)",
+  "logo": "cbs-affiliate",
+  "program": "WDBJ7 News at 11",
+  "title": "Experts discuss tariff impacts",
+  "type": "tv",
+  "topic": "trade",
+  "scope": "Local",
+  "tier": "national",
+  "url": "https://www.wdbj7.com/2025/04/03/local-experts-discuss-tariff-impacts/",
+  "va": true
+ },
+ {
+  "id": "2853201",
+  "date": "2025-04-02",
+  "outlet": "Augusta Free Press",
+  "logo": "augustafreepress",
+  "program": "Augusta Free Press",
+  "title": "Trump announces ‘Liberation Day’ tariffs: $600B tax increase for you and me",
+  "type": "print",
+  "topic": "trade",
+  "scope": "Local",
+  "tier": "local",
+  "url": "https://augustafreepress.com/news/trump-announces-liberation-day-tariffs-600b-tax-increase-for-you-and-me/",
+  "va": true
  },
  {
   "id": "2820570",
@@ -1550,18 +1532,16 @@ window.MEDIA = [
   "tier": "national"
  },
  {
-  "id": "2853201",
-  "date": "2025-04-02",
-  "outlet": "Augusta Free Press",
-  "logo": "afp",
-  "program": "Augusta Free Press",
-  "title": "Trump announces ‘Liberation Day’ tariffs: $600B tax increase for you and me",
+  "id": "x-2025-04-01-kiplinger",
+  "date": "2025-04-01",
+  "outlet": "Kiplinger",
+  "logo": "kiplinger",
+  "title": "Is the economy at risk of a recession because of tariffs?",
   "type": "print",
   "topic": "trade",
-  "scope": "Local",
-  "tier": "local",
-  "url": "https://augustafreepress.com/news/trump-announces-liberation-day-tariffs-600b-tax-increase-for-you-and-me/",
-  "va": true
+  "scope": "National",
+  "tier": "national",
+  "url": "https://www.research.vt.edu/news/research-experts-media/2025/april.html"
  },
  {
   "id": "2820568",
@@ -1590,23 +1570,12 @@ window.MEDIA = [
   "weak": true
  },
  {
-  "id": "x-2025-04-01-kiplinger",
-  "date": "2025-04-01",
-  "outlet": "Kiplinger",
-  "logo": "kiplinger",
-  "title": "Is the economy at risk of a recession because of tariffs?",
-  "type": "print",
-  "topic": "trade",
-  "tier": "national",
-  "url": "https://www.research.vt.edu/news/research-experts-media/2025/april.html"
- },
- {
   "id": "2820356",
   "date": "2025-03-27",
   "outlet": "Asharq Bloomberg",
   "logo": "bloomberg",
   "program": "Asharq Bloomberg",
-  "title": "WIth a Trump-brokered ceasefire between Russia and the Ukraine a strong possibility, what could this mean for Russias return to the global financial system? Cou",
+  "title": "With a Trump-brokered ceasefire between Russia and Ukraine a strong possibility, what could this mean for Russia's return to the global financial system?",
   "type": "tv",
   "topic": "world",
   "scope": "International",
@@ -1640,20 +1609,6 @@ window.MEDIA = [
   "url": "https://drive.google.com/file/d/1CTBUTSaHGNMHuQtdocVtEVgl5eLEfMNo/view"
  },
  {
-  "id": "2820567",
-  "date": "2025-02-03",
-  "outlet": "Virginia Business",
-  "logo": "vabusiness",
-  "program": "Virginia Business",
-  "title": "Trump 2.0: Making real estate great again? What tycoon’s White House return could mean for the industry",
-  "type": "print",
-  "topic": "housing",
-  "scope": "State",
-  "tier": "state",
-  "url": "https://virginiabusiness.com/trump-2-0-making-the-market-great-again/",
-  "va": true
- },
- {
   "id": "2823957",
   "date": "2025-02-03",
   "outlet": "Virginia Business",
@@ -1668,12 +1623,26 @@ window.MEDIA = [
   "va": true
  },
  {
+  "id": "2820567",
+  "date": "2025-02-03",
+  "outlet": "Virginia Business",
+  "logo": "vabusiness",
+  "program": "Virginia Business",
+  "title": "Trump 2.0: Making real estate great again? What tycoon’s White House return could mean for the industry",
+  "type": "print",
+  "topic": "housing",
+  "scope": "State",
+  "tier": "state",
+  "url": "https://virginiabusiness.com/trump-2-0-making-the-market-great-again/",
+  "va": true
+ },
+ {
   "id": "2720563",
   "date": "2024-12-26",
   "outlet": "FinTech TV",
   "logo": "fintechtv",
   "program": "FinTech TV Market Movers: The Opening Bell (live)",
-  "title": "Assessing fed monetary policies for with david bieri associate professor of public policy at virginia tech",
+  "title": "Assessing Fed monetary policies for 2025 with David Bieri, associate professor of public policy at Virginia Tech",
   "type": "tv",
   "topic": "markets",
   "scope": "International",
@@ -1698,24 +1667,12 @@ window.MEDIA = [
   "outlet": "Associated Press",
   "logo": "ap",
   "program": "Associated Press",
-  "title": "Nvidia’s stock dips after China opens probe of the AI chip company for violating anti-monopoly laws",
+  "title": "Nvidia's stock dips after China opens probe of the AI chip company for violating anti-monopoly laws",
   "type": "online",
   "topic": "markets",
   "scope": "International",
   "tier": "national",
   "url": "https://apnews.com/article/nvidia-china-antitrust-monopoly-investigation-chipmaker-bf2dfae0a2f6a83a64b46239f86a4173",
-  "featured": true
- },
- {
-  "id": "x-2024-12-09-ap",
-  "date": "2024-12-09",
-  "outlet": "Associated Press",
-  "logo": "ap",
-  "title": "Nvidia's stock dips after China opens anti-monopoly probe",
-  "type": "print",
-  "topic": "markets",
-  "tier": "national",
-  "url": "https://liberalarts.vt.edu/news/in-the-news/2024/december/-nvidia-s-stock-dips-after-china-opens-probe-of-the-ai-chip-comp.html",
   "featured": true
  },
  {
@@ -1763,8 +1720,8 @@ window.MEDIA = [
   "title": "On the economy, interest rates and the election",
   "type": "tv",
   "topic": "money",
-  "tier": "national",
-  "url": "https://liberalarts.vt.edu/news/in-the-news/"
+  "scope": "National",
+  "tier": "national"
  },
  {
   "id": "2670266",
@@ -1795,25 +1752,11 @@ window.MEDIA = [
  {
   "id": "2820355",
   "date": "2024-09-17",
-  "outlet": "The Roanoke Times",
-  "logo": "roanoke",
+  "outlet": "The Roanoke Star",
+  "logo": "roanokestar",
   "program": "RoanokeStar.com",
-  "title": "Va tech experts discuss interest rate cuts economy and why fed has so much power",
+  "title": "Virginia Tech experts discuss interest rate cuts, the economy, and why the Fed has so much power",
   "type": "online",
-  "topic": "money",
-  "scope": "Local",
-  "tier": "local",
-  "url": "https://www.theroanokestar.com/2024/09/17/va-tech-experts-discuss-interest-rate-cuts-economy-and-why-fed-has-so-much-power/",
-  "va": true
- },
- {
-  "id": "2697572",
-  "date": "2024-09-17",
-  "outlet": "The Roanoke Times",
-  "logo": "roanoke",
-  "program": "Roanoke Star",
-  "title": "Va tech experts discuss interest rate cuts economy and why fed has so much power",
-  "type": "print",
   "topic": "money",
   "scope": "Local",
   "tier": "local",
@@ -1828,6 +1771,7 @@ window.MEDIA = [
   "title": "Interest rate cuts, the economy, and why the Fed has so much power",
   "type": "online",
   "topic": "money",
+  "scope": "State",
   "tier": "state",
   "url": "https://news.vt.edu/articles/2024/09/federal-interest-rates-september-meeting.html",
   "quote": "There is another channel through which they have influence, and that's by influencing how people think."
@@ -1840,6 +1784,7 @@ window.MEDIA = [
   "title": "Fed rate cuts: implications for markets and portfolio strategies",
   "type": "online",
   "topic": "money",
+  "scope": "National",
   "tier": "national",
   "url": "https://www.newswise.com/articles/virginia-tech-experts-on-fed-rate-cuts-implications-on-market-portfolio-strategies",
   "quote": "The Fed is walking a tightrope — moving just enough to calm markets, but not so much that it reignites inflation."
@@ -1874,12 +1819,13 @@ window.MEDIA = [
   "id": "2631794",
   "date": "2024-07-26",
   "outlet": "American Banker",
-  "logo": "american-banker",
+  "logo": "americanbanker",
   "program": "American Banker",
   "title": "Kamala harris digital dollar vision a new era of financial inclusion",
   "type": "print",
   "topic": "markets",
   "scope": "National",
+  "tier": "national",
   "url": "https://www.americanbanker.com/payments/news/kamala-harris-digital-dollar-vision-a-new-era-of-financial-inclusion"
  },
  {
@@ -1926,26 +1872,15 @@ window.MEDIA = [
  {
   "id": "2622565",
   "date": "2024-07-09",
-  "outlet": "CBS",
-  "logo": "cbs-affiliate",
+  "outlet": "CBS News",
+  "logo": "cbs",
   "program": "CBS MoneyWatch",
-  "title": "Will mortgage rates fall after the july fed meeting heres what some experts expect",
+  "title": "Will mortgage rates fall after the July Fed meeting?",
   "type": "online",
   "topic": "housing",
   "scope": "National",
   "tier": "national",
-  "url": "https://www.cbsnews.com/news/will-mortgage-rates-fall-after-the-july-fed-meeting-heres-what-some-experts-expect/"
- },
- {
-  "id": "x-2024-07-09-cbs",
-  "date": "2024-07-09",
-  "outlet": "CBS News",
-  "logo": "cbs",
-  "title": "Will mortgage rates fall after the July Fed meeting?",
-  "type": "online",
-  "topic": "housing",
-  "tier": "national",
-  "url": "https://liberalarts.vt.edu/news/in-the-news/2024/july/will-mortgage-rates-fall-after-the-july-fed-meeting--here-s-what.html",
+  "url": "https://www.cbsnews.com/news/will-mortgage-rates-fall-after-the-july-fed-meeting-heres-what-some-experts-expect/",
   "quote": "Elevated rates are here to stay for a while."
  },
  {
@@ -1954,23 +1889,12 @@ window.MEDIA = [
   "outlet": "Marketplace",
   "logo": "marketplace",
   "program": "NPR Marketplace",
-  "title": "In april grocery store prices were flat or even lower",
-  "type": "radio",
-  "topic": "markets",
-  "scope": "National",
-  "tier": "national",
-  "url": "https://www.marketplace.org/2024/05/15/in-april-grocery-store-prices-were-flat-or-even-lower/"
- },
- {
-  "id": "x-2024-05-15-marketplace",
-  "date": "2024-05-15",
-  "outlet": "Marketplace",
-  "logo": "marketplace",
-  "title": "Food inflation: why a flat CPI reading is deceiving",
+  "title": "In April, grocery store prices were flat or even lower",
   "type": "radio",
   "topic": "prices",
+  "scope": "National",
   "tier": "national",
-  "url": "https://liberalarts.vt.edu/news/in-the-news/2024/may-/david-bieri-on-food-inflation.html",
+  "url": "https://www.marketplace.org/2024/05/15/in-april-grocery-store-prices-were-flat-or-even-lower/",
   "featured": true,
   "quote": "That zero point zero percent inflation rate for food is a little deceiving."
  },
@@ -2043,40 +1967,16 @@ window.MEDIA = [
   "weak": true
  },
  {
-  "id": "x-2024-03-28-fox",
-  "date": "2024-03-28",
-  "outlet": "Fox LiveNOW",
-  "logo": "fox",
-  "title": "Economic challenges of the Baltimore bridge collapse",
-  "type": "tv",
-  "topic": "jobs",
-  "tier": "national",
-  "url": "https://liberalarts.vt.edu/news/in-the-news/2024/march/economic-challenges-of-baltimore-bridge-collapse.html"
- },
- {
   "id": "2588280",
   "date": "2024-03-27",
-  "outlet": "WMAL-FM (Washington, D. C.)",
-  "logo": "wmal-fm-washington-d-c",
+  "outlet": "WMAL (Washington, DC)",
+  "logo": "wmal",
   "program": "WMAL Newstalk 105.9",
   "title": "WMAL Newstalk 105.9",
   "type": "radio",
   "topic": "jobs",
   "scope": "Regional",
-  "weak": true
- },
- {
-  "id": "2586737",
-  "date": "2024-03-27",
-  "outlet": "FOX News",
-  "logo": "fox",
-  "program": "LiveNOW from FOX",
-  "title": "LiveNOW from FOX",
-  "type": "tv",
-  "topic": "jobs",
-  "scope": "International",
-  "tier": "national",
-  "url": "https://www.livenowfox.com/video/1432327",
+  "tier": "regional",
   "weak": true
  },
  {
@@ -2093,32 +1993,32 @@ window.MEDIA = [
   "weak": true
  },
  {
+  "id": "2586737",
+  "date": "2024-03-27",
+  "outlet": "FOX News",
+  "logo": "fox",
+  "program": "LiveNOW from FOX",
+  "title": "Economic challenges of the Baltimore bridge collapse",
+  "type": "tv",
+  "topic": "jobs",
+  "scope": "International",
+  "tier": "national",
+  "url": "https://www.livenowfox.com/video/1432327"
+ },
+ {
   "id": "2567994",
   "date": "2024-03-12",
   "outlet": "Northern Virginia Daily",
-  "logo": "northern-virginia-daily",
+  "logo": "nvdaily",
   "program": "Northern Virginia Daily",
   "title": "Northern Virginia Daily",
   "type": "print",
   "topic": "jobs",
   "scope": "State",
+  "tier": "local",
   "url": "https://www.nvdaily.com/nvdaily/iac-plant-in-strasburg-announces-permanent-layoff-of-135-workers/article_7859962c-0562-57ef-b4e8-1e9332858962.html",
   "va": true,
   "weak": true
- },
- {
-  "id": "2567605",
-  "date": "2024-03-08",
-  "outlet": "WSLS 10",
-  "logo": "wsls",
-  "program": "WSLS 10 News at 6 p.m.",
-  "title": "Cutting consumer costs or political distraction vt professor weighs in on junk fee crackdown",
-  "type": "tv",
-  "topic": "gov",
-  "scope": "Regional",
-  "tier": "regional",
-  "url": "https://www.wsls.com/news/local/2024/03/09/cutting-consumer-costs-or-political-distraction-vt-professor-weighs-in-on-junk-fee-crackdown/",
-  "va": true
  },
  {
   "id": "2567606",
@@ -2132,6 +2032,20 @@ window.MEDIA = [
   "scope": "State",
   "tier": "regional",
   "url": "https://www.wfxrtv.com/news/inflations-potential-effects-on-the-economy-and-voters/",
+  "va": true
+ },
+ {
+  "id": "2567605",
+  "date": "2024-03-08",
+  "outlet": "WSLS 10",
+  "logo": "wsls",
+  "program": "WSLS 10 News at 6 p.m.",
+  "title": "Cutting consumer costs or political distraction vt professor weighs in on junk fee crackdown",
+  "type": "tv",
+  "topic": "gov",
+  "scope": "Regional",
+  "tier": "regional",
+  "url": "https://www.wsls.com/news/local/2024/03/09/cutting-consumer-costs-or-political-distraction-vt-professor-weighs-in-on-junk-fee-crackdown/",
   "va": true
  },
  {
@@ -2168,14 +2082,13 @@ window.MEDIA = [
   "outlet": "WRIC (ABC)",
   "logo": "abc-affiliate",
   "program": "ABC 8News",
-  "title": "ABC 8News",
+  "title": "Henrico, Alexandria sue insulin manufacturers, alleging they conspired to jack up prices",
   "type": "tv",
   "topic": "jobs",
   "scope": "State",
   "tier": "regional",
   "url": "https://www.wric.com/news/virginia-news/henrico-alexandria-sue-insulin-manufacturers-alleging-they-conspired-to-jack-up-prices/amp/",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "2396145",
@@ -2197,23 +2110,12 @@ window.MEDIA = [
   "outlet": "Business Insider",
   "logo": "bi",
   "program": "Business Insider Magazine",
-  "title": "Dan simkowitz morgan stanley james gorman succession",
-  "type": "print",
+  "title": "This Morgan Stanley veteran is ready to be CEO",
+  "type": "online",
   "topic": "markets",
   "scope": "International",
   "tier": "national",
   "url": "https://www.businessinsider.com/dan-simkowitz-morgan-stanley-james-gorman-succession-2023-10"
- },
- {
-  "id": "x-2023-10-18-bi",
-  "date": "2023-10-18",
-  "outlet": "Business Insider",
-  "logo": "bi",
-  "title": "This Morgan Stanley veteran is ready to be CEO",
-  "type": "online",
-  "topic": "markets",
-  "tier": "national",
-  "url": "https://liberalarts.vt.edu/news/in-the-news/2023/10/this-morgan-stanley-veteran-is-ready-to-be-ceo---it-just-might-b.html"
  },
  {
   "id": "2385518",
@@ -2247,12 +2149,13 @@ window.MEDIA = [
   "id": "2368877",
   "date": "2023-09-28",
   "outlet": "Alaraby TV",
-  "logo": "alaraby-tv",
+  "logo": "alaraby",
   "program": "اقتصاد أميركا العربي  (US Economics News)",
-  "title": "بسبب أزمة الإنفاق في أميركا خلاف جديد بين الديمقراطيين والجمهوريين",
+  "title": "Because of the spending crisis in America, a new dispute between Democrats and Republicans",
   "type": "tv",
   "topic": "jobs",
   "scope": "International",
+  "tier": "international",
   "url": "https://www.alaraby.com/news/%D8%A8%D8%B3%D8%A8%D8%A8-%D8%A3%D8%B2%D9%85%D8%A9-%D8%A7%D9%84%D8%A5%D9%86%D9%81%D8%A7%D9%82-%D9%81%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D8%A7-%D8%AE%D9%84%D8%A7%D9%81-%D8%AC%D8%AF%D9%8A%D8%AF-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%AF%D9%8A%D9%85%D9%82%D8%B1%D8%A7%D8%B7%D9%8A%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%AC%D9%85%D9%87%D9%88%D8%B1%D9%8A%D9%8A%D9%86"
  },
  {
@@ -2286,12 +2189,13 @@ window.MEDIA = [
   "id": "2366011",
   "date": "2023-09-19",
   "outlet": "Reckon.news",
-  "logo": "reckon-news",
+  "logo": "reckon",
   "program": "Reckon Media",
   "title": "What the biden administrations involvement in uaw negotiations could mean for workers",
   "type": "print",
   "topic": "jobs",
   "scope": "National",
+  "tier": "national",
   "url": "https://www.reckon.news/news/2023/09/what-the-biden-administrations-involvement-in-uaw-negotiations-could-mean-for-workers.html"
  },
  {
@@ -2325,14 +2229,13 @@ window.MEDIA = [
  {
   "id": "2307774",
   "date": "2023-06-14",
-  "outlet": "DW",
-  "logo": "dw",
-  "program": "NerdWallet",
-  "title": "Fed pause mortgage rates",
+  "outlet": "NerdWallet",
+  "logo": "nerdwallet",
+  "title": "Fed pause: what it means for mortgage rates",
   "type": "online",
   "topic": "housing",
   "scope": "National",
-  "tier": "international",
+  "tier": "national",
   "url": "https://www.nerdwallet.com/article/mortgages/fed-pause-mortgage-rates-6-14-23"
  },
  {
@@ -2341,23 +2244,12 @@ window.MEDIA = [
   "outlet": "Money",
   "logo": "money",
   "program": "Dollar Scholar",
-  "title": "Fed stop interest rate hikes",
+  "title": "Dollar Scholar asks: is the Fed about to stop raising interest rates?",
   "type": "online",
   "topic": "money",
   "scope": "National",
   "tier": "national",
   "url": "https://money.com/fed-stop-interest-rate-hikes/"
- },
- {
-  "id": "x-2023-06-12-money",
-  "date": "2023-06-12",
-  "outlet": "Money",
-  "logo": "money",
-  "title": "Dollar Scholar asks: is the Fed about to stop raising interest rates?",
-  "type": "online",
-  "topic": "money",
-  "tier": "national",
-  "url": "https://liberalarts.vt.edu/content/liberalarts_vt_edu/en/news/in-the-news/2023/06/dollar-scholar-asks--is-the-fed-about-to-stop-raising-interest-r.html"
  },
  {
   "id": "2307662",
@@ -2388,10 +2280,10 @@ window.MEDIA = [
  {
   "id": "2307680",
   "date": "2023-05-18",
-  "outlet": "CBS",
+  "outlet": "WDBJ7 (CBS Roanoke)",
   "logo": "cbs-affiliate",
-  "program": "WDBJ7 News at 6:00",
-  "title": "What us debt default could mean thousands families virginia",
+  "program": "WDBJ7 News at 6",
+  "title": "What a US debt default could mean for thousands of families in Virginia",
   "type": "tv",
   "topic": "gov",
   "scope": "State",
@@ -2417,12 +2309,13 @@ window.MEDIA = [
   "id": "2307676",
   "date": "2023-05-16",
   "outlet": "WRVA News Radio",
-  "logo": "wrva-news-radio",
+  "logo": "wrva",
   "program": "WVRA News Radio",
   "title": "Default could mean major impacts for virginians",
   "type": "radio",
   "topic": "gov",
   "scope": "Local",
+  "tier": "regional",
   "url": "https://www.audacy.com/newsradiowrva/news/local/default-could-mean-major-impacts-for-virginians",
   "va": true
  },
@@ -2438,20 +2331,6 @@ window.MEDIA = [
   "scope": "Regional",
   "tier": "regional",
   "url": "https://www.wdbj7.com/2023/05/15/vt-professor-explains-debt-ceiling/",
-  "va": true
- },
- {
-  "id": "2307677",
-  "date": "2023-05-10",
-  "outlet": "WFXR (FOX)",
-  "logo": "fox-affiliate",
-  "program": "WFXR (Fox) News @10pm",
-  "title": "People in roanoke react to four day workweek proposal",
-  "type": "tv",
-  "topic": "jobs",
-  "scope": "State",
-  "tier": "regional",
-  "url": "https://www.wfxrtv.com/news/local-news/roanoke-valley-news/people-in-roanoke-react-to-four-day-workweek-proposal/",
   "va": true
  },
  {
@@ -2473,23 +2352,11 @@ window.MEDIA = [
   "outlet": "KNX News 97.1 Los Angeles",
   "logo": "knx",
   "program": "CBS News Radio Los Angeles (live)",
-  "title": "CBS News Radio Los Angeles (live)",
-  "type": "radio",
-  "topic": "jobs",
-  "scope": "State",
-  "tier": "national",
-  "weak": true
- },
- {
-  "id": "x-2023-04-28-knx",
-  "date": "2023-04-28",
-  "outlet": "KNX Radio (Los Angeles)",
-  "logo": "knx",
   "title": "The interest rate hikes are working. The economy is slowing down.",
   "type": "radio",
   "topic": "prices",
-  "tier": "regional",
-  "url": "https://liberalarts.vt.edu/news/in-the-news/2023/04/-the-one-thing-that-we-are-seeing-is-of-course-that-the-interest.html"
+  "scope": "State",
+  "tier": "national"
  },
  {
   "id": "2307665",
@@ -2538,7 +2405,7 @@ window.MEDIA = [
   "outlet": "WFXR (FOX)",
   "logo": "fox-affiliate",
   "program": "WFXR (Fox) News @6pm",
-  "title": "People in roanoke react to four day workweek proposal",
+  "title": "People in Roanoke react to four-day workweek proposal",
   "type": "tv",
   "topic": "jobs",
   "scope": "State",
@@ -2576,13 +2443,14 @@ window.MEDIA = [
  {
   "id": "2242266",
   "date": "2023-03-02",
-  "outlet": "SkyNews Arabia, Dubai",
-  "logo": "skynews-arabia-dubai",
+  "outlet": "Sky News Arabia",
+  "logo": "skynewsarabia",
   "program": "SkyNews Arabia",
   "title": "SkyNews Arabia",
   "type": "online",
   "topic": "jobs",
   "scope": "International",
+  "tier": "international",
   "weak": true
  },
  {
@@ -2672,10 +2540,10 @@ window.MEDIA = [
  {
   "id": "2216183",
   "date": "2022-11-03",
-  "outlet": "CBS",
+  "outlet": "WDBJ7 (CBS Roanoke)",
   "logo": "cbs-affiliate",
-  "program": "WDBJ7 News at 11 p.m.",
-  "title": "Central southwest virginia experts outline impacts most recent interest rate raise",
+  "program": "WDBJ7 News at 11",
+  "title": "Central, Southwest Virginia experts outline impacts of most recent interest rate raise",
   "type": "tv",
   "topic": "money",
   "scope": "State",
@@ -2722,7 +2590,7 @@ window.MEDIA = [
   "topic": "world",
   "scope": "State",
   "tier": "regional",
-  "url": "https://www.wfxrtv.com/news/politics/president-biden-announces-steps-to-stop-the-rise-in-gas-prices-virginia-experts-weigh-in/?",
+  "url": "https://www.wfxrtv.com/news/politics/president-biden-announces-steps-to-stop-the-rise-in-gas-prices-virginia-experts-weigh-in/",
   "va": true
  },
  {
@@ -2833,6 +2701,7 @@ window.MEDIA = [
   "type": "tv",
   "topic": "housing",
   "scope": "National",
+  "tier": "national",
   "weak": true
  },
  {
@@ -2996,9 +2865,10 @@ window.MEDIA = [
   "logo": "knus",
   "program": "The Chuck and Julie Show",
   "title": "The Chuck and Julie Show",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "State",
+  "tier": "regional",
   "weak": true
  },
  {
@@ -3036,9 +2906,10 @@ window.MEDIA = [
   "logo": "knus",
   "program": "The Chuck and Julie Show",
   "title": "The Chuck and Julie Show",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "National",
+  "tier": "regional",
   "url": "https://www.youtube.com/watch?v=ctUK2jPCeRI",
   "weak": true
  },
@@ -3049,24 +2920,26 @@ window.MEDIA = [
   "logo": "knus",
   "program": "The Chuck and Julie Show",
   "title": "The Chuck and Julie Show",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "National",
+  "tier": "regional",
   "url": "https://youtu.be/hBj0sXHOQm4",
   "weak": true
  },
  {
   "id": "1599481",
   "date": "2021-01-22",
-  "outlet": "CBS",
+  "outlet": "WDBJ7 (CBS Roanoke)",
   "logo": "cbs-affiliate",
-  "program": "Morning News",
-  "title": "Virginia tech professor provides a deeper look at the biden harris economic plan",
-  "type": "online",
+  "program": "WDBJ7 Morning News",
+  "title": "Virginia Tech professor provides a deeper look at the Biden-Harris economic plan",
+  "type": "tv",
   "topic": "gov",
   "scope": "Regional",
   "tier": "national",
-  "url": "https://www.wdbj7.com/2021/01/22/virginia-tech-professor-provides-a-deeper-look-at-the-biden-harris-economic-plan/"
+  "url": "https://www.wdbj7.com/2021/01/22/virginia-tech-professor-provides-a-deeper-look-at-the-biden-harris-economic-plan/",
+  "va": true
  },
  {
   "id": "1599468",
@@ -3075,7 +2948,7 @@ window.MEDIA = [
   "logo": "fox5",
   "program": "FOX 5 Good Day DC (live)",
   "title": "FOX 5 Good Day DC (live)",
-  "type": "online",
+  "type": "tv",
   "topic": "jobs",
   "scope": "Regional",
   "tier": "regional",
@@ -3085,15 +2958,16 @@ window.MEDIA = [
  {
   "id": "1599415",
   "date": "2021-01-22",
-  "outlet": "CBS",
-  "logo": "cbs-affiliate",
+  "outlet": "WSET (ABC)",
+  "logo": "abc-affiliate",
   "program": "ABC 13 News",
-  "title": "What economists think of bidens 19t stimulus plan",
+  "title": "What economists think of Biden's $1.9T stimulus plan",
   "type": "online",
   "topic": "gov",
   "scope": "National",
   "tier": "national",
-  "url": "https://wset.com/news/nation-world/what-economists-think-of-bidens-19t-stimulus-plan"
+  "url": "https://wset.com/news/nation-world/what-economists-think-of-bidens-19t-stimulus-plan",
+  "va": true
  },
  {
   "id": "1583293",
@@ -3102,7 +2976,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "WFIR In-Depth",
   "title": "Vt professor says believe it or not the economy is doing well",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "Regional",
   "tier": "local",
@@ -3117,6 +2991,7 @@ window.MEDIA = [
   "title": "Best and worst places to rent in America — expert panel",
   "type": "online",
   "topic": "housing",
+  "scope": "National",
   "tier": "national",
   "url": "https://wallethub.com/edu/best-cities-for-renters/23010/#expert=david-s-bieri"
  },
@@ -3127,7 +3002,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "WFIR Morning News",
   "title": "Vt professor discusses potential covid economic impact",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "Regional",
   "tier": "local",
@@ -3153,21 +3028,10 @@ window.MEDIA = [
   "outlet": "710 KNUS Denver",
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
-  "title": "Chuck Bonniwell & Julie Hayden Show",
-  "type": "online",
-  "topic": "jobs",
-  "scope": "National",
-  "tier": "regional",
-  "weak": true
- },
- {
-  "id": "x-2019-12-13-knus",
-  "date": "2019-12-13",
-  "outlet": "710 KNUS Denver",
-  "logo": "knus",
   "title": "After the British general election: Tory landslide and the reshaping of British politics",
   "type": "radio",
   "topic": "world",
+  "scope": "National",
   "tier": "regional",
   "url": "https://chuckandjulie.podbean.com/e/chuck-julie-december-13-2019-hr-1/"
  },
@@ -3177,21 +3041,10 @@ window.MEDIA = [
   "outlet": "710 KNUS Denver",
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
-  "title": "Chuck Bonniwell & Julie Hayden Show",
-  "type": "online",
-  "topic": "jobs",
-  "scope": "National",
-  "tier": "regional",
-  "weak": true
- },
- {
-  "id": "x-2019-11-15-knus",
-  "date": "2019-11-15",
-  "outlet": "710 KNUS Denver",
-  "logo": "knus",
   "title": "Brexit and Boris Johnson's general-election gamble",
   "type": "radio",
   "topic": "markets",
+  "scope": "National",
   "tier": "regional",
   "url": "https://chuckandjulie.podbean.com/e/chuck-julie-november-15-2019-hr-2/"
  },
@@ -3202,7 +3055,7 @@ window.MEDIA = [
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
   "title": "Chuck Bonniwell & Julie Hayden Show",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "National",
   "tier": "regional",
@@ -3215,7 +3068,7 @@ window.MEDIA = [
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
   "title": "Chuck Bonniwell & Julie Hayden Show",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "National",
   "tier": "regional",
@@ -3228,7 +3081,7 @@ window.MEDIA = [
   "logo": "marketplace",
   "program": "Marketplace",
   "title": "Affordable housing definition meaning cost",
-  "type": "online",
+  "type": "radio",
   "topic": "markets",
   "scope": "National",
   "tier": "national",
@@ -3241,7 +3094,7 @@ window.MEDIA = [
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
   "title": "Chuck Bonniwell & Julie Hayden Show",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "International",
   "tier": "regional",
@@ -3254,7 +3107,7 @@ window.MEDIA = [
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
   "title": "Chuck Bonniwell & Julie Hayden Show",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "International",
   "tier": "regional",
@@ -3267,7 +3120,7 @@ window.MEDIA = [
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
   "title": "Chuck Bonniwell & Julie Hayden Show",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "International",
   "tier": "regional",
@@ -3280,7 +3133,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "WFIR Morning News",
   "title": "Government shutdown also effecting researchers at virginia tech",
-  "type": "online",
+  "type": "radio",
   "topic": "gov",
   "scope": "State",
   "tier": "local",
@@ -3294,7 +3147,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "WFIR Morning News",
   "title": "Amazon wage increase draws comparison to henry ford",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "Regional",
   "tier": "local",
@@ -3308,7 +3161,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "WFIR Morning News",
   "title": "Local congressman becomes first to disclose owning bitcoin",
-  "type": "online",
+  "type": "radio",
   "topic": "markets",
   "scope": "Regional",
   "tier": "local",
@@ -3325,18 +3178,20 @@ window.MEDIA = [
   "type": "online",
   "topic": "trade",
   "scope": "International",
+  "tier": "national",
   "url": "https://www.circa.com/story/2018/07/19/nation/how-do-tariffs-affect-your-wallet"
  },
  {
   "id": "1210353",
   "date": "2018-06-16",
   "outlet": "Investment Watch Blog",
-  "logo": "investment-watch-blog",
+  "logo": "investmentwatch",
   "program": "Blog",
   "title": "The average american needs to earn an hour in order to afford a place to live",
   "type": "online",
   "topic": "housing",
   "scope": "National",
+  "tier": "national",
   "url": "http://www.investmentwatchblog.com/the-average-american-needs-to-earn-22-10-an-hour-in-order-to-afford-a-place-to-live/"
  },
  {
@@ -3346,7 +3201,7 @@ window.MEDIA = [
   "logo": "npr",
   "program": "Radio IQ",
   "title": "Blockchain technology could revolutionize more financial world",
-  "type": "online",
+  "type": "radio",
   "topic": "markets",
   "scope": "State",
   "tier": "national",
@@ -3360,7 +3215,7 @@ window.MEDIA = [
   "logo": "npr",
   "program": "Radio IQ",
   "title": "Exploring blockchain technology blacksburg",
-  "type": "online",
+  "type": "radio",
   "topic": "markets",
   "scope": "Regional",
   "tier": "national",
@@ -3371,12 +3226,13 @@ window.MEDIA = [
   "id": "1210354",
   "date": "2018-05-21",
   "outlet": "Coin Rivet",
-  "logo": "coin-rivet",
+  "logo": "coinrivet",
   "program": "Bitcoin News",
   "title": "Blockchain to banish banks and fico reports",
   "type": "online",
   "topic": "markets",
   "scope": "International",
+  "tier": "international",
   "url": "https://coinrivet.com/blockchain-to-banish-banks-and-fico-reports/"
  },
  {
@@ -3386,7 +3242,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "Morning News",
   "title": "T mobile and sprint merger could be good for southwest va",
-  "type": "online",
+  "type": "radio",
   "topic": "markets",
   "scope": "Regional",
   "tier": "local",
@@ -3415,7 +3271,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "Morning News",
   "title": "Tax cuts and jobs act series concludes ahead of implementation",
-  "type": "online",
+  "type": "radio",
   "topic": "jobs",
   "scope": "National",
   "tier": "local",
@@ -3425,13 +3281,13 @@ window.MEDIA = [
  {
   "id": "1099104",
   "date": "2017-10-30",
-  "outlet": "Earnest.com",
-  "logo": "earnest-com",
-  "program": "How Much Rent Can You Really Afford? Experts Weigh In",
+  "outlet": "Earnest",
+  "logo": "earnest",
   "title": "How much rent can you really afford",
   "type": "online",
   "topic": "housing",
   "scope": "National",
+  "tier": "national",
   "url": "https://www.earnest.com/blog/how-much-rent-can-you-really-afford/"
  },
  {
@@ -3444,6 +3300,7 @@ window.MEDIA = [
   "type": "online",
   "topic": "housing",
   "scope": "Regional",
+  "tier": "regional",
   "url": "https://www.minnpost.com/politics-policy/2017/10/there-or-there-not-affordable-housing-crisis-twin-cities"
  },
  {
@@ -3453,7 +3310,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "Morning News",
   "title": "Cbo realignment push by gop called partisan play",
-  "type": "online",
+  "type": "radio",
   "topic": "gov",
   "scope": "National",
   "tier": "local",
@@ -3480,7 +3337,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "Morning News",
   "title": "Vt prof doesnt think scrapping nafta was actually an option for trump",
-  "type": "online",
+  "type": "radio",
   "topic": "trade",
   "scope": "National",
   "tier": "local",
@@ -3494,66 +3351,11 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "Morning News",
   "title": "Vt prof exclusion of cea chair could allow less mainstream economists to step up",
-  "type": "online",
+  "type": "radio",
   "topic": "gov",
   "scope": "National",
   "tier": "local",
   "url": "https://wfirnews.com/local-news/vt-prof-exclusion-of-cea-chair-could-allow-less-mainstream-economists-to-step-up",
-  "va": true
- },
- {
-  "id": "1099111",
-  "date": "2017-01-23",
-  "outlet": "CBS",
-  "logo": "cbs-affiliate",
-  "program": "News at 11",
-  "title": "News at 11",
-  "type": "online",
-  "topic": "jobs",
-  "scope": "Local",
-  "tier": "national",
-  "url": "https://www.youtube.com/watch?v=HZRoqu-Oebw&feature=youtu.be",
-  "weak": true
- },
- {
-  "id": "1099112",
-  "date": "2017-01-20",
-  "outlet": "WFXR (FOX)",
-  "logo": "fox-affiliate",
-  "program": "News at 11",
-  "title": "News at 11",
-  "type": "online",
-  "topic": "jobs",
-  "scope": "State",
-  "tier": "regional",
-  "url": "https://www.youtube.com/watch?v=QFeowiYZDTo&feature=youtu.be",
-  "va": true,
-  "weak": true
- },
- {
-  "id": "1099113",
-  "date": "2017-01-20",
-  "outlet": "WFIR",
-  "logo": "wfir",
-  "program": "Morning News",
-  "title": "Vt prof more optimistic than others on economic impact of president trump",
-  "type": "online",
-  "topic": "gov",
-  "scope": "National",
-  "tier": "local",
-  "url": "https://wfirnews.com/local-news/vt-prof-more-optimistic-than-others-on-economic-impact-of-president-trump",
-  "va": true
- },
- {
-  "id": "x-2017-01-20-fox-affiliate",
-  "date": "2017-01-20",
-  "outlet": "WFXR (Fox Roanoke)",
-  "logo": "fox-affiliate",
-  "title": "Political experts weigh in on the incoming administration",
-  "type": "tv",
-  "topic": "gov",
-  "tier": "regional",
-  "url": "http://www.virginiafirst.com/news/local-news/political-experts-weigh-in-on-upcoming-trump-presidency-womens-march/642431219",
   "va": true
  },
  {
@@ -3564,19 +3366,50 @@ window.MEDIA = [
   "title": "What the world can expect from the Trump administration",
   "type": "print",
   "topic": "world",
+  "scope": "International",
   "tier": "international",
   "url": "http://www.correiobraziliense.com.br/app/noticia/mundo/2017/01/20/interna_mundo,566730/o-que-esperar-do-governo-trump.shtml"
  },
  {
-  "id": "x-2017-01-20-cbs-affiliate",
+  "id": "1099113",
+  "date": "2017-01-20",
+  "outlet": "WFIR",
+  "logo": "wfir",
+  "program": "Morning News",
+  "title": "Vt prof more optimistic than others on economic impact of president trump",
+  "type": "radio",
+  "topic": "gov",
+  "scope": "National",
+  "tier": "local",
+  "url": "https://wfirnews.com/local-news/vt-prof-more-optimistic-than-others-on-economic-impact-of-president-trump",
+  "va": true
+ },
+ {
+  "id": "1099112",
+  "date": "2017-01-20",
+  "outlet": "WFXR (FOX)",
+  "logo": "fox-affiliate",
+  "program": "News at 11",
+  "title": "Political experts weigh in on the incoming administration",
+  "type": "online",
+  "topic": "gov",
+  "scope": "State",
+  "tier": "regional",
+  "url": "https://www.youtube.com/watch?v=QFeowiYZDTo&feature=youtu.be",
+  "va": true
+ },
+ {
+  "id": "1099111",
   "date": "2017-01-20",
   "outlet": "WDBJ7 (CBS Roanoke)",
   "logo": "cbs-affiliate",
+  "program": "WDBJ7 News at 11",
   "title": "How the inauguration could impact businesses in Virginia",
   "type": "tv",
   "topic": "gov",
-  "tier": "regional",
-  "url": "http://www.wdbj7.com/content/news/Trumps-inauguration-could-impact-businesses-in-Virginia-410729125.html",
+  "scope": "Local",
+  "tier": "national",
+  "url": "https://www.youtube.com/watch?v=HZRoqu-Oebw&feature=youtu.be",
   "va": true
  },
  {
@@ -3587,20 +3420,20 @@ window.MEDIA = [
   "title": "Can a conservative president save the EU Parliament from the far right?",
   "type": "print",
   "topic": "world",
+  "scope": "National",
   "tier": "national",
   "url": "http://www.csmonitor.com/World/Europe/2017/0118/Can-a-conservative-president-save-the-EU-parliament-from-the-far-right"
  },
  {
   "id": "1099106",
   "date": "2016-11-09",
-  "outlet": "Money",
-  "logo": "money",
-  "program": "New rules of spending",
-  "title": "New rules personal finance spending",
+  "outlet": "MoneySense (Canada)",
+  "logo": "moneysense",
+  "title": "The new rules of personal finance: spending",
   "type": "online",
   "topic": "prices",
   "scope": "International",
-  "tier": "national",
+  "tier": "international",
   "url": "http://www.moneysense.ca/spend/new-rules-personal-finance-spending/"
  },
  {
@@ -3611,6 +3444,7 @@ window.MEDIA = [
   "title": "Brexit as the battle of ideas over Europe's 'manifest destiny' (op-ed)",
   "type": "print",
   "topic": "world",
+  "scope": "Regional",
   "tier": "regional",
   "url": "http://www.roanoke.com/opinion/commentary/bieri-brexit-as-the-battle-of-ideas-over-europe-s/article_6dd34600-a9de-573d-8bf9-b9b9ec17370f.html",
   "va": true
@@ -3622,7 +3456,7 @@ window.MEDIA = [
   "logo": "wfir",
   "program": "WFIR Morning News",
   "title": "Vt prof brexit vote reflects long stranding issues in europe",
-  "type": "online",
+  "type": "radio",
   "topic": "world",
   "scope": "Regional",
   "tier": "local",
@@ -3632,15 +3466,16 @@ window.MEDIA = [
  {
   "id": "1099109",
   "date": "2016-06-24",
-  "outlet": "CBS",
+  "outlet": "WDBJ7 (CBS Roanoke)",
   "logo": "cbs-affiliate",
-  "program": "News at 5",
-  "title": "How Brexit could impact",
-  "type": "online",
+  "program": "WDBJ7 News at 5",
+  "title": "How Brexit could impact Virginia",
+  "type": "tv",
   "topic": "world",
   "scope": "State",
   "tier": "national",
-  "url": "https://www.wdbj7.com/content/news/How-Brexit-could-impact--384328971.html"
+  "url": "https://www.wdbj7.com/content/news/How-Brexit-could-impact--384328971.html",
+  "va": true
  },
  {
   "id": "x-2016-04-12-wallethub",
@@ -3650,6 +3485,7 @@ window.MEDIA = [
   "title": "Cities where people are most overleveraged on their homes",
   "type": "online",
   "topic": "housing",
+  "scope": "National",
   "tier": "national",
   "url": "https://wallethub.com/mortgage-calculator/"
  },
@@ -3661,6 +3497,7 @@ window.MEDIA = [
   "title": "Die Crowd als Baumeister — on crowdfunding the city",
   "type": "print",
   "topic": "housing",
+  "scope": "International",
   "tier": "international",
   "url": "http://derstandard.at/2000026115752/Die-Crowd-als-Baumeister"
  },
@@ -3668,10 +3505,11 @@ window.MEDIA = [
   "id": "x-2015-09-15-earnest-com",
   "date": "2015-09-15",
   "outlet": "Earnest",
-  "logo": "earnest-com",
+  "logo": "earnest",
   "title": "Ignore the '30 percent rule' when it comes to rent",
   "type": "online",
   "topic": "housing",
+  "scope": "Regional",
   "tier": "regional",
   "url": "http://blog.meetearnest.com/post/129291050047/rent-and-the-30-percent-rule"
  },
@@ -3683,6 +3521,7 @@ window.MEDIA = [
   "title": "Why should you only spend 30% of your income on housing?",
   "type": "online",
   "topic": "housing",
+  "scope": "National",
   "tier": "national",
   "url": "http://fortune.com/2015/08/04/housing-30-percent-rule/"
  },
@@ -3694,6 +3533,7 @@ window.MEDIA = [
   "title": "With public funds, Battle Creek United plays stealthy development game",
   "type": "print",
   "topic": "gov",
+  "scope": "Regional",
   "tier": "regional",
   "url": "http://www.battlecreekenquirer.com/story/news/local/2015/03/21/public-funds-bcu-plays-stealthy-development-game/25115589/"
  },
@@ -3705,6 +3545,7 @@ window.MEDIA = [
   "title": "Lawmakers pass on TIF reform this year",
   "type": "print",
   "topic": "gov",
+  "scope": "Regional",
   "tier": "regional",
   "url": "http://www.metrotimes.com/Blogs/archives/2014/12/31/news-hits-lawmakers-pass-on-tif-reform-this-year"
  },
@@ -3716,6 +3557,7 @@ window.MEDIA = [
   "title": "Rental burdens: rethinking affordability measures",
   "type": "online",
   "topic": "housing",
+  "scope": "National",
   "tier": "national",
   "url": "http://www.huduser.org/portal/pdredge/pdr_edge_featd_article_092214.html"
  },
@@ -3723,10 +3565,11 @@ window.MEDIA = [
   "id": "x-2014-09-15-npr",
   "date": "2014-09-15",
   "outlet": "Michigan Public Radio",
-  "logo": "npr",
+  "logo": "michiganradio",
   "title": "Transparency lacking as Michigan taxpayers bankroll private development",
   "type": "radio",
   "topic": "gov",
+  "scope": "Regional",
   "tier": "regional",
   "url": "http://michiganradio.org/post/tranparency-lacking-michigan-taxpayers-bankroll-private-development"
  },
@@ -3738,6 +3581,7 @@ window.MEDIA = [
   "title": "Inversions, loopholes, taxes and TIFs: what's a revenue service to do?",
   "type": "online",
   "topic": "gov",
+  "scope": "National",
   "tier": "national",
   "url": "http://taxvox.taxpolicycenter.org/2014/09/09/inversions-loopholes-taxes-tifs-whats-revenue-service/"
  },
@@ -3749,6 +3593,7 @@ window.MEDIA = [
   "title": "Michigan tax-capturing authorities could rake in $1.2B a year but have little oversight",
   "type": "online",
   "topic": "gov",
+  "scope": "Regional",
   "tier": "regional",
   "url": "http://www.mlive.com/lansing-news/index.ssf/2014/09/tax-capturing_authorities_that.html"
  },
@@ -3760,6 +3605,7 @@ window.MEDIA = [
   "title": "Thou shalt not commit more than 30 percent of thine income to housing",
   "type": "print",
   "topic": "housing",
+  "scope": "National",
   "tier": "national",
   "url": "http://www.businessweek.com/articles/2014-07-17/housings-30-percent-of-income-rule-is-near-useless",
   "featured": true
@@ -3768,10 +3614,11 @@ window.MEDIA = [
   "id": "x-2014-07-10-npr",
   "date": "2014-07-10",
   "outlet": "Michigan Public Radio",
-  "logo": "npr",
+  "logo": "michiganradio",
   "title": "Do corporate tax incentives boost Michigan's economy?",
   "type": "radio",
   "topic": "gov",
+  "scope": "Regional",
   "tier": "regional",
   "url": "http://wkar.org/post/do-corporate-tax-incentives-boost-michigans-economy"
  },
@@ -3783,12 +3630,13 @@ window.MEDIA = [
   "title": "Blumen für den Gemeindebau",
   "type": "print",
   "topic": "housing",
+  "scope": "International",
   "tier": "international",
   "url": "http://diepresse.com/home/panorama/welt/1598862/Blumen-fur-den-Gemeindebau"
  }
 ];
-window.OUTLETS = [{"name": "The Wall Street Journal", "logo": "wsj", "n": 1, "tier": "national"}, {"name": "The Washington Post", "logo": "wapo", "n": 2, "tier": "national"}, {"name": "TIME", "logo": "time", "n": 2, "tier": "national"}, {"name": "Newsweek", "logo": "newsweek", "n": 2, "tier": "national"}, {"name": "CNN", "logo": "cnn", "n": 7, "tier": "national"}, {"name": "CBS News", "logo": "cbs", "n": 1, "tier": "national"}, {"name": "ABC News", "logo": "abc", "n": 2, "tier": "national"}, {"name": "Associated Press", "logo": "ap", "n": 2, "tier": "national"}, {"name": "Marketplace", "logo": "marketplace", "n": 7, "tier": "national"}, {"name": "NPR / RadioIQ", "logo": "npr", "n": 8, "tier": "national"}, {"name": "Michigan Public Radio", "logo": "npr", "n": 2, "tier": "regional"}, {"name": "The Guardian", "logo": "guardian", "n": 2, "tier": "national"}, {"name": "POLITICO", "logo": "politico", "n": 2, "tier": "national"}, {"name": "Asharq Bloomberg", "logo": "bloomberg", "n": 3, "tier": "international"}, {"name": "Al Jazeera", "logo": "aljazeera", "n": 2, "tier": "international"}, {"name": "DW", "logo": "dw", "n": 2, "tier": "international"}, {"name": "South China Morning Post", "logo": "scmp", "n": 2, "tier": "international"}, {"name": "The Hill / NewsNation", "logo": "thehill", "n": 3, "tier": "national"}, {"name": "New York Post", "logo": "nypost", "n": 1, "tier": "national"}, {"name": "Bloomberg Businessweek", "logo": "businessweek", "n": 1, "tier": "national"}, {"name": "Fortune", "logo": "fortune", "n": 1, "tier": "national"}, {"name": "Christian Science Monitor", "logo": "csm", "n": 1, "tier": "national"}, {"name": "UPI", "logo": "upi", "n": 1, "tier": "national"}, {"name": "Yahoo News", "logo": "yahoo", "n": 2, "tier": "national"}, {"name": "Kiplinger", "logo": "kiplinger", "n": 1, "tier": "national"}, {"name": "Business Insider", "logo": "bi", "n": 2, "tier": "national"}, {"name": "Money", "logo": "money", "n": 3, "tier": "national"}, {"name": "FOX News", "logo": "fox", "n": 3, "tier": "national"}, {"name": "Fox LiveNOW", "logo": "fox", "n": 1, "tier": "national"}, {"name": "FOX 5 DC", "logo": "fox5", "n": 34, "tier": "regional"}, {"name": "WTOP", "logo": "wtop", "n": 2, "tier": "regional"}, {"name": "KNX News 97.1 Los Angeles", "logo": "knx", "n": 7, "tier": "regional"}, {"name": "KNX Radio (Los Angeles)", "logo": "knx", "n": 1, "tier": "regional"}, {"name": "CBS", "logo": "cbs-affiliate", "n": 9, "tier": "national"}, {"name": "WUSA9 (CBS)", "logo": "cbs-affiliate", "n": 4, "tier": "national"}, {"name": "Newswise", "logo": "newswise", "n": 3, "tier": "national"}, {"name": "WalletHub", "logo": "wallethub", "n": 3, "tier": "national"}, {"name": "Agri-View", "logo": "agriview", "n": 1, "tier": "national"}, {"name": "CNBC", "logo": "cnbc", "n": 1, "tier": "national"}, {"name": "Forward Pathway", "logo": "fp", "n": 1, "tier": "national"}, {"name": "Futurity", "logo": "futurity", "n": 1, "tier": "national"}, {"name": "HUD PD&R Edge", "logo": "hud", "n": 1, "tier": "national"}, {"name": "More Perfect Union", "logo": "mpu", "n": 1, "tier": "national"}, {"name": "NerdWallet", "logo": "nerdwallet", "n": 1, "tier": "national"}, {"name": "Public News Service", "logo": "pns", "n": 1, "tier": "national"}, {"name": "Tax Policy Center", "logo": "tpc", "n": 1, "tier": "national"}, {"name": "The Current", "logo": "thecurrent", "n": 1, "tier": "national"}, {"name": "The New Republic", "logo": "newrepublic", "n": 1, "tier": "national"}, {"name": "WTKR (CBS)", "logo": "cbs-affiliate", "n": 1, "tier": "national"}, {"name": "RTVI (Russian-language TV, New York)", "logo": "rtvi", "n": 5, "tier": "international"}, {"name": "Al Arabiya", "logo": "alarabiya", "n": 2, "tier": "international"}, {"name": "AInvest", "logo": "ainvest", "n": 1, "tier": "international"}, {"name": "ARD (German public radio)", "logo": "ard", "n": 1, "tier": "international"}, {"name": "Assets (Austria)", "logo": "assets", "n": 1, "tier": "international"}, {"name": "Correio Braziliense", "logo": "correio", "n": 1, "tier": "international"}, {"name": "Der Standard / St. Galler Tagblatt", "logo": "derstandard", "n": 1, "tier": "international"}, {"name": "Die Presse", "logo": "diepresse", "n": 1, "tier": "international"}, {"name": "EFN", "logo": "efn", "n": 1, "tier": "international"}, {"name": "FinTech TV", "logo": "fintechtv", "n": 1, "tier": "international"}, {"name": "Phoenix TV", "logo": "phoenix", "n": 1, "tier": "international"}, {"name": "Republica (Nepal)", "logo": "republica", "n": 1, "tier": "international"}, {"name": "The New Arab", "logo": "newarab", "n": 1, "tier": "international"}, {"name": "WFXR (FOX)", "logo": "fox-affiliate", "n": 13, "tier": "regional"}, {"name": "WSLS 10", "logo": "wsls", "n": 10, "tier": "regional"}, {"name": "WSET (ABC)", "logo": "abc-affiliate", "n": 6, "tier": "regional"}, {"name": "WDBJ7 (CBS Roanoke)", "logo": "cbs-affiliate", "n": 3, "tier": "regional"}, {"name": "WJLA (ABC)", "logo": "abc-affiliate", "n": 3, "tier": "regional"}, {"name": "WRIC (ABC)", "logo": "abc-affiliate", "n": 3, "tier": "regional"}, {"name": "WVEC (ABC)", "logo": "abc-affiliate", "n": 3, "tier": "regional"}, {"name": "WAVY (ABC)", "logo": "abc-affiliate", "n": 2, "tier": "regional"}, {"name": "Atlanta News First", "logo": "wanf", "n": 1, "tier": "regional"}, {"name": "Battle Creek Enquirer", "logo": "bce", "n": 1, "tier": "regional"}, {"name": "Detroit Metro Times", "logo": "metrotimes", "n": 1, "tier": "regional"}, {"name": "Earnest", "logo": "earnest-com", "n": 1, "tier": "regional"}, {"name": "MLive", "logo": "mlive", "n": 1, "tier": "regional"}, {"name": "Technical.ly", "logo": "technically", "n": 1, "tier": "regional"}, {"name": "WBTV (CBS Charlotte)", "logo": "cbs-affiliate", "n": 1, "tier": "regional"}, {"name": "WFLD (FOX)", "logo": "fox-affiliate", "n": 1, "tier": "regional"}, {"name": "WFXR (Fox Roanoke)", "logo": "fox-affiliate", "n": 1, "tier": "regional"}, {"name": "WOAY", "logo": "woay", "n": 1, "tier": "regional"}, {"name": "WUSA9 (CBS Washington)", "logo": "cbs-affiliate", "n": 1, "tier": "regional"}, {"name": "WWL New Orleans", "logo": "wwl", "n": 1, "tier": "regional"}, {"name": "Virginia Tech News", "logo": "vt", "n": 12, "tier": "state"}, {"name": "Virginia Business", "logo": "vabusiness", "n": 7, "tier": "state"}, {"name": "Curious Conversations", "logo": "vt", "n": 1, "tier": "state"}, {"name": "Dogwood", "logo": "dogwood", "n": 1, "tier": "state"}, {"name": "WFIR", "logo": "wfir", "n": 16, "tier": "local"}, {"name": "The Roanoke Times", "logo": "roanoke", "n": 5, "tier": "local"}, {"name": "Augusta Free Press", "logo": "augustafreepress", "n": 2, "tier": "local"}, {"name": "The Goshen News", "logo": "goshen", "n": 1, "tier": "local"}, {"name": "Whiterock Locators", "logo": "whiterock", "n": 1, "tier": "local"}, {"name": "710 KNUS Denver", "logo": "knus", "n": 12, "tier": ""}, {"name": "Alaraby TV", "logo": "alaraby-tv", "n": 1, "tier": ""}, {"name": "American Banker", "logo": "american-banker", "n": 1, "tier": ""}, {"name": "Circa", "logo": "circa", "n": 1, "tier": ""}, {"name": "Coin Rivet", "logo": "coin-rivet", "n": 1, "tier": ""}, {"name": "Earnest.com", "logo": "earnest-com", "n": 1, "tier": ""}, {"name": "Investment Watch Blog", "logo": "investment-watch-blog", "n": 1, "tier": ""}, {"name": "MinnPost", "logo": "minnpost", "n": 1, "tier": ""}, {"name": "NBC", "logo": "nbc", "n": 1, "tier": ""}, {"name": "Northern Virginia Daily", "logo": "northern-virginia-daily", "n": 1, "tier": ""}, {"name": "Reckon.news", "logo": "reckon-news", "n": 1, "tier": ""}, {"name": "SkyNews Arabia, Dubai", "logo": "skynews-arabia-dubai", "n": 1, "tier": ""}, {"name": "WIRC (ABC 8) Richmond", "logo": "wirc-abc-8-richmond", "n": 1, "tier": ""}, {"name": "WMAL-FM (Washington, D. C.)", "logo": "wmal-fm-washington-d-c", "n": 1, "tier": ""}, {"name": "WRVA News Radio", "logo": "wrva-news-radio", "n": 1, "tier": ""}, {"name": "Washington Examiner (Business)", "logo": "examiner", "n": 1, "tier": ""}];
+window.OUTLETS = [{"name": "The Wall Street Journal", "logo": "wsj", "n": 1, "tier": "national"}, {"name": "The Washington Post", "logo": "wapo", "n": 2, "tier": "national"}, {"name": "TIME", "logo": "time", "n": 2, "tier": "national"}, {"name": "Newsweek", "logo": "newsweek", "n": 2, "tier": "national"}, {"name": "CNN", "logo": "cnn", "n": 7, "tier": "national"}, {"name": "CBS News", "logo": "cbs", "n": 2, "tier": "national"}, {"name": "ABC News", "logo": "abc", "n": 2, "tier": "national"}, {"name": "Associated Press", "logo": "ap", "n": 1, "tier": "national"}, {"name": "Marketplace", "logo": "marketplace", "n": 5, "tier": "national"}, {"name": "NPR / RadioIQ", "logo": "npr", "n": 8, "tier": "national"}, {"name": "The Guardian", "logo": "guardian", "n": 2, "tier": "national"}, {"name": "POLITICO", "logo": "politico", "n": 2, "tier": "national"}, {"name": "Asharq Bloomberg", "logo": "bloomberg", "n": 3, "tier": "international"}, {"name": "Al Jazeera", "logo": "aljazeera", "n": 2, "tier": "international"}, {"name": "DW", "logo": "dw", "n": 1, "tier": "international"}, {"name": "South China Morning Post", "logo": "scmp", "n": 1, "tier": "international"}, {"name": "The Hill / NewsNation", "logo": "thehill", "n": 3, "tier": "national"}, {"name": "New York Post", "logo": "nypost", "n": 1, "tier": "national"}, {"name": "Bloomberg Businessweek", "logo": "businessweek", "n": 1, "tier": "national"}, {"name": "Fortune", "logo": "fortune", "n": 1, "tier": "national"}, {"name": "Christian Science Monitor", "logo": "csm", "n": 1, "tier": "national"}, {"name": "UPI", "logo": "upi", "n": 1, "tier": "national"}, {"name": "Yahoo News", "logo": "yahoo", "n": 2, "tier": "national"}, {"name": "Kiplinger", "logo": "kiplinger", "n": 1, "tier": "national"}, {"name": "Business Insider", "logo": "bi", "n": 1, "tier": "national"}, {"name": "Money", "logo": "money", "n": 1, "tier": "national"}, {"name": "FOX News", "logo": "fox", "n": 3, "tier": "national"}, {"name": "FOX 5 DC", "logo": "fox5", "n": 34, "tier": "regional"}, {"name": "WTOP", "logo": "wtop", "n": 2, "tier": "regional"}, {"name": "KNX News 97.1 Los Angeles", "logo": "knx", "n": 7, "tier": "regional"}, {"name": "WUSA9 (CBS)", "logo": "cbs-affiliate", "n": 4, "tier": "national"}, {"name": "Newswise", "logo": "newswise", "n": 3, "tier": "national"}, {"name": "WalletHub", "logo": "wallethub", "n": 3, "tier": "national"}, {"name": "Earnest", "logo": "earnest", "n": 2, "tier": "national"}, {"name": "NerdWallet", "logo": "nerdwallet", "n": 2, "tier": "national"}, {"name": "Agri-View", "logo": "agriview", "n": 1, "tier": "national"}, {"name": "American Banker", "logo": "americanbanker", "n": 1, "tier": "national"}, {"name": "CNBC", "logo": "cnbc", "n": 1, "tier": "national"}, {"name": "Circa", "logo": "circa", "n": 1, "tier": "national"}, {"name": "Forward Pathway", "logo": "fp", "n": 1, "tier": "national"}, {"name": "Futurity", "logo": "futurity", "n": 1, "tier": "national"}, {"name": "HUD PD&R Edge", "logo": "hud", "n": 1, "tier": "national"}, {"name": "Investment Watch Blog", "logo": "investmentwatch", "n": 1, "tier": "national"}, {"name": "More Perfect Union", "logo": "mpu", "n": 1, "tier": "national"}, {"name": "NBC", "logo": "nbc", "n": 1, "tier": "national"}, {"name": "Public News Service", "logo": "pns", "n": 1, "tier": "national"}, {"name": "Reckon.news", "logo": "reckon", "n": 1, "tier": "national"}, {"name": "Tax Policy Center", "logo": "tpc", "n": 1, "tier": "national"}, {"name": "The Current", "logo": "thecurrent", "n": 1, "tier": "national"}, {"name": "The New Republic", "logo": "newrepublic", "n": 1, "tier": "national"}, {"name": "WTKR (CBS)", "logo": "cbs-affiliate", "n": 1, "tier": "national"}, {"name": "Washington Examiner", "logo": "examiner", "n": 1, "tier": "national"}, {"name": "RTVI (Russian-language TV, New York)", "logo": "rtvi", "n": 5, "tier": "international"}, {"name": "Al Arabiya", "logo": "alarabiya", "n": 2, "tier": "international"}, {"name": "AInvest", "logo": "ainvest", "n": 1, "tier": "international"}, {"name": "ARD (German public radio)", "logo": "ard", "n": 1, "tier": "international"}, {"name": "Alaraby TV", "logo": "alaraby", "n": 1, "tier": "international"}, {"name": "Assets (Austria)", "logo": "assets", "n": 1, "tier": "international"}, {"name": "Coin Rivet", "logo": "coinrivet", "n": 1, "tier": "international"}, {"name": "Correio Braziliense", "logo": "correio", "n": 1, "tier": "international"}, {"name": "Der Standard / St. Galler Tagblatt", "logo": "derstandard", "n": 1, "tier": "international"}, {"name": "Die Presse", "logo": "diepresse", "n": 1, "tier": "international"}, {"name": "EFN", "logo": "efn", "n": 1, "tier": "international"}, {"name": "FinTech TV", "logo": "fintechtv", "n": 1, "tier": "international"}, {"name": "MoneySense (Canada)", "logo": "moneysense", "n": 1, "tier": "international"}, {"name": "Phoenix TV", "logo": "phoenix", "n": 1, "tier": "international"}, {"name": "Republica (Nepal)", "logo": "republica", "n": 1, "tier": "international"}, {"name": "Sky News Arabia", "logo": "skynewsarabia", "n": 1, "tier": "international"}, {"name": "The New Arab", "logo": "newarab", "n": 1, "tier": "international"}, {"name": "WFXR (FOX)", "logo": "fox-affiliate", "n": 13, "tier": "regional"}, {"name": "710 KNUS Denver", "logo": "knus", "n": 10, "tier": "regional"}, {"name": "WSLS 10", "logo": "wsls", "n": 10, "tier": "regional"}, {"name": "WDBJ7 (CBS Roanoke)", "logo": "cbs-affiliate", "n": 8, "tier": "regional"}, {"name": "WSET (ABC)", "logo": "abc-affiliate", "n": 7, "tier": "regional"}, {"name": "WRIC (ABC)", "logo": "abc-affiliate", "n": 4, "tier": "regional"}, {"name": "WJLA (ABC)", "logo": "abc-affiliate", "n": 3, "tier": "regional"}, {"name": "WVEC (ABC)", "logo": "abc-affiliate", "n": 3, "tier": "regional"}, {"name": "Michigan Public Radio", "logo": "michiganradio", "n": 2, "tier": "regional"}, {"name": "WAVY (NBC)", "logo": "nbc-affiliate", "n": 2, "tier": "regional"}, {"name": "Atlanta News First", "logo": "wanf", "n": 1, "tier": "regional"}, {"name": "Battle Creek Enquirer", "logo": "bce", "n": 1, "tier": "regional"}, {"name": "Detroit Metro Times", "logo": "metrotimes", "n": 1, "tier": "regional"}, {"name": "MLive", "logo": "mlive", "n": 1, "tier": "regional"}, {"name": "MinnPost", "logo": "minnpost", "n": 1, "tier": "regional"}, {"name": "Technical.ly", "logo": "technically", "n": 1, "tier": "regional"}, {"name": "WBTV (CBS Charlotte)", "logo": "cbs-affiliate", "n": 1, "tier": "regional"}, {"name": "WFLD (FOX)", "logo": "fox-affiliate", "n": 1, "tier": "regional"}, {"name": "WMAL (Washington, DC)", "logo": "wmal", "n": 1, "tier": "regional"}, {"name": "WOAY", "logo": "woay", "n": 1, "tier": "regional"}, {"name": "WRVA News Radio", "logo": "wrva", "n": 1, "tier": "regional"}, {"name": "WWL New Orleans", "logo": "wwl", "n": 1, "tier": "regional"}, {"name": "Virginia Tech News", "logo": "vt", "n": 12, "tier": "state"}, {"name": "Virginia Business", "logo": "vabusiness", "n": 7, "tier": "state"}, {"name": "Dogwood", "logo": "dogwood", "n": 1, "tier": "state"}, {"name": "WFIR", "logo": "wfir", "n": 16, "tier": "local"}, {"name": "Augusta Free Press", "logo": "augustafreepress", "n": 2, "tier": "local"}, {"name": "The Roanoke Times", "logo": "roanoke", "n": 2, "tier": "local"}, {"name": "Northern Virginia Daily", "logo": "nvdaily", "n": 1, "tier": "local"}, {"name": "The Goshen News", "logo": "goshen", "n": 1, "tier": "local"}, {"name": "The Roanoke Star", "logo": "roanokestar", "n": 1, "tier": "local"}, {"name": "Whiterock Locators", "logo": "whiterock", "n": 1, "tier": "local"}];
 window.TOPIC_LABELS = {"trade": "Trade & tariffs", "money": "The Fed & money", "prices": "Prices & cost of living", "jobs": "Jobs & the economy", "markets": "Markets & new finance", "housing": "Housing", "gov": "Government & budgets", "world": "Global affairs & energy"};
 window.TYPE_LABELS = {"tv": "Television", "radio": "Radio", "print": "Print", "online": "Online", "podcast": "Podcast"};
 window.BAND = [{"slug": "wsj", "name": "The Wall Street Journal", "logos": ["wsj"]}, {"slug": "wapo", "name": "The Washington Post", "logos": ["wapo"]}, {"slug": "time", "name": "TIME", "logos": ["time"]}, {"slug": "newsweek", "name": "Newsweek", "logos": ["newsweek"]}, {"slug": "cnn", "name": "CNN", "logos": ["cnn"]}, {"slug": "cbs", "name": "CBS", "logos": ["cbs", "cbs-affiliate"]}, {"slug": "abc", "name": "ABC", "logos": ["abc", "abc-affiliate"]}, {"slug": "ap", "name": "Associated Press", "logos": ["ap"]}, {"slug": "politico", "name": "POLITICO", "logos": ["politico"]}, {"slug": "thehill", "name": "The Hill", "logos": ["thehill"]}, {"slug": "guardian", "name": "The Guardian", "logos": ["guardian"]}, {"slug": "aljazeera", "name": "Al Jazeera", "logos": ["aljazeera"]}, {"slug": "dw", "name": "DW", "logos": ["dw"]}, {"slug": "npr", "name": "NPR", "logos": ["npr"]}, {"slug": "marketplace", "name": "Marketplace", "logos": ["marketplace"]}, {"slug": "fox5", "name": "FOX 5 DC", "logos": ["fox5"]}];
-window.ALSO = ["Asharq Bloomberg", "South China Morning Post", "New York Post", "Bloomberg Businessweek", "Fortune", "Christian Science Monitor", "UPI", "Yahoo News", "Kiplinger", "Business Insider", "Money", "RTVI (Russian-language TV, New York)", "Al Arabiya", "ARD (German public radio)", "Assets (Austria)", "Correio Braziliense", "Der Standard / St. Galler Tagblatt", "Die Presse", "FinTech TV", "Phoenix TV", "Republica (Nepal)", "The New Arab"];
+window.ALSO = ["Asharq Bloomberg", "South China Morning Post", "New York Post", "Bloomberg Businessweek", "Fortune", "Christian Science Monitor", "UPI", "Yahoo News", "Kiplinger", "Business Insider", "Money", "RTVI (Russian-language TV, New York)", "Al Arabiya", "ARD (German public radio)", "Alaraby TV", "Assets (Austria)", "Correio Braziliense", "Der Standard / St. Galler Tagblatt", "Die Presse", "FinTech TV", "MoneySense (Canada)", "Phoenix TV"];

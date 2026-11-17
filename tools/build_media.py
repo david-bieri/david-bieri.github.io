@@ -4,27 +4,37 @@
 Usage:  python3 tools/build_media.py
 Edit data/media.csv (Excel, Sheets, or a text editor), run this, commit both.
 
-Columns
-  id          stable identifier (Elements activity ID or any unique string)
-  date        YYYY-MM-DD
-  outlet      display name, e.g. "Marketplace", "FOX 5 DC", "WSLS 10 (NBC)"
-  logo        slug for the wordmark, e.g. marketplace, fox5, cbs-affiliate (shared across affiliates)
-  program     show or section, e.g. "Good Day DC (live)"
-  title       headline or short description
-  type        tv | radio | print | online | podcast
-  topic       one of the eight issues (the filters on media.html and the tiles on the home page):
+Columns (conventions as of the 17 Nov 2026 consolidation; see data/MEDIA_CHANGELOG.md)
+  id          stable identifier: the Elements activity ID (digits) for rows from the Elements export,
+              or x-YYYY-MM-DD-<logo> for rows added by hand. Never reuse or renumber.
+  date        YYYY-MM-DD (air date / publication date)
+  outlet      display name. Network affiliates are "CALL (NET)" or "CALL (NET City)", e.g. "WSET (ABC)",
+              "WDBJ7 (CBS Roanoke)"; national networks are the brand, e.g. "CBS News", "FOX News", "CNN".
+              One spelling per outlet -- check the existing rows before adding a variant.
+  logo        wordmark slug: lowercase, no hyphens (thehill, nypost, augustafreepress), except the shared
+              affiliate slugs cbs-affiliate | abc-affiliate | fox-affiliate | nbc-affiliate. A new slug
+              gets a generated SVG in assets/logos/ on the next build.
+  program     show, section or bureau, e.g. "Good Day DC (live)", "CBS MoneyWatch"; blank if none
+  title       the outlet's headline, sentence case. Rows still carrying the placeholder notes
+              title-from-url / title-from-program have no real headline yet (see HANDOVER.md).
+  type        tv | radio | print | online | podcast  -- the medium of the appearance, which follows the
+              outlet (a radio station's web write-up is still radio; a TV clip page is tv).
+  topic       exactly one of the eight issues (the filters on media.html and the tiles on the home page):
                 trade   Trade & tariffs          money    The Fed & money
                 prices  Prices & cost of living  jobs     Jobs & the economy
                 markets Markets & new finance    housing  Housing
                 gov     Government & budgets     world    Global affairs & energy
-  va          "yes" if the story is about Virginia or ran on a Virginia outlet (drives the Virginia filter)
-  scope       Local | State | Regional | National | International   (from Elements)
-  tier        national | international | regional | state | local   (drives outlet wall ordering)
-  url         link; leave blank if none (title renders as plain text)
-  interviewer host or reporter (not rendered; kept for your records)
+  va          "yes" if the story is about Virginia or ran on a Virginia outlet (drives the Virginia filter).
+              Every Virginia station/paper row is flagged; Virginia Tech News rows only when the story is about Virginia.
+  scope       Local | State | Regional | National | International -- the story's geography (Elements field;
+              for hand-added rows defaults to the tier)
+  tier        national | international | regional | state | local -- the outlet's reach (drives outlet wall ordering)
+  url         direct link to the story on the outlet's own site; blank if none (title renders as plain text).
+              No landing pages, no translate proxies, no VT media-mentions pages where the original exists.
+  interviewer host or reporter as "Surname I" (not rendered; kept for your records)
   featured    "yes" to surface on the home page and in Selected appearances
   quote       optional pull quote (rendered in cards)
-  notes       anything else; not rendered
+  notes       provenance and anything else; not rendered. "merged duplicate <id>" records a consolidation.
 """
 import csv, html, json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
