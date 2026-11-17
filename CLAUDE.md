@@ -1,6 +1,6 @@
 # david-bieri.com — working notes for Claude Code
 
-Personal site of David S. Bieri (Associate Professor of Public Policy, SPIA, Virginia Tech). GitHub Pages user site; custom domain via `CNAME`.
+Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virginia Tech). GitHub Pages user site; custom domain via `CNAME`.
 
 ## Stack and conventions
 - Plain HTML, one stylesheet (`assets/css/main.css`), one script (`assets/js/site.js`). No framework, no build step, no bundler, no analytics. Keep it that way.
@@ -8,6 +8,7 @@ Personal site of David S. Bieri (Associate Professor of Public Policy, SPIA, Vir
   - `assets/data/media.js` — media appearances (`window.MEDIA`, `OUTLETS`, `TOPIC_LABELS`, `TYPE_LABELS`). Generated; see Media database below.
   - `assets/data/publications.js` — `window.PUBS`; `selected: true` puts it on the home page.
 - Design tokens are the `:root` variables at the top of `main.css` (paper, ink, rule, red accent, link). Fonts: Archivo (headings, UI) and Source Serif 4 (body). Don't add typefaces or colors outside the token set.
+- Name: **David Bieri**, no middle initial, on the site and in the CV (including "Bieri, D." in the CV's publication lists). The JSON-LD `alternateName` keeps "David S. Bieri" and "David Stephan Bieri" so search engines connect the old bylines.
 - Title used everywhere: "Associate Professor of Public Policy, School of Public and International Affairs, Virginia Tech". Handles: X @space_economy, Instagram @raumwirtschaft. Email bieri@vt.edu.
 - Structured data (Person/WebSite JSON-LD) is in `index.html`; keep it consistent with the Wikidata item and the SPIA page.
 - Nav and footer are duplicated per page by hand; when they change, change all six pages (`index, about, research, publications, media, teaching`).
