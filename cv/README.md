@@ -17,6 +17,15 @@ online archive; delete the line for the complete list (adds ~6 pages).
 - **Languages and citizenship** uncommented. Faculty Senate and Kellogg Research Fellow added to appointments.
 - Title "Associate Professor of Public Policy" throughout; harvard package dropped; two dead Michigan URLs repointed; typos fixed.
 
+## Added after a full read of FARs 2023–2025 (17 Nov)
+- Placements updated: Gebresselassie now Assistant Professor at York University; Agnew Associate Director, CALS Global.
+- Dissertations added: Manthapuri (2025); in progress Detwiler (co-chair), Cambridge, Conley, Jiao; committee service for McDonald and Alhamdan.
+- Master's: Heltzel (chair, 2025); Washington placement at TCU.
+- Service: Provost's Academic Program Review (FIBL, 2025); CLAHS APR (AHRM, 2023); CLAHS Faculty Council 2022–25; Lösch-Gesellschaft VP end-dated 2025.
+- Refereeing: Review of Economics & Statistics, AJAE. Teaching: online REAL 2004 since Summer 2024; Pathways course in development.
+- Research leadership: transatlantic collaborations line (Rieter, Dathe, Hedtke, Rose/Putsch).
+- Not added, by design: reference letters, CITI trainings, workload percentages, family leave.
+
 ## Sources
 Elements export (media), 2022 P&T dossier (`pt_dossier_bieri_main_reformatted.docx`), FARs 2023–2025, legacy site.
 Facts not in those sources were not added. Placements are as of the 2022 dossier — update where you know of moves.
