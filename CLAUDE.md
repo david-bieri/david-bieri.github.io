@@ -22,7 +22,7 @@ Personal site of David S. Bieri (Associate Professor of Public Policy, SPIA, Vir
 - Migrate legacy david-bieri.com assets (PDFs, audio) into `assets/docs/` and add forwarding stubs for old URLs.
 
 ## Media database (added 17 Nov)
-- **Source of truth is `data/media.csv`** (266 rows, 2014–2026). Edit it in Excel/Sheets or by hand, then run `python3 tools/build_media.py`, which regenerates `assets/data/media.js` and any missing `assets/logos/<slug>.svg` wordmarks. Never edit `media.js` directly.
+- **Source of truth is `data/media.csv`** (290 rows, 2014–2026). Edit it in Excel/Sheets or by hand, then run `python3 tools/build_media.py`, which regenerates `assets/data/media.js` and any missing `assets/logos/<slug>.svg` wordmarks. Never edit `media.js` directly.
 - Columns are documented at the top of `tools/build_media.py`. `featured=yes` and `quote` drive the cards; `logo` is shared across network affiliates (`cbs-affiliate`, `abc-affiliate`, `fox-affiliate`).
 - Logos are monochrome typographic wordmarks (`fill: currentColor`, invert in dark mode). To use a real mark, drop a monochrome SVG at `assets/logos/<slug>.svg`; the build script never overwrites an existing file.
 - The media section is called **In the news** everywhere (nav, home, media.html). Every format is treated the same: tv shows as Watch, radio/podcast as Listen, print/online as Read.
