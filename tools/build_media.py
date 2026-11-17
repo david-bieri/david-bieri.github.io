@@ -75,6 +75,23 @@ def prom(o):
 outlets = sorted(freq, key=lambda o: (prom(o), tier_rank.get(tier[o], 5), -freq[o], o))
 wall = [{"name": o, "logo": logo[o], "n": freq[o], "tier": tier[o]} for o in outlets]
 
+# Coverage band (media page and home page): the outlets shown as marks, in this order. Each entry is
+# (slug for assets/logos/<slug>.svg, display name, logo slugs it covers in media.csv). Everything else is
+# listed as plain text under the band. Drop an official monochrome SVG at assets/logos/<slug>.svg to
+# replace the typographic wordmark (tools/prep_logo.py does the clean-up).
+BAND = [("wsj", "The Wall Street Journal", ["wsj"]), ("wapo", "The Washington Post", ["wapo"]),
+    ("time", "TIME", ["time"]), ("newsweek", "Newsweek", ["newsweek"]), ("cnn", "CNN", ["cnn"]),
+    ("cbs", "CBS", ["cbs", "cbs-affiliate"]), ("abc", "ABC", ["abc", "abc-affiliate"]), ("ap", "Associated Press", ["ap"]),
+    ("politico", "POLITICO", ["politico"]), ("thehill", "The Hill", ["thehill"]), ("guardian", "The Guardian", ["guardian"]),
+    ("aljazeera", "Al Jazeera", ["aljazeera"]), ("dw", "DW", ["dw"]), ("npr", "NPR", ["npr"]),
+    ("marketplace", "Marketplace", ["marketplace"]), ("fox5", "FOX 5 DC", ["fox5"])]
+in_band = {s for _, _, ss in BAND for s in ss} | {"fox", "fox-affiliate", "nbc-affiliate"}
+# Plain-text line under the band: prominent outlets first, then international, then national. Aggregators skipped.
+SKIP_ALSO = {"Newswise", "Forward Pathway", "WalletHub", "Investment Watch Blog", "Whiterock Locators", "AInvest", "Coin Rivet", "EFN", "Fox LiveNOW", "KNX Radio (Los Angeles)"}
+cand = [o for o in wall if o["logo"] not in in_band and o["tier"] in ("national", "international") and o["name"] not in SKIP_ALSO]
+also = [o["name"] for o in sorted(cand, key=lambda o: (prom(o["name"]) == 99, o["tier"] != "international"))]
+band = [{"slug": k, "name": n, "logos": ss} for k, n, ss in BAND]
+
 TYPE_LABELS = {"tv": "Television", "radio": "Radio", "print": "Print", "online": "Online", "podcast": "Podcast"}
 
 with open(OUT, "w", encoding="utf-8") as f:
@@ -83,6 +100,8 @@ with open(OUT, "w", encoding="utf-8") as f:
     f.write("window.OUTLETS = " + json.dumps(wall, ensure_ascii=False) + ";\n")
     f.write("window.TOPIC_LABELS = " + json.dumps(TOPIC_LABELS) + ";\n")
     f.write("window.TYPE_LABELS = " + json.dumps(TYPE_LABELS) + ";\n")
+    f.write("window.BAND = " + json.dumps(band, ensure_ascii=False) + ";\n")
+    f.write("window.ALSO = " + json.dumps(also[:22], ensure_ascii=False) + ";\n")
 
 # Monochrome wordmarks: one SVG per logo slug, text set in the site's sans. Replace any file with a real
 # monochrome mark if you have usage rights; the renderer just loads assets/logos/<slug>.svg.

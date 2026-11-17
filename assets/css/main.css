@@ -140,6 +140,8 @@ audio { display: block; width: 100%; max-width: 420px; margin-top: 8px; height: 
 .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
 .row { display: grid; grid-template-columns: 110px 1fr auto; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
 .row .d { font-family: var(--sans); font-size: .85rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.row > div { min-width: 0; }
+.row .t, .row .o { overflow-wrap: anywhere; }
 .row .t a { color: var(--ink); text-decoration: none; }
 .row .t a:hover { text-decoration: underline; }
 .row .o { font-family: var(--sans); font-weight: 600; font-size: .95rem; }
@@ -239,3 +241,25 @@ button.btn.ghost { border: 1px solid var(--ink); }
 .tile .when { font-family: var(--sans); font-size: .78rem; font-weight: 600; color: var(--red); }
 .tile .head { font-size: 1rem; line-height: 1.4; color: var(--ink-2); }
 .tile .outs { margin-top: auto; font-family: var(--sans); font-size: .78rem; line-height: 1.5; color: var(--ink-3); }
+
+/* Coverage band: official marks for the top outlets, the rest as text */
+.band-marks { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); align-items: center; justify-items: center; gap: 4px 12px; }
+.mark { display: inline-flex; align-items: center; justify-content: center; padding: 10px 6px 12px; color: var(--ink-3); text-decoration: none; transition: color .15s var(--ease); }
+.mark:hover, .mark:focus-visible, .mark[aria-current="true"] { color: var(--ink); }
+.mark[aria-current="true"] { box-shadow: inset 0 -2px 0 var(--red); }
+.mk { display: block; width: 110px; height: 26px; max-width: 100%; }
+.mark { max-width: 100%; }
+.mk svg, .mk img { display: block; width: 100%; height: 100%; }
+.mk.is-wm { width: auto; height: auto; }
+.wm { display: block; font-family: var(--sans); font-weight: 700; font-size: .95rem; letter-spacing: -0.015em; line-height: 1.15; text-align: center; }
+@media (prefers-color-scheme: dark) { .mk img { filter: invert(1) hue-rotate(180deg); opacity: .8; } }
+.band-panel { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-top: 16px; padding: 14px 18px; background: var(--paper-2); min-height: 56px; }
+.band-panel .when { font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--red); white-space: nowrap; }
+.band-panel .t { flex: 1 1 380px; font-size: 1.05rem; line-height: 1.35; }
+.band-panel .t a, .band-panel .t .nolink { color: var(--ink); text-decoration: none; }
+.band-panel .t a:hover { text-decoration: underline; }
+.band-panel .all { font-family: var(--sans); font-size: .85rem; white-space: nowrap; }
+.band-also { margin: 16px 0 0; max-width: none; font-family: var(--sans); font-size: .82rem; line-height: 1.6; color: var(--ink-2); }
+.band-also b { color: var(--ink); font-weight: 600; }
+.coverage { padding: clamp(22px, 3vw, 32px) 0; border-bottom: 1px solid var(--rule); }
+@media (max-width: 640px) { .band-marks { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 6px; } .wm { font-size: .76rem; } .band-panel .all { white-space: normal; } }

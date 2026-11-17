@@ -103,18 +103,91 @@
     }).join("");
   }
 
+  /* Coverage band: one mark per top outlet. SVGs are inlined so fill="currentColor" follows the page colour
+     (and dark mode); each mark gets the same visual area whatever its proportions. */
+  var BAND = window.BAND || [];
+  function bandItems(b) { return media.filter(function (m) { return b.logos.indexOf(m.logo) > -1; }); }
+  function sizeMark(el, w, h, area) {
+    var ar = w && h ? w / h : 5, mw = Math.sqrt(area * ar), mh = Math.sqrt(area / ar);
+    if (mw > 168) { mh *= 168 / mw; mw = 168; } if (mh > 44) { mw *= 44 / mh; mh = 44; }
+    el.style.width = Math.round(mw) + "px"; el.style.height = Math.round(mh) + "px";
+  }
+  function loadMark(el, slug, area, name) {
+    var url = "assets/logos/" + slug + ".svg";
+    var fallback = function () { el.innerHTML = '<img src="' + url + '" alt="">'; sizeMark(el, 240, 48, area); };
+    if (!window.fetch || location.protocol === "file:") return fallback();
+    fetch(url).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (txt) {
+      var doc = new DOMParser().parseFromString(txt, "image/svg+xml"), svg = doc.documentElement;
+      if (!svg || svg.nodeName.toLowerCase() !== "svg") throw 0;
+      if (svg.querySelector("text")) {  // generated placeholder wordmark: set the name in the site's own type instead
+        el.classList.add("is-wm"); el.innerHTML = '<span class="wm">' + esc(name) + '</span>'; return;
+      }
+      Array.prototype.forEach.call(svg.querySelectorAll("script,foreignObject"), function (n) { n.remove(); });
+      var vb = (svg.getAttribute("viewBox") || "").split(/[\s,]+/).map(Number);
+      var w = vb[2] || parseFloat(svg.getAttribute("width")), h = vb[3] || parseFloat(svg.getAttribute("height"));
+      if (!svg.getAttribute("viewBox") && w && h) svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+      svg.removeAttribute("width"); svg.removeAttribute("height");
+      svg.setAttribute("aria-hidden", "true"); svg.setAttribute("focusable", "false");
+      el.innerHTML = ""; el.appendChild(document.importNode(svg, true)); sizeMark(el, w, h, area);
+    }).catch(fallback);
+  }
+  function renderBand(root, opts) {
+    var items = BAND.map(function (b) { var xs = bandItems(b); return { b: b, xs: xs, latest: xs.filter(function (m) { return !m.weak; })[0] || xs[0] }; })
+      .filter(function (x) { return x.xs.length; });
+    var area = opts.area || 1500, byName = {};
+    items.forEach(function (x) { byName[x.b.slug] = x.b.name; });
+    root.innerHTML = '<div class="band-marks">' + items.map(function (x) {
+      return '<a class="mark" href="' + opts.href(x.b.slug) + '" data-k="' + x.b.slug + '" aria-label="' + esc(x.b.name) + ': all coverage"><span class="mk"></span></a>';
+    }).join("") + '</div>' + (opts.panel ? '<div class="band-panel" aria-live="polite"></div>' : '') +
+      (opts.also && window.ALSO ? '<p class="band-also"><b>Also:</b> ' + window.ALSO.map(esc).join(", ") + ', and stations across Virginia, Washington and beyond.</p>' : '');
+    Array.prototype.forEach.call(root.querySelectorAll(".mark"), function (a) { loadMark(a.querySelector(".mk"), a.dataset.k, area, byName[a.dataset.k]); });
+    var byKey = {}; items.forEach(function (x) { byKey[x.b.slug] = x; });
+    var panel = root.querySelector(".band-panel");
+    var dflt = items.slice().sort(function (a, b) { return a.latest.date < b.latest.date ? 1 : -1; })[0];
+    function show(k) {
+      if (!panel) return; var x = byKey[k] || dflt; if (!x) return;
+      var m = x.latest;
+      panel.innerHTML = '<span class="when">Latest on ' + esc(x.b.name) + ' · ' + fmtShort(m.date) + '</span>' +
+        '<span class="t">' + titleLink(m) + '</span>' +
+        '<a class="all" href="' + opts.href(x.b.slug) + '">All coverage from ' + esc(x.b.name) + ' →</a>';
+    }
+    root.addEventListener("mouseover", function (e) { var a = e.target.closest(".mark"); if (a) show(a.dataset.k); });
+    root.addEventListener("focusin", function (e) { var a = e.target.closest(".mark"); if (a) show(a.dataset.k); });
+    root.addEventListener("mouseleave", function () { show(root.dataset.sel); });
+    var api = {
+      select: function (k) {
+        root.dataset.sel = k || "";
+        Array.prototype.forEach.call(root.querySelectorAll(".mark"), function (a) {
+          if (a.dataset.k === k) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+        });
+        show(k);
+      },
+      name: function (k) { return byKey[k] && byKey[k].b.name; },
+      logos: function (k) { return byKey[k] ? byKey[k].b.logos : null; }
+    };
+    api.select("");
+    return api;
+  }
+  var homeBand = $("#band-home");
+  if (homeBand) renderBand(homeBand, { area: 1300, href: function (k) { return "media.html#outlet=" + k; } });
+
   /* In the news (media page): issue filter, lead, also-recent, card grid, archive */
   var news = $("#news");
   if (news) {
-    var st = { issue: "all", va: false, q: "", shown: 12 };
+    var st = { issue: "all", va: false, outlet: "", q: "", shown: 12 };
+    var bandRoot = $("#band"), band = bandRoot ? renderBand(bandRoot, { panel: true, also: true, area: 1500, href: function (k) { return "#outlet=" + k; } }) : null;
     function fromHash() {
-      st.issue = "all"; st.va = false;
+      st.issue = "all"; st.va = false; st.outlet = "";
       location.hash.replace(/^#/, "").split("&").forEach(function (h) {
         if (TL[h]) st.issue = h; if (h === "virginia") st.va = true;
+        if (h.indexOf("outlet=") === 0 && band && band.logos(h.slice(7))) st.outlet = h.slice(7);
       });
     }
     fromHash();
-    window.addEventListener("hashchange", function () { fromHash(); st.shown = 12; render(); });
+    window.addEventListener("hashchange", function () {
+      fromHash(); st.shown = 12; render();
+      if (st.outlet) { var n = $("#news"); if (n && n.getBoundingClientRect().top < 0) n.scrollIntoView(); }
+    });
     var upd = $("#updated"); if (upd && media.length) upd.textContent = "Updated " + fmtShort(media[0].date);
     var bar = $("#issue-chips");
     bar.innerHTML = '<button class="chip" data-v="all">All issues</button>' +
@@ -122,7 +195,7 @@
       '<span class="sep" aria-hidden="true"></span><button class="chip place" data-va="1">Virginia</button>';
     bar.addEventListener("click", function (e) {
       var b = e.target.closest(".chip"); if (!b) return;
-      if (b.dataset.va) st.va = !st.va; else st.issue = b.dataset.v;
+      if (b.dataset.va) st.va = !st.va; else if (b.dataset.clear) st.outlet = ""; else st.issue = b.dataset.v;
       st.shown = 12; render(true);
     });
     var more = $("#more");
@@ -130,7 +203,7 @@
 
     var list = $("#archive");
     list.innerHTML = media.map(function (m) {
-      return '<li class="row" data-topic="' + esc(m.topic) + '" data-va="' + (m.va ? 1 : 0) + '" data-text="' + esc((m.outlet + " " + (m.program || "") + " " + m.title + " " + (m.quote || "")).toLowerCase()) + '">' +
+      return '<li class="row" data-logo="' + esc(m.logo || "") + '" data-topic="' + esc(m.topic) + '" data-va="' + (m.va ? 1 : 0) + '" data-text="' + esc((m.outlet + " " + (m.program || "") + " " + m.title + " " + (m.quote || "")).toLowerCase()) + '">' +
         '<div class="d">' + fmt(m.date) + '</div>' +
         '<div><div class="o">' + esc(m.outlet) + (m.program && m.program !== m.outlet && m.program !== m.title ? ' <span class="muted">· ' + esc(m.program) + '</span>' : '') + '</div><div class="t">' + titleLink(m) + '</div>' +
         (m.quote ? '<div class="q">“' + esc(m.quote) + '”</div>' : '') + audioEl(m) + '</div>' +
@@ -140,14 +213,17 @@
     var search = $("#search");
     if (search) search.addEventListener("input", function () { st.q = search.value.trim().toLowerCase(); render(); });
 
-    function keep(m) { return (st.issue === "all" || m.topic === st.issue) && (!st.va || m.va); }
+    function keep(m) { return (st.issue === "all" || m.topic === st.issue) && (!st.va || m.va) && (!st.outlet || band.logos(st.outlet).indexOf(m.logo) > -1); }
     function card(m) {
       return '<article class="ncard">' + fmtTag(m) + '<div class="t">' + titleLink(m) + '</div>' +
         (m.quote ? '<p class="q">“' + esc(m.quote) + '”</p>' : '') + audioEl(m) +
         '<div class="meta">' + byline(m) + '</div></article>';
     }
     function render(fromChip) {
-      Array.prototype.forEach.call(bar.querySelectorAll(".chip"), function (c) {
+      var oc = bar.querySelector("[data-clear]"); if (oc) oc.remove();
+      if (st.outlet) bar.insertAdjacentHTML("beforeend", '<button class="chip place" data-clear="1" aria-pressed="true" aria-label="Remove outlet filter">' + esc(band.name(st.outlet)) + ' ✕</button>');
+      if (band) band.select(st.outlet);
+      Array.prototype.forEach.call(bar.querySelectorAll(".chip:not([data-clear])"), function (c) {
         c.setAttribute("aria-pressed", c.dataset.va ? st.va : c.dataset.v === st.issue);
       });
       var xs = strong.filter(keep), lead = xs[0], also = xs.slice(1, 5), grid = xs.slice(5, 5 + st.shown);
@@ -164,17 +240,18 @@
       $("#news-grid").hidden = !grid.length;
       if (more) more.hidden = xs.length <= 5 + st.shown;
       var shown = 0;
+      var ol = st.outlet ? band.logos(st.outlet) : null;
       Array.prototype.forEach.call(rows, function (r) {
-        var ok = (st.issue === "all" || r.dataset.topic === st.issue) && (!st.va || r.dataset.va === "1") &&
+        var ok = (st.issue === "all" || r.dataset.topic === st.issue) && (!st.va || r.dataset.va === "1") && (!ol || ol.indexOf(r.dataset.logo) > -1) &&
                  (!st.q || r.dataset.text.indexOf(st.q) > -1);
         r.classList.toggle("hidden", !ok); if (ok) shown++;
       });
       $("#empty").hidden = shown > 0;
       $("#count").textContent = shown + " of " + rows.length;
-      var label = (st.issue === "all" ? "" : TL[st.issue]) + (st.va ? (st.issue === "all" ? "" : ", ") + "Virginia" : "");
+      var label = [st.outlet ? band.name(st.outlet) : "", st.issue === "all" ? "" : TL[st.issue], st.va ? "Virginia" : ""].filter(Boolean).join(", ");
       $("#archive-scope").textContent = label ? "Showing: " + label : "";
       if (fromChip && history.replaceState) {
-        var h = [st.issue === "all" ? "" : st.issue, st.va ? "virginia" : ""].filter(Boolean).join("&");
+        var h = [st.issue === "all" ? "" : st.issue, st.va ? "virginia" : "", st.outlet ? "outlet=" + st.outlet : ""].filter(Boolean).join("&");
         history.replaceState(null, "", h ? "#" + h : location.pathname);
       }
     }
