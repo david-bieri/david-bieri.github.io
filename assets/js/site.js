@@ -5,6 +5,13 @@
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   function fmt(d) { var p = d.split("-"); return MONTHS[+p[1] - 1] + " " + (+p[2]) + ", " + p[0]; }
+  function logoImg(m, cls) {
+    return m.logo ? '<img class="' + (cls || 'logo') + '" src="assets/logos/' + esc(m.logo) + '.svg" alt="" loading="lazy" onerror="this.remove()">' : '';
+  }
+  function titleLink(m, cls) {
+    return m.url ? '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + '</a>' : '<span class="' + (cls || 'nolink') + '">' + esc(m.title) + '</span>';
+  }
+  function audioEl(m) { return m.audio ? '<audio controls preload="none" src="' + esc(m.audio) + '"></audio>' : ''; }
   function fmtShort(d) { var p = d.split("-"); return MONTHS[+p[1] - 1] + " " + p[0]; }
 
   /* Nav */
@@ -19,15 +26,15 @@
   /* Wire strip: latest 6 */
   var wire = $("#wire-list");
   if (wire) wire.innerHTML = media.slice(0, 6).map(function (m) {
-    return '<li><b>' + esc(m.outlet) + '</b><a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + '</a> <span class="muted">' + fmtShort(m.date) + '</span></li>';
+    return '<li><b>' + esc(m.outlet) + '</b>' + titleLink(m, 'plain') + ' <span class="muted">' + fmtShort(m.date) + '</span></li>';
   }).join("");
 
   /* Featured cards */
   function card(m) {
     return '<article class="card">' +
-      '<div class="outlet">' + esc(m.outlet) + '</div>' +
-      '<div class="title"><a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + '</a></div>' +
-      (m.quote ? '<p class="quote">“' + esc(m.quote) + '”</p>' : '') +
+      '<div class="outlet">' + (m.logo ? logoImg(m, 'logo card-logo') : '<span class="outlet-name">' + esc(m.outlet) + '</span>') + '</div>' +
+      '<div class="title">' + titleLink(m) + '</div>' +
+      (m.quote ? '<p class="quote">“' + esc(m.quote) + '”</p>' : '') + audioEl(m) +
       '<div class="meta">' + fmt(m.date) + ' · ' + esc(TY[m.type] || m.type) + '</div></article>';
   }
   var feat = $("#featured");
@@ -38,7 +45,13 @@
 
   /* Outlet wall */
   var wall = $("#outlets");
-  if (wall) wall.innerHTML = (window.OUTLETS || []).map(function (o) { return "<span>" + esc(o) + "</span>"; }).join("");
+  if (wall) {
+    var lim = +wall.getAttribute("data-count") || 24, seenLogo = {};
+    var picks = (window.OUTLETS || []).filter(function (o) { if (!o.logo || seenLogo[o.logo]) return false; seenLogo[o.logo] = 1; return true; }).slice(0, lim);
+    wall.innerHTML = picks.map(function (o) {
+      return '<li title="' + esc(o.name) + ' · ' + o.n + '"><img src="assets/logos/' + esc(o.logo) + '.svg" alt="' + esc(o.name) + '" loading="lazy"></li>';
+    }).join("");
+  }
 
   /* Stats */
   var stats = $("#stats");
@@ -50,7 +63,7 @@
     stats.innerHTML =
       '<div class="stat"><b>' + media.length + '+</b><span>appearances since ' + since + '</span></div>' +
       '<div class="stat"><b>' + last12 + '</b><span>in the past twelve months</span></div>' +
-      '<div class="stat"><b>' + Object.keys(outlets).length + '</b><span>outlets, national and regional</span></div>' +
+      '<div class="stat"><b>' + Object.keys(outlets).length + '</b><span>outlets, local to international</span></div>' +
       '<div class="stat"><b>' + Object.keys(countBy(media, "topic")).length + '</b><span>topics, from tariffs to the Fed</span></div>';
   }
   function isoMinus(days) { var d = new Date(); d.setDate(d.getDate() - days); return d.toISOString().slice(0, 10); }
@@ -63,8 +76,8 @@
     function row(m) {
       return '<li class="row" data-topic="' + esc(m.topic) + '" data-type="' + esc(m.type) + '" data-text="' + esc((m.outlet + " " + m.title + " " + (m.quote || "")).toLowerCase()) + '">' +
         '<div class="d">' + fmt(m.date) + '</div>' +
-        '<div><div class="o">' + esc(m.outlet) + '</div><div class="t"><a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + '</a></div>' +
-        (m.quote ? '<div class="q">“' + esc(m.quote) + '”</div>' : '') + '</div>' +
+        '<div><div class="o">' + esc(m.outlet) + (m.program && m.program !== m.outlet ? ' <span class="muted">· ' + esc(m.program) + '</span>' : '') + '</div><div class="t">' + titleLink(m) + '</div>' +
+        (m.quote ? '<div class="q">“' + esc(m.quote) + '”</div>' : '') + audioEl(m) + '</div>' +
         '<div class="k">' + esc(TY[m.type] || m.type) + '<br>' + esc(TL[m.topic] || m.topic) + '</div></li>';
     }
     list.innerHTML = media.map(row).join("");

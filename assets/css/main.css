@@ -111,10 +111,16 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .card .quote { font-style: italic; color: var(--ink-2); font-size: .95rem; line-height: 1.45; border-left: 2px solid var(--red); padding-left: 12px; margin: 4px 0 0; }
 .card .meta { margin-top: auto; padding-top: 8px; }
 
-/* Outlet wall */
-.outlets { display: flex; flex-wrap: wrap; gap: 10px 28px; font-family: var(--sans); font-weight: 600; font-size: clamp(1.1rem, 2.2vw, 1.6rem); letter-spacing: -0.02em; color: var(--ink); line-height: 1.3; }
-.outlets span { color: var(--ink); }
-.outlets span:nth-child(4n+2) { color: var(--ink-2); }
+/* Outlet wall: monochrome wordmarks */
+.outlets { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.outlets li { background: var(--paper); display: grid; place-items: center; padding: 18px 16px; min-height: 76px; color: var(--ink); }
+.outlets img { width: 100%; max-width: 140px; height: 30px; object-fit: contain; opacity: .9; }
+@media (prefers-color-scheme: dark) { .outlets img, .card-logo, .wire img { filter: invert(1) hue-rotate(180deg); } }
+.card .outlet { display: flex; align-items: center; gap: 10px; }
+.card-logo { height: 26px; width: auto; max-width: 150px; margin-left: -6px; }
+.card .outlet-name { font-family: var(--sans); font-weight: 700; font-size: .95rem; }
+.nolink { color: var(--ink); }
+audio { display: block; width: 100%; max-width: 420px; margin-top: 8px; height: 32px; }
 
 /* Stats strip */
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); border: 1px solid var(--rule); margin: 0 0 36px; }
