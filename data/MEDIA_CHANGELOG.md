@@ -70,3 +70,43 @@ and the two Earnest rent articles (2015 and 2017 are different pieces).
 100 rows still carry `title-from-url` / `title-from-program` and need real headlines; `jobs` (74) remains the
 catch-all for those. Several `online` rows still link to liberalarts.vt.edu / research.vt.edu re-posts rather than
 the outlet. The `featured` set (21) has not been re-curated.
+
+# Headline recovery and link check — 17 Nov 2026 (second pass)
+
+## What was checked
+130 of the 215 URLs were opened: all 123 on the sixteen most frequent domains (fox5dc, wfirnews, news.vt.edu,
+wfxrtv, wsls, youtube, wdbj7, wvtf, virginiabusiness, audacy, wset, marketplace, wric, 13newsnow, newswise,
+wallethub) via the browser pane, plus seven one-off pages confirmed through search. Nexstar sites (wfxrtv, wric)
+block programmatic fetches after the first page, so 12 of their URLs returned 403 and are **unverified, not dead**.
+The remaining ~85 one-off URLs (one per domain) were **not checked**; nothing suggests they are dead.
+
+## Headlines
+- 58 placeholder rows now carry the outlet's real headline and the `title-from-*` note is cleared (19 FOX 5 DC
+  clips, 14 WFIR, 9 WSLS, 7 WDBJ7, 6 WVTF, 5 RTVI, Marketplace, VT News, WalletHub, American Banker, TND, WSJ).
+- RTVI rows: the YouTube titles are the whole programme's Russian headline; they are given in English translation,
+  marked "(live US-economy segment)", because the CV generator strips non-Latin text. Programme name stays in `program`.
+- 42 placeholders remain: 24 with no URL (FOX 5 DC and KNUS live hits 2019–2023, KNX, WMAL, WJLA, WSET, WUSA9,
+  SkyNews Arabia, NBC LX) and 18 whose pages could not be fetched (Nexstar 403s and one-off domains). For these the
+  Outlook "Media" folder is the only remaining source.
+
+## Dead links (URL blanked, note added)
+- KNX/Audacy episode pages for 2023-11-14, 2024-07-11 and 2026-04-10 (Audacy removed the episode archive)
+- KNUS YouTube uploads for 2021-02-05 and 2021-04-09 (videos removed)
+- WVEC 13News Now DST video, 2026-10-15 (TEGNA video page redirects to 404)
+- WalletHub renters page (2020) and mortgage-calculator page (2016): pages live but the expert panel has rotated and
+  no longer carries his commentary
+
+## URLs updated to their current location
+Marketplace (4 rows → `/story/…` canonical URLs), WVTF 2018 `/post/…` (2 rows → `/news/2018-05-…`), Virginia
+Business `/article/the-prophet/` → `/the-prophet/`, one tracking parameter stripped.
+
+## Row corrections surfaced by the check
+- `2307673` (15 May 2023, "VT professor explains debt ceiling") is a WDBJ7 story, not WSLS — outlet/logo corrected.
+- The wset.com URL on `3430872` (2 Mar 2026) is actually the 25 Mar article; moved to `x-2026-03-25-abc-affiliate`
+  with its headline. The 2 Mar segment has no URL.
+- 17 rows re-tagged from `jobs` into the issue their headline shows (Fed decisions → money, OPEC/gas → world, etc.).
+  `jobs` is down from 74 to 58.
+
+## Step 3 (VT re-post URLs)
+Only one row still linked to a VT re-post: Kiplinger 1 Apr 2025 (`research.vt.edu`). Kiplinger's own URL was not found;
+left as is. The liberalarts.vt.edu links were all on duplicate rows removed in the first pass.
