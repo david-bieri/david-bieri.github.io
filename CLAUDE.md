@@ -1,0 +1,22 @@
+# david-bieri.com — working notes for Claude Code
+
+Personal site of David S. Bieri (Associate Professor of Public Policy, SPIA, Virginia Tech). GitHub Pages user site; custom domain via `CNAME`.
+
+## Stack and conventions
+- Plain HTML, one stylesheet (`assets/css/main.css`), one script (`assets/js/site.js`). No framework, no build step, no bundler, no analytics. Keep it that way.
+- Content that changes often lives in data files, not markup:
+  - `assets/data/media.js` — press appearances (`window.MEDIA`, `OUTLETS`, `TOPIC_LABELS`, `TYPE_LABELS`). `featured: true` surfaces an item on the home page and in "Selected appearances".
+  - `assets/data/publications.js` — `window.PUBS`; `selected: true` puts it on the home page.
+- Design tokens are the `:root` variables at the top of `main.css` (paper, ink, rule, red accent, link). Fonts: Archivo (headings, UI) and Source Serif 4 (body). Don't add typefaces or colors outside the token set.
+- Title used everywhere: "Associate Professor of Public Policy, School of Public and International Affairs, Virginia Tech". Handles: X @space_economy, Instagram @raumwirtschaft. Email bieri@vt.edu.
+- Structured data (Person/WebSite JSON-LD) is in `index.html`; keep it consistent with the Wikidata item and the SPIA page.
+- Nav and footer are duplicated per page by hand; when they change, change all six pages (`index, about, research, publications, media, teaching`).
+
+## Checks before committing
+- Open each page at desktop and ~390px width; no horizontal scroll, filters on `media.html` work, console clean except the optional headshot.
+- Every new media entry has `date` (YYYY-MM-DD), `outlet`, `type`, `topic`, `title`, `url`.
+
+## Open items
+- `assets/images/headshot.jpg` and `assets/docs/CV_DSBieri.pdf` to be added by David.
+- Verify `publications.js` against the CV; verify media URLs that still point at VT media-mentions pages.
+- Migrate legacy david-bieri.com assets (PDFs, audio) into `assets/docs/` and add forwarding stubs for old URLs.

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://david-bieri.com/sitemap.xml
