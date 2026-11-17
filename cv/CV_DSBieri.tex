@@ -66,6 +66,20 @@
 %\setlength{\textheight}{22cm}
 %\setlength{\oddsidemargin}{8mm}\setlength{\evensidemargin}{8mm}
 
+
+% ---- Hanging-label list used for date-led sections (replaces tabbing, which
+% ---- never wraps and silently runs into the margin). Label width = optional arg.
+\setlength{\emergencystretch}{1.5em} % lets TeX loosen a line rather than run into the margin
+\hyphenation{Wirt-schafts-wissen-schaften Ge-bres-se-las-sie Pa-limp-sest Moon-lights Michi-gan}
+\newlength{\cvlabelw}
+\newenvironment{cvlist}[1][2.5cm]{%
+  \setlength{\cvlabelw}{#1}%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{\cvlabelw}\setlength{\labelwidth}{\cvlabelw}%
+    \setlength{\labelsep}{0pt}\setlength{\itemindent}{0pt}\setlength{\listparindent}{0pt}%
+    \setlength{\itemsep}{4pt}\setlength{\parsep}{0pt}\setlength{\topsep}{3pt}\setlength{\partopsep}{0pt}%
+    \renewcommand{\makelabel}[1]{##1\hfil}}}{\end{list}}
+
 \newcommand{\CVmediaRecent}{2} % years of media listed in full; delete this line for the complete list
 \begin{document}
 \thispagestyle{empty}
@@ -75,10 +89,8 @@
 \begin{tabbing}
 \noindent \=Associate Professor of Public Policy\hspace{2.6cm}\=Associate Professor (affiliate)\\
 \>\emph{School of Public \& International Affairs}\>\emph{Department of Economics}\\[6pt]
-%\>Associate Professor (affiliate)\>\\
-%\>\emph{Department of Economics}\>\\[6pt]
 \>\textsc{Virginia Tech}\>Affiliated Faculty\\
-\>Major Williams Hall (Office 241)\>\emph{Blackwood Department of Real Estate}\\[6pt]
+\>Major Williams Hall (Office 241)\>\emph{Blackwood Department of Real Estate}\\
 \>220 Stanger Street (0113)\>Email:\hspace{1.5ex}\texttt{bieri@vt.edu}\\
 \>Blacksburg, VA 24061\>Phone:\hspace{1ex}(540) 231-3802\\
 \end{tabbing}
@@ -105,19 +117,20 @@
 \noindent\=2015 -- \hspace{7ex}\=\textbf{Virginia Tech}, Blacksburg:\\
 \>\>\emph{Associate Professor of Public Policy} (2015--)\\
 \>\>\emph{Associate Professor of Economics} (affiliate, 2017--)\\
-\>\>\emph{Affiliated Faculty}, Blackwood Department of Real Estate\\
-\>\>\emph{Philosophy, Politics, \& Economics Faculty Affiliate} (2016--); \emph{Kellogg PPE Research Fellow} (2020)\\
+\>\>\emph{Affiliated Faculty, Blackwood Department of Real Estate}\\
+\>\>\emph{Philosophy, Politics, \& Economics Faculty Affiliate} (2016--)\\
+\>\>\emph{Kellogg PPE Research Fellow} (2020)\\
 \>\>\emph{SPIA Representative, Faculty Senate} (2025--2028)\\
 \>\>\emph{Research Associate Professor, Global Forum on Urban \& Regional Resilience} (2015--2022)\\
-\>\>\emph{Junior Real Estate Faculty Fellow}, Blackwood Real Estate Program (endowed, 2016--2019)\\[4pt]
-\>2010 -- 2014 \hspace{7ex}\>\textbf{University of Michigan}, Ann Arbor: \emph{Assistant Professor}\\
+\>\>\emph{Junior Real Estate Faculty Fellow, Blackwood Real Estate Program} (endowed, 2016--2019)\\[4pt]
+\>2010 -- 2014 \hspace{7ex}\>\textbf{University of Michigan}, Ann Arbor: \emph{Assistant Professor},\\
 \>\>Urban and Regional Planning Program, Taubman College of Architecture and Urban Planning
 \end{tabbing}
 
 \subsection*{Education}
 \begin{tabbing}
-\noindent \=Ph.D.\hspace{8ex}\=\textbf{Virginia Tech}, \emph{School of Public \& International Affairs} (2010)\\[4pt]
-%\>\>Dissertation: \enquote{Location Choice, Linkages, and the Spatial Economy}\\
+\noindent \=Ph.D.\hspace{8ex}\=\textbf{Virginia Tech}, \emph{School of Public \& International Affairs} (2010),\\
+\>\>Dissertation: \enquote{Location Choice, Linkages, and the Spatial Economy}\\[4pt]
 \>M.Sc.\>\textbf{Durham University}, UK. \emph{Corporate \& International Finance} (1998)\\[4pt]
 \>B.Sc. (Hons) \>\textbf{London School of Economics \& Political Science}, \emph{Economics} (1997)
 \end{tabbing}
@@ -159,7 +172,7 @@
 \renewcommand{\section}[2]{}
 \begin{thebibliography}{100}
 \bibitem[B1]{Bieri2026a}
-\textsc{Bieri, D.} (2026): \emph{August L\"{o}sch: Briefe / Letters, 1926--1945 (with accompanying correspondence from the years 1945--1985)}. \href{https://www.metropolis-verlag.de/August-Loesch---Briefe--Letters/1628/book.do}{Beitr\"{a}ge zur Geschichte der deutschsprachigen \"{O}konomie}, Vol.~53, Metropolis Verlag, Marburg. 1,074 pp.\\[2pt]
+\textsc{Bieri, D.} (2026): \emph{August L\"{o}sch: Briefe / Letters, 1927--1945 (with accompanying correspondence from the years 1945--1996)}. \href{https://www.metropolis-verlag.de/August-Loesch---Briefe--Letters/1628/book.do}{Beitr\"{a}ge zur Geschichte der deutschsprachigen \"{O}konomie}, Vol.~53, Metropolis Verlag, Marburg. 1,076 pp.\\[2pt]
 \noindent A critical edition of 450 letters from German, Swiss and American archives, with a new intellectual biography, commentary, indices and genealogies. The correspondence documents the development of German business-cycle theory in the interwar years, the transatlantic networks of \'{e}migr\'{e} economists after 1933, and L\"{o}sch's resistance to the Nazi regime. Funded by the History of Economics Society and the Kellogg Center for PPE; featured in the \emph{Frankfurter Allgemeine Zeitung}.
 
 \bibitem[B2]{Bieri2023}
@@ -182,13 +195,13 @@
 \textsc{Bieri, D., N.V. Kuminoff {\small and} J.C. Pope} (2023): \enquote{\href{https://www.sciencedirect.com/science/article/pii/S0095069622000766}{National Expenditures on Local Amenities},} \emph{Journal of Environmental Economics \& Management}, 117, 102717.
 
 \bibitem[A4]{BieriDawkins2019}
-\textsc{Bieri, D.  {\small and} C.J. Dawkins} (2019):  \href{https://onlinelibrary.wiley.com/doi/abs/10.1111/jors.12400}{\enquote{Amenities, Affordability, and Housing Vouchers},} \emph{Journal of Regional Science}, 56(1), 56--82.
+\textsc{Bieri, D.  {\small and} C.J. Dawkins} (2019):  \href{https://onlinelibrary.wiley.com/doi/abs/10.1111/jors.12400}{\enquote{Amenities, Affordability, and Housing Vouchers},} \emph{Journal of Regional Science}, 59(1), 56--82. % volume corrected 56 -> 59 (2019); please verify
 
 \bibitem[A5]{Bieri2017}
 \textsc{Bieri, D.} (2017): \enquote{\href{http://www.tandfonline.com/doi/full/10.1080/10511482.2017.1298211}{Managing `Cataclysmic Money': How Financial Regulation Matters for the Future of U.S. Housing Policy},} \emph{Housing Policy Debate}, 27(3), 476--482.
 
 \bibitem[A6]{BieriDawkins2016}
-\textsc{Bieri, D.  {\small and} C.J. Dawkins} (2016):  \enquote{\href{http://www.tandfonline.com/doi/full/10.1080/10511482.2016.1188844}{Quality of Life, Transportation Costs, and Federal Housing Assistance: Leveling the Playing Field},} \emph{Housing Policy Debate}, 26(4--5): 646--669.
+\textsc{Bieri, D.  {\small and} C.J. Dawkins} (2016):  \enquote{\href{http://www.tandfonline.com/doi/full/10.1080/10511482.2016.1188844}{Quality of Life, Transportation Costs, and Federal Housing Assistance: Leveling the Playing Field},} \emph{Housing Policy Debate}, 26(4--5), 646--669.
 
 \bibitem[A7]{Bieri2015}
 \textsc{Bieri, D.} (2015): \enquote{\href{http://epn.sagepub.com/content/47/12/2429?etoc}{Crowdfunding the City: The End of \enquote{Cataclysmic Money}?},} \emph{Environment \& Planning A}, 47(12), 2429--2435.
@@ -271,7 +284,7 @@
 \begingroup
 \renewcommand{\section}[2]{}
 \begin{thebibliography}{100}
-\bibitem[W1]{Bieri2026wp}
+\bibitem[W1]{Bieri2026w}
 \textsc{Bieri, D.} (2026): \enquote{The Regulatory State of Our Financial Union: Prediction Markets, Regulatory Carry and the Enclosure of Jurisdiction, 1863--2026,} working paper, Virginia Tech.
 
 \bibitem[W2]{Bieri2019}
@@ -295,13 +308,13 @@
 \textsc{Bieri, D.} (2014): \href{https://david-bieri.com/legacy/docs/MSFF_PSELab_v0.pdf}{\emph{Moonlights, Sunspots, and Frontier Finance: On the Nexus between Money, Credit and Urban Form}}, Political Space Economy Lab, Ann Arbor, MI.
 
 \bibitem[W8]{Bieri2012a}
-\textsc{Bieri, D., P.L. Knox,  {\small and} F. Wei} (2012): \enquote{\href{https://david-bieri.com/legacy/docs/SocialEcologies_BKW_Jun12.pdf}{Changing Social Ecologies of U.S. Suburban Areas, 1960-2000},} mimeograph.
+\textsc{Bieri, D., P.L. Knox,  {\small and} F. Wei} (2012): \enquote{\href{https://david-bieri.com/legacy/docs/SocialEcologies_BKW_Jun12.pdf}{Changing Social Ecologies of U.S. Suburban Areas, 1960--2000},} mimeograph.
 
 \bibitem[W9]{Bieri2010b}
 \textsc{Bieri, D.} (2010): \enquote{\href{http://papers.ssrn.com/sol3/papers.cfm?abstract_id=989787}{The Transformation Problem: A Tale of Two Interpretations},} mimeograph.
 
 \bibitem[W10]{Bieri2001}
-\textsc{Bieri, D.} (2001): \enquote{\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2196017}{Central Bank Intervention and Risk Premia in Foreign Exchange Markets: Evidence of Daily Effects: Switzerland 1986–1995},} mimeograph.
+\textsc{Bieri, D.} (2001): \enquote{\href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2196017}{Central Bank Intervention and Risk Premia in Foreign Exchange Markets: Evidence of Daily Effects: Switzerland 1986--1995},} mimeograph.
 \end{thebibliography}
 \endgroup
 
@@ -310,7 +323,7 @@
 \renewcommand{\section}[2]{}
 \begin{thebibliography}{100}
 \bibitem[R1]{Bieri2016a}
-\textsc{Bieri, D.} (2016): \enquote{\href{http://onlinelibrary.wiley.com/doi/10.1111/1468-2427.12428/full}{Towards a Detroit School? A Review of \enquote{\emph{Reinventing Detroit: The Politics of Possibility}}, by P.M. Smith and L.O. Kirkpatrick (eds.)},} \emph{International Journal of Urban \& Regional Research}, 40(6): 1244--1246.
+\textsc{Bieri, D.} (2016): \enquote{\href{http://onlinelibrary.wiley.com/doi/10.1111/1468-2427.12428/full}{Towards a Detroit School? A Review of \enquote{\emph{Reinventing Detroit: The Politics of Possibility}}, by P.M. Smith and L.O. Kirkpatrick (eds.)},} \emph{International Journal of Urban \& Regional Research}, 40(6), 1244--1246.
 \end{thebibliography}
 \endgroup
 
@@ -319,11 +332,14 @@
 \begingroup
 \renewcommand{\section}[2]{}
 \begin{thebibliography}{100}
-\bibitem[M1]{Bieri2018a}
+\bibitem[M1]{Bieri2025a}
+\textsc{Bieri, D.} (2025): \enquote{\href{https://www.faz.net/aktuell/wirtschaft/geooekonom-august-loesch-der-raeumliche-visionaer-accg-110760868.html}{Geo\"{o}konom August L\"{o}sch: Der r\"{a}umliche Vision\"{a}r},} \emph{Frankfurter Allgemeine Zeitung}, November.
+
+\bibitem[M2]{Bieri2018a}
 \textsc{Repetti, M., D. Bieri, S. Franzi {\small and} L. Camacho} (2018): \enquote{\href{https://www.reiso.org/articles/themes/politiques/2989-la-monnaie-moyen-de-redistribution-sociale}{La monnaie, moyen de redistribution sociale?},} \emph{REISO: Revue d'information sociale}, April.
 
-\bibitem[M2]{Bieri2016c}
-\textsc{Bieri, D.} (2016): \href{http://www.roanoke.com/opinion/commentary/bieri-brexit-as-the-battle-of-ideas-over-europe-s/article_6dd34600-a9de-573d-8bf9-b9b9ec17370f.html}{Brexit as the Battle of Ideas over Europe's \enquote{Manifest Destiny}}, \emph{Roanoke Times}, July.
+\bibitem[M3]{Bieri2016c}
+\textsc{Bieri, D.} (2016): \enquote{\href{http://www.roanoke.com/opinion/commentary/bieri-brexit-as-the-battle-of-ideas-over-europe-s/article_6dd34600-a9de-573d-8bf9-b9b9ec17370f.html}{Brexit as the Battle of Ideas over Europe's \enquote{Manifest Destiny}},} \emph{Roanoke Times}, July.
 \end{thebibliography}
 \endgroup
 
@@ -345,8 +361,8 @@
 
 
 \subsubsection*{Publications in preparation, under review/revision}
-\begin{itemize}
-
+\begin{itemize}[--]
+\itemsep0em
 
 \item \textsc{Bieri, D.}:  \enquote{An Evolutionary Understanding of Geographies of Money and Finance}, invited for \emph{Regional Inequality in an Age of Crisis: Essays in Honour of Ronald L. Martin}. Cambridge University Press.
 
@@ -361,69 +377,50 @@
 
 
 \subsection*{Research leadership}
-\begin{tabbing}
-\noindent\=2015 -- 2022\hspace{3ex}\=\textbf{Financial Resilience Lab}, Global Forum on Urban \& Regional Resilience, Virginia Tech: \emph{Director}.\\
-\>\>One of three research clusters of a presidential initiative with a start-up budget of c.\ \$1 million; supported a dozen\\
-\>\>PhD students, three postdocs and five visiting scholars. Funded in part by a \$210,000 multi-year gift endowment.\\[4pt]
-\>2015 -- 2021\>\textbf{NSF Research Traineeship \enquote{UrbComp}}, Virginia Tech: \emph{Co-PI and faculty co-lead} (\$2.999 million).\\[4pt]
-\>2018\>\textbf{Blacksburg Blockchain Symposium}: founder and director of the first blockchain conference in the Mid-Atlantic.\\[4pt]
-\>2018\>\textbf{Riva Meeting on the Political Economy of Regional Resilience}, VT Steger Center, Riva San Vitale: organiser.\\[4pt]
-\>2026\>\textbf{Annual Meeting, Standing Committee on the History of Economic Thought}, Verein f\"{u}r Socialpolitik,\\
-\>\>VT Steger Center, Riva San Vitale (June 2026): host and organiser.\\[4pt]
-\>2026 -- 2027\>\textbf{Research leave}, Fall 2026: \emph{From the New South to the New Europe} -- archival work at UNC/Duke, the Rockefeller\\
-\>\>Archive Center and the Kiel Institute for the World Economy.\\[4pt]
-\>ongoing\>\textbf{Transatlantic collaborations}: Heinz Rieter (Hamburg) on the German origins of spatial economics and post-war\\
-\>\>planning; Uwe Dathe (ThULB Jena) on Walter Eucken; Ulrich Hedtke (Berlin) on Schumpeter and the Americanisation\\
-\>\>of continental economics; Charlotte Rose and Rolf Putsch (Wuppertal) on Cl\"{a}re Tisch (1907--1941).\\[4pt]
-\>2016 -- 2019\>\textbf{Blackwood Real Estate Program}, Virginia Tech: \emph{Junior Real Estate Faculty Fellow} (endowed).
-\end{tabbing}
+\begin{cvlist}
+\item[ongoing] \textbf{Transatlantic collaborations}: Heinz Rieter (Hamburg) on the German origins of spatial economics and post-war planning; Uwe Dathe (ThULB Jena) on Walter Eucken; Ulrich Hedtke (Berlin) on Schumpeter and the Americanisation of continental economics; Charlotte Rose and Rolf Putsch (Wuppertal) on Cl\"{a}re Tisch (1907--1941).
+\item[2026 -- 2027] \textbf{Research leave}, Fall 2026: \emph{From the New South to the New Europe} -- archival work at UNC/Duke, the Rockefeller Archive Center and the Kiel Institute for the World Economy.
+\item[2026] \textbf{Annual Meeting, Standing Committee on the History of Economic Thought}, Verein f\"{u}r Socialpolitik, VT Steger Center, Riva San Vitale (June 2026): host and organiser.
+\item[2018] \textbf{Blacksburg Blockchain Symposium}: founder and director of the first blockchain conference in the Mid-Atlantic.
+\item[2018] \textbf{Riva Meeting on the Political Economy of Regional Resilience}, VT Steger Center, Riva San Vitale: organiser.
+\item[2016 -- 2019] \textbf{Blackwood Real Estate Program}, Virginia Tech: \emph{Junior Real Estate Faculty Fellow} (endowed).
+\item[2015 -- 2022] \textbf{Financial Resilience Lab}, Global Forum on Urban \& Regional Resilience, Virginia Tech: \emph{Director}. One of three research clusters of a presidential initiative with a start-up budget of c.\ \$1 million; supported a dozen PhD students, three postdocs and five visiting scholars. Funded in part by a \$210,000 multi-year gift endowment.
+\item[2015 -- 2021] \textbf{NSF Research Traineeship \enquote{UrbComp}}, Virginia Tech: \emph{Co-PI and faculty co-lead} (\$2.999 million).
+\end{cvlist}
 
 \subsection*{Research funding}
 \subsubsection*{Principal investigator}
-\begin{tabbing}
-\noindent\=2023\hspace{8ex}\=Rockefeller Foundation, Rockefeller Archive Center Research Stipend: ``Lost in Translation? Arthur\\
-\>\>Spiethoff and the `Speculative Economics' of the Bonn School, 1931-1938'',  \$1,500.\\[5pt]
-\>2020\>\=Virginia Tech, Kellogg Center for Philosophy, Politics, \& Economics: ``August L\"{o}sch: Collected\\
-\>\>Correspondence,'' \$2,900.\\[5pt]
-\>2018\>History of Economics Society: \enquote{\href{http://www.august-loesch.org/}{The August L\"{o}sch Online Archive},} \$5,100.\\[5pt]
-\>2014\>Michigan State University-U.S. Economic Development Administration, Center for Regional Economic\\
-\>\>Innovation: \enquote{The Future of Tax Increment Financing in Michigan,} \$8,000.\\[5pt]
-\>2013\>University of Michigan, Taubman College Research on the City: ``Moonlights, Sunspots, and Frontier\\
-\>\>Finance: The Historical Nexus between Money, Credit and Urban Form,'' \$20,000.\\[5pt]
-\>\> University of Michigan, UROP Research Grant: ``Household Leverage and Local House Price\\
-\>\>Elasticities,'' \$1,100.\\[5pt]
-\>\>Swiss Federal Department of Foreign Affairs, ThinkSwiss Summer Research Grant, \$3,000.\\[5pt]
-\noindent\>2011--2013\>Graham Sustainability Institute: ``\href{http://sustainability.umich.edu/news/u-m-faculty-selected-detroit-sustainability-indicators-project}{Measuring the Greenness of Cities: A New Methodology}\\
-\>\>\href{http://sustainability.umich.edu/news/u-m-faculty-selected-detroit-sustainability-indicators-project}{for an Urban Sustainability Index},'' \$40,000.\\[5pt]
-\>2012\> University of Michigan, UROP Summer Research Grant: ``The Regional Flow of Funds for\\
-\>\>Housing Credit,'' \$2,000.\\[5pt]
-\>2011\>University of Michigan, Rackham Summer Research Grant: ``Local Real Estate Markets\\
-\>\>and the Regional Balance of Payments,'' \$6,000.
-\end{tabbing}
+\begin{cvlist}
+\item[2023] Rockefeller Foundation, Rockefeller Archive Center Research Stipend: \enquote{Lost in Translation? Arthur Spiethoff and the `Speculative Economics' of the Bonn School, 1931--1938,} \$1,500.
+\item[2020] Virginia Tech, Kellogg Center for Philosophy, Politics, \& Economics: \enquote{August L\"{o}sch: Collected Correspondence,} \$2,900.
+\item[2018] History of Economics Society: \enquote{\href{http://www.august-loesch.org/}{The August L\"{o}sch Online Archive},} \$5,100.
+\item[2014] Michigan State University--U.S. Economic Development Administration, Center for Regional Economic Innovation: \enquote{The Future of Tax Increment Financing in Michigan,} \$8,000.
+\item[2013] University of Michigan, Taubman College Research on the City: \enquote{Moonlights, Sunspots, and Frontier Finance: The Historical Nexus between Money, Credit and Urban Form,} \$20,000.
+\item[] University of Michigan, UROP Research Grant: \enquote{Household Leverage and Local House Price Elasticities,} \$1,100.
+\item[] Swiss Federal Department of Foreign Affairs, ThinkSwiss Summer Research Grant, \$3,000.
+\item[2011 -- 2013] Graham Sustainability Institute: \enquote{\href{http://sustainability.umich.edu/news/u-m-faculty-selected-detroit-sustainability-indicators-project}{Measuring the Greenness of Cities: A New Methodology for an Urban Sustainability Index},} \$40,000.
+\item[2012] University of Michigan, UROP Summer Research Grant: \enquote{The Regional Flow of Funds for Housing Credit,} \$2,000.
+\item[2011] University of Michigan, Rackham Summer Research Grant: \enquote{Local Real Estate Markets and the Regional Balance of Payments,} \$6,000.
+\end{cvlist}
 
 \subsubsection*{Co-investigator}
-\begin{tabbing}
-\noindent\=2015\hspace{8ex}\= National Science Foundation Research Traineeship (NRT): ``UrbComp: Data Science for\\
-\>\> Modeling, Understanding, and Advancing Urban Populations,'' \$2,999,092.\\[5pt]
-\>2013\> Kresge Foundation, Michigan Dept. of Environmental Quality, University of Michigan Water\\
-\>\> Center: \enquote{Restoring, Retrofitting, and Recoupling Michigan's Great Lakes Shorelands,} \$396,500.\\[5pt]
-\>\>Broad Art Museum, Michigan State University; \enquote{East Lansing 2030: Collegeville Re-Envisioned,}\\
-\>\>\$15,750.\\[5pt]
-\>\> University of Michigan, Office of the Provost and Executive Vice President: ``Arts as an Eco-\\
-\>\>nomic Engine:  Building Creative Communities,'' \$15,000.
-\end{tabbing}
-
+\begin{cvlist}
+\item[2015] National Science Foundation Research Traineeship (NRT): \enquote{UrbComp: Data Science for Modeling, Understanding, and Advancing Urban Populations,} \$2,999,092.
+\item[2013] Kresge Foundation, Michigan Dept.\ of Environmental Quality, University of Michigan Water Center: \enquote{Restoring, Retrofitting, and Recoupling Michigan's Great Lakes Shorelands,} \$396,500.
+\item[] Broad Art Museum, Michigan State University: \enquote{East Lansing 2030: Collegeville Re-Envisioned,} \$15,750.
+\item[] University of Michigan, Office of the Provost and Executive Vice President: \enquote{Arts as an Economic Engine: Building Creative Communities,} \$15,000.
+\end{cvlist}
 
 \subsection*{Honours and awards}
-\begin{tabbing}
-\noindent\=2024\hspace{8ex}\=Cambridge Journal of Regions, Economy \& Society Best Paper Award 2023\\[5pt]
-\>2021\hspace{8ex}\=Virginia Tech Alumni Award for Outreach Excellence (Team Award)\\[5pt]
-\>2020\>Virginia Tech Kellogg Center for Philosophy, Politics, \& Economics Research Fellow\\[5pt]
-\noindent\>2012\hspace{8ex}\>University of Michigan UROP Outstanding Research Mentor Award\\[5pt]
-\>2011\>ULI/Gerald D. Hines Student Urban Design Competition Finalist (faculty adviser)\\[5pt]
-\>2010\>Virginia Tech College of Architecture \& Urban Studies Outstanding Doctoral Student\\[5pt]
-\>2009\>Young Professional Development Award, Environmental Protection Agency
-\end{tabbing}
+\begin{cvlist}
+\item[2024] Cambridge Journal of Regions, Economy \& Society Best Paper Award 2023
+\item[2021] Virginia Tech Alumni Award for Outreach Excellence (Team Award)
+\item[2020] Virginia Tech Kellogg Center for Philosophy, Politics, \& Economics Research Fellow
+\item[2012] University of Michigan UROP Outstanding Research Mentor Award
+\item[2011] ULI/Gerald D. Hines Student Urban Design Competition Finalist (faculty adviser)
+\item[2010] Virginia Tech College of Architecture \& Urban Studies Outstanding Doctoral Student
+\item[2009] Young Professional Development Award, Environmental Protection Agency
+\end{cvlist}
 
 \subsection*{Teaching}
 \noindent Five courses developed from scratch at Virginia Tech, including the university's only course dedicated to the history of economic thought; more than 1,750 students taught in evaluated sections since 2017, nine-tenths of them undergraduates. Principles of Real Estate, a required 125--175-seat course, has enrolled more than 1,600 students since 2017 and has run fully asynchronously online since Summer 2024. Student ratings in my seminar courses average 5.9--6.0 on Virginia Tech's six-point scale against a college mean of 5.4; in Principles of Real Estate, ratings for clarity of presentation rose from 4.3 to 5.6 between 2018 and 2021 following a course redesign. A new Pathways course, \emph{Capitalism: Ideas, Identities, and Institutions}, is in development.
@@ -431,9 +428,9 @@
 \itemsep0em
     \item \emph{Principles of Real Estate} (Undergraduate), Virginia Tech: Summer 2026, S2026, Summer 2025, Summer 2024, S2024, S2023, S2022, S2021, S2020, S2019, S2018, S2017, S2016.
     \item \emph{SPIA Graduate Colloquium} (Doctoral), Virginia Tech: F2025, F2024, F2022.
+    \item \emph{Planning Theory and History} (Graduate), Virginia Tech: S2026, S2024, S2023.
     \item \emph{Data and the Art of Public Policy} (Undergraduate), Virginia Tech: F2024.
     \item \emph{Transdisciplinary Problem Solving} (Undergraduate), Virginia Tech: F2024.
-    \item \emph{Planning Theory and History} (Graduate), Virginia Tech: S2026, S2024, S2023.
     \item \emph{New Economic Thinking} (Undergraduate), Virginia Tech: F2022, F2021, F2020.
     \item \emph{Urban \& Regional Economics} (Graduate), Virginia Tech: F2019, S2010.
     \item \emph{Capitalism \& the History of Economic Ideas} (Graduate, Undergraduate), Virginia Tech: F2018.
@@ -445,29 +442,36 @@
     \item \emph{Real Estate Finance} (Graduate), University of Michigan: F2010.
     \item \emph{Economics of State \& Local Government} (Undergraduate), Virginia Tech: F2009, F2008.
     \item \emph{Central Banking Theory} (Graduate), Centre Africain d'Etudes Sup\'{e}rieures en Gestion, Dakar, Senegal: March 2005.
-    \item \emph{Banking System \& Capital Markets} (Graduate), South African Development Corporation, Maputo, Mozambique: Feb 2005.
+    \item \emph{Banking System \& Capital Markets} (Graduate), South African Development Corporation, Maputo, Mozambique: February 2005.
 \end{itemize}
 
 
 \subsection*{Doctoral and postdoctoral supervision}
-\noindent Fifteen completed doctoral dissertations (one as co-chair, two as initial chair, twelve as committee member) and four in progress (one as co-chair); two postdoctoral fellows; eight master's theses (six as chair); five undergraduate research projects and honours theses. Current placements in parentheses.
+\noindent Fifteen completed doctoral dissertations (one as co-chair, two as initial chair, one as interim chair, eleven as committee member) and four in progress (one as co-chair); two postdoctoral fellows; eight master's theses (six as chair); five undergraduate research projects and honours theses. Current placements in parentheses.
 
 \subsubsection*{Doctoral dissertations}
+% Reverse chronological by year of degree; role in parentheses where other than committee member.
+% Titles verified against VTechWorks / Deep Blue (Nov 2026); placements updated from public faculty pages where found.
+% R. Wei and P. Izar placements not re-verified since the 2022 dossier.
 \begin{itemize}[--]
 \itemsep0em
-\item \textbf{Sadhana Manthapuri} (VT 2025), \enquote{Visualizing the DNA of Cities} (Research Consultant, AREAL, Nashville).
-\item \textbf{Priscila Izar} (co-chair, VT 2018), \enquote{Housing Provision through Real Estate Development: Public-Private Partnerships for Affordable Housing in Brazil} (Director, Dar es Salaam City Laboratory, Ardhi University).
+\item \textbf{Sadhana Manthapuri} (VT 2025), \enquote{Developing a Framework for Urban DNA Analysis} (Research Consultant, AREAL, Nashville, TN).
+\item \textbf{Davon Woodard} (chair to 2019; VT 2021), \enquote{Frames of Digital Blackness in the Racialized Palimpsest City} (Assistant Professor of Race and Urbanism, University of Washington Tacoma).
+\item \textbf{Mahtot Gebresselassie} (VT 2021), \enquote{Wheelchair Accessibility in Transportation Service Hailed Through the Uber and Lyft Apps} (Assistant Professor, Faculty of Environmental and Urban Change, York University, Toronto).
+\item \textbf{Luis Camacho} (VT 2020), \enquote{Technology, Participatory Management Practices, and Dignity at Work: Negotiating the Use of Technology in a Plastics Packaging Firm} (Senior Analyst, UNDP Bogot\'{a}).
+\item \textbf{Jessica Agnew} (VT 2020), \enquote{Buying to Thrive: Exploring the Potential for Market-Based Approaches to Contribute to Increases in Diet Diversity in Mozambique} (Associate Director, CALS Global, Virginia Tech).
 \item \textbf{Rongrong Wei} (chair to 2016; VT 2019), \enquote{Local Fiscal Sustainability within American Federalism} (Pew Charitable Trusts; Bastiat Postdoctoral Fellow, George Mason University, 2019).
-\item \textbf{Davon Woodard} (chair to 2019; VT 2021), \enquote{Frames of Digital Blackness in the Racialized Palimpsest City} (Assistant Professor, University of Washington Tacoma).
-\item \textbf{Vera Smirnova} (VT 2018), \enquote{On the Land, Territory, and Crisis Triad} (Assistant Professor of Geography, Kansas State University).
-\item \textbf{Carla Maria Kayanan} (Michigan 2019), \enquote{Building Cities Like Startups: Innovation Districts, Rent Extraction, and the Remaking of Public Space} (Postdoctoral Researcher, University College Dublin).
-\item \textbf{Mahtot Gebresselassie} (VT 2021), smart mobility and accessible transit (Assistant Professor, Environmental and Urban Change, York University, Toronto).
-\item \textbf{Matthew Slifko} (VT Statistics 2019), \enquote{The Cauchy-Net Mixture Model} (Assistant Professor of Mathematics, High Point University).
-\item \textbf{Luis Camacho} (VT 2020), technology and dignity at work (Senior Analyst, UNDP Bogot\'{a}); \textbf{Jessica Agnew} (VT 2020), market-based nutrition in Mozambique (Associate Director, CALS Global, Virginia Tech); \textbf{Omchand Madhu} (interim chair; VT 2019), climate adaptation in Guyanese rice farming (USAID; Adjunct Professor, Virginia Tech).
-\item \textbf{Joshua Shake} (Michigan 2016), participatory planning in S\~{a}o Paulo (InDev Capital, S\~{a}o Paulo); \textbf{Wonhyung Lee} (Michigan 2014), business improvement districts in Los Angeles (Associate Professor, University at Albany); \textbf{Michael Cantor} (Michigan 2014), sports and real-estate development (Sterling Project Development); \textbf{Kate Owens} (Michigan 2012), real-estate markets and planning in Tanzania (Principal, HR\&A Advisors).
+\item \textbf{Carla Maria Kayanan} (Michigan 2019), \enquote{Building Cities Like Startups: Innovation Districts, Rent Extraction, and the Remaking of Public Space} (Assistant Lecturer in Geography, Maynooth University).
+\item \textbf{Matthew Slifko} (VT Statistics 2019), \enquote{The Cauchy-Net Mixture Model} (Assistant Teaching Professor of Statistics, Pennsylvania State University).
+\item \textbf{Omchand Mahdu} (interim chair; VT 2019), \enquote{The Impacts of Climate Change on Rice Production and Small Farmers' Adaptation: A Case of Guyana} (\mbox{USAID}; Adjunct Professor, Virginia Tech).
+\item \textbf{Priscila Izar} (co-chair; VT 2018), \enquote{Housing Provision through Real Estate Development: Public-Private Partnerships for Affordable Housing in Brazil} (Director, Dar es Salaam City Laboratory, Ardhi University).
+\item \textbf{Vera Smirnova} (VT 2018), \enquote{On the Land, Territory, and Crisis Triad: Extra-legal Appropriation, Border Materialities, and Enclosure of the Russian Land Commune} (Assistant Professor of Geography and Political Science, Kansas State University).
+\item \textbf{Joshua Shake} (Michigan 2016), \enquote{Privatizing Urban Planning and the Struggle for Inclusive Urban Development: New Redevelopment Forms and Participatory Planning in S\~{a}o Paulo} (InDev Capital, S\~{a}o Paulo).
+\item \textbf{Wonhyung Lee} (Michigan 2014), \enquote{Critical Perspectives on Local Governance: The Formation of Business Improvement Districts in Low-Income Immigrant Neighborhoods of Los Angeles} (Associate Professor, School of Social Welfare, University at Albany).
+\item \textbf{Michael Cantor} (Michigan Kinesiology 2014), \enquote{Sports and Real Estate Development as Tools for Changing Patterns of Regional Economic Activity: Managing the Effects of Teams and Venues on Local Communities} (Sterling Project Development).
+\item \textbf{Kate Owens} (Michigan 2014), \enquote{Negotiating the City: Urban Development in Tanzania} (Principal, HR\&A Advisors).
 \end{itemize}
-
-\noindent \emph{In progress:} \textbf{Jack Detwiler} (co-chair; VT Computer Science), \enquote{The Combinatorial Complexity of Equitable and Optimal Gerrymandering}; \textbf{Eleanor Cambridge} (VT), \enquote{Supreme Audit Institutions: Accountability in Governance, 1900--2024}; \textbf{Kenneth Conley} (VT Science, Technology and Society); \textbf{S. Jiao} (VT); earlier committee service for \textbf{Todd McDonald} (VT Public Administration, 2024) and \textbf{Zaid Alhamdan} (VT Landscape Architecture, 2023).
+\noindent\emph{In progress:} Joshua Detwiler (co-chair; VT Computer Science), \enquote{The Combinatorial Complexity of Equitable and Optimal Gerrymandering}; Eleanor Cambridge (VT), \enquote{Supreme Audit Institutions: Accountability in Governance, 1900--2024}; Kenneth Conley (VT Science, Technology and Society); Sam Jiao (VT). Earlier committee service for Todd McDonald (VT Public Administration, 2024) and Ziyad Alhamdan (VT Landscape Architecture, 2023), \enquote{Temporary Urban Regeneration: A Systematic Approach for a Multi-System Life Cycle Assessment}.
 
 \subsubsection*{Postdoctoral fellows}
 \begin{itemize}[--]
@@ -480,7 +484,7 @@
 \noindent William Heltzel (VT 2025, \enquote{Level of Service: Design Standards, Imposed Car Dependence, and the Production of Urban Space}), Trey Gordner (VT 2022; U.S. Digital Corps inaugural cohort; founder, Koios), Samuel Spencer (VT 2018; Royal Town Planning Institute), Nour Shammout (Michigan 2014; Senior Economist, Strategy\&), Eric Tuomey (Michigan 2013), Maxwell Blume (Michigan 2012); Jack Washington (now Assistant Director, Facilities Planning, Texas Christian University). Committee member: Fan Mo (VT 2020), Aida Fernandez Brillet (VT 2020), Lorenzo Gallosti (KTH Stockholm 2015), Cassandra DeWitt (Michigan 2014; City of Detroit).
 
 \subsubsection*{Undergraduate research and honours theses}
-\noindent Eileen Divringi (Michigan honours thesis 2012), Yichuan Wang and Nicholas Ostezan (Michigan UROP, 2013--14), Atoshem Ghebrehiwet (VT MAOP, 2016), Nicolas Waingortain (GFURR internship, 2016).
+\noindent Nicolas Waingortain (GFURR internship, 2016), Atoshem Ghebrehiwet (VT MAOP, 2016), Yichuan Wang and Nicholas Ostezan (Michigan UROP, 2013--14), Eileen Divringi (Michigan honours thesis, 2012).
 
 \subsection*{Public engagement}
 \noindent Expert testimony to the Michigan House of Representatives on tax-increment-finance reform (2014, 2015) and membership of its TIF task force; Foreign Policy Association \emph{Great Decisions} lecturer (2021, 2022, 2024); Virginia Society of CPAs annual conference keynote on the digitisation of money (2021); Virginia Tech Alumni Award for Outreach Excellence (2021). Media work is summarised below and archived in full at \href{https://david-bieri.com/media.html}{david-bieri.com/media}.
@@ -492,6 +496,7 @@
 \begin{itemize}[--]
 \itemsep0em
     %\itemsep0em
+    \item \enquote{The U.S.--China Trade War}, \emph{Foreign Policy Association Great Decisions 2024}, Virginia Tech Life Long Learning Institute, Blacksburg, VA: Apr 2024.
     \item \enquote{Economic Outlook: Trends in Global Manufacturing, Inflation, \& Labor Markets}, \emph{CC Industries Presidents' Meeting}, Virginia Tech Innovation and Partnerships, Blacksburg, VA: Nov 2022.   
     \item \enquote{Industrial Policy}, \emph{Foreign Policy Association Great Decisions 2022}, Virginia Tech Life Long Learning Institute, Blacksburg, VA: Apr 2022.
     \item \enquote{\href{https://www.slideshare.net/davidbieri/from-bitcoin-to-central-bank-digital-currencies-the-digitization-of-money-its-consequences}{From Bitcoin to Central Bank Digital Currencies: The Digitization of Money \& Its Consequences},} \emph{Annual Virginia Accounting \& Auditing Conference}, Virginia Society of CPAs: Nov 2021.
@@ -500,9 +505,9 @@
     \item \enquote{\href{https://www.researchgate.net/publication/326782744_Blockchain_Revolution_The_Promise_and_Peril_of_Disrupting_the_Trust_Business}{Blockchain Revolution? The Promise and Peril of Disrupting the Trust Business},} \emph{Blacksburg Blockchain Symposium}, Global Forum on Urban \& Regional Resilience, Blacksburg, VA: Apr 2018.
     \item \enquote{\href{https://aap.cornell.edu/news-events/david-bieri-gradual-and-cataclysmic-money-revisited-how-detroits-turbulent-financial}{Gradual and Cataclysmic Money Revisited: How Detroit's Turbulent Financial History Matters for Urban Theory},} \emph{Glenn H. Beyer Memorial Lectureship}, Cornell University, Ithaca, NY: Sept 2017.
     \item \enquote{\href{https://aap.cornell.edu/news-events/david-bieri-monetary-amnesia-how-regional-science-abandoned-monetary-thought}{Monetary Amnesia: How Regional Science Abandoned Monetary Thought},} \emph{Regional Science Colloquium}, Cornell University, Ithaca, NY: Sept 2017.
-    \item \enquote{Raum und Geld: August L\"{o}schs `Theorie der W\"{a}hrung' und ihre Bedeutung für regional\"{o}konomische Verteilungsfragen,} \emph{Auschu{\ss} f\"{u}r die Geschichte der Wirtschaftswi{\ss}enschaften}, Verein f\"{u}r Socialpolitik, Siegen, Germany: Jun 2017.
+    \item \enquote{Raum und Geld: August L\"{o}schs `Theorie der W\"{a}hrung' und ihre Bedeutung f\"{u}r regional\"{o}ko\-no\-mische Verteilungsfragen,} \emph{Ausschu{\ss} f\"{u}r die Geschichte der Wirtschaftswissenschaften}, Verein f\"{u}r Socialpolitik, Siegen, Germany: Jun 2017.
     \item \enquote{\href{http://rri.wvu.edu/about/photos/dr-bieri-seminar/}{Back to the Future: L\"{o}sch, Isard, and the Role of Money and Credit in the Space-Economy},} \emph{Regional Research Institute}, West Virginia University, Morgantown, WV: Jan 2016.
-    \item \enquote{The Alchemy of Financing Economy Development: The Tiff Over TIFs,} \emph{Mayors’ Institute on City Design}, University of Cincinnati, Cincinnati, OH: Oct 2015.
+    \item \enquote{The Alchemy of Financing Economic Development: The Tiff Over TIFs,} \emph{Mayors’ Institute on City Design}, University of Cincinnati, Cincinnati, OH: Oct 2015.
     \item \enquote{How the Spatial Non-Neutrality of Money Shaped the American Metropolis,}  \emph{Social Decision Analytics Lab Seminar}, Virginia Bioinformatics Institute, Arlington, VA: Aug 2015.
     \item \enquote{Retheorizing the Urbanization of Capital: 200 Years of Evidence from Detroit,} \href{http://icos.umich.edu/lecture-2014-10-10}{\emph{ICOS Fall Lecture}}, Interdisciplinary Committee on Organizational Studies, University of Michigan, Ann Arbor, MI: Oct 2014.
     \item \enquote{On the Political Economy of Big Data,} \emph{2nd Annual DataDrive}, keynote address, School of Information, University of Michigan, Ann Arbor, MI: Feb 2013.
@@ -517,62 +522,63 @@
 \end{itemize}
 
 \subsubsection*{Conference presentations}
-\begin{tabbing}
-\noindent\=2022\hspace{3ex}\=Association of American Law Schools, \emph{Annual Meetings, Socio-Economics Group}, (virtual).\\
-\>\> Kellogg Institute for Philosophy, Politics \& Economics, \emph{PPE Working Paper Series}, Virginia Tech, Blacksburg.\\
-\>\> Global Conference on Economic Geography, University College Dublin, Ireland (virtual).\\[5pt]
-\>2021\hspace{3ex}\>Verein f\"{u}r Socialpolitik, \emph{Ausschu{\ss} f\"{u}r die Geschichte der Wirtschaftswissenschaften}, Frankfurt,\\
-\>\>Germany (virtual).\\
-\>\>School of Management and Labor Relations, \emph{Mid-Year Fellows Workshop in Honor of Louis O. Kelso},\\
-\>\>Rutgers University (virtual).\\
-\>\>Society of Socio-Economists, \emph{Annual Meetings} (virtual).\\[5pt]
-\>2020\>Verein f\"{u}r Socialpolitik, \emph{Ausschu{\ss} f\"{u}r die Geschichte der Wirtschaftswissenschaften}, Jena,\\
-\>\>Germany (cancelled).\\
-\>\>Gesellschaft f\"{u}r Regionalforschung, \emph{Summer Conference}, Braunschweig, Germany (cancelled).\\[5pt]
-\>2019\>European Society for the History of Economic Thought, \emph{Annual Conference}, Lille, France.\\
-\>\>Association of American Geographers, \emph{Annual Meetings}, Washington, DC.\\
-\>\>International Studies Association \emph{Annual Convention}, Toronto, ON.\\[5pt]
-\>2018\>Gesellschaft f\"{u}r Regionalforschung, \emph{Summer Conference}, Berlin, Germany.\\
-\>\>Global Conference on Economic Geography, Universit\"{a}t zu K\"{o}ln, Cologne, Germany.\\[5pt]
-\>2017\>Verein f\"{u}r Socialpolitik, \emph{Ausschu{\ss} f\"{u}r die Geschichte der Wirtschaftswissenschaften}, Siegen, Germany.\\[5pt]
-\>2016\>History of Economics Society, \emph{Annual Meetings}, Durham, NC.\\
-\>\>Association of American Geographers, \emph{Annual Meetings}, San Francisco, CA.\\
-\>\>Association of American Law Schools, \emph{Annual Meetings}, New York City.\\[5pt]
-\>2015\hspace{3ex}\=Regional Science Association International, \emph{North American Annual Conference}, Portland, OR.\\
-\>\>Technische Universit\"{a}t Dortmund, \href{http://www.transforming-city-regions.com/}{\emph{Polycentric City Regions in Transformation}}, Essen, Germany.\\
-\>\>Association of American Geographers, \emph{Annual Meetings}, Chicago, IL.\\
-\>\>Society of Socio-Economists, \emph{Annual Meetings}, Washington, DC.\\[5pt]
-\>2002--2014\hspace{3ex}\=Regional Science Association International (2008, 2010, 2011, 2014); Association of American Geographers (2014);\\
-\>\>American Economic Association (2011); Urban Economics Association (2012); ACSP (2011, 2012); Southern and\\
-\>\>Mid-Continent Regional Science Associations (2008, 2010); International Post Keynesian Conference (2014); SASE\\
-\>\>(2007); Camp Resources and EPA Microeconometrics Workshop (2009); BIS delegations to IMF/World Bank Spring\\
-\>\>Meetings and the BIS--PBoC Governors' Meeting (2006); BIS seminars in Abu Dhabi, Pretoria and Beatenberg (2002--04).
-\end{tabbing}
+\begin{cvlist}
+\item[2022] Association of American Law Schools, \emph{Annual Meetings, Socio-Economics Group} (virtual).
+
+Kellogg Institute for Philosophy, Politics \& Economics, \emph{PPE Working Paper Series}, Virginia Tech, Blacksburg.
+
+Global Conference on Economic Geography, University College Dublin, Ireland (virtual).
+\item[2021] Verein f\"{u}r Socialpolitik, \emph{Ausschu{\ss} f\"{u}r die Geschichte der Wirtschaftswissenschaften}, Frankfurt, Germany (virtual).
+
+School of Management and Labor Relations, \emph{Mid-Year Fellows Workshop in Honor of Louis O. Kelso}, Rutgers University (virtual).
+
+Society of Socio-Economists, \emph{Annual Meetings} (virtual).
+\item[2020] Verein f\"{u}r Socialpolitik, \emph{Ausschu{\ss} f\"{u}r die Geschichte der Wirtschaftswissenschaften}, Jena, Germany (cancelled).
+
+Gesellschaft f\"{u}r Regionalforschung, \emph{Summer Conference}, Braunschweig, Germany (cancelled).
+\item[2019] European Society for the History of Economic Thought, \emph{Annual Conference}, Lille, France.
+
+Association of American Geographers, \emph{Annual Meetings}, Washington, DC.
+
+International Studies Association, \emph{Annual Convention}, Toronto, ON.
+\item[2018] Gesellschaft f\"{u}r Regionalforschung, \emph{Summer Conference}, Berlin, Germany.
+
+Global Conference on Economic Geography, Universit\"{a}t zu K\"{o}ln, Cologne, Germany.
+\item[2017] Verein f\"{u}r Socialpolitik, \emph{Ausschu{\ss} f\"{u}r die Geschichte der Wirtschaftswissenschaften}, Siegen, Germany.
+\item[2016] History of Economics Society, \emph{Annual Meetings}, Durham, NC.
+
+Association of American Geographers, \emph{Annual Meetings}, San Francisco, CA.
+
+Association of American Law Schools, \emph{Annual Meetings}, New York City.
+\item[2015] Regional Science Association International, \emph{North American Annual Conference}, Portland, OR.
+
+Technische Universit\"{a}t Dortmund, \href{http://www.transforming-city-regions.com/}{\emph{Polycentric City Regions in Transformation}}, Essen, Germany.
+
+Association of American Geographers, \emph{Annual Meetings}, Chicago, IL.
+
+Society of Socio-Economists, \emph{Annual Meetings}, Washington, DC.
+\item[2002 -- 2014] Regional Science Association International (2008, 2010, 2011, 2014); Association of American Geographers (2014); American Economic Association (2011); Urban Economics Association (2012); ACSP (2011, 2012); Southern and Mid-Continent Regional Science Associations (2008, 2010); International Post Keynesian Conference (2014); SASE (2007); Camp Resources and EPA Microeconometrics Workshop (2009); BIS delegations to IMF\slash World Bank Spring Meetings and the BIS--PBoC Governors' Meeting (2006); BIS seminars in Abu Dhabi, Pretoria and Beatenberg (2002--04).
+\end{cvlist}
 
 \subsection*{Service}
-\begin{tabbing}
-\noindent\=2021--2025\hspace{8ex}\=August-L\"{o}sch-Gesellschaft e.V., Heidenheim, Vice President\\[5pt]
-\>2021--\>Virginia Tech, Disaster Resilience and Risk Management (DRRM) Graduate Education Program,\\
-\>\>Affiliate Faculty Member\\[5pt]
-\>2020--2021\>Virginia Tech, Jean Monnet Center for European Union, Transatlantic and Trans-European\\
-\>\>Space Studies, Associate Director\\[5pt]
-\>2018--\hspace{8ex}\=Verein f\"{u}r Socialpolitik, Ausschu{\ss} f\"{u}r die Geschichte der Wirtschaftswi{\ss}enschaften,\\
-\>\>(\href{https://history-economicthought.committee.socialpolitik.de/}{Standing Field Committee on the History of Economic Thought}).\\[5pt]
-\>2025\>Virginia Tech, Office of the Provost, Academic Program Review: Peer Reviewer, Department of Finance,\\
-\>\>Insurance and Business Law.\\[5pt]
-\>2023\>Virginia Tech, CLAHS Academic Program Review: Peer Reviewer, Department of Apparel, Housing and\\
-\>\>Resource Management.\\[5pt]
-\>2022--2025\>Virginia Tech, CLAHS Faculty Council, Member.\\[5pt]
-\>2016--\>Housing Policy Debate, Member of the Editorial Board.\\[5pt]
-\>2015--\>Urban and Regional Resilience eJournal, Social Science Research Network (SSRN), Editor.\\[5pt]
-\>2018--2021\>Virginia Tech, University Council Member.\\[5pt]
-\>2015--2016\>Michigan House of Representatives, Local Government Committee, Expert Testimony on\\
-\>\>Tax Increment Finance Reform.\\[5pt]
-\>2014\>Michigan House of Representatives, Commerce Committee, Member of Task Force on Tax\\
-\>\>Increment Finance Reform.\\[5pt]
-\>2012--2018\>American Planning Association, Economic Development Graduate Scholarship Referee.\\[5pt]
-\>2011\>University of Michigan Road Scholar, Office of the Vice President for Government Relations.
-\end{tabbing}
+% Ongoing roles first, then concluded roles in reverse chronological order.
+\begin{cvlist}
+\item[2025 --] Virginia Tech Faculty Senate, SPIA Representative (term 2025--2028).
+\item[2021 --] Virginia Tech, Disaster Resilience and Risk Management (DRRM) Graduate Education Program, Affiliate Faculty Member.
+\item[2018 --] Verein f\"{u}r Socialpolitik, Ausschu{\ss} f\"{u}r die Geschichte der Wirtschaftswissenschaften (\href{https://history-economicthought.committee.socialpolitik.de/}{Standing Field Committee on the History of Economic Thought}), Member.
+\item[2016 --] \emph{Housing Policy Debate}, Member of the Editorial Board.
+\item[2015 --] \emph{Urban and Regional Resilience eJournal}, Social Science Research Network (SSRN), Editor.
+\item[2025] Virginia Tech, Office of the Provost, Academic Program Review: Peer Reviewer, Department of Finance, Insurance and Business Law.
+\item[2023] Virginia Tech, CLAHS Academic Program Review: Peer Reviewer, Department of Apparel, Housing and Resource Management.
+\item[2022 -- 2025] Virginia Tech, College of Liberal Arts \& Human Sciences Faculty Council, SPIA Representative.
+\item[2021 -- 2025] August-L\"{o}sch-Gesellschaft e.V., Heidenheim, Vice President.
+\item[2020 -- 2021] Virginia Tech, Jean Monnet Center for European Union, Transatlantic and Trans-European Space Studies, Associate Director.
+\item[2018 -- 2021] Virginia Tech, University Council, Member.
+\item[2015 -- 2016] Michigan House of Representatives, Local Government Committee, Expert Testimony on Tax Increment Finance Reform.
+\item[2014] Michigan House of Representatives, Commerce Committee, Member of Task Force on Tax Increment Finance Reform.
+\item[2012 -- 2018] American Planning Association, Economic Development Graduate Scholarship Referee.
+\item[2011] University of Michigan Road Scholar, Office of the Vice President for Government Relations.
+\end{cvlist}
 
 \subsection*{Refereeing}
 \noindent Referee for more than thirty journals, presses and funders, most frequently \emph{Housing Policy Debate} (7), \emph{Journal of Regional Science} (5), \emph{Environment \& Planning A} (4), \emph{Geoforum} (3), \emph{Economic Geography} and \emph{Journal of the American Planning Association} (2 each); also \emph{Review of Economics \& Statistics}, \emph{American Journal of Agricultural Economics}, \emph{Urban Studies}, \emph{IJURR}, \emph{Transactions of the IBG}, \emph{Economic Systems Research}, \emph{Computational Economics}, Oxford University Press, SAGE, the National Science Foundation (Geography and Spatial Sciences) and the Italian Ministry of University and Research.
@@ -582,4 +588,4 @@
 
 \subsection*{Languages and citizenship}
 \noindent German (native), English and French (fluent), Italian and Spanish (intermediate). Swiss and U.S. citizen.
-\end{document}\end{document}
+\end{document}
