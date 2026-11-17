@@ -27,3 +27,6 @@ Personal site of David S. Bieri (Associate Professor of Public Policy, SPIA, Vir
 - Logos are monochrome typographic wordmarks (`fill: currentColor`, invert in dark mode). To use a real mark, drop a monochrome SVG at `assets/logos/<slug>.svg`; the build script never overwrites an existing file.
 - `data/service.csv` holds committee service, offices, awards, refereeing, expert testimony and talks from the same Elements export — not rendered yet.
 - `data/source/` holds the raw Elements exports; re-export from Elements and re-run the merge when adding a batch (see HANDOVER.md step 4).
+
+## Teaching data
+- Teaching figures and quotes on teaching.html are static and come from an analysis of SPOT reports kept privately in OneDrive/Tenure/FARs/TeachingEvals/_analysis. Never commit student comments or per-section scores to this public repo.
