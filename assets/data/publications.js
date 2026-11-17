@@ -56,6 +56,8 @@ window.PUBS = [
     venue: "In R. W. Kolb (ed.), Lessons from the Financial Crisis: Causes, Consequences, and Our Economic Future. Hoboken, NJ: Wiley", url: "legacy/docs/RegFinStab_Bieri_Wiley10.pdf" },
 
   // Working papers
+  { kind: "working", year: 2026, title: "The regulatory state of our financial union: prediction markets, regulatory carry and the enclosure of jurisdiction, 1863–2026",
+    venue: "Working paper, Virginia Tech, November 2026", selected: true },
   { kind: "working", year: 2014, title: "Moonlights, sunspots and frontier finance: on the nexus between money, credit and urban form",
     venue: "Monograph, Political Space Economy Lab, University of Michigan, 135 pp.", url: "legacy/docs/MSFF_PSELab_v0.pdf" },
   { kind: "working", year: 2007, title: "The transformation problem: a tale of two interpretations",
