@@ -146,3 +146,11 @@ Checked and not added: ABC News Live 17 Aug (show cancelled the segment), WUSA9 
 CPI request (no confirmation in the thread), an unread housing-market interview request of 26 Oct (left unread).
 FOX 5 DC 15 Sep and 29 Oct: still no clip URL (fox5dc.com search and web search). The Gray car-affordability piece
 (WBTV row, 24 Oct) was syndicated nationwide; the original at localnewslive.com is recorded in its note.
+
+## Same day, after review
+- `featured` re-curated to 10 national/international items (TIME ×2, The New Republic, CBS News ×2, Al Jazeera, SCMP,
+  AP, WSJ, Marketplace); every quote checked against the article text. The previous 21 flags are cleared.
+- Added `x-2026-08-12-knx` (KNX, July CPI report; confirmed by David). ABC News Live 17 Aug stays out (cancelled).
+- Saved clips in OneDrive `Media` (catalogued in `Media/_catalogue`) confirmed four rows: WJLA 19 May 2023 (headline is
+  now the on-air chyron, "Implications of the looming debt crisis"), KNX 28 Apr 2023, NewsNation 16 Jul 2026 and
+  CNN 15 Mar 2025. A saved PDF confirmed the Washington Post 3 Feb 2022 headline (a syndicated Bloomberg column).
