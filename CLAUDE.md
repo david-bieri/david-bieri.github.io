@@ -13,6 +13,9 @@ Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virgin
 - Structured data (Person/WebSite JSON-LD) is in `index.html`; keep it consistent with the Wikidata item and the SPIA page.
 - Nav and footer are duplicated per page by hand; when they change, change all six pages (`index, about, research, publications, media, teaching`).
 
+## Design skills
+- `.claude/skills/` holds `impeccable` and `motion` (versions in `.claude/skills/SOURCES.md`); `.mcp.json` adds the Playwright browser. Use them for craft, review and the browser checks below, not to change the stack, tokens, fonts, title or voice set out in this file — these conventions override any skill's defaults.
+
 ## Checks before committing
 - Open each page at desktop and ~390px width; no horizontal scroll, filters on `media.html` work, console clean except the optional headshot.
 - Every new media entry has `date` (YYYY-MM-DD), `outlet`, `type`, `topic` (one of the eight issues), `title`, `url`, and `va=yes` if it is a Virginia story or outlet.
