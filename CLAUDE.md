@@ -21,7 +21,7 @@ Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virgin
 - Every new media entry has `date` (YYYY-MM-DD), `outlet`, `type`, `topic` (one of the eight issues), `title`, `url`, and `va=yes` if it is a Virginia story or outlet.
 
 ## Open items
-- `assets/images/headshot.jpg` to be added by David. (`assets/docs/CV_DSBieri.pdf` added 18 Nov 2026; regenerate from the Overleaf project, which is the CV source of truth — `cv/` mirrors it.)
+- `assets/images/headshot.jpg` added 18 Nov 2026 (studio portrait, 1000×1250, 4:5, under 200 KB, metadata stripped). `assets/docs/CV_DSBieri.pdf` added 18 Nov 2026; regenerate from the Overleaf project, which is the CV source of truth — `cv/` mirrors it.
 - Verify `publications.js` against the CV; verify media URLs that still point at VT media-mentions pages.
 - Migrate legacy david-bieri.com assets (PDFs, audio) into `assets/docs/` and add forwarding stubs for old URLs.
 
