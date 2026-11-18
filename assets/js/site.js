@@ -8,9 +8,12 @@
   function logoImg(m, cls) {
     return m.logo ? '<img class="' + (cls || 'logo') + '" src="assets/logos/' + esc(m.logo) + '.svg" alt="" loading="lazy" onerror="this.remove()">' : '';
   }
+  var NEWTAB = '<span class="sr-only"> (opens in a new tab)</span>';
   function titleLink(m, cls) {
-    return m.url ? '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + '</a>' : '<span class="' + (cls || 'nolink') + '">' + esc(m.title) + '</span>';
+    return m.url ? '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + NEWTAB + '</a>' : '<span class="' + (cls || 'nolink') + '">' + esc(m.title) + '</span>';
   }
+  /* Static links that open a new tab say so to screen readers */
+  Array.prototype.forEach.call(document.querySelectorAll('a[target="_blank"]'), function (a) { if (!a.querySelector(".sr-only")) a.insertAdjacentHTML("beforeend", NEWTAB); });
   /* Clips: nothing third-party loads until the visitor clicks Watch (keeps the site free of tracking by default). */
   /* Still for the On air row and a video-less lead (media.csv "poster"); it repeats the headline link,
      so it stays out of the tab order and away from screen readers */
@@ -92,32 +95,6 @@
     feat.innerHTML = media.filter(function (m) { return m.featured; }).slice(0, n).map(card).join("");
   }
 
-  /* Outlet wall */
-  var wall = $("#outlets");
-  if (wall) {
-    var lim = +wall.getAttribute("data-count") || 24, seenLogo = {};
-    var picks = (window.OUTLETS || []).filter(function (o) { if (!o.logo || seenLogo[o.logo]) return false; seenLogo[o.logo] = 1; return true; }).slice(0, lim);
-    wall.innerHTML = picks.map(function (o) {
-      return '<li title="' + esc(o.name) + ' · ' + o.n + '"><img src="assets/logos/' + esc(o.logo) + '.svg" alt="' + esc(o.name) + '" loading="lazy"></li>';
-    }).join("");
-  }
-
-  /* Stats */
-  var stats = $("#stats");
-  if (stats) {
-    var years = media.map(function (m) { return +m.date.slice(0, 4); });
-    var outlets = {}; media.forEach(function (m) { outlets[m.outlet] = 1; });
-    var since = Math.min.apply(null, years);
-    var last12 = media.filter(function (m) { return m.date >= isoMinus(365); }).length;
-    stats.innerHTML =
-      '<div class="stat"><b>' + media.length + '+</b><span>appearances since ' + since + '</span></div>' +
-      '<div class="stat"><b>' + last12 + '</b><span>in the past twelve months</span></div>' +
-      '<div class="stat"><b>' + Object.keys(outlets).length + '</b><span>outlets, local to international</span></div>' +
-      '<div class="stat"><b>' + Object.keys(countBy(media, "topic")).length + '</b><span>topics, from tariffs to the Fed</span></div>';
-  }
-  function isoMinus(days) { var d = new Date(); d.setDate(d.getDate() - days); return d.toISOString().slice(0, 10); }
-  function countBy(arr, k) { var o = {}; arr.forEach(function (x) { o[x[k]] = (o[x[k]] || 0) + 1; }); return o; }
-
   /* Format: every medium gets the same treatment, one verb and one icon */
   var VERB = { tv: "Watch", radio: "Listen", podcast: "Listen", print: "Read", online: "Read" };
   var ICON = {
@@ -146,7 +123,7 @@
     tiles.innerHTML = t.map(function (x) {
       return '<a class="tile" href="media.html#' + x.k + '">' +
         '<span class="name">' + esc(TL[x.k]) + '</span>' +
-        '<span class="when">Latest · ' + fmtShort(x.lead.date) + '</span>' +
+        '<span class="when">' + fmtShort(x.lead.date) + '</span>' +
         '<span class="head">' + esc(x.lead.title) + '</span>' +
         '<span class="outs">' + x.outs.map(esc).join(' · ') + '</span></a>';
     }).join("");
@@ -202,7 +179,7 @@
       var m = x.latest, sel = root.dataset.sel === x.b.slug, n = x.xs.length;
       panel.innerHTML = '<span class="when">Latest on ' + esc(x.b.name) + ' · ' + fmtShort(m.date) + '</span>' +
         '<span class="t">' + titleLink(m) + '</span>' +
-        '<a class="all" href="' + opts.href(x.b.slug) + '">' + (sel ? n + (n === 1 ? ' appearance' : ' appearances') + ' below ↓' : 'All coverage from ' + esc(x.b.name) + ' →') + '</a>';
+        '<a class="all" href="' + opts.href(x.b.slug) + '">' + (sel ? n + (n === 1 ? ' appearance' : ' appearances') + ' below' : 'All coverage from ' + esc(x.b.name)) + '</a>';
     }
     /* Hover preview only where hover exists: on touch, iOS withholds the tap when a mouseover handler changes content */
     if (window.matchMedia && matchMedia("(hover: hover)").matches) {
@@ -300,10 +277,10 @@
       });
       var xs = strong.filter(keep), lead = xs[0], also = xs.slice(1, 5), grid = xs.slice(5, 5 + st.shown);
       $("#lead").innerHTML = lead ?
-        '<article class="lead-item">' + (lead.video ? '' : still(lead)) + '<div class="kicker">' + esc(TL[lead.topic] || "") + (lead.va ? ' · Virginia' : '') + '</div>' +
+        '<article class="lead-item">' + (lead.video ? '' : still(lead)) +
         '<h2 class="lead-title">' + titleLink(lead) + '</h2>' +
         (lead.quote ? '<p class="q">“' + esc(lead.quote) + '”</p>' : '') + audioEl(lead) +
-        '<div class="meta">' + fmtTag(lead) + '<span>' + byline(lead) + '</span></div></article>' +
+        '<div class="meta">' + fmtTag(lead) + '<span>' + byline(lead) + ' · ' + esc(TL[lead.topic] || "") + (lead.va ? ' · Virginia' : '') + '</span></div></article>' +
         (also.length ? '<aside class="also" aria-label="Also recent"><h3>Also recent</h3><ol>' + also.map(function (m) {
           return '<li>' + fmtTag(m) + '<span class="t">' + titleLink(m) + '</span><span class="meta">' + byline(m) + '</span></li>';
         }).join("") + '</ol></aside>' : '') :
@@ -353,7 +330,7 @@
     }
     function pub(p) {
       return '<div class="pub"><div class="y">' + p.year + '</div><div>' +
-        '<div class="t">' + (p.url ? '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>' : esc(p.title)) + (p.authors ? ' <span class="muted">(' + esc(p.authors) + ')</span>' : '') + '</div>' +
+        '<div class="t">' + (p.url ? '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + NEWTAB + '</a>' : esc(p.title)) + (p.authors ? ' <span class="muted">(' + esc(p.authors) + ')</span>' : '') + '</div>' +
         '<div class="v">' + esc(p.venue) + '</div>' + (p.note ? '<div class="n">' + esc(p.note) + '</div>' : '') + '</div></div>';
     }
   }
