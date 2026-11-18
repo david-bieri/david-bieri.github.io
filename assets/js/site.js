@@ -185,14 +185,22 @@
     var dflt = items.slice().sort(function (a, b) { return a.latest.date < b.latest.date ? 1 : -1; })[0];
     function show(k) {
       if (!panel) return; var x = byKey[k] || dflt; if (!x) return;
-      var m = x.latest;
+      var m = x.latest, sel = root.dataset.sel === x.b.slug, n = x.xs.length;
       panel.innerHTML = '<span class="when">Latest on ' + esc(x.b.name) + ' · ' + fmtShort(m.date) + '</span>' +
         '<span class="t">' + titleLink(m) + '</span>' +
-        '<a class="all" href="' + opts.href(x.b.slug) + '">All coverage from ' + esc(x.b.name) + ' →</a>';
+        '<a class="all" href="' + opts.href(x.b.slug) + '">' + (sel ? n + (n === 1 ? ' appearance' : ' appearances') + ' below ↓' : 'All coverage from ' + esc(x.b.name) + ' →') + '</a>';
     }
-    root.addEventListener("mouseover", function (e) { var a = e.target.closest(".mark"); if (a) show(a.dataset.k); });
+    /* Hover preview only where hover exists: on touch, iOS withholds the tap when a mouseover handler changes content */
+    if (window.matchMedia && matchMedia("(hover: hover)").matches) {
+      root.addEventListener("mouseover", function (e) { var a = e.target.closest(".mark"); if (a) show(a.dataset.k); });
+      root.addEventListener("mouseleave", function () { show(root.dataset.sel); });
+    }
     root.addEventListener("focusin", function (e) { var a = e.target.closest(".mark"); if (a) show(a.dataset.k); });
-    root.addEventListener("mouseleave", function () { show(root.dataset.sel); });
+    /* The panel's "All coverage" link points at the current hash once an outlet is selected: then scroll to the results */
+    if (panel) panel.addEventListener("click", function (e) {
+      var a = e.target.closest("a.all"); if (!a || a.getAttribute("href") !== location.hash) return;
+      e.preventDefault(); var n = document.getElementById("news"); if (n) n.scrollIntoView();
+    });
     var api = {
       select: function (k) {
         root.dataset.sel = k || "";
@@ -224,14 +232,17 @@
     }
     fromHash();
     window.addEventListener("hashchange", function () {
-      fromHash(); st.shown = 12; render();
-      if (st.outlet) { var n = $("#news"); if (n && n.getBoundingClientRect().top < 0) n.scrollIntoView(); }
+      var was = st.outlet; fromHash(); st.shown = 12; render();
+      /* A new outlet (band tap) filters content that may be out of view: bring the results up */
+      if (st.outlet) { var n = $("#news"); if (n && (st.outlet !== was || n.getBoundingClientRect().top < 0)) n.scrollIntoView(); }
     });
     var upd = $("#updated"); if (upd && media.length) upd.textContent = "Updated " + fmtShort(media[0].date);
     var bar = $("#issue-chips");
-    bar.innerHTML = '<button class="chip" data-v="all">All issues</button>' +
+    /* Issues in a strip (scrolls on phones), Virginia and the outlet chip in a row of their own that never scrolls away */
+    bar.innerHTML = '<div class="issue-strip"><button class="chip" data-v="all">All issues</button>' +
       Object.keys(TL).map(function (k) { return '<button class="chip" data-v="' + k + '">' + esc(TL[k]) + '</button>'; }).join("") +
-      '<span class="sep" aria-hidden="true"></span><button class="chip place" data-va="1">Virginia</button>';
+      '</div><div class="issue-pins"><span class="sep" aria-hidden="true"></span><button class="chip place" data-va="1">Virginia</button></div>';
+    var strip = bar.querySelector(".issue-strip"), pins = bar.querySelector(".issue-pins"), narrow = window.matchMedia ? matchMedia("(max-width: 640px)") : null;
     bar.addEventListener("click", function (e) {
       var b = e.target.closest(".chip"); if (!b) return;
       if (b.dataset.va) st.va = !st.va; else if (b.dataset.clear) st.outlet = ""; else st.issue = b.dataset.v;
@@ -260,7 +271,13 @@
     }
     function render(fromChip) {
       var oc = bar.querySelector("[data-clear]"); if (oc) oc.remove();
-      if (st.outlet) bar.insertAdjacentHTML("beforeend", '<button class="chip place" data-clear="1" aria-pressed="true" aria-label="Remove outlet filter">' + esc(band.name(st.outlet)) + ' ✕</button>');
+      if (st.outlet) pins.insertAdjacentHTML("beforeend", '<button class="chip place" data-clear="1" aria-pressed="true" aria-label="Remove outlet filter">' + esc(band.name(st.outlet)) + ' ✕</button>');
+      /* On phones the pressed issue comes first in the strip, so the state is visible without scrolling it */
+      if (narrow && narrow.matches) {
+        var keys = ["all"].concat(st.issue === "all" ? [] : [st.issue]).concat(Object.keys(TL).filter(function (k) { return k !== st.issue; }));
+        keys.forEach(function (k) { var c = strip.querySelector('.chip[data-v="' + k + '"]'); if (c) strip.appendChild(c); });
+        strip.scrollLeft = 0;
+      }
       if (band) band.select(st.outlet);
       Array.prototype.forEach.call(bar.querySelectorAll(".chip:not([data-clear])"), function (c) {
         c.setAttribute("aria-pressed", c.dataset.va ? st.va : c.dataset.v === st.issue);
@@ -296,12 +313,15 @@
       $("#count").textContent = shown + " of " + rows.length;
       var label = [st.outlet ? band.name(st.outlet) : "", st.issue === "all" ? "" : TL[st.issue], st.va ? "Virginia" : ""].filter(Boolean).join(", ");
       $("#archive-scope").textContent = label ? "Showing: " + label : "";
+      var scope = $("#scope"); if (scope) scope.textContent = label ? "Showing " + label + " · " + shown + " of " + rows.length : "";
       if (fromChip && history.replaceState) {
         var h = [st.issue === "all" ? "" : st.issue, st.va ? "virginia" : "", st.outlet ? "outlet=" + st.outlet : ""].filter(Boolean).join("&");
         history.replaceState(null, "", h ? "#" + h : location.pathname);
       }
     }
     render();
+    /* Arriving with an outlet in the hash (a band tap on the home page): show the results, not the intro */
+    if (st.outlet) { var n0 = $("#news"); if (n0) n0.scrollIntoView(); }
   }
 
   /* Publications */

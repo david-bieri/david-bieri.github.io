@@ -14,6 +14,7 @@
 <meta name="twitter:image" content="https://www.david-bieri.com/assets/images/og.jpg">
 <link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/data/media.js" as="script">
 <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
@@ -42,6 +43,7 @@
 <section class="section" id="news">
   <div class="wrap">
     <div class="issue-bar" id="issue-chips" role="group" aria-label="Filter by issue"></div>
+    <p class="scope" id="scope"></p>
     <div class="news-lead" id="lead" aria-live="polite"></div>
     <div class="onair" id="onair" hidden></div>
     <div class="news-grid" id="news-grid"></div>
@@ -59,7 +61,7 @@
 <section class="section">
   <div class="wrap">
     <div class="section-head"><h2>Every appearance, 2014–2026</h2><span class="meta"><span id="archive-scope"></span> <span id="count"></span></span></div>
-    <div class="filters"><input class="search" id="search" type="search" placeholder="Search outlet, programme or headline" aria-label="Search appearances" style="margin-left:0"></div>
+    <div class="filters"><input class="search" id="search" type="search" placeholder="Search headlines and outlets" aria-label="Search appearances" style="margin-left:0"></div>
     <ul class="list" id="archive"></ul>
     <div class="empty" id="empty" hidden>Nothing matches. Clear the search or pick another issue above.</div>
   </div>
