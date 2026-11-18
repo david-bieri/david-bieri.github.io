@@ -36,7 +36,9 @@ Compiles with your preamble (EB Garamond, newtx, T2A); test-compiled here with a
   11 member) + 4 in progress; Alhamdan and McDonald as earlier committee service, per your draft.
 - media_section.tex regenerated from the repo (commit 002a890, 273 items) with tools/build_cv_media.py.
 - Publication initials switched to 'Bieri, D.' per the repo CLAUDE.md.
-- No open TODOs in the .tex. Names settled: Sam Jiao, Joshua Detwiler.
+- Fifth pass (18 Nov): supervision and teaching verified against OneDrive/Teaching (syllabi, UP 734 theses, forms): all thesis
+  titles present, course numbers added, UP 590 Expanded Horizons, UP 504 W14, SPIA 6004 Sp23, Rust and Cantor theses,
+  guest lectures, curriculum development. No open TODOs.
 - `CV_DSBieri_PREVIEW_standin-fonts.pdf` was compiled with Palatino (EB Garamond/newtx/T2A unavailable here);
   recompile with your preamble for the real layout.
 
