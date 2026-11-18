@@ -4,3 +4,6 @@
 .impeccable/audit/
 .impeccable/*.cache*
 .impeccable/cache/
+
+# tasteskill checker scratch
+.taste-skill/
