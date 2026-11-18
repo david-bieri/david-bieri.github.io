@@ -372,14 +372,13 @@ window.MEDIA = [
   "outlet": "WRIC (ABC)",
   "logo": "abc-affiliate",
   "program": "ABC 8News",
-  "title": "‘Highly volatile’",
+  "title": "‘Highly volatile’: Virginia infrastructure projects steady as Iran war drives fuel costs higher",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "world",
   "scope": "State",
   "tier": "regional",
   "url": "https://www.wric.com/news/virginia-news/iran-war-fuel-surge-project-costs/",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "3448799",
@@ -493,13 +492,12 @@ window.MEDIA = [
   "outlet": "The New Arab",
   "logo": "newarab",
   "program": "The New Arab",
-  "title": "Gambling on death",
+  "title": "Gambling on death: Polymarket and the dark rise of war betting",
   "type": "online",
   "topic": "markets",
   "scope": "International",
   "tier": "international",
-  "url": "https://www.newarab.com/analysis/gambling-death-polymarket-and-dark-rise-war-betting",
-  "weak": true
+  "url": "https://www.newarab.com/analysis/gambling-death-polymarket-and-dark-rise-war-betting"
  },
  {
   "id": "3433416",
@@ -1215,14 +1213,13 @@ window.MEDIA = [
   "outlet": "The Washington Post",
   "logo": "wapo",
   "program": "Washington Post",
-  "title": "Tariffs hit U.S",
+  "title": "Tariffs hit U.S. companies like GM and Jeep-maker Stellantis hard",
   "type": "print",
   "topic": "trade",
   "scope": "National",
   "tier": "national",
   "url": "https://www.washingtonpost.com/business/2025/07/22/tariffs-cost-gm-stellantis-profits-trump/",
-  "featured": true,
-  "weak": true
+  "featured": true
  },
  {
   "id": "2870788",
@@ -2017,14 +2014,13 @@ window.MEDIA = [
   "outlet": "Northern Virginia Daily",
   "logo": "nvdaily",
   "program": "Northern Virginia Daily",
-  "title": "Northern Virginia Daily",
+  "title": "IAC plant in Strasburg announces permanent layoff of 135 workers",
   "type": "print",
   "topic": "jobs",
   "scope": "State",
   "tier": "local",
   "url": "https://www.nvdaily.com/nvdaily/iac-plant-in-strasburg-announces-permanent-layoff-of-135-workers/article_7859962c-0562-57ef-b4e8-1e9332858962.html",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "2567606",
@@ -2193,7 +2189,7 @@ window.MEDIA = [
   "outlet": "Reckon.news",
   "logo": "reckon",
   "program": "Reckon Media",
-  "title": "What the biden administrations involvement in uaw negotiations could mean for workers",
+  "title": "What the Biden administration's involvement in UAW negotiations could mean for workers",
   "type": "print",
   "topic": "jobs",
   "scope": "National",
@@ -2768,7 +2764,7 @@ window.MEDIA = [
   "outlet": "WFXR (FOX)",
   "logo": "fox-affiliate",
   "program": "WFXR News at Noon (live)",
-  "title": "Understanding new va law about cryptocurrency",
+  "title": "Understanding new VA law about cryptocurrency",
   "type": "tv",
   "topic": "markets",
   "scope": "Regional",
@@ -2822,13 +2818,12 @@ window.MEDIA = [
   "outlet": "The Washington Post",
   "logo": "wapo",
   "program": "Washington Post, Business Analysis",
-  "title": "Washington Post, Business Analysis",
+  "title": "How to Pay Your Rent Without Going Broke",
   "type": "print",
-  "topic": "jobs",
+  "topic": "housing",
   "scope": "National",
   "tier": "national",
-  "url": "https://www.washingtonpost.com/business/how-to-pay-your-rent-without-going-broke/2022/02/03/a166da0c-84e9-11ec-951c-1e0cc3723e53_story.html",
-  "weak": true
+  "url": "https://www.washingtonpost.com/business/how-to-pay-your-rent-without-going-broke/2022/02/03/a166da0c-84e9-11ec-951c-1e0cc3723e53_story.html"
  },
  {
   "id": "1647211",
@@ -2877,7 +2872,7 @@ window.MEDIA = [
   "program": "Cover story, Virginia Business Magazine",
   "title": "The Prophet",
   "type": "print",
-  "topic": "jobs",
+  "topic": "markets",
   "scope": "State",
   "tier": "state",
   "url": "https://virginiabusiness.com/the-prophet/",
@@ -3209,7 +3204,7 @@ window.MEDIA = [
   "outlet": "Coin Rivet",
   "logo": "coinrivet",
   "program": "Bitcoin News",
-  "title": "Blockchain to banish banks and fico reports",
+  "title": "Blockchain to banish banks and FICO reports",
   "type": "online",
   "topic": "markets",
   "scope": "International",
@@ -3236,14 +3231,13 @@ window.MEDIA = [
   "outlet": "The Roanoke Times",
   "logo": "roanoke",
   "program": "Business News",
-  "title": "Business News",
+  "title": "Symposium highlights Blacksburg's place in the tech behind Bitcoin",
   "type": "online",
-  "topic": "jobs",
+  "topic": "markets",
   "scope": "Regional",
   "tier": "local",
   "url": "https://www.roanoke.com/business/news/blacksburg/symposium-highlights-blacksburg-s-place-in-the-tech-behind-bitcoin/article_8b1f34cb-0504-531b-814d-3b71f058a254.html",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "1099117",
@@ -3277,7 +3271,7 @@ window.MEDIA = [
   "outlet": "MinnPost",
   "logo": "minnpost",
   "program": "Is there—or is there not—an affordable housing crisis in the Twin Cities?",
-  "title": "There or there not affordable housing crisis twin cities",
+  "title": "Is there — or is there not — an affordable housing crisis in the Twin Cities?",
   "type": "online",
   "topic": "housing",
   "scope": "Regional",
