@@ -9,7 +9,7 @@ Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virgin
   - `assets/data/publications.js` — `window.PUBS`; `selected: true` puts it on the home page.
 - Design tokens are the `:root` variables at the top of `main.css` (paper, ink, rule, red accent, link). Fonts: Archivo (headings, UI) and Source Serif 4 (body). Don't add typefaces or colors outside the token set.
 - Name: **David Bieri**, no middle initial, on the site and in the CV (including "Bieri, D." in the CV's publication lists). The JSON-LD `alternateName` keeps "David S. Bieri" and "David Stephan Bieri" so search engines connect the old bylines.
-- Title used everywhere: "Associate Professor of Public Policy, School of Public and International Affairs, Virginia Tech". Handles: X @space_economy, Instagram @raumwirtschaft. Email bieri@vt.edu.
+- Title used everywhere: "Associate Professor of Public Policy, School of Public and International Affairs, Virginia Tech". The official HR title is "Associate Professor of Urban Affairs" (tenured 2023); it appears only on the CV's appointment line, in the about.html timeline and as a second JSON-LD `jobTitle`. Economics is a courtesy appointment ("Associate Professor of Economics, by courtesy"); Blackwood and Kellogg are faculty affiliations. Handles: X @space_economy, Instagram @raumwirtschaft. Email bieri@vt.edu.
 - Structured data (Person/WebSite JSON-LD) is in `index.html`; keep it consistent with the Wikidata item and the SPIA page.
 - Nav and footer are duplicated per page by hand; when they change, change all six pages (`index, about, research, publications, media, teaching`).
 
@@ -18,7 +18,7 @@ Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virgin
 - Every new media entry has `date` (YYYY-MM-DD), `outlet`, `type`, `topic` (one of the eight issues), `title`, `url`, and `va=yes` if it is a Virginia story or outlet.
 
 ## Open items
-- `assets/images/headshot.jpg` and `assets/docs/CV_DSBieri.pdf` to be added by David.
+- `assets/images/headshot.jpg` to be added by David. (`assets/docs/CV_DSBieri.pdf` added 18 Nov 2026; regenerate from the Overleaf project, which is the CV source of truth — `cv/` mirrors it.)
 - Verify `publications.js` against the CV; verify media URLs that still point at VT media-mentions pages.
 - Migrate legacy david-bieri.com assets (PDFs, audio) into `assets/docs/` and add forwarding stubs for old URLs.
 
