@@ -110,3 +110,39 @@ Business `/article/the-prophet/` → `/the-prophet/`, one tracking parameter str
 ## Step 3 (VT re-post URLs)
 Only one row still linked to a VT re-post: Kiplinger 1 Apr 2025 (`research.vt.edu`). Kiplinger's own URL was not found;
 left as is. The liberalarts.vt.edu links were all on duplicate rows removed in the first pass.
+
+# Headlines, Outlook pass and backfill check — 18 Nov 2026
+
+## Headlines (42 placeholders → 13)
+**From the outlet's own page (built-in browser, one approval per load), 14 rows:** Guardian 2017 (re-dated 7 → 8 Jun,
+the publication date), MinnPost 2017, Roanoke Times 2018, Coin Rivet 2018, Investment Watch 2018, WFXR ×6
+(2022–24; the site's bot wall blocked one video page until wfxrtv.com was allowed site-wide), WJLA Feb 2023,
+Reckon 2023, Northern Virginia Daily 2024. Note `title-from-…` replaced by `headline from outlet page, 18 Nov 2026`.
+
+**Pages that would not load, 4 rows:** Circa (site closed; headline confirmed from Sinclair syndication, URL blanked),
+Earnest and Whiterock Locators (404, URL blanked), Washington Post Feb 2022 (403 to the browser pane, URL kept). The last
+three carry the URL-slug wording, marked `unverified` in `notes`.
+
+**From the Outlook Media folder, 11 rows** (no URL; `title` is a topic line, as for the 2026 FOX 5 rows):
+Sky News Arabia 2 Mar 2023 (Swiss inflation and the franc), KNX 10 Mar / 12 Apr / 2 Jun 2023 and 11 Jul 2024
+(jobs reports, CPI releases), WJLA 19 May 2023 (debt ceiling; inferred from the 16 May pitch that led to the booking),
+WUSA 21 Sep 2023 (UAW strike; request dated 19 Sep), WSET 29 Sep 2023 (shutdown economics), WMAL and FOX 5 27 Mar
+2024 and FOX 5 30 Mar 2024 (Key Bridge collapse; the 30 Mar topic is inferred from the thread). Each note says which
+email the topic came from.
+
+**Still placeholders, 13 rows:** KNUS ×8 (2019–21), NBC LX Apr 2022, FOX 5 Jun and Oct 2022 — the Media folder only
+reaches back to Dec 2022 and the online archive has no media mail; FOX 5 4 May 2023 (booking and a TVEyes clip, no
+topic); KNX 14 Nov 2023 (no 2023 thread; a KNX CPI interview was booked for 14 Nov 2024 — this row may be misdated).
+
+## Topics (c)
+Re-tagged on the rows that got a headline: Roanoke Times 2018 → markets; WFXR rate-hike clip → housing; WFXR inflation
+clip, WJLA, KNX CPI ×2 → prices; WaPo rent piece → housing; Sky News Arabia → world; WJLA debt ceiling, WSET shutdown → gov;
+Key Bridge rows (incl. the LiveNOW segment of 27 Mar 2024, for consistency) → trade. `jobs` is down from 58 to 44.
+
+## Backfill Aug–Nov 2026 (b)
+The Media folder has nothing after 21 Oct (USA Today source list, not an appearance). Inbox/mailbox searches (VT media
+relations senders, "interview", outlet names) found no appearance after 30 Oct that isn't already in the file.
+Checked and not added: ABC News Live 17 Aug (show cancelled the segment), WUSA9 6 Aug (declined, travelling), KNX 12 Aug
+CPI request (no confirmation in the thread), an unread housing-market interview request of 26 Oct (left unread).
+FOX 5 DC 15 Sep and 29 Oct: still no clip URL (fox5dc.com search and web search). The Gray car-affordability piece
+(WBTV row, 24 Oct) was syndicated nationwide; the original at localnewslive.com is recorded in its note.
