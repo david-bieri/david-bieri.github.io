@@ -1,6 +1,6 @@
 # david-bieri.com — working notes for Claude Code
 
-Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virginia Tech). GitHub Pages user site; custom domain via `CNAME` (**www.david-bieri.com**; the bare david-bieri.com 301-redirects to it from Bluehost, because Bluehost serves its hosting IP for the apex A record). Absolute URLs (canonical, sitemap, JSON-LD, og) use `https://www.david-bieri.com`.
+Personal site of David Bieri (Associate Professor of Urban Affairs, SPIA, Virginia Tech). GitHub Pages user site; custom domain via `CNAME` (**www.david-bieri.com**; the bare david-bieri.com 301-redirects to it from Bluehost, because Bluehost serves its hosting IP for the apex A record). Absolute URLs (canonical, sitemap, JSON-LD, og) use `https://www.david-bieri.com`.
 
 ## Stack and conventions
 - Plain HTML, one stylesheet (`assets/css/main.css`), one script (`assets/js/site.js`). No framework, no build step, no bundler, no analytics. Keep it that way.
@@ -9,7 +9,7 @@ Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virgin
   - `assets/data/publications.js` — `window.PUBS`; `selected: true` puts it on the home page.
 - Design tokens are the `:root` variables at the top of `main.css` (paper, ink, rule, red accent, link). Fonts: Archivo (headings, UI) and Source Serif 4 (body). Don't add typefaces or colors outside the token set.
 - Name: **David Bieri**, no middle initial, on the site and in the CV (including "Bieri, D." in the CV's publication lists). The JSON-LD `alternateName` keeps "David S. Bieri" and "David Stephan Bieri" so search engines connect the old bylines.
-- Title used everywhere: "Associate Professor of Public Policy, School of Public and International Affairs, Virginia Tech". The official HR title is "Associate Professor of Urban Affairs" (tenured 2023); it appears only on the CV's appointment line, in the about.html timeline and as a second JSON-LD `jobTitle`. Economics is a courtesy appointment ("Associate Professor of Economics, by courtesy"); Blackwood and Kellogg are faculty affiliations. Handles: X @space_economy, Instagram @raumwirtschaft. Email bieri@vt.edu.
+- Title used everywhere (site, CV, letters): "Associate Professor of Urban Affairs, School of Public and International Affairs, Virginia Tech", the official HR title (tenured 2023). Decided 18 Nov 2026; it replaces the earlier "Public Policy" wording. "Associate Professor of Public Policy" survives only as the second JSON-LD `jobTitle` (media often use it) and verbatim inside media headlines, which are never edited. Economics is a courtesy appointment ("Associate Professor of Economics, by courtesy"); Blackwood and Kellogg are faculty affiliations. Handles: X @space_economy, Instagram @raumwirtschaft. Email bieri@vt.edu.
 - Structured data (Person/WebSite JSON-LD) is in `index.html`; keep it consistent with the Wikidata item and the SPIA page.
 - Nav and footer are duplicated per page by hand; when they change, change all six pages (`index, about, research, publications, media, teaching`).
 
@@ -21,7 +21,7 @@ Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virgin
 - Every new media entry has `date` (YYYY-MM-DD), `outlet`, `type`, `topic` (one of the eight issues), `title`, `url`, and `va=yes` if it is a Virginia story or outlet.
 
 ## Open items
-- `assets/images/headshot.jpg` to be added by David. (`assets/docs/CV_DSBieri.pdf` added 18 Nov 2026; regenerate from the Overleaf project, which is the CV source of truth — `cv/` mirrors it.)
+- `assets/images/headshot.jpg` added 18 Nov 2026 (studio portrait, 1000×1250, 4:5, under 200 KB, metadata stripped). `assets/docs/CV_DSBieri.pdf` added 18 Nov 2026; regenerate from the Overleaf project, which is the CV source of truth — `cv/` mirrors it.
 - Verify `publications.js` against the CV; verify media URLs that still point at VT media-mentions pages.
 - Migrate legacy david-bieri.com assets (PDFs, audio) into `assets/docs/` and add forwarding stubs for old URLs.
 
