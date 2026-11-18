@@ -67,6 +67,14 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .portrait .fallback { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--sans); font-weight: 700; font-size: 4rem; color: var(--ink-3); letter-spacing: -0.05em; }
 .portrait figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 10px; font-family: var(--sans); font-size: .75rem; color: var(--ink-2); background: linear-gradient(transparent, var(--paper)); }
 @media (max-width: 760px) { .hero .wrap { grid-template-columns: 1fr; } .portrait { max-width: 320px; } }
+/* About: office banner and press photos */
+.banner { margin: clamp(24px, 4vw, 40px) 0 0; aspect-ratio: 12 / 5; border: 1px solid var(--rule); background: var(--paper-2); overflow: hidden; }
+.banner img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+@media (max-width: 560px) { .banner { aspect-ratio: 3 / 2; } }
+.press { display: flex; flex-wrap: wrap; gap: 20px; margin: 4px 0 24px; }
+.press figure { margin: 0; width: 140px; }
+.press img { display: block; width: 140px; aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: 50% 20%; border: 1px solid var(--rule); background: var(--paper-2); }
+.press figcaption { margin-top: 8px; font-family: var(--sans); font-size: .82rem; line-height: 1.4; color: var(--ink-2); }
 
 /* Hex lattice (Lösch) — quiet background mark on the hero */
 .lattice { position: absolute; right: -60px; top: -40px; width: 520px; height: 520px; opacity: .55; pointer-events: none; color: var(--rule); }
