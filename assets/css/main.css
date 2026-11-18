@@ -23,7 +23,7 @@
   --paper-2: #E8EAE6;
   --ink: #1A1D21;
   --ink-2: #4E545B;
-  --ink-3: #8A9097;
+  --ink-3: #656A6F;
   --rule: #D1D4CF;
   --red: #C8291E;
   --link: #27456B;
@@ -34,7 +34,7 @@
   --ease: cubic-bezier(.2,.7,.2,1);
 }
 @media (prefers-color-scheme: dark) {
-  :root { --paper:#17191C; --paper-2:#1F2226; --ink:#EDEEEA; --ink-2:#B9BDC2; --ink-3:#7F858C; --rule:#2E3238; --red:#E8463A; --link:#9DB8DA; }
+  :root { --paper:#17191C; --paper-2:#1F2226; --ink:#EDEEEA; --ink-2:#B9BDC2; --ink-3:#83898F; --rule:#2E3238; --red:#E8463A; --link:#9DB8DA; }
 }
 
 *,*::before,*::after { box-sizing: border-box; }
