@@ -1626,7 +1626,6 @@ window.MEDIA = [
   "topic": "trade",
   "scope": "International",
   "tier": "national",
-  "url": "https://drive.google.com/file/d/1CTBUTSaHGNMHuQtdocVtEVgl5eLEfMNo/view",
   "featured": true,
   "quote": "We knew this going in, we just didn't anticipate perhaps quite how messy that could be.",
   "poster": "assets/media/posters/2820382.jpg"
