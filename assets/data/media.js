@@ -2437,8 +2437,7 @@ window.MEDIA = [
   "topic": "prices",
   "scope": "Regional",
   "tier": "regional",
-  "url": "https://wjla.com/features/7news-mornings/us-inflation-outlook",
-  "weak": true
+  "url": "https://wjla.com/features/7news-mornings/us-inflation-outlook"
  },
  {
   "id": "2215064",
@@ -2837,8 +2836,7 @@ window.MEDIA = [
   "scope": "State",
   "tier": "state",
   "url": "https://virginiabusiness.com/the-prophet/",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "1618303",

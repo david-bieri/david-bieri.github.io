@@ -120,8 +120,10 @@ for r in rows:
         m["featured"] = True
     if r.get("va", "").strip().lower() in YES:
         m["va"] = True
-    if "title-from-program" in r.get("notes", "") or r["title"] == r.get("program") or len(r["title"].split()) < 4:
-        m["weak"] = True  # placeholder headline: kept in the archive, skipped for the lead, cards and tiles
+    notes = r.get("notes", "")
+    if "title-from-program" in notes or r["title"] == r.get("program") or (len(r["title"].split()) < 4 and "headline" not in notes.lower()):
+        m["weak"] = True  # placeholder or topic-line title: kept in the archive, skipped for the lead, cards and tiles.
+        # A short title whose notes say where the headline was confirmed ("headline from outlet page") is a real headline.
     if r.get("quote"):
         m["quote"] = r["quote"]
     v = video_ref(r.get("video", "").strip() or r.get("url", ""), explicit=bool(r.get("video", "").strip()), rid=r["id"])
