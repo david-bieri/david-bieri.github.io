@@ -14,7 +14,7 @@ Read `CLAUDE.md` first (conventions, media database, coverage band, clips). This
   - 7 rows play the outlet's own YouTube upload through the click-to-load player.
   - History: `data/MEDIA_CHANGELOG.md`.
 - **Headshot and publications:** done 18 Nov (PRs #14 and #11).
-- **Checks:** `python3 tools/check_pages.py` (with `python3 -m http.server 8765` running) screenshots all six pages at 1280/390 px. It flags horizontal scroll, failed requests, console errors and third-party requests. The only third-party request left is Google Fonts.
+- **Checks:** `python3 tools/check_pages.py` (with `python3 -m http.server 8765` running) screenshots all six pages at 1280/390 px. It flags horizontal scroll, failed requests, console errors and third-party requests. Since the fonts were self-hosted (task 2) there are no third-party requests before a click.
 
 ## Tasks, in order (one branch and PR per task)
 1. **CNN Drive link.** Row `2820382` (CNN, 15 Mar 2025) links a Google Drive copy of CNN footage, and it is a featured card. Remove the `url`, keep the row and its quote, and note why — unless David says CNN agreed.
