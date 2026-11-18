@@ -12,6 +12,14 @@
     return m.url ? '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + '</a>' : '<span class="' + (cls || 'nolink') + '">' + esc(m.title) + '</span>';
   }
   /* Clips: nothing third-party loads until the visitor clicks Watch (keeps the site free of tracking by default). */
+  /* Still for the On air row and a video-less lead (media.csv "poster"); it repeats the headline link,
+     so it stays out of the tab order and away from screen readers */
+  function still(m) {
+    if (!m.poster) return '';
+    var img = '<img src="' + esc(m.poster) + '" alt="" width="1280" height="720" loading="lazy" onerror="this.parentNode.remove()">';
+    return m.url ? '<a class="still" href="' + esc(m.url) + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">' + img + '</a>'
+                 : '<div class="still" aria-hidden="true">' + img + '</div>';
+  }
   function audioEl(m) {
     var h = "";
     if (m.video) {
@@ -259,7 +267,7 @@
       });
       var xs = strong.filter(keep), lead = xs[0], also = xs.slice(1, 5), grid = xs.slice(5, 5 + st.shown);
       $("#lead").innerHTML = lead ?
-        '<article class="lead-item"><div class="kicker">' + esc(TL[lead.topic] || "") + (lead.va ? ' · Virginia' : '') + '</div>' +
+        '<article class="lead-item">' + (lead.video ? '' : still(lead)) + '<div class="kicker">' + esc(TL[lead.topic] || "") + (lead.va ? ' · Virginia' : '') + '</div>' +
         '<h2 class="lead-title">' + titleLink(lead) + '</h2>' +
         (lead.quote ? '<p class="q">“' + esc(lead.quote) + '”</p>' : '') + audioEl(lead) +
         '<div class="meta">' + fmtTag(lead) + '<span>' + byline(lead) + '</span></div></article>' +
@@ -267,6 +275,13 @@
           return '<li>' + fmtTag(m) + '<span class="t">' + titleLink(m) + '</span><span class="meta">' + byline(m) + '</span></li>';
         }).join("") + '</ol></aside>' : '') :
         '<p class="empty">Nothing on that combination yet. Try another issue.</p>';
+      var air = xs.filter(function (m) { return m.poster && m !== lead; }).slice(0, 4), onair = $("#onair");
+      if (onair) {
+        onair.innerHTML = air.length ? '<h3>On air</h3><div class="onair-row">' + air.map(function (m) {
+          return '<article class="air">' + still(m) + '<div class="t">' + titleLink(m) + '</div><div class="meta">' + fmtTag(m) + '<span>' + byline(m) + '</span></div></article>';
+        }).join("") + '</div>' : '';
+        onair.hidden = !air.length;
+      }
       $("#news-grid").innerHTML = grid.map(card).join("");
       $("#news-grid").hidden = !grid.length;
       if (more) more.hidden = xs.length <= 5 + st.shown;

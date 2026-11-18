@@ -39,7 +39,9 @@ Columns (conventions as of the 17 Nov 2026 consolidation; see data/MEDIA_CHANGEL
               .mp4/.webm file. Left blank, a YouTube link in `url` is used automatically (the outlet's own upload).
               Never point this at a file in this repo: GitHub rejects files over 100 MB and Pages sites are capped at 1 GB.
   audio       optional; direct https URL to an .mp3/.m4a (or assets/media/… path for a small file, < 10 MB)
-  poster      optional still for `video`: assets/media/posters/<id>.jpg (1280 px, < 200 KB) or https URL
+  poster      optional still for the appearance: assets/media/posters/<id>.jpg (1280x720, 16:9, < 200 KB) or https URL.
+              Used by the video player when the row has a `video`, and by the On air row on media.html either way.
+              Leave the network logo and caption in so the still credits itself. A local path that does not exist fails the build.
   transcript  optional; assets/media/transcripts/<id>.txt or https URL, shown as a "Transcript" link
   notes       provenance and anything else; not rendered. "merged duplicate <id>" records a consolidation.
 """
@@ -61,6 +63,10 @@ TOPIC_LABELS = {"trade": "Trade & tariffs", "money": "The Fed & money", "prices"
 odd = [r.get("id", "?") for r in rows if r["topic"] not in TOPIC_LABELS]
 if odd:
     sys.exit("Rows with a topic outside the eight issues: " + ", ".join(odd))
+missing = [r.get("id", "?") + " (" + r["poster"] + ")" for r in rows
+           if r.get("poster") and not r["poster"].startswith("http") and not os.path.isfile(os.path.join(ROOT, r["poster"]))]
+if missing:
+    sys.exit("Rows whose poster file does not exist: " + ", ".join(missing))
 YES = ("yes", "true", "1", "x")
 
 def video_ref(u, explicit, rid):
