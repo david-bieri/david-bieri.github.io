@@ -160,3 +160,67 @@ FOX 5 DC 15 Sep and 29 Oct: still no clip URL (fox5dc.com search and web search)
 - WDBJ7 22 Jan 2021: programme corrected to *WDBJ7 Evening News* (David).
 - New optional columns `video`, `audio`, `poster`, `transcript`; 7 rows with an outlet-uploaded YouTube link (RTVI ×5,
   WFXR and WDBJ7 2017) now play on the page, loaded only on click.
+
+# Outlook In-Place Archive pass — 18 Nov 2026 (evening)
+
+The earlier pass only saw the live mailbox, whose Media folder starts in Dec 2022. The **In-Place Archive ›
+Admin › Media** folder holds the rest: 433 messages, June 2016 – Nov 2022. All 429 readable messages were listed
+with their preview text and about 30 were opened in full. 275 → 279 rows; placeholders 13 → 4.
+
+## Placeholders resolved (9)
+KNUS 16 Apr 2019 (Brexit; about 25 min live by phone), 1 May 2019 (Spanish general election), 15 Oct 2019
+(Boris Johnson and the Brexit deadline), 23 Oct 2019 (after the Commons vote on the withdrawal bill), 5 Feb 2021
+(Biden's economic plan; *inferred* from the invitation, which followed his FOX 5 segment on it), 9 Apr 2021
+(Europe's third COVID wave), 9 Jun 2021 (inflation, jobs and Biden's economy); NBC LX 15 Apr 2022 (inflation and the
+economy; live-to-tape for NBC Boston/LX); FOX 5 DC 16 Oct 2022 (butter shortage and supply-chain glitches).
+Titles are topic lines from the booking emails, as for the other no-URL rows. Each note names the source.
+
+## Still placeholders (4)
+KNUS 4 Jun 2019 (booked for 3:30 p.m. MT; the thread has no topic); FOX 5 DC 16 Jun 2022 (see below); FOX 5 DC
+4 May 2023 and KNX 14 Nov 2023 (after the archive's range; unchanged from the earlier pass).
+
+## Added (4)
+- FOX 5 DC, 5 Apr 2022 — Biden's extension of the student-loan pause (live Zoom at 5 p.m., confirmed by email).
+- Commercial Observer, 10 Jul 2019 — "Can Commercial Real Estate Investment Truly Be Democratized?" (Chava Gourarie).
+- WFIR, 10 Mar 2023 — "Stubborn inflation may mean more interest rate hikes" (found via a wfirnews.com search).
+- KNUS, 27 Aug 2021 — Chuck and Julie Show (booked and Zoom link sent; topic inferred).
+
+## Corrected
+- WDBJ7 inauguration story re-dated 20 → 13 Jan 2017 (interview 13 Jan, clip circulated 14 Jan).
+- WFIR daylight-saving row (28 Oct 2026) now has its story: "The debate over changing our clocks twice a year
+  continues", posted 5 Nov.
+- WSET 22 Jan 2021: the piece is by Sinclair's national reporter Leandra Bernstein, published on WSET's site;
+  `program` now says so.
+- WFIR 14 Jan 2021: the long-form In-Depth version (15 Jan) is recorded in `notes`.
+
+## Needs David — not added
+- **FOX 5 DC 16 Jun 2022** (row `2216170`, interviewer Lokay J): the archive has no booking for 16 Jun. It has two
+  10:45 p.m. live hits that summer — 7 Jun (World Bank cuts its growth forecast, warns of stagflation) and 13 Jul
+  (with Jim Lokay; a clip service and media relations both confirm it aired). The row is probably 13 Jul; the
+  other date is then missing.
+- Booked or interviewed, but no published piece found: Inman News (Marian McPherson, 6 Jul 2022, Brooke Amendment);
+  Bloomberg (Suzanne Woolley, call 24 Jun 2022, follow-up to the 30% rent-rule column); Wall Street Journal (David
+  Harrison, call 21 Feb 2020, HUD Location Affordability Index); Cardinal News (Dwayne Yancey, Zoom 23 Sep 2022,
+  Smith Mountain Lake); Nexstar Digital (Michael Bartiromo, phone 9 Mar 2022, inflation).
+- WFXR bookings with no story found: 22 Feb 2022 (gas prices, 4 p.m. confirmed), 11 Mar 2022 (U.S. ban on Russian
+  imports, D'mon Reynolds), 13 Apr 2022 (inflation at a record high), 7 Jul 2022 (layoffs and recession). WSLS 7 Jul
+  2022 (Boris Johnson's resignation) was offered the same day.
+- WFIR stories that name only "a Virginia Tech professor": "Lack of Brexit deal being felt Virginia" (6 Feb 2019)
+  and "VT Prof: New leaders could mean movement over Brexit" (6 Aug 2019). They follow his WFIR Brexit interviews of
+  17 Jan and 25 Jul 2019; audio is on the pages.
+- Requests that went unconfirmed or were declined: KNUS 3 and 21 Sep 2021 (Evergrande), WFIR 11 Jul 2022 (dollar–euro
+  parity), FOX 5 9 Sep 2022 (declined; reporter asked to quote his emailed paragraph), Business Insider May 2022,
+  Agência Estado Apr 2022 (shrinkflation), Fortune (Erik Sherman) May 2019.
+
+## Same evening, after David's review (279 → 288 rows)
+- FOX 5 DC row `2216170` re-dated 16 Jun → **13 Jul 2022** (David: it is the Jim Lokay segment). The 7 Jun segment
+  (World Bank growth cut and stagflation warning) added as `x-2022-06-07-fox5`. Neither clip is findable on fox5dc.com.
+- Interviews added from the archive: Inman (now with its article, published **31 May 2023**, "A squad of economists
+  is waging a stealth war on America's '30% rule'"), Wall Street Journal 21 Feb 2020, Bloomberg 24 Jun 2022,
+  Cardinal News 23 Sep 2022, Nexstar Media Wire 9 Mar 2022, WFXR 22 Feb, 11 Mar and 13 Apr 2022. Except Inman, none
+  has a published piece or clip that could be found; titles are topic lines and the notes say so. Bloomberg's
+  13 Sep 2022 piece on outdated money rules was checked (via the FA Magazine reprint) and does not quote him.
+- WDBJ7 5 Mar 2026 row now has its story: "Roanoke family feels economic squeeze as grocery costs, inflation outpace
+  wages" (found by web search).
+- Not added (no booking confirmed): WFXR and WSLS 7 Jul 2022, KNUS Sep 2021, WFIR Jul 2022, and the two WFIR 2019
+  Brexit stories that do not name him.

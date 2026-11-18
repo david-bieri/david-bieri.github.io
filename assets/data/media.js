@@ -31,11 +31,12 @@ window.MEDIA = [
   "outlet": "WFIR",
   "logo": "wfir",
   "program": "WFIR News Roanoke",
-  "title": "Daylight saving time and federalism",
+  "title": "The debate over changing our clocks twice a year continues",
   "type": "radio",
   "topic": "gov",
   "scope": "State",
   "tier": "local",
+  "url": "https://wfirnews.com/news/the-debate-over-changing-our-clocks-twice-a-year-continues",
   "va": true
  },
  {
@@ -827,11 +828,12 @@ window.MEDIA = [
   "date": "2026-03-05",
   "outlet": "WDBJ7 (CBS Roanoke)",
   "logo": "cbs-affiliate",
-  "title": "Iran war and inflation in Virginia",
+  "title": "Roanoke family feels economic squeeze as grocery costs, inflation outpace wages",
   "type": "tv",
   "topic": "prices",
   "scope": "Regional",
   "tier": "regional",
+  "url": "https://www.wdbj7.com/2026/03/05/roanoke-family-feels-economic-squeeze-grocery-costs-inflation-outpace-wages/",
   "va": true
  },
  {
@@ -2229,6 +2231,18 @@ window.MEDIA = [
   "tier": "national"
  },
  {
+  "id": "x-2023-05-31-inman",
+  "date": "2023-05-31",
+  "outlet": "Inman",
+  "logo": "inman",
+  "title": "A squad of economists is waging a stealth war on America’s ‘30% rule’",
+  "type": "online",
+  "topic": "housing",
+  "scope": "National",
+  "tier": "national",
+  "url": "https://www.inman.com/2023/05/31/a-squad-of-economists-is-waging-a-stealth-war-on-americas-30-rule/"
+ },
+ {
   "id": "2307659",
   "date": "2023-05-19",
   "outlet": "WJLA (ABC)",
@@ -2388,6 +2402,20 @@ window.MEDIA = [
   "scope": "Regional",
   "tier": "regional",
   "url": "https://www.fox5dc.com/video/1193237"
+ },
+ {
+  "id": "x-2023-03-10-wfir",
+  "date": "2023-03-10",
+  "outlet": "WFIR",
+  "logo": "wfir",
+  "program": "WFIR News Roanoke",
+  "title": "Stubborn inflation may mean more interest rate hikes",
+  "type": "radio",
+  "topic": "money",
+  "scope": "State",
+  "tier": "local",
+  "url": "https://wfirnews.com/news/stubborn-inflation-may-mean-more-interest-rate-hikes",
+  "va": true
  },
  {
   "id": "2242265",
@@ -2553,12 +2581,11 @@ window.MEDIA = [
   "outlet": "FOX 5 DC",
   "logo": "fox5",
   "program": "FOX 5 DC News at 10 p.m.",
-  "title": "FOX 5 DC News at 10 p.m.",
+  "title": "A butter shortage ahead of the holidays and other supply-chain glitches",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "prices",
   "scope": "National",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "2216198",
@@ -2572,6 +2599,18 @@ window.MEDIA = [
   "scope": "National",
   "tier": "regional",
   "url": "https://www.fox5dc.com/video/1127024"
+ },
+ {
+  "id": "x-2022-09-23-cardinalnews",
+  "date": "2022-09-23",
+  "outlet": "Cardinal News",
+  "logo": "cardinalnews",
+  "title": "Smith Mountain Lake and amenity-driven growth",
+  "type": "online",
+  "topic": "housing",
+  "scope": "Regional",
+  "tier": "regional",
+  "va": true
  },
  {
   "id": "2216196",
@@ -2588,7 +2627,7 @@ window.MEDIA = [
  },
  {
   "id": "2216170",
-  "date": "2022-06-16",
+  "date": "2022-07-13",
   "outlet": "FOX 5 DC",
   "logo": "fox5",
   "program": "FOX 5 DC News at 10 p.m. (live)",
@@ -2598,6 +2637,29 @@ window.MEDIA = [
   "scope": "National",
   "tier": "regional",
   "weak": true
+ },
+ {
+  "id": "x-2022-06-24-bloomberg",
+  "date": "2022-06-24",
+  "outlet": "Bloomberg",
+  "logo": "bloomberg",
+  "title": "The 30% rent rule and how to measure housing affordability",
+  "type": "online",
+  "topic": "housing",
+  "scope": "National",
+  "tier": "national"
+ },
+ {
+  "id": "x-2022-06-07-fox5",
+  "date": "2022-06-07",
+  "outlet": "FOX 5 DC",
+  "logo": "fox5",
+  "program": "FOX 5 DC News at 10 p.m. (live)",
+  "title": "The World Bank cuts its growth forecast and warns of stagflation",
+  "type": "tv",
+  "topic": "world",
+  "scope": "National",
+  "tier": "regional"
  },
  {
   "id": "2050082",
@@ -2646,12 +2708,23 @@ window.MEDIA = [
   "outlet": "NBC",
   "logo": "nbc",
   "program": "LX Current",
-  "title": "LX Current",
+  "title": "Inflation and the economy",
   "type": "tv",
-  "topic": "housing",
+  "topic": "prices",
   "scope": "National",
-  "tier": "national",
-  "weak": true
+  "tier": "national"
+ },
+ {
+  "id": "x-2022-04-13-fox-affiliate",
+  "date": "2022-04-13",
+  "outlet": "WFXR (FOX)",
+  "logo": "fox-affiliate",
+  "title": "Inflation at a record high, and what comes next",
+  "type": "tv",
+  "topic": "prices",
+  "scope": "Regional",
+  "tier": "regional",
+  "va": true
  },
  {
   "id": "2037724",
@@ -2665,6 +2738,17 @@ window.MEDIA = [
   "scope": "National",
   "tier": "regional",
   "url": "https://www.fox5dc.com/video/1055524"
+ },
+ {
+  "id": "x-2022-04-05-fox5",
+  "date": "2022-04-05",
+  "outlet": "FOX 5 DC",
+  "logo": "fox5",
+  "title": "Biden extends the pause on student-loan payments",
+  "type": "tv",
+  "topic": "gov",
+  "scope": "National",
+  "tier": "regional"
  },
  {
   "id": "2037726",
@@ -2721,6 +2805,29 @@ window.MEDIA = [
   "va": true
  },
  {
+  "id": "x-2022-03-11-fox-affiliate",
+  "date": "2022-03-11",
+  "outlet": "WFXR (FOX)",
+  "logo": "fox-affiliate",
+  "title": "The U.S. ban on Russian imports",
+  "type": "tv",
+  "topic": "trade",
+  "scope": "Regional",
+  "tier": "regional",
+  "va": true
+ },
+ {
+  "id": "x-2022-03-09-nexstar",
+  "date": "2022-03-09",
+  "outlet": "Nexstar Media Wire",
+  "logo": "nexstar",
+  "title": "Inflation and what is driving it",
+  "type": "online",
+  "topic": "prices",
+  "scope": "National",
+  "tier": "national"
+ },
+ {
   "id": "2022710",
   "date": "2022-03-09",
   "outlet": "WFXR (FOX)",
@@ -2746,6 +2853,18 @@ window.MEDIA = [
   "scope": "Regional",
   "tier": "regional",
   "url": "https://www.fox5dc.com/video/1042195"
+ },
+ {
+  "id": "x-2022-02-22-fox-affiliate",
+  "date": "2022-02-22",
+  "outlet": "WFXR (FOX)",
+  "logo": "fox-affiliate",
+  "title": "Rising gas prices and their impact on the economy",
+  "type": "tv",
+  "topic": "prices",
+  "scope": "Regional",
+  "tier": "regional",
+  "va": true
  },
  {
   "id": "2022713",
@@ -2800,17 +2919,28 @@ window.MEDIA = [
   "url": "https://www.fox5dc.com/video/983942"
  },
  {
+  "id": "x-2021-08-27-knus",
+  "date": "2021-08-27",
+  "outlet": "710 KNUS Denver",
+  "logo": "knus",
+  "program": "The Chuck and Julie Show",
+  "title": "The economy and inflation under Biden",
+  "type": "radio",
+  "topic": "prices",
+  "scope": "National",
+  "tier": "regional"
+ },
+ {
   "id": "1643906",
   "date": "2021-06-09",
   "outlet": "710 KNUS Denver",
   "logo": "knus",
   "program": "The Chuck and Julie Show",
-  "title": "The Chuck and Julie Show",
+  "title": "Inflation, jobs and Biden’s economy",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "prices",
   "scope": "State",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "1628165",
@@ -2844,12 +2974,11 @@ window.MEDIA = [
   "outlet": "710 KNUS Denver",
   "logo": "knus",
   "program": "The Chuck and Julie Show",
-  "title": "The Chuck and Julie Show",
+  "title": "Europe’s third COVID wave and the EU economy",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "world",
   "scope": "National",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "1606379",
@@ -2857,9 +2986,9 @@ window.MEDIA = [
   "outlet": "710 KNUS Denver",
   "logo": "knus",
   "program": "The Chuck and Julie Show",
-  "title": "The Chuck and Julie Show",
+  "title": "Biden’s economic plan",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "gov",
   "scope": "National",
   "tier": "regional",
   "weak": true
@@ -2896,7 +3025,7 @@ window.MEDIA = [
   "date": "2021-01-22",
   "outlet": "WSET (ABC)",
   "logo": "abc-affiliate",
-  "program": "ABC 13 News",
+  "program": "Sinclair Broadcast Group (national desk)",
   "title": "What economists think of Biden's $1.9T stimulus plan",
   "type": "online",
   "topic": "gov",
@@ -2945,6 +3074,17 @@ window.MEDIA = [
   "va": true
  },
  {
+  "id": "x-2020-02-21-wsj",
+  "date": "2020-02-21",
+  "outlet": "The Wall Street Journal",
+  "logo": "wsj",
+  "title": "HUD’s Location Affordability Index and the cost of commuting",
+  "type": "print",
+  "topic": "housing",
+  "scope": "National",
+  "tier": "national"
+ },
+ {
   "id": "1603387",
   "date": "2020-01-13",
   "outlet": "Whiterock Locators",
@@ -2988,12 +3128,11 @@ window.MEDIA = [
   "outlet": "710 KNUS Denver",
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
-  "title": "Chuck Bonniwell & Julie Hayden Show",
+  "title": "Brexit after the Commons vote on the withdrawal bill",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "world",
   "scope": "National",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "1560965",
@@ -3001,12 +3140,23 @@ window.MEDIA = [
   "outlet": "710 KNUS Denver",
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
-  "title": "Chuck Bonniwell & Julie Hayden Show",
+  "title": "Boris Johnson, the EU and the Brexit deadline",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "world",
   "scope": "National",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
+ },
+ {
+  "id": "x-2019-07-10-commercialobserver",
+  "date": "2019-07-10",
+  "outlet": "Commercial Observer",
+  "logo": "commercialobserver",
+  "title": "Can Commercial Real Estate Investment Truly Be Democratized?",
+  "type": "online",
+  "topic": "markets",
+  "scope": "National",
+  "tier": "national",
+  "url": "https://commercialobserver.com/2019/07/can-commercial-real-estate-investment-truly-be-democratized/"
  },
  {
   "id": "1559419",
@@ -3039,12 +3189,11 @@ window.MEDIA = [
   "outlet": "710 KNUS Denver",
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
-  "title": "Chuck Bonniwell & Julie Hayden Show",
+  "title": "The Spanish general election and Europe",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "world",
   "scope": "International",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "1559407",
@@ -3052,12 +3201,11 @@ window.MEDIA = [
   "outlet": "710 KNUS Denver",
   "logo": "knus",
   "program": "Chuck Bonniwell & Julie Hayden Show",
-  "title": "Chuck Bonniwell & Julie Hayden Show",
+  "title": "Brexit and the UK’s departure from the EU",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "world",
   "scope": "International",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "1210336",
@@ -3329,8 +3477,20 @@ window.MEDIA = [
   }
  },
  {
+  "id": "x-2017-01-18-csm",
+  "date": "2017-01-18",
+  "outlet": "Christian Science Monitor",
+  "logo": "csm",
+  "title": "Can a conservative president save the EU Parliament from the far right?",
+  "type": "print",
+  "topic": "world",
+  "scope": "National",
+  "tier": "national",
+  "url": "http://www.csmonitor.com/World/Europe/2017/0118/Can-a-conservative-president-save-the-EU-parliament-from-the-far-right"
+ },
+ {
   "id": "1099111",
-  "date": "2017-01-20",
+  "date": "2017-01-13",
   "outlet": "WDBJ7 (CBS Roanoke)",
   "logo": "cbs-affiliate",
   "program": "WDBJ7 News at 11",
@@ -3344,18 +3504,6 @@ window.MEDIA = [
   "video": {
    "yt": "HZRoqu-Oebw"
   }
- },
- {
-  "id": "x-2017-01-18-csm",
-  "date": "2017-01-18",
-  "outlet": "Christian Science Monitor",
-  "logo": "csm",
-  "title": "Can a conservative president save the EU Parliament from the far right?",
-  "type": "print",
-  "topic": "world",
-  "scope": "National",
-  "tier": "national",
-  "url": "http://www.csmonitor.com/World/Europe/2017/0118/Can-a-conservative-president-save-the-EU-parliament-from-the-far-right"
  },
  {
   "id": "1099106",
@@ -3566,8 +3714,8 @@ window.MEDIA = [
   "url": "http://diepresse.com/home/panorama/welt/1598862/Blumen-fur-den-Gemeindebau"
  }
 ];
-window.OUTLETS = [{"name": "The Wall Street Journal", "logo": "wsj", "n": 1, "tier": "national"}, {"name": "The Washington Post", "logo": "wapo", "n": 2, "tier": "national"}, {"name": "TIME", "logo": "time", "n": 2, "tier": "national"}, {"name": "Newsweek", "logo": "newsweek", "n": 2, "tier": "national"}, {"name": "CNN", "logo": "cnn", "n": 7, "tier": "national"}, {"name": "CBS News", "logo": "cbs", "n": 2, "tier": "national"}, {"name": "ABC News", "logo": "abc", "n": 2, "tier": "national"}, {"name": "Associated Press", "logo": "ap", "n": 1, "tier": "national"}, {"name": "Marketplace", "logo": "marketplace", "n": 5, "tier": "national"}, {"name": "NPR / RadioIQ", "logo": "npr", "n": 8, "tier": "national"}, {"name": "The Guardian", "logo": "guardian", "n": 2, "tier": "national"}, {"name": "POLITICO", "logo": "politico", "n": 2, "tier": "national"}, {"name": "Asharq Bloomberg", "logo": "bloomberg", "n": 3, "tier": "international"}, {"name": "Al Jazeera", "logo": "aljazeera", "n": 2, "tier": "international"}, {"name": "DW", "logo": "dw", "n": 1, "tier": "international"}, {"name": "South China Morning Post", "logo": "scmp", "n": 1, "tier": "international"}, {"name": "The Hill / NewsNation", "logo": "thehill", "n": 3, "tier": "national"}, {"name": "New York Post", "logo": "nypost", "n": 1, "tier": "national"}, {"name": "Bloomberg Businessweek", "logo": "businessweek", "n": 1, "tier": "national"}, {"name": "Fortune", "logo": "fortune", "n": 1, "tier": "national"}, {"name": "Christian Science Monitor", "logo": "csm", "n": 1, "tier": "national"}, {"name": "UPI", "logo": "upi", "n": 1, "tier": "national"}, {"name": "Yahoo News", "logo": "yahoo", "n": 2, "tier": "national"}, {"name": "Kiplinger", "logo": "kiplinger", "n": 1, "tier": "national"}, {"name": "Business Insider", "logo": "bi", "n": 1, "tier": "national"}, {"name": "Money", "logo": "money", "n": 1, "tier": "national"}, {"name": "FOX News", "logo": "fox", "n": 3, "tier": "national"}, {"name": "FOX 5 DC", "logo": "fox5", "n": 34, "tier": "regional"}, {"name": "WTOP", "logo": "wtop", "n": 2, "tier": "regional"}, {"name": "KNX News 97.1 Los Angeles", "logo": "knx", "n": 8, "tier": "regional"}, {"name": "WUSA9 (CBS)", "logo": "cbs-affiliate", "n": 4, "tier": "national"}, {"name": "Newswise", "logo": "newswise", "n": 3, "tier": "national"}, {"name": "WalletHub", "logo": "wallethub", "n": 3, "tier": "national"}, {"name": "Earnest", "logo": "earnest", "n": 2, "tier": "national"}, {"name": "NerdWallet", "logo": "nerdwallet", "n": 2, "tier": "national"}, {"name": "Agri-View", "logo": "agriview", "n": 1, "tier": "national"}, {"name": "American Banker", "logo": "americanbanker", "n": 1, "tier": "national"}, {"name": "CNBC", "logo": "cnbc", "n": 1, "tier": "national"}, {"name": "Circa", "logo": "circa", "n": 1, "tier": "national"}, {"name": "Forward Pathway", "logo": "fp", "n": 1, "tier": "national"}, {"name": "Futurity", "logo": "futurity", "n": 1, "tier": "national"}, {"name": "HUD PD&R Edge", "logo": "hud", "n": 1, "tier": "national"}, {"name": "Investment Watch Blog", "logo": "investmentwatch", "n": 1, "tier": "national"}, {"name": "More Perfect Union", "logo": "mpu", "n": 1, "tier": "national"}, {"name": "NBC", "logo": "nbc", "n": 1, "tier": "national"}, {"name": "Public News Service", "logo": "pns", "n": 1, "tier": "national"}, {"name": "Reckon.news", "logo": "reckon", "n": 1, "tier": "national"}, {"name": "Tax Policy Center", "logo": "tpc", "n": 1, "tier": "national"}, {"name": "The Current", "logo": "thecurrent", "n": 1, "tier": "national"}, {"name": "The New Republic", "logo": "newrepublic", "n": 1, "tier": "national"}, {"name": "WTKR (CBS)", "logo": "cbs-affiliate", "n": 1, "tier": "national"}, {"name": "Washington Examiner", "logo": "examiner", "n": 1, "tier": "national"}, {"name": "RTVI (Russian-language TV, New York)", "logo": "rtvi", "n": 5, "tier": "international"}, {"name": "Al Arabiya", "logo": "alarabiya", "n": 2, "tier": "international"}, {"name": "AInvest", "logo": "ainvest", "n": 1, "tier": "international"}, {"name": "ARD (German public radio)", "logo": "ard", "n": 1, "tier": "international"}, {"name": "Alaraby TV", "logo": "alaraby", "n": 1, "tier": "international"}, {"name": "Assets (Austria)", "logo": "assets", "n": 1, "tier": "international"}, {"name": "Coin Rivet", "logo": "coinrivet", "n": 1, "tier": "international"}, {"name": "Correio Braziliense", "logo": "correio", "n": 1, "tier": "international"}, {"name": "Der Standard / St. Galler Tagblatt", "logo": "derstandard", "n": 1, "tier": "international"}, {"name": "Die Presse", "logo": "diepresse", "n": 1, "tier": "international"}, {"name": "EFN", "logo": "efn", "n": 1, "tier": "international"}, {"name": "FinTech TV", "logo": "fintechtv", "n": 1, "tier": "international"}, {"name": "Frankfurter Allgemeine Zeitung", "logo": "faz", "n": 1, "tier": "international"}, {"name": "MoneySense (Canada)", "logo": "moneysense", "n": 1, "tier": "international"}, {"name": "Phoenix TV", "logo": "phoenix", "n": 1, "tier": "international"}, {"name": "Republica (Nepal)", "logo": "republica", "n": 1, "tier": "international"}, {"name": "Sky News Arabia", "logo": "skynewsarabia", "n": 1, "tier": "international"}, {"name": "The New Arab", "logo": "newarab", "n": 1, "tier": "international"}, {"name": "WFXR (FOX)", "logo": "fox-affiliate", "n": 13, "tier": "regional"}, {"name": "710 KNUS Denver", "logo": "knus", "n": 10, "tier": "regional"}, {"name": "WDBJ7 (CBS Roanoke)", "logo": "cbs-affiliate", "n": 9, "tier": "regional"}, {"name": "WSLS 10", "logo": "wsls", "n": 9, "tier": "regional"}, {"name": "WSET (ABC)", "logo": "abc-affiliate", "n": 7, "tier": "regional"}, {"name": "WRIC (ABC)", "logo": "abc-affiliate", "n": 4, "tier": "regional"}, {"name": "WJLA (ABC)", "logo": "abc-affiliate", "n": 3, "tier": "regional"}, {"name": "WVEC (ABC)", "logo": "abc-affiliate", "n": 3, "tier": "regional"}, {"name": "Michigan Public Radio", "logo": "michiganradio", "n": 2, "tier": "regional"}, {"name": "WAVY (NBC)", "logo": "nbc-affiliate", "n": 2, "tier": "regional"}, {"name": "Atlanta News First", "logo": "wanf", "n": 1, "tier": "regional"}, {"name": "Battle Creek Enquirer", "logo": "bce", "n": 1, "tier": "regional"}, {"name": "Detroit Metro Times", "logo": "metrotimes", "n": 1, "tier": "regional"}, {"name": "MLive", "logo": "mlive", "n": 1, "tier": "regional"}, {"name": "MinnPost", "logo": "minnpost", "n": 1, "tier": "regional"}, {"name": "Technical.ly", "logo": "technically", "n": 1, "tier": "regional"}, {"name": "WBTV (CBS Charlotte)", "logo": "cbs-affiliate", "n": 1, "tier": "regional"}, {"name": "WFLD (FOX)", "logo": "fox-affiliate", "n": 1, "tier": "regional"}, {"name": "WMAL (Washington, DC)", "logo": "wmal", "n": 1, "tier": "regional"}, {"name": "WOAY", "logo": "woay", "n": 1, "tier": "regional"}, {"name": "WRVA News Radio", "logo": "wrva", "n": 1, "tier": "regional"}, {"name": "WWL New Orleans", "logo": "wwl", "n": 1, "tier": "regional"}, {"name": "Virginia Tech News", "logo": "vt", "n": 12, "tier": "state"}, {"name": "Virginia Business", "logo": "vabusiness", "n": 7, "tier": "state"}, {"name": "Dogwood", "logo": "dogwood", "n": 1, "tier": "state"}, {"name": "WFIR", "logo": "wfir", "n": 16, "tier": "local"}, {"name": "Augusta Free Press", "logo": "augustafreepress", "n": 2, "tier": "local"}, {"name": "The Roanoke Times", "logo": "roanoke", "n": 2, "tier": "local"}, {"name": "Northern Virginia Daily", "logo": "nvdaily", "n": 1, "tier": "local"}, {"name": "The Goshen News", "logo": "goshen", "n": 1, "tier": "local"}, {"name": "The Roanoke Star", "logo": "roanokestar", "n": 1, "tier": "local"}, {"name": "Whiterock Locators", "logo": "whiterock", "n": 1, "tier": "local"}];
+window.OUTLETS = [{"name": "The Wall Street Journal", "logo": "wsj", "n": 2, "tier": "national"}, {"name": "The Washington Post", "logo": "wapo", "n": 2, "tier": "national"}, {"name": "TIME", "logo": "time", "n": 2, "tier": "national"}, {"name": "Newsweek", "logo": "newsweek", "n": 2, "tier": "national"}, {"name": "CNN", "logo": "cnn", "n": 7, "tier": "national"}, {"name": "CBS News", "logo": "cbs", "n": 2, "tier": "national"}, {"name": "ABC News", "logo": "abc", "n": 2, "tier": "national"}, {"name": "Associated Press", "logo": "ap", "n": 1, "tier": "national"}, {"name": "Marketplace", "logo": "marketplace", "n": 5, "tier": "national"}, {"name": "NPR / RadioIQ", "logo": "npr", "n": 8, "tier": "national"}, {"name": "The Guardian", "logo": "guardian", "n": 2, "tier": "national"}, {"name": "POLITICO", "logo": "politico", "n": 2, "tier": "national"}, {"name": "Bloomberg", "logo": "bloomberg", "n": 1, "tier": "national"}, {"name": "Asharq Bloomberg", "logo": "bloomberg", "n": 3, "tier": "international"}, {"name": "Al Jazeera", "logo": "aljazeera", "n": 2, "tier": "international"}, {"name": "DW", "logo": "dw", "n": 1, "tier": "international"}, {"name": "South China Morning Post", "logo": "scmp", "n": 1, "tier": "international"}, {"name": "The Hill / NewsNation", "logo": "thehill", "n": 3, "tier": "national"}, {"name": "New York Post", "logo": "nypost", "n": 1, "tier": "national"}, {"name": "Bloomberg Businessweek", "logo": "businessweek", "n": 1, "tier": "national"}, {"name": "Fortune", "logo": "fortune", "n": 1, "tier": "national"}, {"name": "Christian Science Monitor", "logo": "csm", "n": 1, "tier": "national"}, {"name": "UPI", "logo": "upi", "n": 1, "tier": "national"}, {"name": "Yahoo News", "logo": "yahoo", "n": 2, "tier": "national"}, {"name": "Kiplinger", "logo": "kiplinger", "n": 1, "tier": "national"}, {"name": "Business Insider", "logo": "bi", "n": 1, "tier": "national"}, {"name": "Money", "logo": "money", "n": 1, "tier": "national"}, {"name": "FOX News", "logo": "fox", "n": 3, "tier": "national"}, {"name": "FOX 5 DC", "logo": "fox5", "n": 36, "tier": "regional"}, {"name": "WTOP", "logo": "wtop", "n": 2, "tier": "regional"}, {"name": "KNX News 97.1 Los Angeles", "logo": "knx", "n": 8, "tier": "regional"}, {"name": "WUSA9 (CBS)", "logo": "cbs-affiliate", "n": 4, "tier": "national"}, {"name": "Newswise", "logo": "newswise", "n": 3, "tier": "national"}, {"name": "WalletHub", "logo": "wallethub", "n": 3, "tier": "national"}, {"name": "Earnest", "logo": "earnest", "n": 2, "tier": "national"}, {"name": "NerdWallet", "logo": "nerdwallet", "n": 2, "tier": "national"}, {"name": "Agri-View", "logo": "agriview", "n": 1, "tier": "national"}, {"name": "American Banker", "logo": "americanbanker", "n": 1, "tier": "national"}, {"name": "CNBC", "logo": "cnbc", "n": 1, "tier": "national"}, {"name": "Circa", "logo": "circa", "n": 1, "tier": "national"}, {"name": "Commercial Observer", "logo": "commercialobserver", "n": 1, "tier": "national"}, {"name": "Forward Pathway", "logo": "fp", "n": 1, "tier": "national"}, {"name": "Futurity", "logo": "futurity", "n": 1, "tier": "national"}, {"name": "HUD PD&R Edge", "logo": "hud", "n": 1, "tier": "national"}, {"name": "Inman", "logo": "inman", "n": 1, "tier": "national"}, {"name": "Investment Watch Blog", "logo": "investmentwatch", "n": 1, "tier": "national"}, {"name": "More Perfect Union", "logo": "mpu", "n": 1, "tier": "national"}, {"name": "NBC", "logo": "nbc", "n": 1, "tier": "national"}, {"name": "Nexstar Media Wire", "logo": "nexstar", "n": 1, "tier": "national"}, {"name": "Public News Service", "logo": "pns", "n": 1, "tier": "national"}, {"name": "Reckon.news", "logo": "reckon", "n": 1, "tier": "national"}, {"name": "Tax Policy Center", "logo": "tpc", "n": 1, "tier": "national"}, {"name": "The Current", "logo": "thecurrent", "n": 1, "tier": "national"}, {"name": "The New Republic", "logo": "newrepublic", "n": 1, "tier": "national"}, {"name": "WTKR (CBS)", "logo": "cbs-affiliate", "n": 1, "tier": "national"}, {"name": "Washington Examiner", "logo": "examiner", "n": 1, "tier": "national"}, {"name": "RTVI (Russian-language TV, New York)", "logo": "rtvi", "n": 5, "tier": "international"}, {"name": "Al Arabiya", "logo": "alarabiya", "n": 2, "tier": "international"}, {"name": "AInvest", "logo": "ainvest", "n": 1, "tier": "international"}, {"name": "ARD (German public radio)", "logo": "ard", "n": 1, "tier": "international"}, {"name": "Alaraby TV", "logo": "alaraby", "n": 1, "tier": "international"}, {"name": "Assets (Austria)", "logo": "assets", "n": 1, "tier": "international"}, {"name": "Coin Rivet", "logo": "coinrivet", "n": 1, "tier": "international"}, {"name": "Correio Braziliense", "logo": "correio", "n": 1, "tier": "international"}, {"name": "Der Standard / St. Galler Tagblatt", "logo": "derstandard", "n": 1, "tier": "international"}, {"name": "Die Presse", "logo": "diepresse", "n": 1, "tier": "international"}, {"name": "EFN", "logo": "efn", "n": 1, "tier": "international"}, {"name": "FinTech TV", "logo": "fintechtv", "n": 1, "tier": "international"}, {"name": "Frankfurter Allgemeine Zeitung", "logo": "faz", "n": 1, "tier": "international"}, {"name": "MoneySense (Canada)", "logo": "moneysense", "n": 1, "tier": "international"}, {"name": "Phoenix TV", "logo": "phoenix", "n": 1, "tier": "international"}, {"name": "Republica (Nepal)", "logo": "republica", "n": 1, "tier": "international"}, {"name": "Sky News Arabia", "logo": "skynewsarabia", "n": 1, "tier": "international"}, {"name": "The New Arab", "logo": "newarab", "n": 1, "tier": "international"}, {"name": "WFXR (FOX)", "logo": "fox-affiliate", "n": 16, "tier": "regional"}, {"name": "710 KNUS Denver", "logo": "knus", "n": 11, "tier": "regional"}, {"name": "WDBJ7 (CBS Roanoke)", "logo": "cbs-affiliate", "n": 9, "tier": "regional"}, {"name": "WSLS 10", "logo": "wsls", "n": 9, "tier": "regional"}, {"name": "WSET (ABC)", "logo": "abc-affiliate", "n": 7, "tier": "regional"}, {"name": "WRIC (ABC)", "logo": "abc-affiliate", "n": 4, "tier": "regional"}, {"name": "WJLA (ABC)", "logo": "abc-affiliate", "n": 3, "tier": "regional"}, {"name": "WVEC (ABC)", "logo": "abc-affiliate", "n": 3, "tier": "regional"}, {"name": "Michigan Public Radio", "logo": "michiganradio", "n": 2, "tier": "regional"}, {"name": "WAVY (NBC)", "logo": "nbc-affiliate", "n": 2, "tier": "regional"}, {"name": "Atlanta News First", "logo": "wanf", "n": 1, "tier": "regional"}, {"name": "Battle Creek Enquirer", "logo": "bce", "n": 1, "tier": "regional"}, {"name": "Cardinal News", "logo": "cardinalnews", "n": 1, "tier": "regional"}, {"name": "Detroit Metro Times", "logo": "metrotimes", "n": 1, "tier": "regional"}, {"name": "MLive", "logo": "mlive", "n": 1, "tier": "regional"}, {"name": "MinnPost", "logo": "minnpost", "n": 1, "tier": "regional"}, {"name": "Technical.ly", "logo": "technically", "n": 1, "tier": "regional"}, {"name": "WBTV (CBS Charlotte)", "logo": "cbs-affiliate", "n": 1, "tier": "regional"}, {"name": "WFLD (FOX)", "logo": "fox-affiliate", "n": 1, "tier": "regional"}, {"name": "WMAL (Washington, DC)", "logo": "wmal", "n": 1, "tier": "regional"}, {"name": "WOAY", "logo": "woay", "n": 1, "tier": "regional"}, {"name": "WRVA News Radio", "logo": "wrva", "n": 1, "tier": "regional"}, {"name": "WWL New Orleans", "logo": "wwl", "n": 1, "tier": "regional"}, {"name": "Virginia Tech News", "logo": "vt", "n": 12, "tier": "state"}, {"name": "Virginia Business", "logo": "vabusiness", "n": 7, "tier": "state"}, {"name": "Dogwood", "logo": "dogwood", "n": 1, "tier": "state"}, {"name": "WFIR", "logo": "wfir", "n": 17, "tier": "local"}, {"name": "Augusta Free Press", "logo": "augustafreepress", "n": 2, "tier": "local"}, {"name": "The Roanoke Times", "logo": "roanoke", "n": 2, "tier": "local"}, {"name": "Northern Virginia Daily", "logo": "nvdaily", "n": 1, "tier": "local"}, {"name": "The Goshen News", "logo": "goshen", "n": 1, "tier": "local"}, {"name": "The Roanoke Star", "logo": "roanokestar", "n": 1, "tier": "local"}, {"name": "Whiterock Locators", "logo": "whiterock", "n": 1, "tier": "local"}];
 window.TOPIC_LABELS = {"trade": "Trade & tariffs", "money": "The Fed & money", "prices": "Prices & cost of living", "jobs": "Jobs & the economy", "markets": "Markets & new finance", "housing": "Housing", "gov": "Government & budgets", "world": "Global affairs & energy"};
 window.TYPE_LABELS = {"tv": "Television", "radio": "Radio", "print": "Print", "online": "Online", "podcast": "Podcast"};
 window.BAND = [{"slug": "wsj", "name": "The Wall Street Journal", "logos": ["wsj"], "wm": true}, {"slug": "wapo", "name": "The Washington Post", "logos": ["wapo"], "wm": true}, {"slug": "time", "name": "TIME", "logos": ["time"], "wm": true}, {"slug": "newsweek", "name": "Newsweek", "logos": ["newsweek"], "wm": true}, {"slug": "cnn", "name": "CNN", "logos": ["cnn"], "wm": true}, {"slug": "cbs", "name": "CBS", "logos": ["cbs", "cbs-affiliate"], "wm": true}, {"slug": "abc", "name": "ABC", "logos": ["abc", "abc-affiliate"], "wm": true}, {"slug": "ap", "name": "Associated Press", "logos": ["ap"], "wm": true}, {"slug": "politico", "name": "POLITICO", "logos": ["politico"], "wm": true}, {"slug": "thehill", "name": "The Hill", "logos": ["thehill"], "wm": true}, {"slug": "guardian", "name": "The Guardian", "logos": ["guardian"], "wm": true}, {"slug": "aljazeera", "name": "Al Jazeera", "logos": ["aljazeera"], "wm": true}, {"slug": "dw", "name": "DW", "logos": ["dw"], "wm": true}, {"slug": "npr", "name": "NPR", "logos": ["npr"], "wm": true}, {"slug": "marketplace", "name": "Marketplace", "logos": ["marketplace"], "wm": true}, {"slug": "fox5", "name": "FOX 5 DC", "logos": ["fox5"], "wm": true}];
-window.ALSO = ["Asharq Bloomberg", "South China Morning Post", "New York Post", "Bloomberg Businessweek", "Fortune", "Christian Science Monitor", "UPI", "Yahoo News", "Kiplinger", "Business Insider", "Money", "RTVI (Russian-language TV, New York)", "Al Arabiya", "ARD (German public radio)", "Alaraby TV", "Assets (Austria)", "Correio Braziliense", "Der Standard / St. Galler Tagblatt", "Die Presse", "FinTech TV", "Frankfurter Allgemeine Zeitung", "MoneySense (Canada)"];
+window.ALSO = ["Asharq Bloomberg", "South China Morning Post", "Bloomberg", "New York Post", "Bloomberg Businessweek", "Fortune", "Christian Science Monitor", "UPI", "Yahoo News", "Kiplinger", "Business Insider", "Money", "RTVI (Russian-language TV, New York)", "Al Arabiya", "ARD (German public radio)", "Alaraby TV", "Assets (Austria)", "Correio Braziliense", "Der Standard / St. Galler Tagblatt", "Die Presse", "FinTech TV", "Frankfurter Allgemeine Zeitung"];
