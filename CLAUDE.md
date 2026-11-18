@@ -23,6 +23,7 @@ Personal site of David Bieri (Associate Professor of Urban Affairs, SPIA, Virgin
 
 ## Open items
 - `assets/images/headshot.jpg` added 18 Nov 2026 (studio portrait, 1000×1250, 4:5, under 200 KB, metadata stripped). `assets/docs/CV_DSBieri.pdf` added 18 Nov 2026; regenerate from the Overleaf project, which is the CV source of truth — `cv/` mirrors it.
+- Photos (18 Nov 2026): `assets/images/og.jpg` (1200×630, office photo) is the link-preview image in the head of all six pages (`og:image` + `twitter:card summary_large_image`); `about-office.jpg` is the About banner; `press-studio.jpg` (full resolution) and `press-office.jpg` are the press downloads at `about.html#press`, linked from the booking line on media.html. The JSON-LD `image` stays the headshot.
 - Verify `publications.js` against the CV; verify media URLs that still point at VT media-mentions pages.
 - Migrate legacy david-bieri.com assets (PDFs, audio) into `assets/docs/` and add forwarding stubs for old URLs.
 
