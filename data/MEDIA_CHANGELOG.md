@@ -245,3 +245,6 @@ would have needed one approval per domain). No URL was confirmed dead, so none w
   The Hill 30 Oct 2026, NY Post 10 Apr 2026, The Guardian 4 Apr 2026 and WVEC 17 Apr 2026 are confirmed by VT's
   in-the-news pages but their URLs were not seen. For Politico Pro (20 Apr 2026), E&E News ran the same story free on
   21 Apr ("Hill Republicans not keen on gasoline tax holiday"); not swapped in.
+- **Follow-up, same evening (David's answers):** WKAR row `x-2014-07-10-npr` re-dated 10 → 30 Jul 2014 and Michigan
+  Public row `x-2014-09-15-npr` re-dated 15 → 16 Sep 2014, to the page dates (ids kept). The Politico Pro row was
+  **not** switched to E&E News: the E&E piece of 21 Apr 2026 does not mention him, so it is not the same article.

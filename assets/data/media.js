@@ -3643,7 +3643,7 @@ window.MEDIA = [
  },
  {
   "id": "x-2014-09-15-npr",
-  "date": "2014-09-15",
+  "date": "2014-09-16",
   "outlet": "Michigan Public Radio",
   "logo": "michiganradio",
   "title": "Transparency lacking as Michigan taxpayers bankroll private development",
@@ -3678,6 +3678,18 @@ window.MEDIA = [
   "url": "http://www.mlive.com/lansing-news/index.ssf/2014/09/tax-capturing_authorities_that.html"
  },
  {
+  "id": "x-2014-07-10-npr",
+  "date": "2014-07-30",
+  "outlet": "Michigan Public Radio",
+  "logo": "michiganradio",
+  "title": "Do corporate tax incentives boost Michigan's economy?",
+  "type": "radio",
+  "topic": "gov",
+  "scope": "Regional",
+  "tier": "regional",
+  "url": "https://www.wkar.org/economy/2014-07-30/do-corporate-tax-incentives-boost-michigans-economy"
+ },
+ {
   "id": "x-2014-07-17-businessweek",
   "date": "2014-07-17",
   "outlet": "Bloomberg Businessweek",
@@ -3688,18 +3700,6 @@ window.MEDIA = [
   "scope": "National",
   "tier": "national",
   "url": "https://www.bloomberg.com/bw/articles/2014-07-17/housings-30-percent-of-income-rule-is-near-useless"
- },
- {
-  "id": "x-2014-07-10-npr",
-  "date": "2014-07-10",
-  "outlet": "Michigan Public Radio",
-  "logo": "michiganradio",
-  "title": "Do corporate tax incentives boost Michigan's economy?",
-  "type": "radio",
-  "topic": "gov",
-  "scope": "Regional",
-  "tier": "regional",
-  "url": "https://www.wkar.org/economy/2014-07-30/do-corporate-tax-incentives-boost-michigans-economy"
  },
  {
   "id": "x-2014-04-15-diepresse",
