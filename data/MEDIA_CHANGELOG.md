@@ -211,3 +211,16 @@ KNUS 4 Jun 2019 (booked for 3:30 p.m. MT; the thread has no topic); FOX 5 DC 16 
 - Requests that went unconfirmed or were declined: KNUS 3 and 21 Sep 2021 (Evergrande), WFIR 11 Jul 2022 (dollar–euro
   parity), FOX 5 9 Sep 2022 (declined; reporter asked to quote his emailed paragraph), Business Insider May 2022,
   Agência Estado Apr 2022 (shrinkflation), Fortune (Erik Sherman) May 2019.
+
+## Same evening, after David's review (279 → 288 rows)
+- FOX 5 DC row `2216170` re-dated 16 Jun → **13 Jul 2022** (David: it is the Jim Lokay segment). The 7 Jun segment
+  (World Bank growth cut and stagflation warning) added as `x-2022-06-07-fox5`. Neither clip is findable on fox5dc.com.
+- Interviews added from the archive: Inman (now with its article, published **31 May 2023**, "A squad of economists
+  is waging a stealth war on America's '30% rule'"), Wall Street Journal 21 Feb 2020, Bloomberg 24 Jun 2022,
+  Cardinal News 23 Sep 2022, Nexstar Media Wire 9 Mar 2022, WFXR 22 Feb, 11 Mar and 13 Apr 2022. Except Inman, none
+  has a published piece or clip that could be found; titles are topic lines and the notes say so. Bloomberg's
+  13 Sep 2022 piece on outdated money rules was checked (via the FA Magazine reprint) and does not quote him.
+- WDBJ7 5 Mar 2026 row now has its story: "Roanoke family feels economic squeeze as grocery costs, inflation outpace
+  wages" (found by web search).
+- Not added (no booking confirmed): WFXR and WSLS 7 Jul 2022, KNUS Sep 2021, WFIR Jul 2022, and the two WFIR 2019
+  Brexit stories that do not name him.
