@@ -22,10 +22,11 @@ Read `CLAUDE.md` first (conventions, media database, coverage band, clips). This
 3. **Talks and service.** Render `data/service.csv` as a Talks and Service page or section; design it in Claude Design first.
    - David's two recorded talks get the click-to-load player once he supplies their YouTube/Vimeo/VTechWorks URLs: the Ashford comments (Jan 2021) and "Thinking About Affordable Housing: How Theory Matters" (Feb 2021). Use the `-plus` versions.
    - The catalogue and transcripts are in OneDrive `Media/_catalogue`, not in this repo.
-4. **Legacy assets.** The old files are on the Bluehost account and can no longer be fetched over the web. David downloads `public_html` (docs, images, audio) from cPanel; then copy what the redirect stubs and the CV link to into the repo, and check every old URL in `legacy/README.md`.
-5. **Logos.** As official one-colour marks arrive, run `python3 tools/prep_logo.py <file.svg> <slug>` (see `assets/logos/README.md`). Don't switch on a half-logo, half-name band.
-6. **Google Scholar.** Pull citation counts and the h-index from https://scholar.google.com/citations?user=l_KyksEAAAAJ in the browser (it rate-limits scripts). Add them to the About page only if David agrees.
-7. **Media leftovers** (lower priority):
+4. **Legacy assets.** The old files are on the Bluehost account and can no longer be fetched over the web. David downloads `public_html` (docs, images, audio) from cPanel; then copy what the redirect stubs and the CV link to into the repo, and check every old URL in `legacy/README.md`. Add forwarding pages for old URLs that are still linked from elsewhere (VT pages, old syllabi, Google Scholar), not only the ones the CV uses.
+5. **Logos.** Start with `python3 tools/prep_logo.py --check`, which lists the band slots that are still text placeholders; TIME, CNN, AP and the WSJ matter most. As official one-colour marks arrive, run `python3 tools/prep_logo.py <file.svg> <slug>` (see `assets/logos/README.md`). Don't switch on a half-logo, half-name band.
+6. **Click-test script.** Add `tools/click_test.py` next to `check_pages.py`: on media.html, click each issue chip, the Virginia toggle, an outlet mark and a Watch button, then confirm the hash, the row count and that the On air row matches the filter. Today these clicks are done by hand in every session.
+7. **Google Scholar.** Pull citation counts and the h-index from https://scholar.google.com/citations?user=l_KyksEAAAAJ in the browser (it rate-limits scripts). Add them to the About page only if David agrees.
+8. **Media leftovers** (lower priority):
    - the ~85 one-off URLs that haven't been checked;
    - the Kiplinger row (1 Apr 2025), which still links a research.vt.edu re-post;
    - KNX row `2396145`, which may be misdated (2023 vs 2024);
@@ -33,7 +34,12 @@ Read `CLAUDE.md` first (conventions, media database, coverage band, clips). This
    - the SSRN link for the 2026 prediction-markets working paper, once David has the number.
 
    The 13 remaining placeholders need David's memory, not a search. Station clips David saved himself are not re-hosted without the station's permission.
-8. **End the session** with the session-handover skill. Update `WEBSITE_SESSION_NOTES.md` in the Website project; `SESSION_NOTES.md` in this repo records the 18 Nov media session only.
+9. **End the session** with the session-handover skill. Update `WEBSITE_SESSION_NOTES.md` in the Website project; `SESSION_NOTES.md` in this repo records the 18 Nov media session only.
+
+## Running sessions
+- **Check links on David's computer, not in the cloud.** The cloud sandbox can't reach outlet sites, and the environment service refused to add their hosts (18 Nov). Locally, use the built-in browser for WFXR, WRIC and Outlook. Expect bot walls on Nexstar video pages.
+- **In a cloud session**, `tools/check_pages.py` needs `pip install playwright` and `CHROME=/opt/pw-browsers/chromium`; otherwise run the same checks through the Playwright MCP.
+- **One HANDOVER task per branch and PR.** Screenshots at 1280 and 390 px before each commit (CLAUDE.md). End with the session-handover skill.
 
 After every media edit: `python3 tools/build_media.py`, then `python3 tools/build_cv_media.py > cv/media_section.tex`. Then David pastes `media_section.tex` into Overleaf.
 
