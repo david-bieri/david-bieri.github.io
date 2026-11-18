@@ -34,11 +34,13 @@
   --ease: cubic-bezier(.2,.7,.2,1);
 }
 @media (prefers-color-scheme: dark) {
-  :root { --paper:#17191C; --paper-2:#1F2226; --ink:#EDEEEA; --ink-2:#B9BDC2; --ink-3:#83898F; --rule:#2E3238; --red:#E8463A; --link:#9DB8DA; }
+  :root { --paper:#17191C; --paper-2:#1F2226; --ink:#EDEEEA; --ink-2:#B9BDC2; --ink-3:#83898F; --rule:#2E3238; --red:#F25A4E; --link:#9DB8DA; } /* red: 5.3:1 on paper, 4.8:1 on paper-2 (was #E8463A, 4.1:1 on paper-2) */
 }
 
 *,*::before,*::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+[hidden] { display: none !important; } /* author display rules (.btn, .news-grid) must not undo the hidden attribute */
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 76px; } /* anchors clear the 60px sticky header */
+[id] { scroll-margin-top: 76px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { transition: none !important; animation: none !important; } }
 body { margin:0; background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1.6; font-feature-settings: "liga","kern"; }
 img { max-width: 100%; height: auto; display: block; }
@@ -68,8 +70,9 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .nav a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--red); border-radius: 0; }
 .nav-toggle { display: none; }
 @media (max-width: 720px) {
-  .nav-toggle { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: .9rem; background: none; border: 1px solid var(--rule); color: var(--ink); padding: 6px 10px; border-radius: 3px; cursor: pointer; }
+  .nav-toggle { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: .9rem; background: none; border: 1px solid var(--rule); color: var(--ink); padding: 8px 14px; min-height: 44px; border-radius: 3px; cursor: pointer; }
   .nav { display: none; position: absolute; left: 0; right: 0; top: 60px; background: var(--paper); border-bottom: 1px solid var(--rule); padding: 8px var(--gutter) 14px; flex-direction: column; }
+  .nav a { padding: 12px 10px; } /* 44px rows */
   .nav.open { display: flex; }
 }
 
@@ -172,7 +175,8 @@ audio { display: block; width: 100%; max-width: 420px; margin-top: 8px; height: 
 .chip { font-family: var(--sans); font-size: .85rem; border: 1px solid var(--rule); background: transparent; color: var(--ink-2); padding: 6px 12px; border-radius: 999px; cursor: pointer; }
 .chip:hover { color: var(--ink); border-color: var(--ink-3); }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.search { font-family: var(--sans); font-size: .9rem; padding: 7px 12px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); border-radius: 3px; min-width: 220px; margin-left: auto; }
+.search { font-family: var(--sans); font-size: 1rem; padding: 10px 12px; min-height: 44px; border: 1px solid var(--ink-3); background: var(--paper); color: var(--ink); border-radius: 3px; width: min(100%, 360px); margin-left: auto; } /* 16px: iOS Safari zooms into smaller fields; ink-3 border passes 3:1 */
+.search::placeholder { color: var(--ink-2); opacity: 1; }
 .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
 .row { display: grid; grid-template-columns: 110px 1fr auto; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
 .row .d { font-family: var(--sans); font-size: .85rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
@@ -205,7 +209,7 @@ audio { display: block; width: 100%; max-width: 420px; margin-top: 8px; height: 
 .timeline b { font-family: var(--sans); font-weight: 600; }
 
 /* Buttons */
-.btn { display: inline-block; font-family: var(--sans); font-size: .92rem; font-weight: 600; text-decoration: none; color: var(--paper); background: var(--ink); padding: 10px 16px; border-radius: 3px; }
+.btn { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--sans); font-size: .92rem; font-weight: 600; text-decoration: none; color: var(--paper); background: var(--ink); padding: 10px 16px; border-radius: 3px; }
 .btn:hover { color: var(--paper); background: var(--ink-2); }
 .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
 .btn.ghost:hover { background: var(--paper-2); }
@@ -219,7 +223,11 @@ audio { display: block; width: 100%; max-width: 420px; margin-top: 8px; height: 
 .site-foot ul { list-style: none; margin: 0; padding: 0; }
 .site-foot li { margin-bottom: 6px; }
 .site-foot .fine { grid-column: 1 / -1; margin-top: 10px; color: var(--ink-3); font-size: .8rem; }
-@media (max-width: 640px) { .site-foot .wrap { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .site-foot .wrap { grid-template-columns: 1fr; }
+  .site-foot li { margin-bottom: 0; }
+  .site-foot li a { display: inline-block; padding: 8px 0; } /* spaced tap targets */
+}
 
 /* Page intro */
 .intro { padding: clamp(32px, 5vw, 64px) 0 clamp(20px, 3vw, 36px); border-bottom: 1px solid var(--rule); }
@@ -230,17 +238,33 @@ audio { display: block; width: 100%; max-width: 420px; margin-top: 8px; height: 
    One treatment for every medium: a verb (Watch / Listen / Read) and an icon in the accent colour. */
 .fmt { display: inline-flex; align-items: center; gap: 6px; font-family: var(--sans); font-size: .78rem; font-weight: 600; color: var(--red); letter-spacing: .02em; white-space: nowrap; }
 .fmt svg { width: 14px; height: 14px; flex: none; }
-.intro .updated { display: block; margin-top: 8px; font-family: var(--sans); font-size: .82rem; color: var(--ink-3); }
+.intro .updated { display: block; margin-top: 8px; min-height: 1.4em; font-family: var(--sans); font-size: .82rem; color: var(--ink-3); } /* min-height: the text arrives with media.js */
+/* Space for what the script renders, so the page does not shift when media.js arrives (measured heights) */
+#band { min-height: 270px; }
+#band-home { min-height: 118px; }
+#lead { min-height: 420px; }
+@media (max-width: 640px) { #band { min-height: 540px; } #band-home { min-height: 200px; } #lead { min-height: 600px; } }
 .issue-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 28px; font-family: var(--sans); }
+.issue-strip, .issue-pins { display: contents; }
 .issue-bar .chip { font-size: .9rem; padding: 8px 14px; min-height: 38px; }
 .issue-bar .sep { width: 1px; height: 26px; background: var(--rule); margin: 0 6px; }
+.scope { display: none; }
 @media (max-width: 640px) {
-  .issue-bar { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: calc(-1 * var(--gutter)); padding-right: var(--gutter); }
-  .issue-bar::-webkit-scrollbar { display: none; }
-  .issue-bar .chip { white-space: nowrap; flex: none; }
-  .issue-bar .sep { flex: none; }
+  /* Issues scroll in a strip with a fade at the cut edge; the pressed issue is moved to the front by the script.
+     Virginia and the outlet chip sit in a second, non-scrolling row so the state is always on screen. */
+  .issue-bar { gap: 10px 8px; margin-bottom: 18px; }
+  .issue-bar .chip { min-height: 44px; padding: 10px 16px; white-space: nowrap; flex: none; }
+  .issue-strip { display: flex; gap: 8px; flex: 1 1 100%; overflow-x: auto; scrollbar-width: none; margin-right: calc(-1 * var(--gutter)); padding-right: 48px;
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); }
+  .issue-strip::-webkit-scrollbar { display: none; }
+  .issue-pins { display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 100%; }
+  .issue-bar .sep { display: none; }
+  .scope { display: block; font-family: var(--sans); font-size: .9rem; color: var(--ink-2); margin: 0 0 16px; }
+  .scope:empty { display: none; }
+  .player .watch { min-height: 44px; }
 }
-.chip.place[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: #fff; }
+.mark { min-height: 44px; }
+.chip.place[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: var(--paper); } /* paper on red: 5.0 light, 5.3 dark; #fff failed in dark mode */
 
 .news-lead { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr); gap: clamp(24px, 4vw, 56px); padding: 30px 0 40px; border-top: 2px solid var(--ink); }
 .kicker { font-family: var(--sans); font-size: .82rem; font-weight: 600; color: var(--red); margin-bottom: 14px; }
