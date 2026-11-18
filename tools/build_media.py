@@ -34,10 +34,15 @@ Columns (conventions as of the 17 Nov 2026 consolidation; see data/MEDIA_CHANGEL
   interviewer host or reporter as "Surname I" (not rendered; kept for your records)
   featured    "yes" to surface on the home page and in Selected appearances
   quote       optional pull quote (rendered in cards)
-  image       optional broadcast still or photo for this appearance, as a site path such as
-              assets/images/media/<id>.jpg: 16:9, 960x540 JPEG, under ~110 KB, network logo and caption
-              left in so the still credits itself. Shown on the lead story and on cards; the build fails if
-              the file is missing.
+  video       optional; plays on the page, loaded only when the visitor clicks Watch. Either a YouTube/Vimeo URL
+              (youtube.com/watch?v=…&t=…, youtu.be/…, youtube.com/live/…, vimeo.com/…) or a direct https URL to an
+              .mp4/.webm file. Left blank, a YouTube link in `url` is used automatically (the outlet's own upload).
+              Never point this at a file in this repo: GitHub rejects files over 100 MB and Pages sites are capped at 1 GB.
+  audio       optional; direct https URL to an .mp3/.m4a (or assets/media/… path for a small file, < 10 MB)
+  poster      optional still for the appearance: assets/media/posters/<id>.jpg (1280x720, 16:9, < 200 KB) or https URL.
+              Used by the video player when the row has a `video`, and by the On air row on media.html either way.
+              Leave the network logo and caption in so the still credits itself. A local path that does not exist fails the build.
+  transcript  optional; assets/media/transcripts/<id>.txt or https URL, shown as a "Transcript" link
   notes       provenance and anything else; not rendered. "merged duplicate <id>" records a consolidation.
 """
 import csv, html, json, os, re, sys
@@ -58,14 +63,47 @@ TOPIC_LABELS = {"trade": "Trade & tariffs", "money": "The Fed & money", "prices"
 odd = [r.get("id", "?") for r in rows if r["topic"] not in TOPIC_LABELS]
 if odd:
     sys.exit("Rows with a topic outside the eight issues: " + ", ".join(odd))
-missing = [r.get("id", "?") + " (" + r["image"] + ")" for r in rows if r.get("image") and not os.path.isfile(os.path.join(ROOT, r["image"]))]
+missing = [r.get("id", "?") + " (" + r["poster"] + ")" for r in rows
+           if r.get("poster") and not r["poster"].startswith("http") and not os.path.isfile(os.path.join(ROOT, r["poster"]))]
 if missing:
-    sys.exit("Rows whose image file does not exist: " + ", ".join(missing))
+    sys.exit("Rows whose poster file does not exist: " + ", ".join(missing))
 YES = ("yes", "true", "1", "x")
+
+def video_ref(u, explicit, rid):
+    """Normalise a video reference to {'yt': id, 'start': s} | {'vimeo': id} | {'src': url}, or None."""
+    if not u:
+        return None
+    from urllib.parse import urlparse, parse_qs
+    p = urlparse(u); host = p.netloc.lower().replace("www.", "").replace("m.", "")
+    q = parse_qs(p.query)
+    def secs(t):
+        t = (t or "").rstrip("s")
+        if not t: return 0
+        if t.isdigit(): return int(t)
+        mm = re.match(r"(?:(\d+)h)?(?:(\d+)m)?(?:(\d+))?", t)
+        return sum(int(x or 0) * k for x, k in zip(mm.groups(), (3600, 60, 1))) if mm else 0
+    vid = None
+    if host == "youtu.be":
+        vid = p.path.strip("/")
+    elif host in ("youtube.com", "youtube-nocookie.com"):
+        if p.path == "/watch": vid = (q.get("v") or [None])[0]
+        elif re.match(r"^/(live|embed|shorts)/", p.path): vid = p.path.split("/")[2]
+    if vid:
+        out = {"yt": vid}
+        st = secs((q.get("t") or q.get("start") or [""])[0])
+        if st: out["start"] = st
+        return out
+    if host == "vimeo.com" and re.match(r"^/\d+", p.path):
+        return {"vimeo": p.path.split("/")[1]}
+    if explicit:
+        if re.search(r"\.(mp4|webm)(\?|$)", u) and u.startswith("https://"):
+            return {"src": u}
+        sys.exit(f"Row {rid}: video must be a YouTube/Vimeo URL or an https .mp4/.webm URL: {u}")
+    return None
 
 media = []
 for r in rows:
-    m = {k: r[k] for k in ("id", "date", "outlet", "logo", "program", "title", "type", "topic", "scope", "tier", "url", "image") if r.get(k)}
+    m = {k: r[k] for k in ("id", "date", "outlet", "logo", "program", "title", "type", "topic", "scope", "tier", "url") if r.get(k)}
     if r.get("featured", "").strip().lower() in YES:
         m["featured"] = True
     if r.get("va", "").strip().lower() in YES:
@@ -74,6 +112,15 @@ for r in rows:
         m["weak"] = True  # placeholder headline: kept in the archive, skipped for the lead, cards and tiles
     if r.get("quote"):
         m["quote"] = r["quote"]
+    v = video_ref(r.get("video", "").strip() or r.get("url", ""), explicit=bool(r.get("video", "").strip()), rid=r["id"])
+    if v:
+        m["video"] = v
+    for k in ("audio", "poster", "transcript"):
+        val = r.get(k, "").strip()
+        if val:
+            if not val.startswith("https://") and not os.path.exists(os.path.join(ROOT, val)):
+                sys.exit(f"Row {r['id']}: {k} file not found: {val}")
+            m[k] = val
     media.append(m)
 
 # Outlet wall: distinct outlets ranked by tier then frequency
