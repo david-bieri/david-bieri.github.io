@@ -236,7 +236,9 @@
     var strip = bar.querySelector(".issue-strip"), pins = bar.querySelector(".issue-pins"), narrow = window.matchMedia ? matchMedia("(max-width: 640px)") : null;
     bar.addEventListener("click", function (e) {
       var b = e.target.closest(".chip"); if (!b) return;
-      if (b.dataset.va) st.va = !st.va; else if (b.dataset.clear) st.outlet = ""; else st.issue = b.dataset.v;
+      if (b.dataset.va) st.va = !st.va; else if (b.dataset.clear) st.outlet = "";
+      else if (b.dataset.clearall) { st.issue = "all"; st.va = false; st.outlet = ""; if (search) { search.value = ""; st.q = ""; } }
+      else st.issue = b.dataset.v;
       st.shown = 12; st.all = false; render(true);
     });
     var more = $("#more");
@@ -256,15 +258,19 @@
     var search = $("#search");
     if (search) search.addEventListener("input", function () { st.q = search.value.trim().toLowerCase(); render(); });
 
-    function keep(m) { return (st.issue === "all" || m.topic === st.issue) && (!st.va || m.va) && (!st.outlet || band.logos(st.outlet).indexOf(m.logo) > -1); }
+    /* One filter for the whole page: issue, Virginia, outlet and the search box all narrow the lead, the grids and the archive */
+    function keep(m) { return (st.issue === "all" || m.topic === st.issue) && (!st.va || m.va) && (!st.outlet || band.logos(st.outlet).indexOf(m.logo) > -1) && (!st.q || m.text.indexOf(st.q) > -1); }
+    function filterNames() { return [st.outlet ? band.name(st.outlet) : "", st.issue === "all" ? "" : TL[st.issue], st.va ? "Virginia" : "", st.q ? "“" + st.q + "”" : ""].filter(Boolean); }
     function card(m) {
       return '<article class="ncard">' + fmtTag(m) + '<div class="t">' + titleLink(m) + '</div>' +
         (m.quote ? '<p class="q">“' + esc(m.quote) + '”</p>' : '') + audioEl(m) +
         '<div class="meta">' + byline(m) + '</div></article>';
     }
     function render(fromChip) {
-      var oc = bar.querySelector("[data-clear]"); if (oc) oc.remove();
-      if (st.outlet) pins.insertAdjacentHTML("beforeend", '<button class="chip place" data-clear="1" aria-pressed="true" aria-label="Remove outlet filter">' + esc(band.name(st.outlet)) + ' ✕</button>');
+      Array.prototype.forEach.call(bar.querySelectorAll("[data-clear],[data-clearall]"), function (c) { c.remove(); });
+      if (st.outlet) pins.insertAdjacentHTML("beforeend", '<button class="chip place on" data-clear="1" aria-label="Remove the ' + esc(band.name(st.outlet)) + ' filter">' + esc(band.name(st.outlet)) + ' ✕</button>');
+      var nf = (st.issue !== "all") + st.va + !!st.outlet;
+      if (nf > 1) pins.insertAdjacentHTML("beforeend", '<button class="chip" data-clearall="1">Clear filters</button>');
       /* On phones the pressed issue comes first in the strip, so the state is visible without scrolling it */
       if (narrow && narrow.matches) {
         var keys = ["all"].concat(st.issue === "all" ? [] : [st.issue]).concat(Object.keys(TL).filter(function (k) { return k !== st.issue; }));
@@ -284,7 +290,7 @@
         (also.length ? '<aside class="also" aria-label="Also recent"><h3>Also recent</h3><ol>' + also.map(function (m) {
           return '<li>' + fmtTag(m) + '<span class="t">' + titleLink(m) + '</span><span class="meta">' + byline(m) + '</span></li>';
         }).join("") + '</ol></aside>' : '') :
-        '<p class="empty">Nothing on that combination yet. Try another issue.</p>';
+        '<p class="empty">Nothing matches ' + esc(filterNames().join(" + ")) + '. Remove one of those filters' + (st.q ? ' or clear the search' : '') + '.</p>';
       var air = xs.filter(function (m) { return m.poster && m !== lead; }).slice(0, 4), onair = $("#onair");
       if (onair) {
         onair.innerHTML = air.length ? '<h3>On air</h3><div class="onair-row">' + air.map(function (m) {
@@ -295,18 +301,21 @@
       $("#news-grid").innerHTML = grid.map(card).join("");
       $("#news-grid").hidden = !grid.length;
       if (more) more.hidden = xs.length <= 5 + st.shown;
-      var matches = media.filter(function (m) { return keep(m) && (!st.q || m.text.indexOf(st.q) > -1); }), shown = matches.length;
+      var matches = media.filter(keep), shown = matches.length;
       var all = st.all || !!st.q || shown <= ARCHIVE_N;
       list.innerHTML = (all ? matches : matches.slice(0, ARCHIVE_N)).map(row).join("");
       if (archiveMore) { archiveMore.hidden = all; archiveMore.textContent = "Show all " + shown; }
       $("#empty").hidden = shown > 0;
       $("#count").textContent = shown + " of " + media.length;
-      var label = [st.outlet ? band.name(st.outlet) : "", st.issue === "all" ? "" : TL[st.issue], st.va ? "Virginia" : ""].filter(Boolean).join(", ");
+      var label = filterNames().join(", ");
       $("#archive-scope").textContent = label ? "Showing: " + label : "";
+      $("#empty").textContent = "Nothing matches " + filterNames().join(" + ") + ".";
       var scope = $("#scope"); if (scope) scope.textContent = label ? "Showing " + label + " · " + shown + " of " + media.length : "";
-      if (fromChip && history.replaceState) {
+      /* Each filter change is a history entry, so Back undoes one filter at a time (David's decision, 18 Nov 2026) */
+      if (fromChip && history.pushState) {
         var h = [st.issue === "all" ? "" : st.issue, st.va ? "virginia" : "", st.outlet ? "outlet=" + st.outlet : ""].filter(Boolean).join("&");
-        history.replaceState(null, "", h ? "#" + h : location.pathname);
+        var next = h ? "#" + h : location.pathname + location.search;
+        if ((location.hash || "") !== (h ? "#" + h : "")) history.pushState(null, "", next);
       }
     }
     render();
@@ -330,8 +339,8 @@
     }
     function pub(p) {
       return '<div class="pub"><div class="y">' + p.year + '</div><div>' +
-        '<div class="t">' + (p.url ? '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + NEWTAB + '</a>' : esc(p.title)) + (p.authors ? ' <span class="muted">(' + esc(p.authors) + ')</span>' : '') + '</div>' +
-        '<div class="v">' + esc(p.venue) + '</div>' + (p.note ? '<div class="n">' + esc(p.note) + '</div>' : '') + '</div></div>';
+        '<div class="t">' + (p.url || p.doi ? '<a href="' + esc(p.url || "https://doi.org/" + p.doi) + '" target="_blank" rel="noopener">' + esc(p.title) + NEWTAB + '</a>' : esc(p.title)) + (p.authors ? ' <span class="muted">(' + esc(p.authors) + ')</span>' : '') + '</div>' +
+        '<div class="v">' + esc(p.venue) + (p.doi ? ' · <a class="doi" href="https://doi.org/' + esc(p.doi) + '" target="_blank" rel="noopener">doi:' + esc(p.doi) + NEWTAB + '</a>' : '') + '</div>' + (p.note ? '<div class="n">' + esc(p.note) + '</div>' : '') + '</div></div>';
     }
   }
 })();

@@ -1,3 +1,30 @@
+# Session notes — 18 Nov 2026 (design review and fixes)
+
+**Topic:** three-skill design review (Impeccable, Motion, design-taste-frontend), then four fix groups and follow-ups
+**PRs:** #26 skill vendored · #27 must-fix · #28 should-fix · #29 polish · #30 follow-ups (all merged to `main`)
+
+## Completed
+- Review published as a Claude artifact (32 findings: 8 must, 14 should, 10 polish, plus rejected advice and an iPhone checklist).
+- Must-fix: `[hidden]` cascade bug, reserved heights (media.html layout shift 0.82 → 0.05), anchors clear the sticky header, phone filter strip with Virginia and the outlet chip pinned, 16px search field, 44px targets, band taps scroll to results, dark red #F25A4E.
+- Should-fix: band as a line of names without SVG fetches, 14px floor for small text on phones, archive rows keep verb and issue, no hollow cards, shorter roles line, measure caps, live region on the scope line, menu Escape/outside tap, `media-home.js` (33 KB) and a 115 KB headshot, og tags on every page, "CV (PDF)", archive paged to 25 rows, programme dedupe in the build, site icons, heading sizes.
+- Polish: no kickers or arrows, teaching figures as a sentence and quotes as a list, Education list, balanced headings, dead code and inline styles gone, new-tab notes, landscape header, menu button below 900px.
+- Follow-ups: skip link, theme-color, 404 shell, sitemap lastmod, pushState filters (Back undoes one step), search narrows the whole page, "Clear filters" chip, named empty states, DOIs (12, from the CV and publishers), Chloe Hurren named in full, `check_pages.py` widened (four viewports, layout shift, click test).
+
+## Decisions
+- Skills precedence: CLAUDE.md, then the skill's specific guidance, then Claude's habits (recorded in CLAUDE.md).
+- The taste skill is vendored without its photo, scene, object and icon libraries (40 MB → 3.3 MB).
+- Filters use `pushState`; the search box narrows every block on media.html, not only the archive.
+- The HPD 2017 "cataclysmic money" link now uses the CV's DOI (10.1080/10511482.2017.1298211); the old link carried a different DOI.
+
+## Open
+- 16 weak rows (13 programme-only titles): David's memory or the Outlook folder.
+- Band logos: all 16 slots are placeholders until marks arrive (HANDOVER task 5).
+- iPhone Safari checks that Chromium cannot do: the search field must not zoom, a band name must select on one tap.
+- DOIs not found for the Journal of Fixed Income 2005 article and the Michigan Journal of Sustainability 2013 article; the remaining chapters have no chapter DOI on record.
+- The CV in Overleaf does not yet list the DOIs added here for CJRES 2023, the Springer 2017 chapter and the Routledge 2021 chapter.
+
+---
+
 # Session notes — 18 Nov 2026 (media database, clips, CV PDF)
 
 **Last session:** 2026-11-18
