@@ -59,7 +59,7 @@ online archive; delete the line for the complete list (adds ~6 pages).
 - **Teaching** gets a summary line (5 courses developed, 1,300+ students).
 - Conference presentations before 2015 and the refereeing list compressed to a paragraph each.
 - **Languages and citizenship** uncommented. Faculty Senate and Kellogg Research Fellow added to appointments.
-- Title "Associate Professor of Public Policy" throughout; harvard package dropped; two dead Michigan URLs repointed; typos fixed.
+- Title "Associate Professor of Urban Affairs" (official; site aligned 18 Nov 2026); harvard package dropped; two dead Michigan URLs repointed; typos fixed.
 
 ## Sources
 Elements export (media), 2022 P&T dossier (`pt_dossier_bieri_main_reformatted.docx`), FARs 2023–2025, legacy site.
