@@ -224,3 +224,24 @@ KNUS 4 Jun 2019 (booked for 3:30 p.m. MT; the thread has no topic); FOX 5 DC 16 
   wages" (found by web search).
 - Not added (no booking confirmed): WFXR and WSLS 7 Jul 2022, KNUS Sep 2021, WFIR Jul 2022, and the two WFIR 2019
   Brexit stories that do not name him.
+
+## Link check of the remaining one-off URLs — 18 Nov 2026 (late)
+The 69 URLs skipped on 17 Nov were checked by web search (the shell cannot reach outlet sites, and the browser
+would have needed one approval per domain). No URL was confirmed dead, so none was blanked.
+- **Moved, URL updated (7):** BusinessWeek 2014 → bloomberg.com/bw; Michigan Radio 2014 → michiganpublic.org;
+  WKAR 2014 → wkar.org/economy/…; Tax Policy Center TaxVox 2014 → taxpolicycenter.org/taxvox/…; HUD PD&R Edge
+  2014 → huduser.gov/portal/node/5796; Metro Times 2014 → metrotimes.com/news/…; Earnest 2015 → earnest.com/blog/….
+  Every moved page except Earnest was opened and names him (TaxVox cites his U-M TIF report without his name).
+- **Live, switched to https (2):** Fortune 4 Aug 2015, Christian Science Monitor 18 Jan 2017.
+- **Seen live at the stored URL or the same article ID (about 20):** Technical.ly, The Hill (24 Jun 2026), NPR
+  Throughline, Newsweek (Home Depot), Washington Examiner, EFN, WAVY (30 Mar 2026), Augusta Free Press (27 Mar 2026),
+  Futurity, WOAY, SCMP, American Banker, ABC News (3 May 2025), WBTV (Gray syndication).
+- **Date questions for David:** the WKAR page is dated 30 Jul 2014 (row says 10 Jul) and Michigan Public 16 Sep 2014
+  (row says 15 Sep). Rows not re-dated.
+- **Could not be checked by search (left as they are):** mostly TV station video pages (13NewsNow, WUSA9, WAVY 2025,
+  WTKR, Gulf Coast News, LiveNOW, The National Desk), paywalled or niche sites (Politico Pro, FAZ, Agri-View, Virginia
+  Dogwood, Assets, Goshen News, UPI, AInvest, Fintech.TV, The Current, Roanoke Star, Al-Araby, Podbean), and the oldest
+  rows (Correio Braziliense, MoneySense, Roanoke Times op-ed, Der Standard, Die Presse, Battle Creek Enquirer, MLive).
+  The Hill 30 Oct 2026, NY Post 10 Apr 2026, The Guardian 4 Apr 2026 and WVEC 17 Apr 2026 are confirmed by VT's
+  in-the-news pages but their URLs were not seen. For Politico Pro (20 Apr 2026), E&E News ran the same story free on
+  21 Apr ("Hill Republicans not keen on gasoline tax holiday"); not swapped in.

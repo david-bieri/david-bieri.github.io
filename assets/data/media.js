@@ -3486,7 +3486,7 @@ window.MEDIA = [
   "topic": "world",
   "scope": "National",
   "tier": "national",
-  "url": "http://www.csmonitor.com/World/Europe/2017/0118/Can-a-conservative-president-save-the-EU-parliament-from-the-far-right"
+  "url": "https://www.csmonitor.com/World/Europe/2017/0118/Can-a-conservative-president-save-the-EU-parliament-from-the-far-right"
  },
  {
   "id": "1099111",
@@ -3591,7 +3591,7 @@ window.MEDIA = [
   "topic": "housing",
   "scope": "Regional",
   "tier": "regional",
-  "url": "http://blog.meetearnest.com/post/129291050047/rent-and-the-30-percent-rule"
+  "url": "https://www.earnest.com/blog/rent-and-the-30-percent-rule/"
  },
  {
   "id": "x-2015-08-04-fortune",
@@ -3603,7 +3603,7 @@ window.MEDIA = [
   "topic": "housing",
   "scope": "National",
   "tier": "national",
-  "url": "http://fortune.com/2015/08/04/housing-30-percent-rule/"
+  "url": "https://fortune.com/2015/08/04/housing-30-percent-rule/"
  },
  {
   "id": "x-2015-03-21-bce",
@@ -3627,7 +3627,7 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "Regional",
   "tier": "regional",
-  "url": "http://www.metrotimes.com/Blogs/archives/2014/12/31/news-hits-lawmakers-pass-on-tif-reform-this-year"
+  "url": "https://www.metrotimes.com/news/news-hits-lawmakers-pass-on-tif-reform-this-year-2276267/"
  },
  {
   "id": "x-2014-09-22-hud",
@@ -3639,7 +3639,7 @@ window.MEDIA = [
   "topic": "housing",
   "scope": "National",
   "tier": "national",
-  "url": "http://www.huduser.org/portal/pdredge/pdr_edge_featd_article_092214.html"
+  "url": "https://www.huduser.gov/portal/node/5796"
  },
  {
   "id": "x-2014-09-15-npr",
@@ -3651,7 +3651,7 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "Regional",
   "tier": "regional",
-  "url": "http://michiganradio.org/post/tranparency-lacking-michigan-taxpayers-bankroll-private-development"
+  "url": "https://www.michiganpublic.org/politics-government/2014-09-16/transparency-lacking-as-michigan-taxpayers-bankroll-private-development"
  },
  {
   "id": "x-2014-09-09-tpc",
@@ -3663,7 +3663,7 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "National",
   "tier": "national",
-  "url": "http://taxvox.taxpolicycenter.org/2014/09/09/inversions-loopholes-taxes-tifs-whats-revenue-service/"
+  "url": "https://taxpolicycenter.org/taxvox/inversions-loopholes-taxes-and-tifs-whats-revenue-service-do"
  },
  {
   "id": "x-2014-09-08-mlive",
@@ -3687,7 +3687,7 @@ window.MEDIA = [
   "topic": "housing",
   "scope": "National",
   "tier": "national",
-  "url": "http://www.businessweek.com/articles/2014-07-17/housings-30-percent-of-income-rule-is-near-useless"
+  "url": "https://www.bloomberg.com/bw/articles/2014-07-17/housings-30-percent-of-income-rule-is-near-useless"
  },
  {
   "id": "x-2014-07-10-npr",
@@ -3699,7 +3699,7 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "Regional",
   "tier": "regional",
-  "url": "http://wkar.org/post/do-corporate-tax-incentives-boost-michigans-economy"
+  "url": "https://www.wkar.org/economy/2014-07-30/do-corporate-tax-incentives-boost-michigans-economy"
  },
  {
   "id": "x-2014-04-15-diepresse",
