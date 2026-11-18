@@ -11,7 +11,38 @@
   function titleLink(m, cls) {
     return m.url ? '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + '</a>' : '<span class="' + (cls || 'nolink') + '">' + esc(m.title) + '</span>';
   }
-  function audioEl(m) { return m.audio ? '<audio controls preload="none" src="' + esc(m.audio) + '"></audio>' : ''; }
+  /* Clips: nothing third-party loads until the visitor clicks Watch (keeps the site free of tracking by default). */
+  function audioEl(m) {
+    var h = "";
+    if (m.video) {
+      var v = m.video, host = v.yt ? "YouTube" : v.vimeo ? "Vimeo" : "";
+      h += '<div class="player' + (m.poster ? ' has-poster' : '') + '">' +
+        '<button class="watch" type="button" data-v=\'' + esc(JSON.stringify(v)) + '\'' + (m.poster ? ' data-poster="' + esc(m.poster) + '"' : '') +
+        ' aria-label="Play clip: ' + esc(m.title) + '">' +
+        (m.poster ? '<img src="' + esc(m.poster) + '" alt="" loading="lazy">' : '') +
+        '<span class="watch-label"><span class="tri" aria-hidden="true"></span>Watch here' +
+        (v.start ? ' <span class="muted">from ' + Math.floor(v.start / 60) + ':' + ("0" + v.start % 60).slice(-2) + '</span>' : '') +
+        (host ? ' <span class="muted">· loads ' + host + '</span>' : '') + '</span></button></div>';
+    }
+    if (m.audio) h += '<audio controls preload="none" src="' + esc(m.audio) + '"></audio>';
+    if (m.transcript) h += '<a class="transcript" href="' + esc(m.transcript) + '" target="_blank" rel="noopener">Transcript</a>';
+    return h;
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest(".watch"); if (!b) return;
+    var v = JSON.parse(b.getAttribute("data-v")), box = b.parentNode, el;
+    if (v.src) {
+      el = document.createElement("video"); el.controls = true; el.autoplay = true; el.src = v.src;
+      if (b.dataset.poster) el.poster = b.dataset.poster;
+    } else {
+      el = document.createElement("iframe");
+      el.src = v.yt ? "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(v.yt) + "?autoplay=1&rel=0" + (v.start ? "&start=" + v.start : "")
+                    : "https://player.vimeo.com/video/" + encodeURIComponent(v.vimeo) + "?autoplay=1&dnt=1";
+      el.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; el.allowFullscreen = true;
+      el.title = b.getAttribute("aria-label");
+    }
+    box.classList.add("playing"); box.innerHTML = ""; box.appendChild(el);
+  });
   function fmtShort(d) { var p = d.split("-"); return MONTHS[+p[1] - 1] + " " + p[0]; }
 
   /* Nav */
@@ -23,16 +54,16 @@
   var media = (window.MEDIA || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
   var TL = window.TOPIC_LABELS || {}, TY = window.TYPE_LABELS || {};
 
-  /* Wire strip: latest 6 */
+  /* Wire strip: latest 3 with a real headline (wraps; no hidden horizontal scroll) */
   var wire = $("#wire-list");
-  if (wire) wire.innerHTML = media.slice(0, 6).map(function (m) {
-    return '<li><b>' + esc(m.outlet) + '</b>' + titleLink(m, 'plain') + ' <span class="muted">' + fmtShort(m.date) + '</span></li>';
+  if (wire) wire.innerHTML = media.filter(function (m) { return !m.weak; }).slice(0, 3).map(function (m) {
+    return '<li><span class="w-meta"><b>' + esc(m.outlet) + '</b> · ' + fmtShort(m.date) + '</span>' + titleLink(m, 'plain') + '</li>';
   }).join("");
 
   /* Featured cards */
   function card(m) {
     return '<article class="card">' +
-      '<div class="outlet">' + (m.logo ? logoImg(m, 'logo card-logo') : '<span class="outlet-name">' + esc(m.outlet) + '</span>') + '</div>' +
+      '<div class="outlet"><span class="outlet-name">' + esc(m.outlet) + '</span></div>' +
       '<div class="title">' + titleLink(m) + '</div>' +
       (m.quote ? '<p class="quote">“' + esc(m.quote) + '”</p>' : '') + audioEl(m) +
       '<div class="meta">' + fmt(m.date) + ' · ' + esc(TY[m.type] || m.type) + '</div></article>';

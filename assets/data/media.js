@@ -11,7 +11,9 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "National",
   "tier": "national",
-  "url": "https://thehill.com/homenews/administration/6184682-trump-daylight-saving-clocks-fallback/"
+  "url": "https://thehill.com/homenews/administration/6184682-trump-daylight-saving-clocks-fallback/",
+  "featured": true,
+  "quote": "Permanent daylight time's safety case is strongest in places like Boston and weakest in places like Indianapolis."
  },
  {
   "id": "x-2026-10-29-fox5",
@@ -167,7 +169,9 @@ window.MEDIA = [
   "topic": "world",
   "scope": "National",
   "tier": "national",
-  "url": "https://www.nerdwallet.com/finance/news/data-center-costs"
+  "url": "https://www.nerdwallet.com/finance/news/data-center-costs",
+  "featured": true,
+  "quote": "The fights look local — it's zoning hearings, it is noise complaints, it is coming from residents. But the crazy thing is that, of course, the money that decides these things is happening at a higher level."
  },
  {
   "id": "x-2026-07-22-technically",
@@ -204,7 +208,9 @@ window.MEDIA = [
   "type": "tv",
   "topic": "markets",
   "scope": "National",
-  "tier": "national"
+  "tier": "national",
+  "featured": true,
+  "quote": "Proximity is the key edge. And unless you remove that element from human life, you won't be able to prevent this. And regulators will always be a step behind."
  },
  {
   "id": "3504526",
@@ -1621,7 +1627,9 @@ window.MEDIA = [
   "topic": "trade",
   "scope": "International",
   "tier": "national",
-  "url": "https://drive.google.com/file/d/1CTBUTSaHGNMHuQtdocVtEVgl5eLEfMNo/view"
+  "url": "https://drive.google.com/file/d/1CTBUTSaHGNMHuQtdocVtEVgl5eLEfMNo/view",
+  "featured": true,
+  "quote": "We knew this going in, we just didn't anticipate perhaps quite how messy that could be."
  },
  {
   "id": "2823957",
@@ -1977,7 +1985,11 @@ window.MEDIA = [
   "topic": "world",
   "scope": "International",
   "tier": "international",
-  "url": "https://www.youtube.com/live/23334XS9ySs?si=4zo1hzwtUJBwjygV&t=2158"
+  "url": "https://www.youtube.com/live/23334XS9ySs?si=4zo1hzwtUJBwjygV&t=2158",
+  "video": {
+   "yt": "23334XS9ySs",
+   "start": 2158
+  }
  },
  {
   "id": "2588280",
@@ -2069,7 +2081,11 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "International",
   "tier": "international",
-  "url": "https://www.youtube.com/watch?v=FtfZ7YvdzRY&t=553s"
+  "url": "https://www.youtube.com/watch?v=FtfZ7YvdzRY&t=553s",
+  "video": {
+   "yt": "FtfZ7YvdzRY",
+   "start": 553
+  }
  },
  {
   "id": "2512388",
@@ -2082,7 +2098,10 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "International",
   "tier": "international",
-  "url": "https://www.youtube.com/watch?v=ZzLpycIHVCg"
+  "url": "https://www.youtube.com/watch?v=ZzLpycIHVCg",
+  "video": {
+   "yt": "ZzLpycIHVCg"
+  }
  },
  {
   "id": "2403726",
@@ -2187,7 +2206,10 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "International",
   "tier": "international",
-  "url": "https://www.youtube.com/watch?v=kELGhBqx998"
+  "url": "https://www.youtube.com/watch?v=kELGhBqx998",
+  "video": {
+   "yt": "kELGhBqx998"
+  }
  },
  {
   "id": "2366011",
@@ -2304,7 +2326,10 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "International",
   "tier": "international",
-  "url": "https://www.youtube.com/watch?v=5J0qd5LZga8"
+  "url": "https://www.youtube.com/watch?v=5J0qd5LZga8",
+  "video": {
+   "yt": "5J0qd5LZga8"
+  }
  },
  {
   "id": "2307676",
@@ -2909,7 +2934,7 @@ window.MEDIA = [
   "date": "2021-01-22",
   "outlet": "WDBJ7 (CBS Roanoke)",
   "logo": "cbs-affiliate",
-  "program": "WDBJ7 Morning News",
+  "program": "WDBJ7 Evening News",
   "title": "Virginia Tech professor provides a deeper look at the Biden-Harris economic plan",
   "type": "tv",
   "topic": "gov",
@@ -3365,7 +3390,10 @@ window.MEDIA = [
   "scope": "State",
   "tier": "regional",
   "url": "https://www.youtube.com/watch?v=QFeowiYZDTo&feature=youtu.be",
-  "va": true
+  "va": true,
+  "video": {
+   "yt": "QFeowiYZDTo"
+  }
  },
  {
   "id": "1099111",
@@ -3379,7 +3407,10 @@ window.MEDIA = [
   "scope": "Local",
   "tier": "national",
   "url": "https://www.youtube.com/watch?v=HZRoqu-Oebw&feature=youtu.be",
-  "va": true
+  "va": true,
+  "video": {
+   "yt": "HZRoqu-Oebw"
+  }
  },
  {
   "id": "x-2017-01-18-csm",

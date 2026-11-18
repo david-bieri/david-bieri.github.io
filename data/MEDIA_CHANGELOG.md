@@ -154,3 +154,9 @@ FOX 5 DC 15 Sep and 29 Oct: still no clip URL (fox5dc.com search and web search)
 - Saved clips in OneDrive `Media` (catalogued in `Media/_catalogue`) confirmed four rows: WJLA 19 May 2023 (headline is
   now the on-air chyron, "Implications of the looming debt crisis"), KNX 28 Apr 2023, NewsNation 16 Jul 2026 and
   CNN 15 Mar 2025. A saved PDF confirmed the Washington Post 3 Feb 2022 headline (a syndicated Bloomberg column).
+- Featured extended to 14: The Hill 30 Oct 2026 (quote from the article, supplied by David), NewsNation 16 Jul 2026 and
+  CNN 15 Mar 2025 (quotes from the saved clips' transcripts), NerdWallet 30 Jul 2026. They render as the new
+  "Selected interviews" grid on media.html (the cards had dropped out of the site in the front-page redesign).
+- WDBJ7 22 Jan 2021: programme corrected to *WDBJ7 Evening News* (David).
+- New optional columns `video`, `audio`, `poster`, `transcript`; 7 rows with an outlet-uploaded YouTube link (RTVI ×5,
+  WFXR and WDBJ7 2017) now play on the page, loaded only on click.
