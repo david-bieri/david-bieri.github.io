@@ -1870,12 +1870,11 @@ window.MEDIA = [
   "outlet": "KNX News 97.1 Los Angeles",
   "logo": "knx",
   "program": "L.A.'s morning news with Vicky Moore & Mike Simpson",
-  "title": "L.A.'s morning news with Vicky Moore & Mike Simpson",
+  "title": "The June consumer price index report",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "prices",
   "scope": "Regional",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "2622565",
@@ -1939,12 +1938,11 @@ window.MEDIA = [
   "outlet": "FOX 5 DC",
   "logo": "fox5",
   "program": "FOX 5 Morning (live)",
-  "title": "FOX 5 Morning (live)",
+  "title": "The Key Bridge collapse and the Port of Baltimore",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "trade",
   "scope": "Regional",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "2586736",
@@ -1978,12 +1976,11 @@ window.MEDIA = [
   "outlet": "WMAL (Washington, DC)",
   "logo": "wmal",
   "program": "WMAL Newstalk 105.9",
-  "title": "WMAL Newstalk 105.9",
+  "title": "Economic impact of the Baltimore Key Bridge collapse",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "trade",
   "scope": "Regional",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "2588278",
@@ -1991,12 +1988,11 @@ window.MEDIA = [
   "outlet": "FOX 5 DC",
   "logo": "fox5",
   "program": "FOX 5 News @6pm",
-  "title": "FOX 5 News @6pm",
+  "title": "Economic fallout of the Baltimore Key Bridge collapse",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "trade",
   "scope": "Regional",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "2586737",
@@ -2006,7 +2002,7 @@ window.MEDIA = [
   "program": "LiveNOW from FOX",
   "title": "Economic challenges of the Baltimore bridge collapse",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "trade",
   "scope": "International",
   "tier": "national",
   "url": "https://www.livenowfox.com/video/1432327"
@@ -2017,14 +2013,13 @@ window.MEDIA = [
   "outlet": "Northern Virginia Daily",
   "logo": "nvdaily",
   "program": "Northern Virginia Daily",
-  "title": "Northern Virginia Daily",
+  "title": "IAC plant in Strasburg announces permanent layoff of 135 workers",
   "type": "print",
   "topic": "jobs",
   "scope": "State",
   "tier": "local",
   "url": "https://www.nvdaily.com/nvdaily/iac-plant-in-strasburg-announces-permanent-layoff-of-135-workers/article_7859962c-0562-57ef-b4e8-1e9332858962.html",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "2567606",
@@ -2032,7 +2027,7 @@ window.MEDIA = [
   "outlet": "WFXR (FOX)",
   "logo": "fox-affiliate",
   "program": "WFXR (Fox) News @10pm",
-  "title": "Inflations potential effects on the economy and voters",
+  "title": "Inflation's potential effects on the economy and voters",
   "type": "tv",
   "topic": "prices",
   "scope": "State",
@@ -2140,13 +2135,12 @@ window.MEDIA = [
   "outlet": "WSET (ABC)",
   "logo": "abc-affiliate",
   "program": "News at 11 pm",
-  "title": "News at 11 pm",
+  "title": "The economics of a looming government shutdown",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "gov",
   "scope": "Regional",
   "tier": "regional",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "2368877",
@@ -2167,12 +2161,11 @@ window.MEDIA = [
   "outlet": "WUSA9 (CBS)",
   "logo": "cbs-affiliate",
   "program": "WUSA 9",
-  "title": "WUSA 9",
+  "title": "The UAW strike and its economic fallout",
   "type": "tv",
   "topic": "jobs",
   "scope": "National",
-  "tier": "national",
-  "weak": true
+  "tier": "national"
  },
  {
   "id": "2366243",
@@ -2193,7 +2186,7 @@ window.MEDIA = [
   "outlet": "Reckon.news",
   "logo": "reckon",
   "program": "Reckon Media",
-  "title": "What the biden administrations involvement in uaw negotiations could mean for workers",
+  "title": "What the Biden administration's involvement in UAW negotiations could mean for workers",
   "type": "print",
   "topic": "jobs",
   "scope": "National",
@@ -2220,7 +2213,7 @@ window.MEDIA = [
   "outlet": "WFXR (FOX)",
   "logo": "fox-affiliate",
   "program": "WFXR (Fox) News @10pm",
-  "title": "Expert shares how potential auto worker strike could affect southwest virginia",
+  "title": "Expert shares how potential auto worker strike could affect Southwest Virginia",
   "type": "tv",
   "topic": "jobs",
   "scope": "State",
@@ -2259,12 +2252,11 @@ window.MEDIA = [
   "outlet": "KNX News 97.1 Los Angeles",
   "logo": "knx",
   "program": "CBS News Radio Los Angeles",
-  "title": "CBS News Radio Los Angeles",
+  "title": "The May 2023 jobs report",
   "type": "radio",
   "topic": "jobs",
   "scope": "State",
-  "tier": "national",
-  "weak": true
+  "tier": "national"
  },
  {
   "id": "2307659",
@@ -2272,12 +2264,11 @@ window.MEDIA = [
   "outlet": "WJLA (ABC)",
   "logo": "abc-affiliate",
   "program": "ABC 7 Washington DC (live)",
-  "title": "ABC 7 Washington DC (live)",
+  "title": "The debt ceiling standoff and the risk of default",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "gov",
   "scope": "Regional",
-  "tier": "regional",
-  "weak": true
+  "tier": "regional"
  },
  {
   "id": "2307680",
@@ -2365,12 +2356,11 @@ window.MEDIA = [
   "outlet": "KNX News 97.1 Los Angeles",
   "logo": "knx",
   "program": "CBS News Radio Los Angeles (live)",
-  "title": "CBS News Radio Los Angeles (live)",
+  "title": "The March consumer price index report",
   "type": "radio",
-  "topic": "jobs",
+  "topic": "prices",
   "scope": "State",
-  "tier": "national",
-  "weak": true
+  "tier": "national"
  },
  {
   "id": "2247541",
@@ -2432,12 +2422,11 @@ window.MEDIA = [
   "outlet": "KNX News 97.1 Los Angeles",
   "logo": "knx",
   "program": "CBS News Radio Los Angeles",
-  "title": "CBS News Radio Los Angeles",
+  "title": "The February jobs report and the Fed's rate hikes",
   "type": "radio",
   "topic": "jobs",
   "scope": "State",
-  "tier": "national",
-  "weak": true
+  "tier": "national"
  },
  {
   "id": "2242266",
@@ -2445,12 +2434,11 @@ window.MEDIA = [
   "outlet": "Sky News Arabia",
   "logo": "skynewsarabia",
   "program": "SkyNews Arabia",
-  "title": "SkyNews Arabia",
+  "title": "Swiss inflation and the strength of the franc",
   "type": "online",
-  "topic": "jobs",
+  "topic": "world",
   "scope": "International",
-  "tier": "international",
-  "weak": true
+  "tier": "international"
  },
  {
   "id": "2239551",
@@ -2471,9 +2459,9 @@ window.MEDIA = [
   "outlet": "WJLA (ABC)",
   "logo": "abc-affiliate",
   "program": "ABC 7 Washington DC (live)",
-  "title": "ABC 7 Washington DC (live)",
+  "title": "U.S. inflation outlook",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "prices",
   "scope": "Regional",
   "tier": "regional",
   "url": "https://wjla.com/features/7news-mornings/us-inflation-outlook",
@@ -2579,7 +2567,7 @@ window.MEDIA = [
   "outlet": "WFXR (FOX)",
   "logo": "fox-affiliate",
   "program": "WFXR News at 10 p.m.",
-  "title": "President biden announces steps to stop the rise in gas prices virginia experts weigh in",
+  "title": "President Biden announces steps to stop the rise in gas prices: Virginia experts weigh in",
   "type": "tv",
   "topic": "world",
   "scope": "State",
@@ -2645,14 +2633,13 @@ window.MEDIA = [
   "outlet": "WFXR (FOX)",
   "logo": "fox-affiliate",
   "program": "WFXR News @ Noon (Live)",
-  "title": "WFXR News @ Noon (Live)",
+  "title": "Digging into the impact of inflation",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "prices",
   "scope": "State",
   "tier": "regional",
   "url": "https://www.wfxrtv.com/video/digging-into-the-impact-of-inflation/7675014/",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "2038128",
@@ -2660,14 +2647,13 @@ window.MEDIA = [
   "outlet": "WFXR (FOX)",
   "logo": "fox-affiliate",
   "program": "WFXR News at 10pm",
-  "title": "WFXR News at 10pm",
+  "title": "Rising interest rates affecting housing market",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "housing",
   "scope": "State",
   "tier": "regional",
   "url": "https://www.wfxrtv.com/video/rising-interest-rates-affecting-housing-market/7657183/",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "2037723",
@@ -2768,7 +2754,7 @@ window.MEDIA = [
   "outlet": "WFXR (FOX)",
   "logo": "fox-affiliate",
   "program": "WFXR News at Noon (live)",
-  "title": "Understanding new va law about cryptocurrency",
+  "title": "Understanding new VA law about cryptocurrency",
   "type": "tv",
   "topic": "markets",
   "scope": "Regional",
@@ -2822,13 +2808,12 @@ window.MEDIA = [
   "outlet": "The Washington Post",
   "logo": "wapo",
   "program": "Washington Post, Business Analysis",
-  "title": "Washington Post, Business Analysis",
+  "title": "How to pay your rent without going broke",
   "type": "print",
-  "topic": "jobs",
+  "topic": "housing",
   "scope": "National",
   "tier": "national",
-  "url": "https://www.washingtonpost.com/business/how-to-pay-your-rent-without-going-broke/2022/02/03/a166da0c-84e9-11ec-951c-1e0cc3723e53_story.html",
-  "weak": true
+  "url": "https://www.washingtonpost.com/business/how-to-pay-your-rent-without-going-broke/2022/02/03/a166da0c-84e9-11ec-951c-1e0cc3723e53_story.html"
  },
  {
   "id": "1647211",
@@ -2996,12 +2981,11 @@ window.MEDIA = [
   "outlet": "Whiterock Locators",
   "logo": "whiterock",
   "program": "WL Blog",
-  "title": "How much should you spend rent month",
+  "title": "How much should you spend on rent each month?",
   "type": "online",
   "topic": "housing",
   "scope": "State",
-  "tier": "local",
-  "url": "https://www.whiterocklocators.com/blog/how-much-should-you-spend-rent-month"
+  "tier": "local"
  },
  {
   "id": "1560958",
@@ -3155,12 +3139,11 @@ window.MEDIA = [
   "outlet": "Circa",
   "logo": "circa",
   "program": "Economy & Business",
-  "title": "How do tariffs affect your wallet",
+  "title": "How do tariffs affect your wallet?",
   "type": "online",
   "topic": "trade",
   "scope": "International",
-  "tier": "national",
-  "url": "https://www.circa.com/story/2018/07/19/nation/how-do-tariffs-affect-your-wallet"
+  "tier": "national"
  },
  {
   "id": "1210353",
@@ -3168,7 +3151,7 @@ window.MEDIA = [
   "outlet": "Investment Watch Blog",
   "logo": "investmentwatch",
   "program": "Blog",
-  "title": "The average american needs to earn an hour in order to afford a place to live",
+  "title": "The average American needs to earn $22.10 an hour in order to afford a place to live",
   "type": "online",
   "topic": "housing",
   "scope": "National",
@@ -3209,7 +3192,7 @@ window.MEDIA = [
   "outlet": "Coin Rivet",
   "logo": "coinrivet",
   "program": "Bitcoin News",
-  "title": "Blockchain to banish banks and fico reports",
+  "title": "Blockchain to banish banks and FICO reports",
   "type": "online",
   "topic": "markets",
   "scope": "International",
@@ -3236,14 +3219,13 @@ window.MEDIA = [
   "outlet": "The Roanoke Times",
   "logo": "roanoke",
   "program": "Business News",
-  "title": "Business News",
+  "title": "Symposium highlights Blacksburg's place in the tech behind Bitcoin",
   "type": "online",
-  "topic": "jobs",
+  "topic": "markets",
   "scope": "Regional",
   "tier": "local",
   "url": "https://www.roanoke.com/business/news/blacksburg/symposium-highlights-blacksburg-s-place-in-the-tech-behind-bitcoin/article_8b1f34cb-0504-531b-814d-3b71f058a254.html",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "1099117",
@@ -3264,20 +3246,18 @@ window.MEDIA = [
   "date": "2017-10-30",
   "outlet": "Earnest",
   "logo": "earnest",
-  "title": "How much rent can you really afford",
+  "title": "How much rent can you really afford?",
   "type": "online",
   "topic": "housing",
   "scope": "National",
-  "tier": "national",
-  "url": "https://www.earnest.com/blog/how-much-rent-can-you-really-afford/"
+  "tier": "national"
  },
  {
   "id": "1099108",
   "date": "2017-10-04",
   "outlet": "MinnPost",
   "logo": "minnpost",
-  "program": "Is there—or is there not—an affordable housing crisis in the Twin Cities?",
-  "title": "There or there not affordable housing crisis twin cities",
+  "title": "Is there — or is there not — an affordable housing crisis in the Twin Cities?",
   "type": "online",
   "topic": "housing",
   "scope": "Regional",
@@ -3300,11 +3280,10 @@ window.MEDIA = [
  },
  {
   "id": "1099107",
-  "date": "2017-06-07",
+  "date": "2017-06-08",
   "outlet": "The Guardian",
   "logo": "guardian",
-  "program": "Earn minimum wage in the US? You can afford to live in exactly 12 counties",
-  "title": "Minimum wage affordable housing rentals study",
+  "title": "Earn minimum wage in the US? You can afford to live in exactly 12 counties",
   "type": "online",
   "topic": "housing",
   "scope": "International",
