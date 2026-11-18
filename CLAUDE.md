@@ -1,6 +1,6 @@
 # david-bieri.com — working notes for Claude Code
 
-Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virginia Tech). GitHub Pages user site; custom domain via `CNAME`.
+Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virginia Tech). GitHub Pages user site; custom domain via `CNAME` (**www.david-bieri.com**; the bare david-bieri.com 301-redirects to it from Bluehost, because Bluehost serves its hosting IP for the apex A record). Absolute URLs (canonical, sitemap, JSON-LD, og) use `https://www.david-bieri.com`.
 
 ## Stack and conventions
 - Plain HTML, one stylesheet (`assets/css/main.css`), one script (`assets/js/site.js`). No framework, no build step, no bundler, no analytics. Keep it that way.
