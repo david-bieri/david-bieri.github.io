@@ -17,8 +17,8 @@ Read `CLAUDE.md` first (conventions, media database, coverage band, clips). This
 - **Checks:** `python3 tools/check_pages.py` (with `python3 -m http.server 8765` running) screenshots all six pages at 1280/390 px. It flags horizontal scroll, failed requests, console errors and third-party requests. Since the fonts were self-hosted (task 2) there are no third-party requests before a click.
 
 ## Tasks, in order (one branch and PR per task)
-1. **CNN Drive link.** Row `2820382` (CNN, 15 Mar 2025) links a Google Drive copy of CNN footage, and it is a featured card. Remove the `url`, keep the row and its quote, and note why — unless David says CNN agreed.
-2. **Self-host the fonts.** Archivo and Source Serif 4 load from fonts.googleapis.com, the only third-party request on the site. Serve woff2 subsets from `assets/fonts/` (only the weights and styles in use) and drop the Google Fonts link from all six pages. Nothing should look different.
+1. ~~**CNN Drive link.**~~ Done, by decision (18 Nov): the link was removed in PR #21, then restored in PR #24 at David's request. Row `2820382` keeps its Google Drive link as a deliberate exception (see CLAUDE.md, Clips). Don't remove it.
+2. ~~**Self-host the fonts.**~~ Done (PR #22, 18 Nov): Archivo and Source Serif 4 are served from `assets/fonts/` (see its README), and screenshots match the Google-hosted version pixel for pixel. The site makes no third-party request before a click. The same day, PR #23 darkened `--ink-3` (light `#656A6F`, dark `#83898F`) to pass WCAG AA contrast.
 3. **Talks and service.** Render `data/service.csv` as a Talks and Service page or section; design it in Claude Design first.
    - David's two recorded talks get the click-to-load player once he supplies their YouTube/Vimeo/VTechWorks URLs: the Ashford comments (Jan 2021) and "Thinking About Affordable Housing: How Theory Matters" (Feb 2021). Use the `-plus` versions.
    - The catalogue and transcripts are in OneDrive `Media/_catalogue`, not in this repo.
@@ -33,7 +33,7 @@ Read `CLAUDE.md` first (conventions, media database, coverage band, clips). This
    - FOX 5 DC clip URLs for 15 Sep and 29 Oct 2026;
    - the SSRN link for the 2026 prediction-markets working paper, once David has the number.
 
-   The 13 remaining placeholders need David's memory, not a search. Station clips David saved himself are not re-hosted without the station's permission.
+   The 13 remaining placeholders need David's memory, not a search. Station clips David saved himself are not re-hosted without the station's permission (the CNN 15 Mar 2025 row is the one exception David chose).
 9. **End the session** with the session-handover skill. Update `WEBSITE_SESSION_NOTES.md` in the Website project; `SESSION_NOTES.md` in this repo records the 18 Nov media session only.
 
 ## Running sessions
