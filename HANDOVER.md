@@ -1,26 +1,39 @@
 # Handover — david-bieri.github.io
 
-Paste the block below as the first message in a Claude Code session opened in this repository.
+Paste the block below as the first message in a Claude Code session opened in this repository. Run the session on David's own machine if possible: the cloud workspace can't reach outlet sites, which makes link checking slow.
 
 ---
 
-Read CLAUDE.md first; it holds the conventions. This repo is my personal academic site (plain HTML/CSS/JS, GitHub Pages user site, custom domain david-bieri.com via CNAME). It was scaffolded in a cloud session on 17 Nov 2026 and is live at https://david-bieri.github.io/. The old site at https://www.david-bieri.com/ (2016, VT-hosted template) is still serving until DNS is switched. I am applying for an academic position; the site must be presentable within 36 hours, so finish the deploy items before any redesign.
+Read CLAUDE.md (conventions) and SESSION_NOTES.md (state of the last session, 18 Nov 2026) first. This repo is my personal academic site: plain HTML/CSS/JS, a GitHub Pages user site, live at https://www.david-bieri.com. I am on the senior faculty market, so the site has to stay application-ready. Finish these items before any redesign. Do them in order, one branch and PR per step, and run `python3 tools/check_pages.py` (desktop + 390 px) before each commit.
 
-Do these in order and commit after each:
+0. **Merge state.** Check that PR #13 (media pass of 18 Nov) is merged. If it isn't, ask me before building on it.
+1. **CNN Drive link.** Row `2820382` (CNN, 15 Mar 2025) links a Google Drive copy of CNN footage and is a featured card. Remove the `url`, keep the row and its quote, and note why — unless I tell you CNN agreed.
+2. **Headshot and sharing image.** I'll name one of the `dsb*.png` / `dsb_vt*.jpeg` files in OneDrive `Media`. Crop it to 4:5 at ≥1000 px and save it as `assets/images/headshot.jpg`. Remove the "DB" placeholder. Add `og:image` / `twitter:image` to all six pages, plus `image` in the JSON-LD.
+3. **Publications against the CV.** The CV is final (`cv/CV_DSBieri.tex`, PDF in `assets/docs/`). Make `assets/data/publications.js` match it: titles, venues, years, page numbers, status (forthcoming, working paper) and "Bieri, D." order. Keep the data-file format. List every change in the PR.
+4. **Talks.** Render `data/service.csv` (talks, testimony, service) as a "Talks" list on research.html, using the same pattern as the media archive. My two recorded talks (Ashford, Jan 2021; affordable housing, Feb 2021) get the click-to-load player once I give you their YouTube/Vimeo/VTechWorks URLs. The catalogue is in OneDrive `Media/_catalogue`.
+5. **Self-host the fonts.** Archivo and Source Serif 4 currently load from fonts.googleapis.com, the only third-party request on the site. Serve woff2 subsets from `assets/fonts/` (only the weights and styles in use) and remove the Google Fonts link from all six pages. Nothing should look different.
+6. **Legacy assets.** Follow `legacy/README.md`. Bring the old site's PDFs and audio into `assets/docs/`. Add forwarding stubs for old URLs that are still linked from elsewhere, check every `legacy/docs/...` reference in the data files, and drop `docs/MiRTIF.zip` (it's a 404 upstream).
+7. **Logos.** `python3 tools/prep_logo.py --check` lists the coverage-band outlets that are still typographic placeholders. Add official one-colour marks where the sources and permissions in `assets/logos/README.md` allow it.
+8. **Google Scholar.** Open https://scholar.google.com/citations?user=l_KyksEAAAAJ in the browser (it rate-limits scripts). Note total citations, h-index and i10. Add a `cites` field to `publications.js` and render it discreetly after the venue.
+9. **Media leftovers** (lower priority; see `data/MEDIA_CHANGELOG.md`):
+   - the ~85 one-off URLs that haven't been checked;
+   - the Kiplinger row (1 Apr 2025), which still links a research.vt.edu re-post;
+   - KNX row `2396145`, which may be misdated (2023 vs 2024);
+   - FOX 5 DC clip URLs for 15 Sep and 29 Oct 2026.
 
-1. **Legacy assets.** Follow `legacy/README.md`: wget the old site's `docs/` and `images/` into `legacy/`. Confirm every `legacy/docs/...` URL in `assets/data/publications.js` and `assets/data/media.js` resolves to a file. Remove the `docs/MiRTIF.zip` reference (404 upstream). Commit the files (largest is a 17 MB mp4; if it pushes the repo past taste, drop the mp4 and link the WDBJ page instead).
-2. **Headshot and CV.** I will put `headshot.jpg` (4:5, ≥1000px) in `assets/images/` and `CV_DSBieri.pdf` in `assets/docs/`. If they are not there yet, use `legacy/images/Portrait_DSB_small.jpg` and `legacy/docs/CV_DSBieri_Web.pdf` as stopgaps and tell me.
-3. **Reconcile publications against the CV.** Open the CV PDF, compare with `assets/data/publications.js`. The 2024 CJRES "Gesetz and Gestalt" entry, the 2026 Carriers-of-History status, and the chapter page numbers were reconstructed from RePEc and the old site — fix what the CV says differently. Keep the data-file format.
-4. **Media database.** Source of truth is `data/media.csv` (273 rows from the Elements export, legacy site and the 2026 reconciliation; consolidated and link-checked 17 Nov, see `data/MEDIA_CHANGELOG.md`); `python3 tools/build_media.py` regenerates `assets/data/media.js` and logos, `python3 tools/build_cv_media.py > cv/media_section.tex` the CV section. Done on 17 Nov: duplicates merged, conventions standardized, 58 placeholder headlines recovered, 130 of 215 URLs checked (8 dead ones blanked), 17 rows re-tagged. Done on 18 Nov: 29 more headlines recovered (browser + Outlook Media folder), topics re-checked (`jobs` 58 → 44), Aug–Nov 2026 mail checked (no new appearances after 30 Oct), CV PDF recompiled with EB Garamond. Still to do: (a) 13 placeholders remain (KNUS ×8 2019–21, NBC LX and FOX 5 2022 — the Media folder starts Dec 2022; FOX 5 4 May 2023 has no topic; KNX 14 Nov 2023 may be misdated to 2024) — only David's memory or the stations can fill these; (b) the ~85 one-off URLs were not link-checked; (d) `featured` set: proposal of 11 items with quotes in PR for the 18 Nov pass, apply once approved; (e) FOX 5 DC 15 Sep / 29 Oct 2026 still have no clip URL; (f) the Kiplinger row (1 Apr 2025) still links a `research.vt.edu` re-post.
+   The 13 remaining placeholder headlines need my memory, not a search.
+10. **End the session** with the session-handover skill: rewrite SESSION_NOTES.md and this list.
 
-5. **Logos.** The coverage band shows 16 outlets (`BAND` in `tools/build_media.py`); placeholders render as the outlet name. To add an official one-colour mark, run `python3 tools/prep_logo.py <file.svg> <slug>`; sources, permissions and the checklist are in `assets/logos/README.md`. `python3 tools/prep_logo.py --check` shows what is still missing.
-5b. **Google Scholar.** Fetch https://scholar.google.com/citations?user=l_KyksEAAAAJ in the browser (it rate-limits scripts), note total citations / h-index / i10, and reconcile `publications.js` against the Scholar list; add citation counts as a `cites` field and render it discreetly after the venue.
-5c. **Teaching.** A Teaching block (four figures, four anonymous SPOT quotes) is already on teaching.html. Raw evaluation data and comments are deliberately NOT in this public repo; they live in OneDrive/Tenure/FARs/TeachingEvals/_analysis. Do not add them.
-6. **Visual check.** Headless screenshots of all six pages at 1280 and 390 px; compare to the look of the current commit. No horizontal scroll, filters work, console clean. Fix anything off. Then run a link check over the whole site.
-7. **Go-live.** Confirm Settings → Pages is set to main / root and the custom domain field shows david-bieri.com. Give me the exact DNS records to enter at my registrar and tell me when to tick Enforce HTTPS. Do not touch DNS yourself.
-8. **End the session** with the session-handover skill: write SESSION_NOTES.md with what was done, what is open, and what you would do next.
+After every media edit: `python3 tools/build_media.py`, then `python3 tools/build_cv_media.py > cv/media_section.tex`, then tell me to paste `media_section.tex` into Overleaf.
 
-Do not: add a framework or build step; add analytics; change the title "Associate Professor of Public Policy, School of Public and International Affairs, Virginia Tech"; redesign anything. Design changes come later from a Design System artifact in the Website project; the current tokens in `main.css` are the baseline.
+Do not:
+- add a framework, a build step or analytics;
+- commit video files;
+- re-host station footage without the station's permission;
+- change the title "Associate Professor of Public Policy, School of Public and International Affairs, Virginia Tech";
+- redesign anything.
+
+Design changes come later from a Design System artifact in the Website project; the current tokens in `main.css` are the baseline.
 
 Later sessions (not now): the two sister sites, august-loesch.github.io and circular-flows.github.io, will share these tokens. Specs are in the Website project docs (`circular-flows-org-implementation.md`, `workflow-strategy.md`).
 

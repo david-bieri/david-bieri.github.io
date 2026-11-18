@@ -15,6 +15,7 @@ Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virgin
 
 ## Checks before committing
 - Open each page at desktop and ~390px width; no horizontal scroll, filters on `media.html` work, console clean except the optional headshot.
+- `python3 tools/check_pages.py` (with `python3 -m http.server 8765` running) does the mechanical part: screenshots of all six pages at 1280 and 390 px in /tmp/pagecheck, horizontal scroll, failed requests, console errors, third-party requests before any click.
 - Every new media entry has `date` (YYYY-MM-DD), `outlet`, `type`, `topic` (one of the eight issues), `title`, `url`, and `va=yes` if it is a Virginia story or outlet.
 
 ## Open items
