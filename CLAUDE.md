@@ -1,6 +1,6 @@
 # david-bieri.com — working notes for Claude Code
 
-Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virginia Tech). GitHub Pages user site; custom domain via `CNAME` (**www.david-bieri.com**; the bare david-bieri.com 301-redirects to it from Bluehost, because Bluehost serves its hosting IP for the apex A record). Absolute URLs (canonical, sitemap, JSON-LD, og) use `https://www.david-bieri.com`.
+Personal site of David Bieri (Associate Professor of Urban Affairs, SPIA, Virginia Tech). GitHub Pages user site; custom domain via `CNAME` (**www.david-bieri.com**; the bare david-bieri.com points at GitHub Pages (four A and four AAAA records), and GitHub 301-redirects it to www; the Let's Encrypt certificate covers both. Bluehost only holds the DNS zone and the old hosting files). Absolute URLs (canonical, sitemap, JSON-LD, og) use `https://www.david-bieri.com`.
 
 ## Stack and conventions
 - Plain HTML, one stylesheet (`assets/css/main.css`), one script (`assets/js/site.js`). No framework, no build step, no bundler, no analytics. Keep it that way.
@@ -9,9 +9,12 @@ Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virgin
   - `assets/data/publications.js` — `window.PUBS`; `selected: true` puts it on the home page.
 - Design tokens are the `:root` variables at the top of `main.css` (paper, ink, rule, red accent, link). Fonts: Archivo (headings, UI) and Source Serif 4 (body). Don't add typefaces or colors outside the token set.
 - Name: **David Bieri**, no middle initial, on the site and in the CV (including "Bieri, D." in the CV's publication lists). The JSON-LD `alternateName` keeps "David S. Bieri" and "David Stephan Bieri" so search engines connect the old bylines.
-- Title used everywhere: "Associate Professor of Public Policy, School of Public and International Affairs, Virginia Tech". The official HR title is "Associate Professor of Urban Affairs" (tenured 2023); it appears only on the CV's appointment line, in the about.html timeline and as a second JSON-LD `jobTitle`. Economics is a courtesy appointment ("Associate Professor of Economics, by courtesy"); Blackwood and Kellogg are faculty affiliations. Handles: X @space_economy, Instagram @raumwirtschaft. Email bieri@vt.edu.
+- Title used everywhere (site, CV, letters): "Associate Professor of Urban Affairs, School of Public and International Affairs, Virginia Tech", the official HR title (tenured 2023). Decided 18 Nov 2026; it replaces the earlier "Public Policy" wording. "Associate Professor of Public Policy" survives only as the second JSON-LD `jobTitle` (media often use it) and verbatim inside media headlines, which are never edited. Economics is a courtesy appointment ("Associate Professor of Economics, by courtesy"); Blackwood and Kellogg are faculty affiliations. Handles: X @space_economy, Instagram @raumwirtschaft. Email bieri@vt.edu.
 - Structured data (Person/WebSite JSON-LD) is in `index.html`; keep it consistent with the Wikidata item and the SPIA page.
 - Nav and footer are duplicated per page by hand; when they change, change all six pages (`index, about, research, publications, media, teaching`).
+
+## Design skills
+- `.claude/skills/` holds `impeccable` and `motion` (versions in `.claude/skills/SOURCES.md`); `.mcp.json` adds the Playwright browser. Use them for craft, review and the browser checks below, not to change the stack, tokens, fonts, title or voice set out in this file — these conventions override any skill's defaults.
 
 ## Checks before committing
 - Open each page at desktop and ~390px width; no horizontal scroll, filters on `media.html` work, console clean except the optional headshot.
@@ -19,12 +22,12 @@ Personal site of David Bieri (Associate Professor of Public Policy, SPIA, Virgin
 - Every new media entry has `date` (YYYY-MM-DD), `outlet`, `type`, `topic` (one of the eight issues), `title`, `url`, and `va=yes` if it is a Virginia story or outlet.
 
 ## Open items
-- `assets/images/headshot.jpg` to be added by David. (`assets/docs/CV_DSBieri.pdf` added 18 Nov 2026; regenerate from the Overleaf project, which is the CV source of truth — `cv/` mirrors it.)
+- `assets/images/headshot.jpg` added 18 Nov 2026 (studio portrait, 1000×1250, 4:5, under 200 KB, metadata stripped). `assets/docs/CV_DSBieri.pdf` added 18 Nov 2026; regenerate from the Overleaf project, which is the CV source of truth — `cv/` mirrors it.
 - Verify `publications.js` against the CV; verify media URLs that still point at VT media-mentions pages.
 - Migrate legacy david-bieri.com assets (PDFs, audio) into `assets/docs/` and add forwarding stubs for old URLs.
 
 ## Media database (added 17 Nov)
-- **Source of truth is `data/media.csv`** (274 rows, 2014–2026; consolidated 17 Nov, see data/MEDIA_CHANGELOG.md). Edit it in Excel/Sheets or by hand, then run `python3 tools/build_media.py`, which regenerates `assets/data/media.js` and any missing `assets/logos/<slug>.svg` wordmarks. Never edit `media.js` directly.
+- **Source of truth is `data/media.csv`** (275 rows, 2014–2026; consolidated 17 Nov, see data/MEDIA_CHANGELOG.md). Edit it in Excel/Sheets or by hand, then run `python3 tools/build_media.py`, which regenerates `assets/data/media.js` and any missing `assets/logos/<slug>.svg` wordmarks. Never edit `media.js` directly.
 - Columns are documented at the top of `tools/build_media.py`. `featured=yes` plus a `quote` puts an item in the **Selected interviews** card grid on media.html (`#featured`; curated 18 Nov to 14 national/international items, every quote checked against the source). `logo` is shared across network affiliates (`cbs-affiliate`, `abc-affiliate`, `fox-affiliate`).
 - **Clips** (added 18 Nov): optional columns `video`, `audio`, `poster`, `transcript`. `video` takes a YouTube/Vimeo URL or an https .mp4/.webm URL; when blank, a YouTube link in `url` is used automatically (the outlet's own upload, with its `t=` start time). The page shows a "Watch here" button and loads the third-party player only on click (youtube-nocookie / Vimeo dnt), so nothing tracks visitors by default. Never commit video files to this repo (GitHub rejects files over 100 MB; Pages sites are capped at 1 GB). Station footage David saved himself (OneDrive `Media`, catalogued in `Media/_catalogue`) is not re-hosted without the station's permission; link the outlet's page instead.
 - The home page **Latest** strip shows the three most recent rows with a real headline (wrapping, no horizontal scroll) and an "All coverage" link.

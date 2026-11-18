@@ -392,14 +392,13 @@ window.MEDIA = [
   "outlet": "WRIC (ABC)",
   "logo": "abc-affiliate",
   "program": "ABC 8News",
-  "title": "‘Highly volatile’",
+  "title": "‘Highly volatile’: Virginia infrastructure projects steady as Iran war drives fuel costs higher",
   "type": "tv",
-  "topic": "jobs",
+  "topic": "world",
   "scope": "State",
   "tier": "regional",
   "url": "https://www.wric.com/news/virginia-news/iran-war-fuel-surge-project-costs/",
-  "va": true,
-  "weak": true
+  "va": true
  },
  {
   "id": "3448799",
@@ -511,13 +510,12 @@ window.MEDIA = [
   "outlet": "The New Arab",
   "logo": "newarab",
   "program": "The New Arab",
-  "title": "Gambling on death",
+  "title": "Gambling on death: Polymarket and the dark rise of war betting",
   "type": "online",
   "topic": "markets",
   "scope": "International",
   "tier": "international",
-  "url": "https://www.newarab.com/analysis/gambling-death-polymarket-and-dark-rise-war-betting",
-  "weak": true
+  "url": "https://www.newarab.com/analysis/gambling-death-polymarket-and-dark-rise-war-betting"
  },
  {
   "id": "3433416",
@@ -1229,13 +1227,12 @@ window.MEDIA = [
   "outlet": "The Washington Post",
   "logo": "wapo",
   "program": "Washington Post",
-  "title": "Tariffs hit U.S",
+  "title": "Tariffs hit U.S. companies like GM and Jeep-maker Stellantis hard",
   "type": "print",
   "topic": "trade",
   "scope": "National",
   "tier": "national",
-  "url": "https://www.washingtonpost.com/business/2025/07/22/tariffs-cost-gm-stellantis-profits-trump/",
-  "weak": true
+  "url": "https://www.washingtonpost.com/business/2025/07/22/tariffs-cost-gm-stellantis-profits-trump/"
  },
  {
   "id": "2870788",
@@ -2896,7 +2893,7 @@ window.MEDIA = [
   "program": "Cover story, Virginia Business Magazine",
   "title": "The Prophet",
   "type": "print",
-  "topic": "jobs",
+  "topic": "markets",
   "scope": "State",
   "tier": "state",
   "url": "https://virginiabusiness.com/the-prophet/",
