@@ -128,13 +128,13 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 .section-head a.more { font-family: var(--sans); font-size: .9rem; }
 .cols { display: grid; grid-template-columns: 240px 1fr; gap: clamp(24px, 4vw, 64px); }
 .cols > aside { font-family: var(--sans); font-size: .9rem; color: var(--ink-2); line-height: 1.5; }
-.cols > aside h2 { color: var(--ink); font-size: 1.1rem; margin-bottom: 8px; }
+.cols > aside h2 { color: var(--ink); font-size: 1.25rem; margin-bottom: 8px; }
 @media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
 
 /* Research threads */
 .threads { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border-top: 1px solid var(--rule); }
 .thread { padding: 24px 24px 24px 0; border-bottom: 1px solid var(--rule); }
-.thread h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.thread h3 { font-size: 1.15rem; margin-bottom: 8px; }
 .thread p { font-size: .98rem; color: var(--ink-2); margin: 0; }
 .thread .meta { margin-top: 10px; }
 @media (min-width: 761px) { .threads { grid-template-columns: 1fr 1fr; } .thread:nth-child(odd) { border-right: 1px solid var(--rule); } .thread:nth-child(even) { padding-left: 24px; } }
@@ -142,7 +142,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
 /* Media cards ----------------------------------------------------- */
 .featured { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 0; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
 .featured .card { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-.card { background: var(--paper); padding: 22px 22px 26px; display: flex; flex-direction: column; gap: 10px; min-height: 220px; }
+.card { background: var(--paper); padding: 22px 22px 26px; display: flex; flex-direction: column; gap: 10px; }
 .card .outlet { font-family: var(--sans); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
 .card .title { font-size: 1.02rem; line-height: 1.35; }
 .card .title a { color: var(--ink); text-decoration: none; }
@@ -188,7 +188,13 @@ audio { display: block; width: 100%; max-width: 420px; margin-top: 8px; height: 
 .row .q { font-style: italic; color: var(--ink-2); font-size: .92rem; margin-top: 4px; }
 .row .k { font-family: var(--sans); font-size: .78rem; color: var(--ink-3); white-space: nowrap; }
 .row.hidden { display: none; }
-@media (max-width: 640px) { .row { grid-template-columns: 1fr; gap: 4px; } .row .k { display: none; } }
+@media (max-width: 640px) {
+  .row { grid-template-columns: 1fr; gap: 4px; }
+  .row .k { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; white-space: normal; margin-top: 4px; } /* keep the verb and the issue on phones */
+  .row .k br { display: none; }
+}
+.row > div:nth-child(2) { max-width: 78ch; }
+.pub > div { max-width: 78ch; }
 .empty { padding: 28px 0; color: var(--ink-2); font-family: var(--sans); }
 
 /* Publications */
@@ -240,10 +246,11 @@ audio { display: block; width: 100%; max-width: 420px; margin-top: 8px; height: 
 .fmt svg { width: 14px; height: 14px; flex: none; }
 .intro .updated { display: block; margin-top: 8px; min-height: 1.4em; font-family: var(--sans); font-size: .82rem; color: var(--ink-3); } /* min-height: the text arrives with media.js */
 /* Space for what the script renders, so the page does not shift when media.js arrives (measured heights) */
-#band { min-height: 270px; }
-#band-home { min-height: 118px; }
-#lead { min-height: 420px; }
-@media (max-width: 640px) { #band { min-height: 540px; } #band-home { min-height: 200px; } #lead { min-height: 600px; } }
+#band { min-height: 262px; }
+#band-home { min-height: 69px; }
+#lead { min-height: 560px; }
+@media (max-width: 640px) { #band { min-height: 520px; } #band-home { min-height: 171px; } #lead { min-height: 840px; } }
+@media (max-width: 340px) { #band { min-height: 596px; } #band-home { min-height: 206px; } #lead { min-height: 880px; } }
 .issue-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 28px; font-family: var(--sans); }
 .issue-strip, .issue-pins { display: contents; }
 .issue-bar .chip { font-size: .9rem; padding: 8px 14px; min-height: 38px; }
@@ -264,6 +271,12 @@ audio { display: block; width: 100%; max-width: 420px; margin-top: 8px; height: 
   .player .watch { min-height: 44px; }
 }
 .mark { min-height: 44px; }
+/* Phones: rem is 16px while the body is 17px, so the apparatus sizes bottom out at 14px here */
+@media (max-width: 640px) {
+  .meta, .row .d, .row .k, .row .k .fmt, .fmt, .wire .w-meta, .wire .tag, .tile .when, .tile .outs, .timeline .when, .site-foot .fine,
+  .band-panel .when, .kicker, .intro .updated, .portrait figcaption, .wm, .transcript, .player .watch { font-size: .875rem; }
+}
+.archive-more { display: flex; justify-content: center; margin-top: 24px; }
 .chip.place[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: var(--paper); } /* paper on red: 5.0 light, 5.3 dark; #fff failed in dark mode */
 
 .news-lead { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr); gap: clamp(24px, 4vw, 56px); padding: 30px 0 40px; border-top: 2px solid var(--ink); }
@@ -297,7 +310,7 @@ a.still:hover img { opacity: .9; }
 .air .t a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 .air .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .85rem; }
 .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-.ncard { background: var(--paper); padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; min-height: 190px; }
+.ncard { background: var(--paper); padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; }
 .ncard .t { font-size: 1.12rem; line-height: 1.3; }
 .ncard .q { font-size: .93rem; margin: 0; }
 .ncard .meta { margin-top: auto; padding-top: 6px; }
@@ -308,7 +321,7 @@ button.btn.ghost { border: 1px solid var(--ink); }
 
 /* Issue tiles (home page) */
 .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-.tile { background: var(--paper); padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 10px; min-height: 230px; text-decoration: none; color: var(--ink); transition: background .15s var(--ease); }
+.tile { background: var(--paper); padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: var(--ink); transition: background .15s var(--ease); }
 .tile:hover { background: var(--paper-2); color: var(--ink); }
 .tile .name { font-family: var(--sans); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.015em; line-height: 1.15; display: flex; justify-content: space-between; gap: 10px; }
 .tile .name::after { content: "→"; color: var(--ink-3); transition: transform .15s var(--ease), color .15s; }
@@ -334,7 +347,15 @@ button.btn.ghost { border: 1px solid var(--ink); }
 .band-panel .t a, .band-panel .t .nolink { color: var(--ink); text-decoration: none; }
 .band-panel .t a:hover { text-decoration: underline; }
 .band-panel .all { font-family: var(--sans); font-size: .85rem; white-space: nowrap; }
-.band-also { margin: 16px 0 0; max-width: none; font-family: var(--sans); font-size: .82rem; line-height: 1.6; color: var(--ink-2); }
+.band-also { margin: 16px 0 0; max-width: 95ch; font-family: var(--sans); font-size: .82rem; line-height: 1.6; color: var(--ink-2); }
+/* While every band slot is a placeholder, the names run as one wrapped line in the site's own type instead of a grid of grey names */
+.band-marks.all-wm { display: block; font-family: var(--sans); font-size: 1.02rem; line-height: 2.1; color: var(--ink-2); }
+.band-marks.all-wm .mark { display: inline; padding: 6px 0; min-height: 0; color: var(--ink); }
+.band-marks.all-wm .mark:not(:last-child)::after { content: ", "; font-weight: 400; color: var(--ink-2); }
+.band-marks.all-wm .mk, .band-marks.all-wm .wm { display: inline; font-size: inherit; line-height: inherit; text-align: left; white-space: nowrap; }
+.band-marks.all-wm .mark:hover .wm, .band-marks.all-wm .mark:focus-visible .wm { color: var(--red); }
+.band-marks.all-wm .mark[aria-current="true"] { box-shadow: none; }
+.band-marks.all-wm .mark[aria-current="true"] .wm { box-shadow: inset 0 -2px 0 var(--red); }
 .band-also b { color: var(--ink); font-weight: 600; }
 .coverage { padding: clamp(22px, 3vw, 32px) 0; border-bottom: 1px solid var(--rule); }
 @media (max-width: 640px) { .band-marks { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 6px; } .wm { font-size: .76rem; } .band-panel .all { white-space: normal; } }
