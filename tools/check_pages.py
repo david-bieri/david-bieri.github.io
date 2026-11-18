@@ -5,8 +5,7 @@ failed requests, console errors and third-party requests made before any click.
 Usage:  python3 -m http.server 8765 &        (from the repo root)
         python3 tools/check_pages.py [page ...]   (default: all six pages)
 Needs:  pip install playwright, plus a Chrome or Chromium binary (set CHROME=/path if not /usr/bin/google-chrome).
-Screenshots go to /tmp/pagecheck/<page>_<width>.png. Expected noise: a /favicon.ico 404 on the first page
-(no icon is declared). Third-party requests should be none: the fonts are self-hosted (assets/fonts/README.md).
+Screenshots go to /tmp/pagecheck/<page>_<width>.png. Expected noise: none (the icons are declared in every head). Third-party requests should be none: the fonts are self-hosted (assets/fonts/README.md).
 """
 import asyncio, os, sys
 from urllib.parse import urlparse
