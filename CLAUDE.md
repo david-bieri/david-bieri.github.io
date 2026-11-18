@@ -18,6 +18,7 @@ Personal site of David Bieri (Associate Professor of Urban Affairs, SPIA, Virgin
 
 ## Checks before committing
 - Open each page at desktop and ~390px width; no horizontal scroll, filters on `media.html` work, console clean except the optional headshot.
+- `python3 tools/check_pages.py` (with `python3 -m http.server 8765` running) does the mechanical part: screenshots of all six pages at 1280 and 390 px in /tmp/pagecheck, horizontal scroll, failed requests, console errors, third-party requests before any click.
 - Every new media entry has `date` (YYYY-MM-DD), `outlet`, `type`, `topic` (one of the eight issues), `title`, `url`, and `va=yes` if it is a Virginia story or outlet.
 
 ## Open items
@@ -26,8 +27,10 @@ Personal site of David Bieri (Associate Professor of Urban Affairs, SPIA, Virgin
 - Migrate legacy david-bieri.com assets (PDFs, audio) into `assets/docs/` and add forwarding stubs for old URLs.
 
 ## Media database (added 17 Nov)
-- **Source of truth is `data/media.csv`** (273 rows, 2014–2026; consolidated 17 Nov, see data/MEDIA_CHANGELOG.md). Edit it in Excel/Sheets or by hand, then run `python3 tools/build_media.py`, which regenerates `assets/data/media.js` and any missing `assets/logos/<slug>.svg` wordmarks. Never edit `media.js` directly.
-- Columns are documented at the top of `tools/build_media.py`. `featured=yes` and `quote` drive the cards; `logo` is shared across network affiliates (`cbs-affiliate`, `abc-affiliate`, `fox-affiliate`).
+- **Source of truth is `data/media.csv`** (275 rows, 2014–2026; consolidated 17 Nov, see data/MEDIA_CHANGELOG.md). Edit it in Excel/Sheets or by hand, then run `python3 tools/build_media.py`, which regenerates `assets/data/media.js` and any missing `assets/logos/<slug>.svg` wordmarks. Never edit `media.js` directly.
+- Columns are documented at the top of `tools/build_media.py`. `featured=yes` plus a `quote` puts an item in the **Selected interviews** card grid on media.html (`#featured`; curated 18 Nov to 14 national/international items, every quote checked against the source). `logo` is shared across network affiliates (`cbs-affiliate`, `abc-affiliate`, `fox-affiliate`).
+- **Clips** (added 18 Nov): optional columns `video`, `audio`, `poster`, `transcript`. `video` takes a YouTube/Vimeo URL or an https .mp4/.webm URL; when blank, a YouTube link in `url` is used automatically (the outlet's own upload, with its `t=` start time). The page shows a "Watch here" button and loads the third-party player only on click (youtube-nocookie / Vimeo dnt), so nothing tracks visitors by default. Never commit video files to this repo (GitHub rejects files over 100 MB; Pages sites are capped at 1 GB). Station footage David saved himself (OneDrive `Media`, catalogued in `Media/_catalogue`) is not re-hosted without the station's permission; link the outlet's page instead.
+- The home page **Latest** strip shows the three most recent rows with a real headline (wrapping, no horizontal scroll) and an "All coverage" link.
 - **Coverage band** (`#band` on media.html, `#band-home` on index): the 16 outlets in `BAND` in `tools/build_media.py`. Each mark links to `media.html#outlet=<slug>`, and hovering one shows its latest headline. SVGs are inlined so `currentColor` follows the page, and every mark gets the same visual area. Typographic placeholder SVGs (containing `<text>`) render as the outlet name in Archivo. Every other outlet is listed as plain text (`window.ALSO`). To add an official mark: `python3 tools/prep_logo.py <file.svg> <slug>`; sources and permissions are in `assets/logos/README.md`.
 - The media section is called **In the news** everywhere (nav, home, media.html). Every format is treated the same: tv shows as Watch, radio/podcast as Listen, print/online as Read.
 - **Eight issues** (`topic` column): trade, money, prices, jobs, markets, housing, gov, world. Labels are in `TOPIC_LABELS` in `tools/build_media.py`; the build fails on any other value. `va` is a separate Virginia filter.
