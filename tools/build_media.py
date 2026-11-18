@@ -34,6 +34,10 @@ Columns (conventions as of the 17 Nov 2026 consolidation; see data/MEDIA_CHANGEL
   interviewer host or reporter as "Surname I" (not rendered; kept for your records)
   featured    "yes" to surface on the home page and in Selected appearances
   quote       optional pull quote (rendered in cards)
+  image       optional broadcast still or photo for this appearance, as a site path such as
+              assets/images/media/<id>.jpg: 16:9, 960x540 JPEG, under ~110 KB, network logo and caption
+              left in so the still credits itself. Shown on the lead story and on cards; the build fails if
+              the file is missing.
   notes       provenance and anything else; not rendered. "merged duplicate <id>" records a consolidation.
 """
 import csv, html, json, os, re, sys
@@ -54,11 +58,14 @@ TOPIC_LABELS = {"trade": "Trade & tariffs", "money": "The Fed & money", "prices"
 odd = [r.get("id", "?") for r in rows if r["topic"] not in TOPIC_LABELS]
 if odd:
     sys.exit("Rows with a topic outside the eight issues: " + ", ".join(odd))
+missing = [r.get("id", "?") + " (" + r["image"] + ")" for r in rows if r.get("image") and not os.path.isfile(os.path.join(ROOT, r["image"]))]
+if missing:
+    sys.exit("Rows whose image file does not exist: " + ", ".join(missing))
 YES = ("yes", "true", "1", "x")
 
 media = []
 for r in rows:
-    m = {k: r[k] for k in ("id", "date", "outlet", "logo", "program", "title", "type", "topic", "scope", "tier", "url") if r.get(k)}
+    m = {k: r[k] for k in ("id", "date", "outlet", "logo", "program", "title", "type", "topic", "scope", "tier", "url", "image") if r.get(k)}
     if r.get("featured", "").strip().lower() in YES:
         m["featured"] = True
     if r.get("va", "").strip().lower() in YES:

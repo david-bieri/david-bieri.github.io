@@ -11,6 +11,13 @@
   function titleLink(m, cls) {
     return m.url ? '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + '</a>' : '<span class="' + (cls || 'nolink') + '">' + esc(m.title) + '</span>';
   }
+  /* Broadcast still (media.csv "image"): repeats the headline link, so it is hidden from the tab order and screen readers */
+  function still(m) {
+    if (!m.image) return '';
+    var img = '<img src="' + esc(m.image) + '" alt="" width="960" height="540" loading="lazy" onerror="this.parentNode.remove()">';
+    return m.url ? '<a class="still" href="' + esc(m.url) + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">' + img + '</a>'
+                 : '<div class="still" aria-hidden="true">' + img + '</div>';
+  }
   function audioEl(m) { return m.audio ? '<audio controls preload="none" src="' + esc(m.audio) + '"></audio>' : ''; }
   function fmtShort(d) { var p = d.split("-"); return MONTHS[+p[1] - 1] + " " + p[0]; }
 
@@ -228,7 +235,7 @@
       });
       var xs = strong.filter(keep), lead = xs[0], also = xs.slice(1, 5), grid = xs.slice(5, 5 + st.shown);
       $("#lead").innerHTML = lead ?
-        '<article class="lead-item"><div class="kicker">' + esc(TL[lead.topic] || "") + (lead.va ? ' · Virginia' : '') + '</div>' +
+        '<article class="lead-item">' + still(lead) + '<div class="kicker">' + esc(TL[lead.topic] || "") + (lead.va ? ' · Virginia' : '') + '</div>' +
         '<h2 class="lead-title">' + titleLink(lead) + '</h2>' +
         (lead.quote ? '<p class="q">“' + esc(lead.quote) + '”</p>' : '') + audioEl(lead) +
         '<div class="meta">' + fmtTag(lead) + '<span>' + byline(lead) + '</span></div></article>' +
@@ -236,6 +243,13 @@
           return '<li>' + fmtTag(m) + '<span class="t">' + titleLink(m) + '</span><span class="meta">' + byline(m) + '</span></li>';
         }).join("") + '</ol></aside>' : '') :
         '<p class="empty">Nothing on that combination yet. Try another issue.</p>';
+      var air = xs.filter(function (m) { return m.image && m !== lead; }).slice(0, 4), onair = $("#onair");
+      if (onair) {
+        onair.innerHTML = air.length ? '<h3>On air</h3><div class="onair-row">' + air.map(function (m) {
+          return '<article class="air">' + still(m) + '<div class="t">' + titleLink(m) + '</div><div class="meta">' + fmtTag(m) + '<span>' + byline(m) + '</span></div></article>';
+        }).join("") + '</div>' : '';
+        onair.hidden = !air.length;
+      }
       $("#news-grid").innerHTML = grid.map(card).join("");
       $("#news-grid").hidden = !grid.length;
       if (more) more.hidden = xs.length <= 5 + st.shown;

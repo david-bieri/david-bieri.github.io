@@ -406,6 +406,7 @@ window.MEDIA = [
   "scope": "National",
   "tier": "national",
   "url": "https://abcnews.com/video/132251202/",
+  "image": "assets/images/media/3449220.jpg",
   "featured": true
  },
  {
@@ -747,7 +748,8 @@ window.MEDIA = [
   "topic": "money",
   "scope": "Regional",
   "tier": "regional",
-  "url": "https://www.fox5dc.com/video/fmc-hc5fcyr187yfr6wx"
+  "url": "https://www.fox5dc.com/video/fmc-hc5fcyr187yfr6wx",
+  "image": "assets/images/media/3451854.jpg"
  },
  {
   "id": "x-2026-03-17-wtop",
@@ -863,20 +865,6 @@ window.MEDIA = [
   "va": true
  },
  {
-  "id": "3406078",
-  "date": "2026-02-25",
-  "outlet": "Phoenix TV",
-  "logo": "phoenix",
-  "program": "Phoenix TV (凤凰卫视)",
-  "title": "Special feature",
-  "type": "online",
-  "topic": "jobs",
-  "scope": "International",
-  "tier": "international",
-  "url": "http://share.fengshows.cn/article.html?id=74af9318-6af0-4b1c-866d-67a80ecf08a3&channelID=r03&time=1771968035.202499",
-  "weak": true
- },
- {
   "id": "x-2026-02-24-vt",
   "date": "2026-02-24",
   "outlet": "Virginia Tech News",
@@ -915,6 +903,20 @@ window.MEDIA = [
   "tier": "regional",
   "url": "https://www.wsls.com/news/local/2026/02/18/virginia-bill-aims-to-cut-electric-bills/",
   "va": true
+ },
+ {
+  "id": "3406078",
+  "date": "2026-02-15",
+  "outlet": "Phoenix TV",
+  "logo": "phoenix",
+  "program": "Phoenix TV (凤凰卫视)",
+  "title": "Market focus shifts as the Fed may no longer prop up markets unconditionally",
+  "type": "tv",
+  "topic": "money",
+  "scope": "International",
+  "tier": "international",
+  "url": "http://share.fengshows.cn/article.html?id=74af9318-6af0-4b1c-866d-67a80ecf08a3&channelID=r03&time=1771968035.202499",
+  "image": "assets/images/media/3406078.jpg"
  },
  {
   "id": "3449926",
@@ -1613,7 +1615,8 @@ window.MEDIA = [
   "topic": "trade",
   "scope": "International",
   "tier": "national",
-  "url": "https://drive.google.com/file/d/1CTBUTSaHGNMHuQtdocVtEVgl5eLEfMNo/view"
+  "url": "https://drive.google.com/file/d/1CTBUTSaHGNMHuQtdocVtEVgl5eLEfMNo/view",
+  "image": "assets/images/media/2820382.jpg"
  },
  {
   "id": "2823957",
