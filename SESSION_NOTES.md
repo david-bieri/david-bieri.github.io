@@ -1,3 +1,42 @@
+# Session notes — 18 Nov 2026, evening (On-air mosaic merged, repo tidy)
+
+**Last session:** 2026-11-18
+**Topic:** merged the Media page redesign, removed the intake folder from main, set up the GitHub CLI, pruned branches
+**Horizon:** site must stay application-ready (senior faculty search, 2026–27 cycle)
+
+Project configuration: as in the "media database, clips, CV PDF" block below. Dispatch is now `gh` from this machine (see §3).
+
+## 1. Completed
+- ✓ PR #36 `feat/on-air-mosaic` → main: the Media page redesign (server-rendered media.html, one filter bar with state in the URL, Selected television mosaic, Selected coverage, year-grouped archive, lightbox). Check before merge: all six pages pass at four widths, CLS 0.
+- ✓ PR #35 `intake/stills-2026-11-18` → main (merged by mistake alongside #36); undone by ✓ PR #37 `chore/remove-intake`, which deletes `intake/` from main. The raw stills stay on the intake branch and in history.
+- ✓ GitHub CLI 2.105.0 installed and logged in as `david-bieri` (keyring). `gh pr create` works.
+- ✓ Branches: 36 merged branches deleted on GitHub. Left: `main` and `intake/stills-2026-11-18`. Local: `main` only.
+
+## 2. Pending dispatch
+- **GitHub:** delete `intake/stills-2026-11-18` once the held stills (§5) are decided: `git push origin --delete intake/stills-2026-11-18`.
+- **Browser:** look at the live www.david-bieri.com/media.html on a phone and on desktop after the Pages deploy (not yet done).
+
+## 3. Decisions
+- **Intake branches are never merged to main.** Raw material goes onto the live site the moment it reaches main; process it on a feature branch into `assets/` instead.
+- **`gh` is installed on this machine.** In a Claude Code session started before the install, add `C:\Program Files\GitHub CLI` to PATH or restart. The claim "GraphQL is blocked" in the config below applied to the earlier environment; `gh pr create` reached GraphQL here.
+- **Before deleting branches, test each one with `git merge-base --is-ancestor origin/<b> origin/main`.** A count-based filter wrongly reported three merged branches as unmerged this session.
+
+## 4. Latent issues
+- Running `tools/build_media.py` on Windows rewrites `media.html` with LF endings, so git shows it as changed with no content diff. Discard it (`git checkout -- media.html`) or add a `.gitattributes` rule.
+
+## 5. Open questions (David, deferred)
+1. Stills for TV rows 3507577 (The Hill/NewsNation, 2026-07-16) and 3298072 (CNN, 2025-11-20). Should 3298072 be featured?
+2. A clean frame for 2215064 (its still has a play button baked in).
+3. `video`/`audio` URLs: the columns are empty, so the page has no Play buttons.
+4. Real headlines for 2396145, 2307674, 2216170 and 1559416 (title equals the programme, so they are marked weak).
+5. Held items on the intake branch: the Phoenix Warsh frame, the FOX 5 DC alternatives, two VT photos, the 2026-05-01 "Dr. David Bieri" screenshot, the Blacksburg Symposium photo. Use or drop each.
+- Also open: legacy david-bieri.com PDFs and audio → `assets/docs/` with forwarding stubs; check media links that still point at VT media-mentions pages.
+
+## 6. Suggested next session
+"Read SESSION_NOTES.md, then process open questions 1–5 with me (I'll supply stills, links and headlines)." If David has no assets ready: "Read SESSION_NOTES.md, then start the legacy-asset migration in HANDOVER.md."
+
+---
+
 # Session notes — 18 Nov 2026 (design review and fixes)
 
 **Topic:** three-skill design review (Impeccable, Motion, design-taste-frontend), then four fix groups and follow-ups
