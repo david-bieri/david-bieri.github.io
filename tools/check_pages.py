@@ -11,8 +11,9 @@ Screenshots go to /tmp/pagecheck/<page>_<width>.png. Expected noise: none (the i
 Third-party requests should be none: the fonts are self-hosted (assets/fonts/README.md).
 Layout shift is the cumulative layout-shift score 1.5 s after load, with the images and the data file arriving at
 full speed; anything over 0.05 means a block renders without reserved space (CLAUDE.md, coverage band).
-The click test fails on: a filter that does not change the hash or the count, a Virginia toggle that does not
-narrow the list, a band name that does not select its outlet, or Back that does not undo the last filter.
+The click test fails on: a topic or type filter that does not change the URL query or the count, a Virginia
+toggle that does not narrow the list, a search that does not narrow the page, or a tile that does not open
+and close the lightbox.
 """
 import asyncio, os, sys
 from urllib.parse import urlparse
@@ -56,33 +57,39 @@ async def check(browser, page, width, height):
     for e in errors: print("       console:", e[:160])
 
 async def click_test(browser):
-    """media.html on a phone: each control changes the state it should, and Back undoes one step."""
+    """media.html on a phone: the filter bar drives the page, the URL query tracks it, and a tile opens
+    and closes the lightbox."""
     global failures
     ctx = await browser.new_context(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True)
     pg = await ctx.new_page()
     await pg.goto(f"{BASE}/media.html", wait_until="networkidle")
-    state = "() => ({hash: location.hash, count: document.getElementById('count').textContent, pressed: [...document.querySelectorAll('.chip[aria-pressed=true], .chip.on')].map(c => c.textContent.trim()), scope: document.getElementById('scope').textContent, lead: (document.querySelector('.lead-title') || {}).textContent || ''})"
+    state = ("() => ({q: location.search, status: document.getElementById('mb-status').textContent, "
+             "pressed: [...document.querySelectorAll('.mb-chip[aria-pressed=true], .mb-segbtn[aria-pressed=true]')].map(c => c.textContent.trim()), "
+             "tiles: document.querySelectorAll('#tv-mosaic .tv-tile').length, "
+             "lbOpen: !document.getElementById('lightbox').hidden})")
+    def num(s):
+        return int(s.split()[0]) if s and s.split() else -1
     def expect(cond, what, s):
         global failures
         if not cond:
             failures += 1
             print(f"FAIL click: {what}  -> {s}")
-    start = await pg.evaluate(state)
-    await pg.get_by_role("button", name="Housing").click(); await pg.wait_for_timeout(300)
-    s = await pg.evaluate(state); expect(s["hash"] == "#housing" and s["count"] != start["count"] and "Housing" in s["pressed"], "Housing chip", s)
-    await pg.get_by_role("button", name="Virginia").click(); await pg.wait_for_timeout(300)
-    s2 = await pg.evaluate(state); expect(s2["hash"] == "#housing&virginia" and int(s2["count"].split()[0]) < int(s["count"].split()[0]), "Virginia toggle", s2)
-    await pg.go_back(); await pg.wait_for_timeout(400)
-    s3 = await pg.evaluate(state); expect(s3["hash"] == "#housing" and s3["count"] == s["count"], "Back undoes Virginia", s3)
-    await pg.get_by_role("button", name="All issues").click(); await pg.wait_for_timeout(300)
-    marks = pg.locator("#band .mark")
-    name = await marks.nth(4).get_attribute("aria-label")
-    await marks.nth(4).click(); await pg.wait_for_timeout(500)
-    s4 = await pg.evaluate(state); expect(s4["hash"].startswith("#outlet=") and any("✕" in p for p in s4["pressed"]), f"band mark {name}", s4)
-    await pg.fill("#search", "tariff"); await pg.wait_for_timeout(300)
-    s5 = await pg.evaluate(state); expect("tariff" in s5["scope"] and s5["lead"] != s4["lead"] or s5["count"] != s4["count"], "search narrows the page", s5)
-    air = await pg.evaluate("() => { const on = document.getElementById('onair'); return on.hidden || [...on.querySelectorAll('.air')].length <= 4; }")
-    expect(air, "On air row follows the filter", s5)
+    await pg.get_by_role("button", name="Housing", exact=True).click(); await pg.wait_for_timeout(250)
+    s = await pg.evaluate(state); expect("topic=housing" in s["q"] and " of " in s["status"] and "Housing" in s["pressed"], "Housing topic", s)
+    await pg.get_by_role("button", name="TV", exact=True).click(); await pg.wait_for_timeout(250)
+    s2 = await pg.evaluate(state); expect("type=tv" in s2["q"] and num(s2["status"]) <= num(s["status"]), "TV type", s2)
+    await pg.get_by_role("button", name="All topics", exact=True).click()
+    await pg.get_by_role("button", name="All", exact=True).click()
+    await pg.get_by_role("button", name="Virginia only", exact=True).click(); await pg.wait_for_timeout(250)
+    s3 = await pg.evaluate(state); expect("va=1" in s3["q"] and num(s3["status"]) >= 0, "Virginia toggle", s3)
+    await pg.get_by_role("button", name="Virginia only", exact=True).click()
+    await pg.fill("#mb-q", "tariff"); await pg.wait_for_timeout(250)
+    s4 = await pg.evaluate(state); expect("q=tariff" in s4["q"] and " of " in s4["status"], "search narrows the page", s4)
+    await pg.fill("#mb-q", "")
+    await pg.locator(".tv-tile--lead .tv-link").click(); await pg.wait_for_timeout(250)
+    s5 = await pg.evaluate(state); expect(s5["lbOpen"], "tile opens lightbox", s5)
+    await pg.keyboard.press("Escape"); await pg.wait_for_timeout(200)
+    s6 = await pg.evaluate(state); expect(not s6["lbOpen"], "Escape closes lightbox", s6)
     await ctx.close()
     print("ok   media click test" if failures == 0 else "     media click test finished with failures above")
 

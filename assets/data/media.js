@@ -2043,7 +2043,8 @@ window.MEDIA = [
   "url": "https://www.youtube.com/watch?v=ZzLpycIHVCg",
   "video": {
    "yt": "ZzLpycIHVCg"
-  }
+  },
+  "poster": "assets/media/posters/2512388.jpg"
  },
  {
   "id": "2403726",
@@ -2150,7 +2151,8 @@ window.MEDIA = [
   "url": "https://www.youtube.com/watch?v=kELGhBqx998",
   "video": {
    "yt": "kELGhBqx998"
-  }
+  },
+  "poster": "assets/media/posters/2366243.jpg"
  },
  {
   "id": "2366011",
@@ -2478,7 +2480,8 @@ window.MEDIA = [
   "topic": "prices",
   "scope": "National",
   "tier": "regional",
-  "url": "https://www.fox5dc.com/video/1157882"
+  "url": "https://www.fox5dc.com/video/1157882",
+  "poster": "assets/media/posters/2215064.jpg"
  },
  {
   "id": "2216177",
@@ -3018,7 +3021,8 @@ window.MEDIA = [
   "topic": "gov",
   "scope": "Regional",
   "tier": "regional",
-  "url": "https://www.fox5dc.com/video/892885"
+  "url": "https://www.fox5dc.com/video/892885",
+  "poster": "assets/media/posters/1599468.jpg"
  },
  {
   "id": "1599415",
