@@ -243,7 +243,7 @@ VERB = {"tv": "Watch", "radio": "Listen", "podcast": "Listen", "print": "Read", 
 # Display rules for this page only (CSV is left untouched). A clean headline for the Fox 5 Fed row,
 # and the prefix/suffix the RTVI rows carry in the CSV so the translated title reads as a headline.
 HEADLINE_OVERRIDES = {"3451854": "Federal Reserve decision preview"}
-# Alt-text descriptions of the stills (from intake/stills/MANIFEST.md); the sentence after the colon.
+# Alt-text descriptions of the stills (from the intake manifest, branch intake/stills-2026-11-18); the sentence after the colon.
 STILL_DESC = {
     "3449220": "David Bieri in a video window, the full broadcast frame on a dark field",
     "3451854": "David Bieri in split screen beside the Federal Reserve building, lower third reading David Bieri, Virginia Tech Professor",
