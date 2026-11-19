@@ -229,3 +229,146 @@ for slug, name in names.items():
     open(path, "w", encoding="utf-8").write(svg)
 
 print(f"{len(media)} appearances, {len(wall)} outlets, {len(os.listdir(LOGOS))} logos -> {os.path.relpath(OUT, ROOT)}")
+
+# ---------------------------------------------------------------------------
+# media.html static markup. The page works and is indexable without JS; site.js
+# only layers filtering, year toggles and the lightbox on top of what is here.
+# Edit the CSV and re-run; never edit the generated regions of media.html by hand.
+MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+MONTHS_FULL = ["January", "February", "March", "April", "May", "June", "July", "August",
+               "September", "October", "November", "December"]
+LEAD_SIZES = "(min-width: 1200px) 700px, 100vw"
+SMALL_SIZES = "(min-width: 1200px) 240px, 50vw"
+VERB = {"tv": "Watch", "radio": "Listen", "podcast": "Listen", "print": "Read", "online": "Read"}
+# Display rules for this page only (CSV is left untouched). A clean headline for the Fox 5 Fed row,
+# and the prefix/suffix the RTVI rows carry in the CSV so the translated title reads as a headline.
+HEADLINE_OVERRIDES = {"3451854": "Federal Reserve decision preview"}
+# Alt-text descriptions of the stills (from intake/stills/MANIFEST.md); the sentence after the colon.
+STILL_DESC = {
+    "3449220": "David Bieri in a video window, the full broadcast frame on a dark field",
+    "3451854": "David Bieri in split screen beside the Federal Reserve building, lower third reading David Bieri, Virginia Tech Professor",
+    "3406078": "David Bieri in studio with a Chinese-language lower third dated 15 February",
+    "2820382": "David Bieri in split screen with the anchor, First 100 Days chyron",
+    "2512388": "David Bieri in a live RTVI studio segment",
+    "2366243": "David Bieri in a live RTVI studio segment",
+    "2215064": "David Bieri in the FOX 5 DC studio for a Consumer Alert segment",
+    "1599468": "David Bieri in the FOX 5 DC studio analysing President Biden's economic plan",
+}
+
+def E(s):
+    return html.escape(str(s if s is not None else ""), quote=True)
+
+def disp_title(m):
+    t = HEADLINE_OVERRIDES.get(m["id"], m["title"])
+    t = re.sub(r"^RTVI:\s*", "", t)
+    t = re.sub(r"\s*\(live US-economy segment\)\s*$", "", t)
+    return t.strip()
+
+def disp_prog(m, title):
+    p = m.get("program")
+    return p if (p and p != m["outlet"] and p != title) else None
+
+def mon_year(d):
+    return MONTHS[int(d[5:7]) - 1] + " " + d[:4]
+
+def day_mon(d):
+    return MONTHS[int(d[5:7]) - 1] + " " + str(int(d[8:10]))
+
+def alt_text(m):
+    prog = m.get("program")
+    head = m["outlet"] + (", " + prog if prog else "") + ", " + MONTHS_FULL[int(m["date"][5:7]) - 1] + " " + m["date"][:4]
+    return head + ": " + STILL_DESC.get(m["id"], "David Bieri on " + m["outlet"])
+
+def picture(m, sizes, eager=False):
+    load = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
+    alt = E(alt_text(m))
+    poster = m["poster"]
+    base = poster[:-4]
+    if poster.startswith("http") or not os.path.isfile(os.path.join(ROOT, base + "-640.webp")):
+        return f'<img src="{E(poster)}" width="1280" height="720" alt="{alt}" {load}>'
+    return ('<picture>'
+            f'<source type="image/webp" srcset="{base}-640.webp 640w, {base}.webp 1280w" sizes="{sizes}">'
+            f'<img src="{base}.jpg" srcset="{base}-640.jpg 640w, {base}.jpg 1280w" sizes="{sizes}" '
+            f'width="1280" height="720" alt="{alt}" {load}></picture>')
+
+def title_link(m, title):
+    u = m.get("url")
+    return (f'<a href="{E(u)}" target="_blank" rel="noopener">{E(title)}</a>' if u
+            else f'<span class="nolink">{E(title)}</span>')
+
+def tv_tile(m, lead=False):
+    # Stretched-link tile: the headline <a> covers the whole tile (CSS ::after); a clip's Play
+    # button lives inside the figure as a sibling of the link, so no interactive element is nested.
+    t = disp_title(m)
+    prog = m.get("program")
+    meta = E(" · ".join([m["outlet"]] + ([prog] if prog else []) + [mon_year(m["date"])]))
+    u = m.get("url")
+    play = (f'<button type="button" class="tv-play" data-id="{E(m["id"])}" '
+            f'aria-label="Play clip: {E(t)}"><span class="tri" aria-hidden="true"></span>Play</button>') if m.get("video") else ""
+    fig = f'<figure class="shot">{picture(m, LEAD_SIZES if lead else SMALL_SIZES, eager=lead)}{play}</figure>'
+    head = (f'<a class="tv-link" href="{E(u)}" target="_blank" rel="noopener">{E(t)}</a>' if u
+            else f'<span class="tv-link">{E(t)}</span>')
+    cls = "tv-tile tv-tile--lead" if lead else "tv-tile"
+    return (f'<article class="{cls}" data-id="{E(m["id"])}">{fig}'
+            f'<h3 class="tv-head">{head}</h3><p class="tv-meta">{meta}</p></article>')
+
+def cov_item(m):
+    t = disp_title(m)
+    return (f'<li class="cov-item"><span class="cov-t">{title_link(m, t)}</span>'
+            f'<span class="cov-meta">{E(m["outlet"])} · {E(mon_year(m["date"]))}</span></li>')
+
+def arc_row(m):
+    t = disp_title(m)
+    prog = disp_prog(m, t)
+    main = f'<div class="arc-o">{E(m["outlet"])}</div><div class="arc-t">{title_link(m, t)}</div>'
+    if prog:
+        main += f'<div class="arc-p">{E(prog)}</div>'
+    if m.get("quote"):
+        main += f'<div class="arc-q">“{E(m["quote"])}”</div>'
+    k = f'<span class="arc-type">{E(TYPE_LABELS.get(m["type"], m["type"]))}</span>'
+    if (m.get("video") or m.get("audio")) and m.get("url"):
+        k += f'<a class="arc-do" href="{E(m["url"])}" target="_blank" rel="noopener">{VERB.get(m["type"], "Read")}</a>'
+    return (f'<li class="arc-row"><span class="arc-d">{E(day_mon(m["date"]))}</span>'
+            f'<div class="arc-main">{main}</div><span class="arc-k">{k}</span></li>')
+
+def arc_years(items):
+    years = []
+    for m in items:
+        y = m["date"][:4]
+        if not years or years[-1][0] != y:
+            years.append((y, []))
+        years[-1][1].append(m)
+    open_set = {y for y, _ in years[:2]}
+    out = []
+    for y, rows in years:
+        n = len(rows)
+        word = "appearance" if n == 1 else "appearances"
+        out.append(f'<details class="arc-year"{" open" if y in open_set else ""}>'
+                   f'<summary class="arc-sum"><span class="arc-y">{y}</span>'
+                   f'<span class="arc-n">{n} {word}</span></summary>'
+                   f'<ul class="arc-rows">{"".join(arc_row(m) for m in rows)}</ul></details>')
+    return "".join(out)
+
+tv_rows = [m for m in media if m.get("poster")][:5]
+lead, rest = tv_rows[0], tv_rows[1:5]
+tv_html = tv_tile(lead, lead=True) + '<div class="tv-rest">' + "".join(tv_tile(m) for m in rest) + "</div>"
+cov_rows = [m for m in media if m.get("featured") and not m.get("poster")][:8]
+cov_html = "".join(cov_item(m) for m in cov_rows)
+arc_html = arc_years(media)
+first_year = min(m["date"][:4] for m in media)
+summary = (f"{len(media)} television, radio, print and online appearances in "
+           f"{len(wall)} outlets since {first_year}.")
+lbase = lead["poster"][:-4]
+preload = (f'\n<link rel="preload" as="image" type="image/webp" '
+           f'imagesrcset="{lbase}-640.webp 640w, {lbase}.webp 1280w" '
+           f'imagesizes="{LEAD_SIZES}" fetchpriority="high">\n')
+
+PAGE = os.path.join(ROOT, "media.html")
+doc = open(PAGE, encoding="utf-8").read()
+for key, val in {"preload": preload, "summary": summary, "tv": tv_html,
+                 "coverage": cov_html, "archive": arc_html}.items():
+    a, b = f"<!-- build:{key} -->", f"<!-- /build:{key} -->"
+    i, j = doc.index(a) + len(a), doc.index(b)
+    doc = doc[:i] + val + doc[j:]
+open(PAGE, "w", encoding="utf-8", newline="\n").write(doc)
+print(f"media.html: {len(tv_rows)} tv tiles, {len(cov_rows)} coverage, {len(media)} archive rows")
