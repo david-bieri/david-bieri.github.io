@@ -320,6 +320,16 @@
       var m = byId(lbTiles[lbIdx].getAttribute("data-id")); lbStage.innerHTML = ""; lbStage.appendChild(makeVideo(m.video));
     });
 
+    /* Coverage band: filter the page in place rather than reloading to ?q=<outlet> */
+    var coverage = document.querySelector(".coverage");
+    if (coverage) coverage.addEventListener("click", function (e) {
+      var a = e.target.closest(".outlets a"); if (!a) return;
+      e.preventDefault();
+      st.q = new URL(a.href).searchParams.get("q") || "";
+      if (qInput) qInput.value = st.q;
+      writeURL(); render(); page.scrollIntoView();
+    });
+
     page.addEventListener("click", function (e) {
       var play = e.target.closest(".tv-play");
       if (play) { e.preventDefault(); var fig = play.closest(".shot"); fig.innerHTML = ""; fig.appendChild(makeVideo(byId(play.getAttribute("data-id")).video)); return; }

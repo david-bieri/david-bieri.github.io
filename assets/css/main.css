@@ -267,6 +267,14 @@ button.btn.ghost { border: 1px solid var(--ink); }
 /* Media page: filter bar, television mosaic, selected coverage, archive, lightbox ---- */
 .lede { font-size: 1.12rem; max-width: 60ch; }
 
+/* Coverage band: a quiet line of outlet names; each filters the list by that outlet */
+.outlets { margin: 0; font-family: var(--sans); font-size: 1.02rem; line-height: 1.9; color: var(--ink-2); }
+.outlets a { color: var(--ink); text-decoration: none; }
+.outlets a:hover, .outlets a:focus-visible { color: var(--red); }
+.outlets-also { margin: 12px 0 0; max-width: 95ch; font-family: var(--sans); font-size: .82rem; line-height: 1.6; color: var(--ink-2); }
+.outlets-also b { color: var(--ink); font-weight: 600; }
+@media (max-width: 640px) { .outlets { font-size: .95rem; } }
+
 /* One filter bar drives every section. Without JS it is hidden and everything shows unfiltered. */
 .mediabar { display: flex; flex-direction: column; gap: 14px; margin: 0 0 6px; font-family: var(--sans); }
 .no-js .mediabar, .no-js .mb-status { display: none; }

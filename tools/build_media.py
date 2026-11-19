@@ -349,6 +349,14 @@ def arc_years(items):
                    f'<ul class="arc-rows">{"".join(arc_row(m) for m in rows)}</ul></details>')
     return "".join(out)
 
+from urllib.parse import quote_plus
+# Coverage band: the BAND outlets as a quiet line of links that filter the list by that outlet's name.
+# Static (indexable, no layout shift); site.js intercepts the clicks to filter in place.
+band_links = ", ".join(f'<a href="?q={quote_plus(b["name"])}">{E(b["name"])}</a>' for b in band)
+band_html = (f'<p class="outlets">{band_links}</p>'
+             f'<p class="outlets-also"><b>Also:</b> {", ".join(E(n) for n in also[:22])}, '
+             f'and stations across Virginia, Washington and beyond.</p>')
+
 tv_rows = [m for m in media if m.get("poster")][:5]
 lead, rest = tv_rows[0], tv_rows[1:5]
 tv_html = tv_tile(lead, lead=True) + '<div class="tv-rest">' + "".join(tv_tile(m) for m in rest) + "</div>"
@@ -365,7 +373,7 @@ preload = (f'\n<link rel="preload" as="image" type="image/webp" '
 
 PAGE = os.path.join(ROOT, "media.html")
 doc = open(PAGE, encoding="utf-8").read()
-for key, val in {"preload": preload, "summary": summary, "tv": tv_html,
+for key, val in {"preload": preload, "summary": summary, "band": band_html, "tv": tv_html,
                  "coverage": cov_html, "archive": arc_html}.items():
     a, b = f"<!-- build:{key} -->", f"<!-- /build:{key} -->"
     i, j = doc.index(a) + len(a), doc.index(b)
