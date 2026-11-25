@@ -15,6 +15,7 @@ Project configuration: as in the "media database, clips, CV PDF" block below. Di
 ## 2. Pending dispatch
 - **GitHub:** delete `intake/stills-2026-11-18` once the held stills (§5) are decided: `git push origin --delete intake/stills-2026-11-18`.
 - **Browser:** look at the live www.david-bieri.com/media.html on a phone and on desktop after the Pages deploy (not yet done).
+- **GitHub:** decide on `claude/upbeat-edison-88l4p0` (one commit, e5cf412, 20 Nov, from another session): it vendors the "UI UX Pro Max" skill 2.15.0 into `.claude/skills/` (51 files, about 64,000 lines; no site pages touched). Not merged. If kept, add it to `.claude/skills/SOURCES.md` and the Design skills list in CLAUDE.md; if not, delete the branch.
 
 ## 3. Decisions
 - **Intake branches are never merged to main.** Raw material goes onto the live site the moment it reaches main; process it on a feature branch into `assets/` instead.
